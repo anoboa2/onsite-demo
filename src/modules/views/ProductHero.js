@@ -30,20 +30,20 @@ export default function ProductHero() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Get the most out of travel experience by leaving the planning to us
+        Get the most out of your travel by leaving the planning to us
       </Typography>
       <Button
         color="secondary"
         variant="contained"
         size="large"
         component="a"
-        href="/premium-themes/onepirate/sign-up/"
+        href="/booking"
         sx={{ minWidth: 200 }}
       >
         Get started
       </Button>
       <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        From couch to Cabo at the click of a button
+        Personalized Trip Planning & Support
       </Typography>
     </ProductHeroLayout>
   );

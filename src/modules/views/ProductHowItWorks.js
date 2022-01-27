@@ -67,7 +67,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  Choose you booking details and a planning package: Full Travel or Daily Planning
                 </Typography>
               </Box>
             </Grid>
@@ -81,8 +81,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so
-                  be quick.
+                  Checkout to receive your trip details form and proposed itinerary
                 </Typography>
               </Box>
             </Grid>
@@ -96,8 +95,36 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={item}>
+                <Box sx={number}>4.</Box>
+                <Box
+                  component="img"
+                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  alt="clock"
+                  sx={image}
+                />
+                <Typography variant="h5" align="center">
+                Approve the itinerary and  we  will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations. 
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={item}>
+                <Box sx={number}>5.</Box>
+                <Box
+                  component="img"
+                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  alt="clock"
+                  sx={image}
+                />
+                <Typography variant="h5" align="center">
+                
+A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.
                 </Typography>
               </Box>
             </Grid>
@@ -111,7 +138,7 @@ function ProductHowItWorks() {
           href="/premium-themes/onepirate/sign-up/"
           sx={{ mt: 8 }}
         >
-          Get started
+          Start booking
         </Button>
       </Container>
     </Box>
