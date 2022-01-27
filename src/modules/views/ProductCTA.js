@@ -34,10 +34,10 @@ function ProductCTA() {
           >
             <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                Receive offers
+                Join our waitlist
               </Typography>
               <Typography variant="h5">
-                Taste the holidays of the everyday close to home.
+                Onsite will be launching soon.  Stay up-to-date with the latest!
               </Typography>
               <TextField
                 noBorder
