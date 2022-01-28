@@ -10,8 +10,8 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://onsiteplanning.com/">
+        Onsite Inc.
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -42,7 +42,7 @@ const LANGUAGES = [
   },
 ];
 
-export default function AppFooter() {
+export default function AppFooter() { 
   return (
     <Typography
       component="footer"
@@ -59,19 +59,19 @@ export default function AppFooter() {
               sx={{ height: 120 }}
             >
               <Grid item sx={{ display: 'flex' }}>
-                <Box component="a" href="https://mui.com/" sx={iconStyle}>
+                <Box component="a" href="https://facebook.com/" sx={iconStyle}>
                   <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
+                    src="/img/appFooterFacebook.png"
                     alt="Facebook"
                   />
                 </Box>
                 <Box
                   component="a"
-                  href="https://twitter.com/MaterialUI"
+                  href="https://twitter.com/"
                   sx={iconStyle}
                 >
                   <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
+                    src="/img/appFooterTwitter.png"
                     alt="Twitter"
                   />
                 </Box>
@@ -87,15 +87,15 @@ export default function AppFooter() {
             </Typography>
             <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0 }}>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                <Link href="/terms/">Terms</Link>
               </Box>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                <Link href="/privacy/">Privacy</Link>
               </Box>
             </Box>
           </Grid>
           <Grid item xs={6} sm={8} md={4}>
-            <Typography variant="h6" marked="left" gutterBottom>
+            {/* <Typography variant="h6" marked="left" gutterBottom>
               Language
             </Typography>
             <TextField
@@ -112,7 +112,7 @@ export default function AppFooter() {
                   {language.name}
                 </option>
               ))}
-            </TextField>
+            </TextField> */}
           </Grid>
           <Grid item>
             <Typography variant="caption">

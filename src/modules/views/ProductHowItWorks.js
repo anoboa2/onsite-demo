@@ -43,7 +43,7 @@ function ProductHowItWorks() {
       >
         <Box
           component="img"
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src="/img/productCurvyLines.png"
           alt="curvy lines"
           sx={{
             pointerEvents: 'none',
@@ -62,7 +62,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>1.</Box>
                 <Box
                   component="img"
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
+                  src="/icon/productHowItWorks1.svg"
                   alt="suitcase"
                   sx={image}
                 />
@@ -76,7 +76,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>2.</Box>
                 <Box
                   component="img"
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
+                  src="/icon/productHowItWorks2.svg"
                   alt="graph"
                   sx={image}
                 />
@@ -90,7 +90,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>3.</Box>
                 <Box
                   component="img"
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  src="/icon/productHowItWorks3.svg"
                   alt="clock"
                   sx={image}
                 />
@@ -104,7 +104,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>4.</Box>
                 <Box
                   component="img"
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  src="/icon/productHowItWorks3.svg"
                   alt="clock"
                   sx={image}
                 />
@@ -118,7 +118,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>5.</Box>
                 <Box
                   component="img"
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  src="/icon/productHowItWorks3.svg"
                   alt="clock"
                   sx={image}
                 />
@@ -135,7 +135,7 @@ A finalized itinerary will be sent including all tickets. You can continue to re
           size="large"
           variant="contained"
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          href="/sign-up"
           sx={{ mt: 8 }}
         >
           Start booking
