@@ -37,7 +37,7 @@ export default function ProductHero() {
         variant="contained"
         size="large"
         component="a"
-        href="/booking"
+        href="/waitlist"
         sx={{ minWidth: 200 }}
       >
         Get started

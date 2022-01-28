@@ -30,7 +30,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues1.svg"
+                src="/icon/productValues1.svg"
                 alt="suitcase"
                 sx={{ height: 55 }}
               />
@@ -48,7 +48,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues2.svg"
+                src="/icon/productValues2.svg"
                 alt="graph"
                 sx={{ height: 55 }}
               />
@@ -66,7 +66,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues3.svg"
+                src="/icon/productValues3.svg"
                 alt="clock"
                 sx={{ height: 55 }}
               />

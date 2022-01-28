@@ -10,28 +10,28 @@ const rightLink = {
   ml: 3,
 };
 
-const onsiteLogo = 'https://onsite-images-1xo7eac.s3.amazonaws.com/Onsite_Logo_v03-08.png'
+const onsiteLogo = '/img/onsiteLogoColorBg.png';
 
 function AppAppBar() {
   return (
     <div>
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Box sx={{ flex: 1 }} />
+          <Box sx={{ flex: 0.1, justifyContent: 'flex-start' }} />
           <Link
             variant="h6"
             underline="none"
             color="inherit"
             href="/"
-            sx={{ fontSize: 24 }}
+            sx={{ fontSize: 24}}
           >
             <img 
             src = {onsiteLogo} 
-            width = '100px'
+            width = '50px'
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            <Link
+            {/* <Link
               color="inherit"
               variant="h6"
               underline="none"
@@ -39,7 +39,7 @@ function AppAppBar() {
               sx={rightLink}
             >
               {'Log In'}
-            </Link>
+            </Link> */}
             <Link
               variant="h6"
               underline="none"
