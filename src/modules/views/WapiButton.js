@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Waitlist } from 'waitlistapi';
-import WapiButtonStyling from './WapiButton.css'
+import WapiButtonStyling from './WapiButtonStyling.css'
 
 export default function WapiButton() {
     return (
