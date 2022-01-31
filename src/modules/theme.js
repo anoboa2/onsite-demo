@@ -29,7 +29,7 @@ const rawTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'Work Sans', sans-serif",
+    fontFamily: ['Montserrat', 'sans-serif'].join(','),
     fontSize: 14,
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
@@ -40,8 +40,8 @@ const rawTheme = createTheme({
 const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
-  fontFamily: "'Roboto Condensed', sans-serif",
-  textTransform: 'uppercase',
+  fontFamily: "'Montserrat', sans-serif",
+  // textTransform: 'uppercase',
 };
 
 const theme = {
@@ -95,6 +95,7 @@ const theme = {
     body1: {
       ...rawTheme.typography.body2,
       fontWeight: rawTheme.typography.fontWeightRegular,
+      // fontFamily: 'Brandon Grotesque Regular',
       fontSize: 16,
     },
     body2: {
