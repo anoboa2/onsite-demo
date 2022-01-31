@@ -4,8 +4,7 @@ import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '../modules/components/Typography';
-import WaitlistButton from '../modules/views/WaitlistButton';
-import TestButton from '../modules/views/TestButton';
+
 import WapiButton from '../modules/views/WapiButton';
 import withRoot from '../modules/withRoot';
 
@@ -31,7 +30,6 @@ const Background = styled(Box)(({ theme }) => ({
     top: 0,
     bottom: 0,
     background: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url(${backgroundImage})`,
-    // backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -39,37 +37,7 @@ const Background = styled(Box)(({ theme }) => ({
 }));
 
 
-function WaitlistLanding() {
-    // const [ email, setEmail ] = React.useState("");
-    // const [ message, setMessage ] = React.useState("");
-
-    // const [ sent, setSent ] = React.useState(false);
-
-    // let handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         let res = await fetch("https://httpbin.org/post", {
-    //             method: "POST",
-    //             body: JSON.stringify({
-    //                 email: email
-    //             }),
-    //         });
-        
-    //         let resJson = await res.json();
-    //         if (res.status === 200) {
-    //             setEmail("");
-    //             setMessage("Email successfully sent");
-    //         } else {
-    //             setMessage("Some error occurred");
-    //         }
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //     setSent(true);
-    // };
-
-
-
+function Waitlist() {
     return (
         <Background>
             <WaitlistRoot>
@@ -82,11 +50,6 @@ function WaitlistLanding() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'space-between',
-                    // justifyContent: 'flex-start',
-                    // background: 'rgba(245, 245, 245, 0.5)',
-                    // boxShadow: '0 0.5em 1em rgba(0, 0, 0, .4)',
-                    // backdropFilter: 'blur(3px)',
-                    // filter: 'brightness(80)'
                 })}
                 >
                         <Typography
@@ -118,30 +81,11 @@ function WaitlistLanding() {
                             Be the first to access Onsite’s personalized travel planning. 
                             We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                         </Typography>
-                        <Form
-                        onSubmit={(e) => console.log('Test')}
-                        subscription={{ submitting: true}}
-                        >
-                            {({ handleSubmit: handleSubmit2, submitting }) => (
-                                <Box
-                                component="form"
-                                onSubmit={handleSubmit2}
-                                noValidate
-                                display="flex"
-                                sx={{
-                                    mb: 5,
-                                    justifyContent: 'center',
-                                    alignItems: 'baseline',
-                                }}
-                                >
-                                    <WapiButton />
-                                </Box>
-                            )}
-                        </Form>
+                        <WapiButton />
                 </Container>
             </WaitlistRoot>
         </Background>
     )
 }
 
-export default withRoot(WaitlistLanding);
+export default withRoot(Waitlist);
