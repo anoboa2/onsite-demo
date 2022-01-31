@@ -4,8 +4,8 @@ import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '../modules/components/Typography';
-
 import WapiButton from '../modules/views/WapiButton';
+import WapiButtonStyling from '../modules/views/WapiButtonStyling.css'
 import withRoot from '../modules/withRoot';
 
 const backgroundImage =
@@ -81,7 +81,7 @@ function Waitlist() {
                             Be the first to access Onsite’s personalized travel planning. 
                             We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                         </Typography>
-                        <WapiButton />
+                        <WapiButton style={WapiButtonStyling} />
                 </Container>
             </WaitlistRoot>
         </Background>
