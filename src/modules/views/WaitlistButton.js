@@ -92,7 +92,7 @@ export default function WaitlistButton() {
                         <Field
                         autoComplete="email"
                         autoFocus
-                        component="input"
+                        component={RFTextField}
                         placeholder="Email"
                         margin="normal"
                         name="email"
