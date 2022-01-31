@@ -5,6 +5,7 @@ import Booking from "./pages/Booking";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Waitlist from './pages/Waitlist';
+import WaitlistV2 from './pages/WaitlistV2';
 
 function App() {
   return (

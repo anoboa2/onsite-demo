@@ -1,0 +1,46 @@
+h1 {
+    color: #eeeeee;
+}
+/* h2 {
+    color: #444444;
+}
+h3 {
+    color: #444444;
+}
+h4 {
+    color: #444444;
+}
+h5 {
+    color: #444444;
+}
+h6 {
+    color: #444444;
+}
+p {
+    color: #444444;
+}
+body {
+    color: #444444;
+} */
+.container--waitlistapi {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+.button--waitlistapi {
+    background-color: #27cc62;
+}
+.statusTextContainer--waitlistapi {
+    color: #eeeeee;
+}
+.referralLinkField--text {
+    color: #444444;
+}
+.statusToggleLabel {
+    color: rgba(0, 0, 0, 0);
+}
+span {
+    opacity: 0;
+}
+img {
+    opacity: 0;
+}
