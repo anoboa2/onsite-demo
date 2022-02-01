@@ -1,121 +1,86 @@
 import * as React from 'react';
-import { useAxios } from 'use-axios-client';
-import { Form, Field } from 'react-final-form';
-import FormButton from '../form/FormButton';
-import RFTextField from '../form/RFTextField';
-import Snackbar from '../components/Snackbar';
-import Typography from '../components/Typography';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
+import Typography from '@mui/material/Typography';
 
-const apiKey = 'Q3SLPY'
-const referralLink = 'https://www.onsiteplanning.com/waitlist'
 
-function RegisterWaitlist(email) {
-    const { data, error, loading } = useAxios({
-        url: "https://getwaitlist.com/api/v1/waitlists/submit",
-        data: {
-            api_key: apiKey,
-            email: email,
-            referral_link: referralLink,
-        }
-    });
 
-    if (loading || !data) return (
-        <React.Fragment>
-            <Typography>Sending email...</Typography>
-        </React.Fragment>
-    );
-
-    if (error) return (
-        <React.Fragment>
-            <Typography>We're having some technical trouble at the moment.  Please try again soon!</Typography>
-            <Snackbar>Unable to register for the waitlist</Snackbar>
-        </React.Fragment>
-    );
-}
-
-export default function WaitlistButton() {
-    const [email, setEmail] = React.useState(null);
+function WaitlistButton() {
+    const [email, setEmail] = React.useState("");
     const [sent, setSent] = React.useState(false);
 
-    // React.useEffect(() => {
-    //     axios.get(baseUrl).then((response) => {
-    //         setPost(response.data);
-    //     });
-    // }, []);
-    
-    // function initialCall() {
-    //     axios.get(baseUrl).then((response) => {
-    //         setPost(response.data);
-    //     });
-    // }
 
-    // function handleSubmit() {
-    //     axios.post(baseUrl, {
-    //         'api_key': {api_Key},
-    //         'email': {email},
-    //         'referral_link': document.URL,
-    //     })
-    //     .then((response) => {
-    //         // Do something
-    //     });
-    // }
+    const RegisterWaitlist = (e) => {
+        e.preventDefault();
 
-    // if (sent) return (
-    //     <Typography
-    //     color="primary"
-    //     align="center"
-    //     variant="body1"
-    //     >
-            
-    //     </Typography>
-    // )
+        let url = 'https://api.sheety.co/2d1a9568a9af9f0c5b478fb1e08bbbb7/waitlistRegistry/responses';
+        let body = {
+          response: {
+            email: email,
+            timestamp: new Date(Date.now()).toString(),
+            },
+        }
+        fetch(url, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body)
+        })
+        .then((response) => response.json())
+        .then(json => {
+          setSent(true);
+          console.log(json.response);
+        });
+    }
 
 
     return (
         <React.Fragment>
-            <Form
-            onSubmit={(e) => RegisterWaitlist(email)}
+            {sent ? 
+                <Typography sx={{ justifyContent: 'center' }}>Thank you for signing up!  You will be the first to know when our latest features are released!</Typography> :
+            <Box
+            component="form"
+            onSubmit={RegisterWaitlist}
+            noValidate
+            display="flex"
+            sx={{
+                mb: 5,
+                justifyContent: 'center',
+                // alignItems: 'center',
+            }}
             >
-                {() => (
-                    <Box
-                    component="form"
-                    onSubmit={() => setEmail(Field.input.email)}
-                    noValidate
-                    display="flex"
-                    sx={{
-                        mb: 5,
-                        justifyContent: 'center',
-                        alignItems: 'baseline',
-                    }}
-                    >
-                        <Field
-                        autoComplete="email"
-                        autoFocus
-                        component={RFTextField}
-                        placeholder="Email"
-                        margin="normal"
-                        name="email"
-                        required
-                        size="small"
-                        sx={{
-                            width: '300px',
-                            borderRadius: '10px 0px 0px 10px',
-                        }}
-                        />
-                        <FormButton 
-                        size="small"
-                        color="secondary"
-                        sx={{
-                            width: '150px',
-                            borderRadius: '0px 10px 10px 0px',
-                        }}
-                        >
-                            Join Waitlist
-                        </FormButton>
-                    </Box>
-                )}
-            </Form>
+                <div>
+                <Input
+                id="waitlist-email"
+                autoComplete="email"
+                autoFocus
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                sx={{
+                    width: '300px',
+                    background: '#e6edf0',
+                    borderRadios: '10px, 0px, 0px, 10px',
+                }}
+                />
+                <Button 
+                variant="contained"
+                color="secondary"
+                type="submit"
+                sx={{
+                    width: '150px',
+                    borderRadius: '0px 10px 10px 0px',
+                }}
+                >
+                    Join Waitlist
+                </Button>
+                </div>
+            </Box>
+            }
         </React.Fragment>
     );
 };
+
+export default WaitlistButton;
