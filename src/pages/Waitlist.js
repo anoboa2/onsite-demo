@@ -3,8 +3,7 @@ import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '../modules/components/Typography';
-import WapiButton from '../modules/views/WapiButton';
-import WapiButtonStyling from '../modules/views/WapiButtonStyling.css'
+import WaitlistButton from '../modules/views/WaitlistButton';
 import withRoot from '../modules/withRoot';
 
 const backgroundImage =
@@ -36,7 +35,37 @@ const Background = styled(Box)(({ theme }) => ({
 }));
 
 
-function Waitlist() {
+function WaitlistLanding() {
+    // const [ email, setEmail ] = React.useState("");
+    // const [ message, setMessage ] = React.useState("");
+
+    // const [ sent, setSent ] = React.useState(false);
+
+    // let handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         let res = await fetch("https://httpbin.org/post", {
+    //             method: "POST",
+    //             body: JSON.stringify({
+    //                 email: email
+    //             }),
+    //         });
+        
+    //         let resJson = await res.json();
+    //         if (res.status === 200) {
+    //             setEmail("");
+    //             setMessage("Email successfully sent");
+    //         } else {
+    //             setMessage("Some error occurred");
+    //         }
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    //     setSent(true);
+    // };
+
+
+
     return (
         <Background>
             <WaitlistRoot>
@@ -72,7 +101,7 @@ function Waitlist() {
                             display: 'flex',
                             fontSize: 24,
                             mx: 7,
-                            mb: 2,
+                            mb: 4,
                             fontWeight: 400,
                             color: 'white',
                         }}
@@ -80,11 +109,11 @@ function Waitlist() {
                             Be the first to access Onsite’s personalized travel planning. 
                             We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                         </Typography>
-                        <WapiButton style={WapiButtonStyling} />
+                        <WaitlistButton />
                 </Container>
             </WaitlistRoot>
         </Background>
     )
 }
 
-export default withRoot(Waitlist);
+export default withRoot(WaitlistLanding);
