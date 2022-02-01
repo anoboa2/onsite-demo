@@ -39,16 +39,18 @@ function WaitlistButton() {
     return (
         <React.Fragment>
             {sent ? 
-                <Typography sx={{ justifyContent: 'center' }}>Thank you for signing up!  You will be the first to know when our latest features are released!</Typography> :
+                <Typography sx={{ color: 'white', px: 5 }}>Thank you for signing up!  You will be the first to know when our latest features are released!</Typography> :
             <Box
             component="form"
             onSubmit={RegisterWaitlist}
             noValidate
+            fullWidth
             display="flex"
             sx={{
+                mx: 'auto',
                 mb: 5,
+                width: '80vw',
                 justifyContent: 'center',
-                // alignItems: 'center',
             }}
             >
                 <div>
@@ -61,8 +63,13 @@ function WaitlistButton() {
                 required
                 sx={{
                     width: '300px',
+                    height: 35,
+                    pl: 2,
                     background: '#e6edf0',
-                    borderRadios: '10px, 0px, 0px, 10px',
+                    borderRadius: {
+                        xs: '10px 10px 10px 10px',
+                        sm: '10px 0px 0px 10px',
+                    },
                 }}
                 />
                 <Button 
@@ -71,7 +78,11 @@ function WaitlistButton() {
                 type="submit"
                 sx={{
                     width: '150px',
-                    borderRadius: '0px 10px 10px 0px',
+                    height: 35,
+                    borderRadius: {
+                        xs: '10px 10px 10px 10px',
+                        sm: '0px 10px 10px 0px',
+                    },
                 }}
                 >
                     Join Waitlist
