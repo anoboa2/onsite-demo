@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
 
@@ -49,11 +50,12 @@ function WaitlistButton() {
             sx={{
                 mx: 'auto',
                 mb: 5,
+                px: 'auto',
                 width: '80vw',
                 justifyContent: 'center',
             }}
             >
-                <div>
+                <Stack direction={{ xs:'column', sm: 'row' }} spacing={{ xs: 2, sm: 0 }} sx={{ alignItems: 'center' }}>
                 <Input
                 id="waitlist-email"
                 autoComplete="email"
@@ -87,7 +89,7 @@ function WaitlistButton() {
                 >
                     Join Waitlist
                 </Button>
-                </div>
+                </Stack>
             </Box>
             }
         </React.Fragment>
