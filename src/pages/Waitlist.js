@@ -40,7 +40,16 @@ function WaitlistLanding() {
 
     return (
         <Background>
-            <Grid container space={2} justifyContent="center" alignItems="center">
+            <Grid
+            container
+            space={2}
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+                px: '15vw',
+                py: '2vh',
+            }}
+            >
                 <Typography
                 color="primary"
                 align="center"
@@ -48,6 +57,7 @@ function WaitlistLanding() {
                 sx={{
                     mx: 10,
                     my: 4,
+                    pb: 2,
                     fontWeight: 900,
                     color: 'white',
                 }}
@@ -63,6 +73,7 @@ function WaitlistLanding() {
                     fontSize: 24,
                     mx: 7,
                     mb: 4,
+                    pb: 2,
                     fontWeight: 400,
                     color: 'white',
                 }}
@@ -70,7 +81,7 @@ function WaitlistLanding() {
                     Be the first to access Onsite’s personalized travel planning. 
                     We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                 </Typography>
-                <WaitlistButton />
+                <WaitlistButton sx={{ mx: 'auto' }}/>
             </Grid>
         </Background>
     )
