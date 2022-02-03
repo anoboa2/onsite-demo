@@ -1,12 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 import { green, grey, red } from '@mui/material/colors';
 
+// Current fonts imported from google fonts: Montserrat, Kumbh Sans, Tenor Sans
+
 const rawTheme = createTheme({
   palette: {
     primary: {
       light: '#69696a',
       main: '#28282a',
       dark: '#1e1e1f',
+      contrastText: 'rgba(0,0,0,0.8)',
     },
     secondary: {
       light: '#21c37e',
@@ -27,9 +30,21 @@ const rawTheme = createTheme({
       main: green[500],
       dark: green[700],
     },
+    text: {
+      primary: 'rgba(0,0,0,0.92)',
+      secondary: 'rgba(0,0,0,0.69)',
+      disabled: 'rgba(0,0,0,0.48)',
+      hint: 'rgba(0,0,0,0.48)',
+    },
+    neutral: {
+      light: '#fbfbfb',
+      main: '#fafafa',
+      dark: '#e6edf0',
+      disabled: '#afafaf',
+    },
   },
   typography: {
-    fontFamily: ['Montserrat', 'sans-serif'].join(','),
+    fontFamily: ['Kumbh Sans', 'sans-serif'].join(','),
     fontSize: 14,
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
@@ -40,7 +55,7 @@ const rawTheme = createTheme({
 const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
-  fontFamily: "'Montserrat', sans-serif",
+  fontFamily: "'Tenor Sans', sans-serif",
   // textTransform: 'uppercase',
 };
 
@@ -56,20 +71,20 @@ const theme = {
   },
   typography: {
     ...rawTheme.typography,
-    fontHeader,
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
       letterSpacing: 0,
-      [rawTheme.breakpoints.up('md')] : {
-        fontSize: 60,
-      },
-      [rawTheme.breakpoints.down('md')] : {
-        fontSize: 48,
-      },
-      [rawTheme.breakpoints.down('sm')] : {
-        fontSize: 36,
-      },
+      fontSize: 60,
+      // [rawTheme.breakpoints.up('md')] : {
+      //   fontSize: 60,
+      // },
+      // [rawTheme.breakpoints.down('md')] : {
+      //   fontSize: 48,
+      // },
+      // [rawTheme.breakpoints.down('sm')] : {
+      //   fontSize: 36,
+      // },
     },
     h2: {
       ...rawTheme.typography.h2,
@@ -103,12 +118,13 @@ const theme = {
     body1: {
       ...rawTheme.typography.body2,
       fontWeight: rawTheme.typography.fontWeightRegular,
-      [rawTheme.breakpoints.up('md')] : {
-        fontSize: 16,
-      },
-      [rawTheme.breakpoints.down('md')] : {
-        fontSize: 12,
-      },
+      fontSize: 16,
+      // [rawTheme.breakpoints.up('md')] : {
+      //   fontSize: 16,
+      // },
+      // [rawTheme.breakpoints.down('md')] : {
+      //   fontSize: 12,
+      // },
       // [rawTheme.breakpoints.down('sm')] : {
       //   fontSize: 36,
       // },
@@ -116,6 +132,12 @@ const theme = {
     body2: {
       ...rawTheme.typography.body1,
       fontSize: 14,
+    },
+    button: {
+      ...rawTheme.typography.button,
+      fontSize: 12,
+      fontWeight: 400,
+      fontFamily: 'Kumbh Sans',
     },
   },
 };

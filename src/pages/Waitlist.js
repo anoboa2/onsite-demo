@@ -14,6 +14,7 @@ const WaitlistRoot = styled(Container)(({ theme }) => ({
     color: theme.palette.common.white,
     position: 'relative',
     display: 'flex', 
+    flexFlow: 'column wrap',
     alignItems: 'center',
     // [theme.breakpoints.up('sm')]: {
     //     height: '80vh',
@@ -40,16 +41,7 @@ function WaitlistLanding() {
 
     return (
         <Background>
-            <Grid
-            container
-            space={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{
-                px: '15vw',
-                py: '2vh',
-            }}
-            >
+            <WaitlistRoot>
                 <Typography
                 color="primary"
                 align="center"
@@ -82,7 +74,7 @@ function WaitlistLanding() {
                     We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                 </Typography>
                 <WaitlistButton sx={{ mx: 'auto' }}/>
-            </Grid>
+            </WaitlistRoot>
         </Background>
     )
 }

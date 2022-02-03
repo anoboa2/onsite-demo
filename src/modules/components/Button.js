@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { experimentalStyled as styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import MuiButton from '@mui/material/Button';
 
 const ButtonRoot = styled(MuiButton)(({ theme, size }) => ({
-  borderRadius: 0,
+  borderRadius: 10,
   fontWeight: theme.typography.fontWeightMedium,
-  fontFamily: theme.typography.h1.fontFamily,
+  // fontFamily: theme.typography.h1.fontFamily,
   padding: theme.spacing(2, 4),
-  fontSize: theme.typography.pxToRem(14),
+  // fontSize: theme.typography.pxToRem(14),
   boxShadow: 'none',
   '&:active, &:focus': {
     boxShadow: 'none',

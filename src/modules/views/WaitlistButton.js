@@ -1,11 +1,9 @@
 import * as React from 'react';
-import Input from '@mui/material/Input';
-import Button from '@mui/material/Button';
+import Input from '../components/Input';
+import Button from '../components/Button';
 import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
-
-
 
 function WaitlistButton() {
     const [email, setEmail] = React.useState("");
@@ -55,40 +53,51 @@ function WaitlistButton() {
                 justifyContent: 'center',
             }}
             >
-                <Stack direction={{ xs:'column', sm: 'row' }} spacing={{ xs: 2, sm: 0 }} sx={{ alignItems: 'center' }}>
-                <Input
-                id="waitlist-email"
-                autoComplete="email"
-                autoFocus
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                sx={{
-                    width: '300px',
-                    height: 35,
-                    pl: 2,
-                    background: '#e6edf0',
-                    borderRadius: {
-                        xs: '10px 10px 10px 10px',
-                        sm: '10px 0px 0px 10px',
-                    },
+                <Stack
+                direction={{
+                    xs:'column',
+                    sm: 'row',
                 }}
-                />
-                <Button 
-                variant="contained"
-                color="secondary"
-                type="submit"
+                spacing={{
+                    xs: 2,
+                    sm: 0,
+                }}
                 sx={{
-                    width: '150px',
-                    height: 35,
-                    borderRadius: {
-                        xs: '10px 10px 10px 10px',
-                        sm: '0px 10px 10px 0px',
-                    },
+                    alignItems: 'center'
                 }}
                 >
-                    Join Waitlist
-                </Button>
+                    <Input
+                    id="waitlist-email"
+                    autoComplete="email"
+                    autoFocus
+                    disableUnderline
+                    placeholder="Enter your email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    sx={{
+                        width: '300px',
+                        height: 35,
+                        borderRadius: {
+                            xs: '10px',
+                            sm: '10px 0px 0px 10px',
+                        },
+                    }}
+                    />
+                    <Button 
+                    variant="contained"
+                    color="secondary"
+                    type="submit"
+                    sx={{
+                        width: '150px',
+                        height: 35,
+                        borderRadius: {
+                            xs: '10px',
+                            sm: '0px 10px 10px 0px',
+                        },
+                    }}
+                    >
+                        Join Waitlist
+                    </Button>
                 </Stack>
             </Box>
             }
