@@ -1,10 +1,8 @@
 import * as React from 'react';
-
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import Card from '@mui/material/Card';
+import Card from '../components/Card';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 
@@ -26,6 +24,17 @@ const image = {
   height: 55,
   my: 4,
 };
+
+const cardData = {
+  icons: ['icon1', 'icon2', 'icon3', 'icon4', 'icon5'],
+  text: [
+    'Choose your booking details and a planning package: Full Travel or Daily Planning.',
+    'Checkout to receive your trip details form and proposed itinerary.',
+    'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisfied.',
+    'Approve the itinerary and we will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will make all bookings and reservations.',
+    'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.',
+  ]
+}
 
 function ProductHowItWorks() {
   return (
@@ -52,6 +61,7 @@ function ProductHowItWorks() {
             position: 'absolute',
             top: -180,
             opacity: 0.7,
+            zIndex: -1,
           }}
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
@@ -60,7 +70,7 @@ function ProductHowItWorks() {
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
-              <Card sx={{ mx: 5, my: 5, background: 'white' }}>
+              <Card sx={{ mx: 5, my: 5}}>
               <Box sx={item}>
                 <Box sx={number}>1.</Box>
                 <Box

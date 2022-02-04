@@ -45,13 +45,6 @@ function WaitlistButton() {
             noValidate
             fullWidth
             display="flex"
-            sx={{
-                mx: 'auto',
-                mb: 5,
-                px: 'auto',
-                width: '80vw',
-                justifyContent: 'center',
-            }}
             >
                 <Stack
                 direction={{

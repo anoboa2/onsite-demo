@@ -2,7 +2,6 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Typography from '../modules/components/Typography';
 import WaitlistButton from '../modules/views/WaitlistButton';
 import withRoot from '../modules/withRoot';
@@ -16,11 +15,7 @@ const WaitlistRoot = styled(Container)(({ theme }) => ({
     display: 'flex', 
     flexFlow: 'column wrap',
     alignItems: 'center',
-    // [theme.breakpoints.up('sm')]: {
-    //     height: '80vh',
-    //     minHeight: 500,
-    //     maxHeight: 1300,
-    // },
+    justifyContent: 'center',
 }));
 
 const Background = styled(Box)(({ theme }) => ({
@@ -47,9 +42,8 @@ function WaitlistLanding() {
                 align="center"
                 variant="h1"
                 sx={{
-                    mx: 10,
-                    my: 4,
-                    pb: 2,
+                    px: 10,
+                    py: 6,
                     fontWeight: 900,
                     color: 'white',
                 }}
@@ -63,9 +57,7 @@ function WaitlistLanding() {
                 sx={{
                     display: 'flex',
                     fontSize: 24,
-                    mx: 7,
-                    mb: 4,
-                    pb: 2,
+                    pb: 4,
                     fontWeight: 400,
                     color: 'white',
                 }}
@@ -73,7 +65,7 @@ function WaitlistLanding() {
                     Be the first to access Onsite’s personalized travel planning. 
                     We believe in helping you maximize every trip and harness the power of technology to curate the ultimate travel experiences.
                 </Typography>
-                <WaitlistButton sx={{ mx: 'auto' }}/>
+                <WaitlistButton />
             </WaitlistRoot>
         </Background>
     )

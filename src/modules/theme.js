@@ -76,15 +76,6 @@ const theme = {
       ...fontHeader,
       letterSpacing: 0,
       fontSize: 60,
-      // [rawTheme.breakpoints.up('md')] : {
-      //   fontSize: 60,
-      // },
-      // [rawTheme.breakpoints.down('md')] : {
-      //   fontSize: 48,
-      // },
-      // [rawTheme.breakpoints.down('sm')] : {
-      //   fontSize: 36,
-      // },
     },
     h2: {
       ...rawTheme.typography.h2,
@@ -119,15 +110,6 @@ const theme = {
       ...rawTheme.typography.body2,
       fontWeight: rawTheme.typography.fontWeightRegular,
       fontSize: 16,
-      // [rawTheme.breakpoints.up('md')] : {
-      //   fontSize: 16,
-      // },
-      // [rawTheme.breakpoints.down('md')] : {
-      //   fontSize: 12,
-      // },
-      // [rawTheme.breakpoints.down('sm')] : {
-      //   fontSize: 36,
-      // },
     },
     body2: {
       ...rawTheme.typography.body1,
@@ -137,7 +119,6 @@ const theme = {
       ...rawTheme.typography.button,
       fontSize: 12,
       fontWeight: 400,
-      fontFamily: 'Kumbh Sans',
     },
   },
 };
