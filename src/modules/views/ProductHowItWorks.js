@@ -1,10 +1,15 @@
 import * as React from 'react';
+import { PropTypes } from 'prop-types';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
+import WaitlistButton from './WaitlistButton';
+
+
+// add onHover animation to Cards
 
 const item = {
   display: 'flex',
@@ -25,22 +30,40 @@ const image = {
   my: 4,
 };
 
-const cardData = {
-  icons: ['icon1', 'icon2', 'icon3', 'icon4', 'icon5'],
-  text: [
-    'Choose your booking details and a planning package: Full Travel or Daily Planning.',
-    'Checkout to receive your trip details form and proposed itinerary.',
-    'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisfied.',
-    'Approve the itinerary and we will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will make all bookings and reservations.',
-    'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.',
-  ]
-}
+const cardContent = [
+  {icon: '/icon/productHowItWorks1.svg', alt: 'suitcase', text: 'Choose you booking details and a planning package: Full Travel or Daily Planning'},
+  {icon: '/icon/productHowItWorks2.svg', alt: 'graph', text: 'Checkout to receive your trip details form and proposed itinerary'},
+  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.'},
+  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'Approve the itinerary and  we  will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations.'},
+  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.'},
+];
 
-function ProductHowItWorks() {
+const ProductHowItWorks = (props) => {
+
+  const StepCards = props.cardContent.map((content) => {
+    return (
+      <Grid item xs={12} md={4}>
+        <Card sx={{ ...item, mx: 5, my: 5}}>
+          <Box sx={number}>1.</Box>
+          <Box
+            component="img"
+            src={content.icon}
+            alt={content.alt}
+            sx={image}
+          />
+          <Typography variant="h5" align="center">{content.text}</Typography>
+        </Card>
+    </Grid>
+    );
+  });
+
   return (
     <Box
       component="section"
-      sx={{ display: 'flex', bgcolor: 'white', overflow: 'hidden' }}
+      sx={{
+        display: 'flex',
+        bgcolor: 'white',
+        overflow: 'hidden' }}
     >
       <Container
         sx={{
@@ -61,7 +84,6 @@ function ProductHowItWorks() {
             position: 'absolute',
             top: -180,
             opacity: 0.7,
-            zIndex: -1,
           }}
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
@@ -69,94 +91,19 @@ function ProductHowItWorks() {
         </Typography>
         <div>
           <Grid container spacing={5}>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ mx: 5, my: 5}}>
-              <Box sx={item}>
-                <Box sx={number}>1.</Box>
-                <Box
-                  component="img"
-                  src="/icon/productHowItWorks1.svg"
-                  alt="suitcase"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Choose you booking details and a planning package: Full Travel or Daily Planning
-                </Typography>
-              </Box>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={item}>
-                <Box sx={number}>2.</Box>
-                <Box
-                  component="img"
-                  src="/icon/productHowItWorks2.svg"
-                  alt="graph"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Checkout to receive your trip details form and proposed itinerary
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={item}>
-                <Box sx={number}>3.</Box>
-                <Box
-                  component="img"
-                  src="/icon/productHowItWorks3.svg"
-                  alt="clock"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={item}>
-                <Box sx={number}>4.</Box>
-                <Box
-                  component="img"
-                  src="/icon/productHowItWorks3.svg"
-                  alt="clock"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                Approve the itinerary and  we  will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations. 
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={item}>
-                <Box sx={number}>5.</Box>
-                <Box
-                  component="img"
-                  src="/icon/productHowItWorks3.svg"
-                  alt="clock"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                
-A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.
-                </Typography>
-              </Box>
-            </Grid>
+            {StepCards}
           </Grid>
         </div>
-        <Button
-          color="secondary"
-          size="large"
-          variant="contained"
-          component="a"
-          href="/sign-up"
-          sx={{ mt: 8 }}
-        >
-          Start booking
-        </Button>
+        <WaitlistButton />
       </Container>
     </Box>
   );
 }
+
+ProductHowItWorks.propTypes = {
+  icon: PropTypes.string,
+  alt: PropTypes.string,
+  text: PropTypes.string,
+};
 
 export default ProductHowItWorks;

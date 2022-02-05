@@ -5,7 +5,7 @@ import MuiCard from '@mui/material/Card';
 const CardRoot = styled(MuiCard)(({ theme }) => ({
     backgroundColor: theme.palette.neutral.light,
     padding: 5,
-    zIndex: 2,
+    zIndex: 3,
 }));
 
 function Card(props) {

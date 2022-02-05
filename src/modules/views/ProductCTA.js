@@ -7,6 +7,8 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+// Update with new waitlist
+
 function ProductCTA() {
   const [open, setOpen] = React.useState(false);
 

@@ -5,6 +5,8 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 
+// Convert to long form content -> Left, Right, Left layout
+
 const item = {
   display: 'flex',
   flexDirection: 'column',
