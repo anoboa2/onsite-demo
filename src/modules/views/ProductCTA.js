@@ -49,11 +49,11 @@ function ProductCTA() {
               />
               <Button
                 type="submit"
-                color="primary"
+                color="secondary"
                 variant="contained"
                 sx={{ width: '100%' }}
               >
-                Keep me updated
+                Join Waitlist
               </Button>
             </Box>
           </Box>
@@ -77,8 +77,8 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750&q=80"
-            alt="call to action"
+            src="/img/promenade.jpg"
+            alt="cruise ship beside a promenade"
             sx={{
               position: 'absolute',
               top: -28,

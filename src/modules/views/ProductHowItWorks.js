@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Card from '../components/Card';
-import Button from '../components/Button';
 import Typography from '../components/Typography';
 import WaitlistButton from './WaitlistButton';
 
@@ -15,7 +14,12 @@ const item = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  mx: 5,
+  my: 5,
   px: 5,
+  minHeight: '300px',
+  minWidth: '200px',
+  zIndex: 2,
 };
 
 const number = {
@@ -38,20 +42,20 @@ const cardContent = [
   {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.'},
 ];
 
-const ProductHowItWorks = (props) => {
+function ProductHowItWorks(props) {
 
-  const StepCards = props.cardContent.map((content) => {
+  const StepCards = cardContent.map((content, index) => {
     return (
-      <Grid item xs={12} md={4}>
-        <Card sx={{ ...item, mx: 5, my: 5}}>
-          <Box sx={number}>1.</Box>
+      <Grid item key={index} xs={12} md={4}>
+        <Card sx={item}>
+          <Box sx={number}>{index+1}</Box>
           <Box
             component="img"
             src={content.icon}
             alt={content.alt}
             sx={image}
           />
-          <Typography variant="h5" align="center">{content.text}</Typography>
+          <Typography variant="body1" align="center">{content.text}</Typography>
         </Card>
     </Grid>
     );
@@ -63,7 +67,10 @@ const ProductHowItWorks = (props) => {
       sx={{
         display: 'flex',
         bgcolor: 'white',
-        overflow: 'hidden' }}
+        overflow: 'hidden',
+        // backgroungImage: '/img/productCurvyLines.png',
+        // backgroundColor: 'white',
+      }}
     >
       <Container
         sx={{
@@ -84,17 +91,17 @@ const ProductHowItWorks = (props) => {
             position: 'absolute',
             top: -180,
             opacity: 0.7,
+            zIndex: -1,
           }}
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
           How it works
         </Typography>
         <div>
-          <Grid container spacing={5}>
+          <Grid container spacing={5} sx={{ justifyContent: 'center' }}>
             {StepCards}
           </Grid>
         </div>
-        <WaitlistButton />
       </Container>
     </Box>
   );
