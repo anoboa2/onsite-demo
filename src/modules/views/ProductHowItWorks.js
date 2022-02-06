@@ -1,11 +1,11 @@
 import * as React from 'react';
+import Fade from 'react-reveal/Fade';
 import { PropTypes } from 'prop-types';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Card from '../components/Card';
 import Typography from '../components/Typography';
-import WaitlistButton from './WaitlistButton';
 
 
 // add onHover animation to Cards
@@ -20,14 +20,19 @@ const item = {
   minHeight: '300px',
   minWidth: '200px',
   zIndex: 2,
+  '&:hover': {
+    transform: 'scale(1.1)',
+    // transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+    // transformStyle: 'preserve-3d',
+  },
 };
 
-const number = {
-  fontSize: 24,
-  fontFamily: 'default',
-  color: 'secondary.main',
-  fontWeight: 'medium',
-};
+// const number = {
+//   fontSize: 24,
+//   fontFamily: 'default',
+//   color: 'secondary.main',
+//   fontWeight: 'medium',
+// };
 
 const image = {
   height: 55,
@@ -35,11 +40,11 @@ const image = {
 };
 
 const cardContent = [
-  {icon: '/icon/productHowItWorks1.svg', alt: 'suitcase', text: 'Choose you booking details and a planning package: Full Travel or Daily Planning'},
-  {icon: '/icon/productHowItWorks2.svg', alt: 'graph', text: 'Checkout to receive your trip details form and proposed itinerary'},
-  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.'},
-  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'Approve the itinerary and  we  will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations.'},
-  {icon: '/icon/productHowItWorks3.svg', alt: 'clock', text: 'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.'},
+  {icon: '/icon/suv.png', alt: 'fully packed station wagon car', text: 'Choose you booking details and a planning package: Full Travel or Daily Planning'},
+  {icon: '/icon/tickets.png', alt: 'two airplane tickets', text: 'Checkout to receive your trip details form and proposed itinerary'},
+  {icon: '/icon/flight.png', alt: 'plane in flight', text: 'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.'},
+  {icon: '/icon/waypoint.png', alt: 'pin on top of map', text: 'Approve the itinerary and we will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations.'},
+  {icon: '/icon/passport.png', alt: 'silouhette of passport', text: 'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.'},
 ];
 
 function ProductHowItWorks(props) {
@@ -47,16 +52,18 @@ function ProductHowItWorks(props) {
   const StepCards = cardContent.map((content, index) => {
     return (
       <Grid item key={index} xs={12} md={4}>
-        <Card sx={item}>
-          <Box sx={number}>{index+1}</Box>
-          <Box
-            component="img"
-            src={content.icon}
-            alt={content.alt}
-            sx={image}
-          />
-          <Typography variant="body1" align="center">{content.text}</Typography>
-        </Card>
+        <Fade bottom>
+          <Card sx={item}>
+            {/* <Box sx={number}>{index+1}</Box> */}
+            <Box
+              component="img"
+              src={content.icon}
+              alt={content.alt}
+              sx={image}
+            />
+            <Typography variant="body1" align="center">{content.text}</Typography>
+          </Card>
+        </Fade>
     </Grid>
     );
   });

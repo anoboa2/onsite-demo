@@ -77,8 +77,8 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="/img/promenade.jpg"
-            alt="cruise ship beside a promenade"
+            src="/img/atrium_cropped.jpg"
+            alt="airplane flying over city"
             sx={{
               position: 'absolute',
               top: -28,
@@ -87,6 +87,7 @@ function ProductCTA() {
               bottom: 0,
               width: '100%',
               maxWidth: 600,
+              maxHeight: 400,
             }}
           />
         </Grid>
@@ -94,7 +95,7 @@ function ProductCTA() {
       <Snackbar
         open={open}
         closeFunc={handleClose}
-        message="We will send you our best offers, once a week."
+        message="Thank you! We will send you updates on our latest releases and features."
       />
     </Container>
   );
