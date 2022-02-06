@@ -4,7 +4,7 @@ import ProductHeroLayout from './ProductHeroLayout';
 import WaitlistButton from './WaitlistButton';
 
 const backgroundImage =
-  '/img/beach-overhead.jpg';
+  '/img/palms-sunset.jpg';
 
 export default function ProductHero() {
   return (
@@ -12,7 +12,7 @@ export default function ProductHero() {
       sxBackground={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundColor: '#7fc7d9', // Average color of the background image.
-        backgroundPosition: 'center',
+        backgroundPosition: 'bottom',
       }}
     >
       {/* Increase the network loading priority of the background image. */}

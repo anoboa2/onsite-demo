@@ -33,9 +33,9 @@ function ProductValues() {
               <Box sx={item}>
                 <Box
                   component="img"
-                  src="/img/bridge_cropped.jpg"
-                  alt="suitcase"
-                  sx={{ pr: 10, height: 300 }}
+                  src="/img/iphone13-mockup1.png"
+                  alt="iphone app screenshot of"
+                  sx={{ pr: 10, height: 600 }}
                 />
                 <Box>
                 <Typography variant="h6" sx={{ my: 5 }}>
@@ -65,9 +65,10 @@ function ProductValues() {
                 </Box>
                 <Box
                   component="img"
-                  src="/img/promenade_cropped.jpg"
-                  alt="graph"
-                  sx={{ pl: 10, height: 300 }}
+                  
+                  src="/img/iphone12-mockup1.png"
+                  alt="iphone app screenshot of"
+                  sx={{ pl: 10, height: 600 }}
                 />
               </Box>
             </Grid>
