@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
 
 const AppBarRoot = styled(MuiAppBar)(({ theme }) => ({
-  backgroundColor: theme.palette.neutral.main,
+  backgroundColor: 'rgba(250, 250, 250, 0.8)',
 }));
 
 function AppBar(props) {
