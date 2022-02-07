@@ -27,17 +27,17 @@ function ProductValues() {
           alt="curvy lines"
           sx={{ pointerEvents: 'none', position: 'absolute', top: -180 }}
         />
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
           <Fade bottom>
             <Grid item>
               <Box sx={item}>
-                <Box
+                <Box 
                   component="img"
                   src="/img/iphone13-mockup1.png"
                   alt="iphone mockup of mobile app hotel page"
-                  sx={{ pr: 10, height: 600 }}
+                  sx={{ pr: 10, mx: '5vw', height: 600 }}
                 />
-                <Box>
+                <Box sx={{ width:'50%' }}>
                 <Typography variant="h6" sx={{ my: 5 }}>
                   Local travel professionals
                 </Typography>
@@ -53,7 +53,7 @@ function ProductValues() {
           <Fade bottom>
             <Grid item>
               <Box sx={item}>
-                <Box>
+                <Box sx={{ width:'50%' }}>
                 <Typography variant="h6" sx={{ my: 5 }}>
                   From plan till you arrive home
                 </Typography>
