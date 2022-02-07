@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 
+// Convert Button -> WaitlistButton
+
 function ProductSmokingHero() {
   return (
     <Container
@@ -22,7 +24,7 @@ function ProductSmokingHero() {
         <Typography variant="h4" component="span">
           Got any questions? Need help?
         </Typography>
-      </Button>
+      </Button> 
       <Typography variant="subtitle1" sx={{ my: 3 }}>
         We are here to help. Get in touch!
       </Typography>

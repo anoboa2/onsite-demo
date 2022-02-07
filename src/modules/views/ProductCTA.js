@@ -7,6 +7,8 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+// Update with new waitlist
+
 function ProductCTA() {
   const [open, setOpen] = React.useState(false);
 
@@ -47,11 +49,11 @@ function ProductCTA() {
               />
               <Button
                 type="submit"
-                color="primary"
+                color="secondary"
                 variant="contained"
                 sx={{ width: '100%' }}
               >
-                Keep me updated
+                Join Waitlist
               </Button>
             </Box>
           </Box>
@@ -75,8 +77,8 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750&q=80"
-            alt="call to action"
+            src="/img/atrium_cropped.jpg"
+            alt="airplane flying over city"
             sx={{
               position: 'absolute',
               top: -28,
@@ -85,6 +87,7 @@ function ProductCTA() {
               bottom: 0,
               width: '100%',
               maxWidth: 600,
+              maxHeight: 400,
             }}
           />
         </Grid>
@@ -92,7 +95,7 @@ function ProductCTA() {
       <Snackbar
         open={open}
         closeFunc={handleClose}
-        message="We will send you our best offers, once a week."
+        message="Thank you! We will send you updates on our latest releases and features."
       />
     </Container>
   );

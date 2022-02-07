@@ -10,7 +10,7 @@ const rightLink = {
   ml: 3,
 };
 
-const onsiteLogo = '/img/onsiteLogoColorBg.png';
+const onsiteLogo = '/img/onsiteLogoTextColor.png';
 
 function AppAppBar() {
   return (
@@ -19,15 +19,12 @@ function AppAppBar() {
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Box sx={{ flex: 0.1, justifyContent: 'flex-start' }} />
           <Link
-            variant="h6"
             underline="none"
-            color="inherit"
             href="/"
-            sx={{ fontSize: 24}}
           >
             <img 
             src = {onsiteLogo} 
-            width = '50px'
+            width = '120px'
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
+import WaitlistButton from './WaitlistButton';
 
 const backgroundImage =
-  'https://images.unsplash.com/photo-1415329343600-a53dd8daf392?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+  '/img/palms-sunset.jpg';
 
 export default function ProductHero() {
   return (
@@ -12,7 +12,7 @@ export default function ProductHero() {
       sxBackground={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundColor: '#7fc7d9', // Average color of the background image.
-        backgroundPosition: 'center',
+        backgroundPosition: 'bottom',
       }}
     >
       {/* Increase the network loading priority of the background image. */}
@@ -32,19 +32,10 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <Button
-        color="secondary"
-        variant="contained"
-        size="large"
-        component="a"
-        href="/waitlist"
-        sx={{ minWidth: 200 }}
-      >
-        Get started
-      </Button>
-      <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
+      <WaitlistButton />
+      {/* <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
         Personalized Trip Planning & Support
-      </Typography>
+      </Typography> */}
     </ProductHeroLayout>
   );
 }
