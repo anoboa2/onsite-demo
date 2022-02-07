@@ -34,7 +34,7 @@ function ProductValues() {
                 <Box
                   component="img"
                   src="/img/iphone13-mockup1.png"
-                  alt="iphone app screenshot of"
+                  alt="iphone mockup of mobile app hotel page"
                   sx={{ pr: 10, height: 600 }}
                 />
                 <Box>
@@ -67,7 +67,7 @@ function ProductValues() {
                   component="img"
                   
                   src="/img/iphone12-mockup1.png"
-                  alt="iphone app screenshot of"
+                  alt="iphone mockup of mobile app booking page"
                   sx={{ pl: 10, height: 600 }}
                 />
               </Box>
@@ -78,9 +78,9 @@ function ProductValues() {
               <Box sx={item}>
                 <Box
                   component="img"
-                  src="/icon/productValues3.svg"
-                  alt="clock"
-                  sx={{ pr: 10, height: 55 }}
+                  src="/img/three-frame.png"
+                  alt="iphone mockup of mobile app itinerary pages"
+                  sx={{ pr: 10, height: 600 }}
                 />
                 <Box>
                 <Typography variant="h6" sx={{ my: 5 }}>
