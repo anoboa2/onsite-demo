@@ -121,6 +121,17 @@ const theme = {
       fontWeight: 400,
     },
   },
+  // components: {
+  //   MuiContainer: {
+  //     styleOverrides: {
+  //       root: {
+  //         '@media (min-width: 1200px)': {
+  //           maxWidth: 'none',
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 };
 
 export default theme;
