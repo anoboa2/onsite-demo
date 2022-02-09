@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
+import PdfModal from '../components/PdfModal';
 import Typography from '../components/Typography';
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
@@ -76,7 +77,18 @@ const images = [
   },
 ];
 
+const files = [
+  {url: '/docs/miami.pdf'},
+  {url: '/docs/nyc.pdf'},
+]
+
 export default function ProductCategories() {
+  function handleClick() {
+    return(
+      <PdfModal pdfFile='/docs/miami.pdf' />
+    );
+  };
+
   return (
     <Container component="section" sx={{ mt: 8, mb: 4 }}>
       <Typography variant="h4" marked="center" align="center" component="h2">
@@ -86,6 +98,7 @@ export default function ProductCategories() {
         {images.map((image) => (
           <ImageIconButton
             key={image.title}
+            onClick={handleClick}
             style={{
               width: image.width,
             }}
