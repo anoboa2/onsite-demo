@@ -10,7 +10,7 @@ const item = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  px: 10,
+  px: { xs: 5, sm: 10 },
   pb: 20,
 };
 
@@ -26,7 +26,7 @@ function ProductValues() {
       component='img'
       src='/img/palm_leaves2.png'
       position="absolute"
-      sx={{ width: '482px', height: '675px' }}
+      sx={{ width: { xs: '280px', sm: '482px'}, height: {xs: '392px', sm: '675px'} }}
       />
         <Grid container spacing={5} sx={{ md: { ml: 5 }, my: 10, }}>
             <Grid item container md={6} order={1} sx={{ justifyContent: 'center'}}>
@@ -35,7 +35,7 @@ function ProductValues() {
                   component="img"
                   src="/img/iphone13-mockup1.png"
                   alt="iphone mockup of mobile app hotel page"
-                  sx={{ height: 600 }}
+                  sx={{ height: { xs: 300, sm: 600 } }}
                 />
               </Fade>
             </Grid>
@@ -73,7 +73,7 @@ function ProductValues() {
                   component="img"
                   src="/img/iphone12-mockup1.png"
                   alt="iphone mockup of mobile app booking page"
-                  sx={{ height: 600 }}
+                  sx={{ height: { xs: 300, sm: 600 } }}
                 />
               </Fade>
             </Grid>
@@ -83,7 +83,7 @@ function ProductValues() {
                   component="img"
                   src="/img/three-frame.png"
                   alt="iphone mockup of mobile app itinerary pages"
-                  sx={{ height: 600 }}
+                  sx={{ height: { xs: 300, sm: 600 } }}
                 />
               </Fade>
             </Grid>
