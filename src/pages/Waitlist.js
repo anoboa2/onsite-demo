@@ -42,10 +42,14 @@ function WaitlistLanding() {
                 align="center"
                 variant="h1"
                 sx={{
-                    px: 10,
+                    px: {
+                        sm: 5,
+                        md: 10,
+                    },
                     py: 6,
                     fontWeight: 900,
                     color: 'white',
+                    fontSize: '2em',
                 }}
                 >
                     Your personalized travel itinerary is coming sooner than you think!
@@ -56,10 +60,10 @@ function WaitlistLanding() {
                 variant="body1"
                 sx={{
                     display: 'flex',
-                    fontSize: 24,
                     pb: 4,
                     fontWeight: 400,
                     color: 'white',
+                    fontSize: '1em'
                 }}
                 >
                     Be the first to access Onsite’s personalized travel planning. 
