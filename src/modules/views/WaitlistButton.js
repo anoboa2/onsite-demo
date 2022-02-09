@@ -87,6 +87,10 @@ function WaitlistButton() {
                             xs: '10px',
                             sm: '0px 10px 10px 0px',
                         },
+                        fontSize: {
+                            xs: 10,
+                            sm: 12,
+                        }
                     }}
                     >
                         Join Waitlist
