@@ -1,15 +1,15 @@
 import * as React from 'react';
-// import { styled } from '@mui/material/styles';
-import { Document, Page } from 'react-pdf';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import MuiModal from '@mui/material/Modal';
-import MuiFade from '@mui/material/Fade';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const style = {
   position: 'absolute',
-  top: '10%',
-  left: '20%',
+  top: '50%',
+  left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
@@ -18,24 +18,18 @@ const style = {
   p: 4,
 };
 
-function PdfModal(pdfFile) {
+export default function TransitionsModal() {
   const [open, setOpen] = React.useState(false);
-  const [numPages, setNumPages] = React.useState(null);
-  const [pageNumber, setPageNumber] = React.useState(1);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  function onDocumentLoadSuccess({ numPages }) {
-      setNumPages(numPages);
-  }
-
   return (
     <div>
-      <MuiModal
+      <Button onClick={handleOpen}>Open modal</Button>
+      <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={handleOpen}
+        open={open}
         onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
@@ -43,17 +37,17 @@ function PdfModal(pdfFile) {
           timeout: 500,
         }}
       >
-        <MuiFade in={open}>
+        <Fade in={open}>
           <Box sx={style}>
-              <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page pageNumber={pageNumber} />
-              </Document>
-              <p>Page {pageNumber} of {numPages} </p>
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+              Text in a modal
+            </Typography>
+            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
           </Box>
-        </MuiFade>
-      </MuiModal>
+        </Fade>
+      </Modal>
     </div>
   );
 }
-
-export default PdfModal;

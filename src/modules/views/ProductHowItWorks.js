@@ -52,7 +52,7 @@ function ProductHowItWorks(props) {
 
   const StepCards = cardContent.map((content, index) => {
     return (
-      <Grid item key={index} xs={12} md={4}>
+      <Grid item key={index} xs={12} md={4} sx={{ justifyContent: 'center' }}>
         <Fade bottom>
           <Card sx={item}>
             {/* <Box sx={number}>{index+1}</Box> */}
