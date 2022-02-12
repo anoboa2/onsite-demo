@@ -30,10 +30,25 @@ function ProductValues() {
       sx={{ width: { xs: '280px', sm: '482px'}, height: {xs: '392px', sm: '675px'} }}
       />
       <Box
-      component='img'
-      src='/img/palm_leaves3.png'
-      position="absolute"
-      sx={{ display: {sm: 'none', md: 'block'}, top: 1900, left: 300, width: { sm: '350px', md: '1300px'}, height: {sm: '275px', md: '975px'} }}
+      sx={{
+        background: 'url(/img/palm_leaves3.png)',
+        backgroundRepeat: 'no-repeat',
+        position: 'absolute',
+        display: {
+          sm: 'none',
+          md: 'block',
+        },
+        top: 1900,
+        left: 300,
+        width: {
+          md: '350px',
+          lg: '1300px',
+        },
+        height: {
+          md: '275px',
+          lg: '975px'
+        },
+      }}
       />
         <Grid container spacing={5} sx={{ md: { ml: 5 }, my: 10, }}>
             <Grid item container md={6} order={1} sx={{ justifyContent: 'center'}}>
