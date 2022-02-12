@@ -1,10 +1,14 @@
 import * as React from 'react';
+import { pdfjs, Document, Page } from 'react-pdf';
+import workerFilePath from 'pdfjs-dist/build/pdf.worker.min.js';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
+pdfjs.GlobalWorkerOptions.workerSrc = workerFilePath
 
 const style = {
   position: 'absolute',
@@ -20,8 +24,15 @@ const style = {
 
 export default function TransitionsModal() {
   const [open, setOpen] = React.useState(false);
+  const [numPages, setNumPages] = React.useState(null);
+  const [pageNumber, setPageNumber] = React.useState(1);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  function onDocumentLoadSuccess({ numPages }) {
+      setNumPages(numPages);
+  }
 
   return (
     <div>
@@ -39,12 +50,9 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
+            <Document file='/docs/miami.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+            <Page pageNumber={pageNumber} />
+            </Document>
           </Box>
         </Fade>
       </Modal>

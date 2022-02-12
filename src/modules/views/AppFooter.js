@@ -24,7 +24,7 @@ const iconStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: 'warning.main',
+  backgroundColor: 'secondary.light',
   mr: 1,
   '&:hover': {
     bgcolor: 'warning.dark',
@@ -48,9 +48,9 @@ export default function AppFooter() {
       component="footer"
       sx={{ display: 'flex', bgcolor: 'neutral.main' }}
     >
-      <Container sx={{ my: 8, display: 'flex' }}>
+      <Container sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
         <Grid container spacing={5}>
-          <Grid item xs={6} sm={4} md={3}>
+          <Grid item xs={6}>
             <Grid
               container
               direction="column"
@@ -59,20 +59,25 @@ export default function AppFooter() {
               sx={{ height: 120 }}
             >
               <Grid item sx={{ display: 'flex' }}>
-                <Box component="a" href="https://facebook.com/" sx={iconStyle}>
+                <Box component="a" href="https://www.facebook.com/OnsiteTravelPlanning/" sx={iconStyle}>
                   <img
-                    src="/img/appFooterFacebook.png"
+                    src="/icon/facebook.png"
                     alt="Facebook"
+                    height={30}
                   />
                 </Box>
-                <Box
-                  component="a"
-                  href="https://twitter.com/"
-                  sx={iconStyle}
-                >
+                <Box component="a" href="https://twitter.com/OnsiteTravelApp" sx={iconStyle}>
                   <img
-                    src="/img/appFooterTwitter.png"
+                    src="/icon/twitter.png"
                     alt="Twitter"
+                    height={30}
+                  />
+                </Box>
+                <Box component="a" href="https://instagram.com/Onsitetravelapp" sx={iconStyle}>
+                  <img
+                    src="/icon/instagram.png"
+                    alt="Instagram"
+                    height={30}
                   />
                 </Box>
               </Grid>
@@ -81,21 +86,21 @@ export default function AppFooter() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={4} md={2}>
+          <Grid item xs={6}>
             <Typography variant="h6" marked="left" gutterBottom>
               Legal
             </Typography>
             <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0 }}>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="/terms/">Terms</Link>
+                <Link href="/terms/" sx={{ color: 'text.primary' }}>Terms</Link>
               </Box>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="/privacy/">Privacy</Link>
+                <Link href="/privacy/" sx={{ color: 'text.primary' }}>Privacy</Link>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} sm={8} md={4}>
-            {/* <Typography variant="h6" marked="left" gutterBottom>
+          {/* <Grid item xs={6} sm={8} md={4}>
+            <Typography variant="h6" marked="left" gutterBottom>
               Language
             </Typography>
             <TextField
@@ -112,30 +117,31 @@ export default function AppFooter() {
                   {language.name}
                 </option>
               ))}
-            </TextField> */}
-          </Grid>
-          <Grid item>
-            <Typography variant="caption">
-              {'Icons made by '}
-              <Link href="https://www.freepik.com" rel="sponsored" title="Freepik">
-                Freepik
-              </Link>
-              {' from '}
-              <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
-                www.flaticon.com
-              </Link>
-              {' is licensed by '}
-              <Link
-                href="https://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC 3.0 BY
-              </Link>
-            </Typography>
-          </Grid>
+            </TextField>
+          </Grid> */}
         </Grid>
+        <Box sx={{ pt: 2}}>
+          <Typography variant="caption" sx={{ color: '#8d9da8' }}>
+        {'Icons made by '}
+        <Link href="https://www.freepik.com" rel="sponsored" title="Freepik" color="inherit">
+          Freepik
+        </Link>
+        {' from '}
+        <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon" color="inherit">
+          www.flaticon.com
+        </Link>
+        {' is licensed by '}
+        <Link
+          href="https://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+          rel="noopener noreferrer"
+          color="inherit"
+        >
+          CC 3.0 BY
+        </Link>
+      </Typography>
+      </Box>
       </Container>
     </Typography>
   );
