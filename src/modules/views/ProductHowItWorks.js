@@ -14,7 +14,8 @@ const item = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  my: 5,
+  justifySelf: 'center',
+  m: 'auto',
   px: 3,
   minHeight: '300px',
   maxHeight: '500px',
@@ -28,12 +29,6 @@ const item = {
   },
 };
 
-// const number = {
-//   fontSize: 24,
-//   fontFamily: 'default',
-//   color: 'secondary.main',
-//   fontWeight: 'medium',
-// };
 
 const image = {
   height: 55,
@@ -76,8 +71,6 @@ function ProductHowItWorks(props) {
         display: 'flex',
         bgcolor: 'white',
         overflow: 'hidden',
-        // backgroungImage: '/img/productCurvyLines.png',
-        // backgroundColor: 'white',
       }}
     >
       <Container

@@ -24,7 +24,14 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
-
+        new CopyWebpackPlugin({
+            patterns: [
+              {
+                from: path.join(path.dirname(require.resolve('pdfjs-dist/package.json')), 'cmaps'),
+                to: 'cmaps/'
+              },
+            ],
+          }),
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
