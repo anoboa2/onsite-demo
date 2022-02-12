@@ -11,10 +11,32 @@ import Button from '../components/Button';
 
 function ProductCTA() {
   const [open, setOpen] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [sent, setSent] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setOpen(true);
+
+    let url = 'https://api.sheety.co/2d1a9568a9af9f0c5b478fb1e08bbbb7/waitlistRegistry/responses';
+    let body = {
+      response: {
+        email: email,
+        timestamp: new Date(Date.now()).toString(),
+        },
+    }
+    fetch(url, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    })
+    .then((response) => response.json())
+    .then(json => {
+      setSent(true);
+      console.log(json.response);
+    });
   };
 
   const handleClose = () => {
