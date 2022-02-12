@@ -6,6 +6,7 @@ import ProductValues from '../modules/views/ProductValues';
 import ProductHowItWorks from '../modules/views/ProductHowItWorks';
 import ProductCTA from '../modules/views/ProductCTA';
 import AppAppBar from '../modules/views/AppAppBar';
+// import TestModal from '../modules/views/TestModal';
 import withRoot from '../modules/withRoot';
 
 function Index() {
@@ -15,6 +16,7 @@ function Index() {
       <ProductHero />
       <ProductValues />
       <ProductCategories />
+      {/* <TestModal /> */}
       <ProductHowItWorks />
       <ProductCTA />
       <AppFooter />
