@@ -2,6 +2,7 @@ import * as React from 'react';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import WaitlistButton from './WaitlistButton';
+import BookingForm from '../form/BookingForm';
 
 const backgroundImage =
   '/img/palms-sunset.jpg';
@@ -32,7 +33,8 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <WaitlistButton />
+      <BookingForm />
+      {/* <WaitlistButton /> */}
       {/* <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
         Personalized Trip Planning & Support
       </Typography> */}

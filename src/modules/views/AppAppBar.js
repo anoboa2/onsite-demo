@@ -37,11 +37,13 @@ function AppAppBar() {
             >
               {'Log In'}
             </Link> */}
+            {/* <a href="/signin" data-rph-login-btn data-rph-logged-in-text="Go to Dashboard">Login </a> */}
             <Link
               variant="h6"
               underline="none"
               href="/waitlist"
               sx={{ ...rightLink, color: 'secondary.main' }}
+              class="data-rph-login-btn"
             >
               {'Sign Up'}
             </Link>
