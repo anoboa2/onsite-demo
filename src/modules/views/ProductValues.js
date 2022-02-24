@@ -64,7 +64,7 @@ function ProductValues() {
             <Grid item container md={6} order={2} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5, color: 'primary.main' }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     Local travel professionals
                   </Typography>
                   <Typography variant="h5">
@@ -78,7 +78,7 @@ function ProductValues() {
             <Grid item container md={6} order={{ xs: 4, md: 3 }} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5, color: 'primary.main' }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     From plan till you arrive home
                   </Typography>
                   <Typography variant="h5">
@@ -113,7 +113,7 @@ function ProductValues() {
             <Grid item container md={6} order={6} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5, color: 'primary.main' }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     Everything in one place
                   </Typography>
                   <Typography variant="h5">
