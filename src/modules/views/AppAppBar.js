@@ -10,7 +10,13 @@ const rightLink = {
   ml: 3,
 };
 
-const onsiteLogo = '/img/onsiteLogoTextColor.png';
+const image = {
+  marginTop: 5,
+  paddingLeft: 10,
+}
+
+const onsiteLogo = '/img/onsiteLogoColorBackground.png';
+const onsiteLogoText = '/img/onsiteLogoTextBW.png';
 
 function AppAppBar() {
   return (
@@ -23,8 +29,14 @@ function AppAppBar() {
             href="/"
           >
             <img 
-            src = {onsiteLogo} 
-            width = '120px'
+            src= { onsiteLogo }
+            height = '50px'
+            style= { image }
+            />
+            <img 
+            src = { onsiteLogoText } 
+            height = '40px'
+            style={ image }
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>

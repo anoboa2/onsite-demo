@@ -5,7 +5,7 @@ import WaitlistButton from './WaitlistButton';
 import BookingForm from '../form/BookingForm';
 
 const backgroundImage =
-  '/img/palms-sunset.jpg';
+  '/img/miami-palms.jpg';
 
 export default function ProductHero() {
   return (

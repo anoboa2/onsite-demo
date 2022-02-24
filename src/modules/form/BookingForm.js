@@ -49,7 +49,7 @@ const BookingForm = (props) => {
             <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ background: 'white', justifyContent: 'center', alignItems: 'center' }}
+            sx={{ justifyContent: 'center', alignItems: 'center' }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
                 { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button> }

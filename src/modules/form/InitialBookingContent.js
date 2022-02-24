@@ -44,6 +44,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                 onChange={handleInputChange}
                 sx={{
                     width: 300,
+                    background: 'white',
                 }}
                 >
                     {locations.map((location) => {
@@ -70,6 +71,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                             <TextField {...endDate} />
                         </React.Fragment>
                     )}
+                    sx={{ background: 'white', }}
                     />
                     </Fade>
                 </LocalizationProvider>
