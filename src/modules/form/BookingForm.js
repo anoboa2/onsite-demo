@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
     Box,
     Container,
-    Fade
+    Fade,
+    Grid
 } from '@mui/material';
 import Button from '../components/Button'
 import InitialBookingContent from './InitialBookingContent';
@@ -52,7 +53,7 @@ const BookingForm = (props) => {
             sx={{ justifyContent: 'center', alignItems: 'center' }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
-                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button> }
+                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button></Grid> }
             </Box>
         </Container>
 

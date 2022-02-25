@@ -15,7 +15,7 @@ const image = {
   paddingLeft: 10,
 }
 
-const onsiteLogo = '/img/onsiteLogoColorBackground.png';
+const onsiteLogo = '/img/onsiteLogoColor.png';
 const onsiteLogoText = '/img/onsiteLogoTextBW.png';
 
 function AppAppBar() {

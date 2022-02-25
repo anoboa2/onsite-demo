@@ -50,8 +50,8 @@ const activities = [
 const SubsequentBookingContent = ({ values, handleInputChange }) => {
 
     return (
-        <Grid container spacing={2} justify="center" sx={{ m: 2, pb: 5, }} >
-            <Grid container item xs={12}>
+        <Grid container columns={12} spacing={2} sx={{ m: 2, pb: 5, justifyContent: 'center' }}>
+            <Grid container item xs={6}>
                 <Container>
                     <Typography>Number of People</Typography>
                 </Container>
@@ -66,7 +66,8 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     value={values.numberofadults}
                     onChange={handleInputChange}
                     sx={{
-                        width: 100,
+                        width: 80,
+                        background: 'white',
                     }}
                     >
                         {numpeople.map((number) => {
@@ -86,7 +87,8 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     value={values.numberofkids}
                     onChange={handleInputChange}
                     sx={{
-                        width: 100,
+                        width: 80,
+                        background: 'white',
                     }}
                     >
                         {numpeople.map((number) => {
@@ -96,7 +98,15 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
+                <TextField
+                label="Budget"
+                variant="filled"
+                name="budget"
+                onChange={handleInputChange}
+                sx={{ width: 300, background: 'white' }} />
+            </Grid>
+            <Grid item xs={6}>
                 <InputLabel id="occasion-label">Type of Trip</InputLabel>
                 <Select
                 labelId="occasion-label"
@@ -116,6 +126,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 )}
                 sx={{
                     width: 300,
+                    background: 'white',
                 }}
                 >
                     {occasions.map((occasion) => {
@@ -123,7 +134,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
                 <InputLabel id="activities-label">Activities</InputLabel>
                 <Select
                 labelId="activities-label"
@@ -135,6 +146,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 onChange={handleInputChange}
                 sx={{
                     width: 300,
+                    background: 'white'
                 }}
                 >
                     {activities.map((activity) => {
@@ -142,15 +154,8 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
+
             <Grid item xs={12}>
-                <TextField
-                label="Budget"
-                variant="filled"
-                name="budget"
-                onChange={handleInputChange}
-                sx={{ width: 300, }} />
-            </Grid>
-            <Grid item xs={6}>
                 <TextField
                 multiline
                 rows={4}
@@ -159,10 +164,10 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 placeholder="Anything else to add?"
                 variant="filled"
                 onChange={handleInputChange}
-                sx={{ width: 300, }} />
+                sx={{ width: 300, background: 'white'}} />
             </Grid>
             <Grid item xs={12}>
-                <Button variant="contained" color="secondary"type="submit">Book Now</Button>
+                <Button variant="contained" color="secondary" type="submit">Book Now</Button>
             </Grid>
         </Grid>
     );
