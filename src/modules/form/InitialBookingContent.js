@@ -32,8 +32,8 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
     };
 
     return (
-        <Grid container justify="center" columns={6} spacing={3} sx={{ m: 2, pb: 5, alignText: 'center' }} >
-            <Grid item xs={6}>
+        <Grid container columns={12} spacing={3} sx={{ m: 2, pb: 5}} >
+            <Grid item xs={4}>
                 <InputLabel id="location-label">Location</InputLabel>
                 <Select
                 labelId="location-label"
@@ -52,7 +52,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
                 <Box sx={{ width: '500px', justifySelf: 'center' }}>
                 <Typography color="black">Travel Dates</Typography>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
