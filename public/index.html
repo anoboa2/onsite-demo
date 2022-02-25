@@ -55,22 +55,51 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <footer>
-      <!-- <script>
-      !function(){var e=window._rphConfig=window._rphConfig||[];let t=window.localStorage.getItem("rph_base_url_override")||"https://hub.rownd.io";e.push(["setBaseUrl",t]);var r=document,s=r.createElement("script"),a=r.getElementsByTagName("script")[0];s.type="text/javascript",s.async=!0,s.src=t+"/static/scripts/rph.js",a.parentNode.insertBefore(s,a)}();
-      
-      _rphConfig.push(['setAppKey', 'd7e2c6ec-99aa-4614-ad02-41baaa742fc6']);
-      _rphConfig.push(['setRootOrigin', 'https://onsiteplanning.com']);
-      
-      _rphConfig.push(['setQuestion', {
-          title: 'What is your email address?',
-          name: 'email',
-          fields: ['email'],
-          requiredForAccount: false,
-          trigger: {
-              type: 'auto'
-          }
-      }]);
-      </script> -->
+      <script>
+        !function(){var e=window._rphConfig=window._rphConfig||[];let t=window.localStorage.getItem("rph_base_url_override")||"https://hub.rownd.io";e.push(["setBaseUrl",t]);var r=document,s=r.createElement("script"),a=r.getElementsByTagName("script")[0];s.type="text/javascript",s.async=!0,s.src=t+"/static/scripts/rph.js",a.parentNode.insertBefore(s,a)}();
+        
+        _rphConfig.push(['setAppKey', 'd7e2c6ec-99aa-4614-ad02-41baaa742fc6']);
+        
+        //this will error out if the RootOrigin does not have the snippet running, ie, if you are in dev, make sure root origin matches your dev environment. 
+        //_rphConfig.push(['setRootOrigin', 'https://onsiteplanning.com']);
+        //If you want to direct logged in people to a different site
+        //_rphConfig.push(['setPostLoginRedirect', 'https://app.onsiteplanning.com']);
+        
+        _rphConfig.push(['onLoaded', () => {
+                    // Get new value from button click
+                    const button = document.querySelector('#root > section.css-19wmqo9 > div > form > div > button');
+                    button.addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                        const newEmail = document.querySelector('#waitlist-email').value;
+                        rph.user.setValue('email', newEmail);
+                        //Coming soon: rownd.requestSignIn will automatically kick off a validation
+                        rownd.requestSignIn({ auto_sign_in: true, identifier: newEmail });
+                    });
+                }]);
+        //
+        _rphConfig.push(['onLoaded', () => {
+         const loginButton = document.querySelector('#root > div:nth-child(1) > header > div > div.MuiBox-root.css-1j9bsaa > a');
+         loginButton.addEventListener('click', (evt) => {
+                evt.preventDefault();
+                evt.stopPropagation();
+              rph.requestSignIn();
+          });
+        }]);
+        //Where to after validation - turn this page into a "We will be in contact soon" type of page 
+        _rphConfig.push(['setPostLoginRedirect', '/waitlist']);
+        
+        
+        _rphConfig.push(['setQuestion', {
+            title: 'What is your email address?',
+            name: 'email',
+            fields: ['email'],
+            requiredForAccount: false,
+            trigger: {
+                type: 'auto'
+            }
+        }]);
+        
+        </script>
     </footer>
   </body>
 </html>
