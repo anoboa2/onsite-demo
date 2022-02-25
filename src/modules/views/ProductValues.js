@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Fade from 'react-reveal/Fade';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '../components/Typography';
 import Section from '../components/Section';
@@ -20,6 +21,7 @@ function ProductValues() {
       sx={{
         display: 'flex',
         overflow: 'hidden',
+        zIndex: -2
     }}
     >
       <Box
@@ -28,21 +30,48 @@ function ProductValues() {
       position="absolute"
       sx={{ width: { xs: '280px', sm: '482px'}, height: {xs: '392px', sm: '675px'} }}
       />
+      <Box
+      sx={{
+        background: 'url(/img/palm_leaves3.png)',
+        backgroundRepeat: 'no-repeat',
+        position: 'absolute',
+        display: {
+          sm: 'none',
+          md: 'block',
+        },
+        top: 1900,
+        left: 300,
+        width: {
+          md: '350px',
+          lg: '1300px',
+        },
+        height: {
+          md: '275px',
+          lg: '975px'
+        },
+      }}
+      />
         <Grid container spacing={5} sx={{ md: { ml: 5 }, my: 10, }}>
+          <Grid item container xs={12} sx={{ mt: 5, py: 20, justifyContent: 'center', alignItems: 'center',  }}>
+          <Typography variant="h3" sx={{ width: "60%", mb: 5, }}>Stress Less, Dream More.  Mobile App Coming Soon.</Typography>
+          <Typography variant="h5" sx={{ width: "60%", mb: 5, }}>
+            We're working non-stop to bring you the mobile app that curates your dream travel experiences. We'll notify you as soon as it's available. In the meantime, plan your next big adventure with us here on our site. Keep an eye out for updates about the mobile app's release.
+          </Typography>
+          </Grid>
             <Grid item container md={6} order={1} sx={{ justifyContent: 'center'}}>
               <Fade bottom>
                 <Box 
                   component="img"
                   src="/img/iphone13-mockup1.png"
                   alt="iphone mockup of mobile app hotel page"
-                  sx={{ height: { xs: 300, sm: 600 } }}
+                  sx={{ height: { xs: 300, sm: 600 }, zIndex: 1 }}
                 />
               </Fade>
             </Grid>
             <Grid item container md={6} order={2} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5 }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     Local travel professionals
                   </Typography>
                   <Typography variant="h5">
@@ -56,7 +85,7 @@ function ProductValues() {
             <Grid item container md={6} order={{ xs: 4, md: 3 }} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5 }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     From plan till you arrive home
                   </Typography>
                   <Typography variant="h5">
@@ -73,7 +102,8 @@ function ProductValues() {
                   component="img"
                   src="/img/iphone12-mockup1.png"
                   alt="iphone mockup of mobile app booking page"
-                  sx={{ height: { xs: 300, sm: 600 } }}
+                  position="relative"
+                  sx={{ height: { xs: 300, sm: 600 }}}
                 />
               </Fade>
             </Grid>
@@ -90,7 +120,7 @@ function ProductValues() {
             <Grid item container md={6} order={6} sx={{ justifyContent: 'center'}}>
               <Box sx={item}>
                 <Fade bottom>
-                  <Typography variant="h6" sx={{ my: 5 }}>
+                  <Typography variant="h4" sx={{ my: 5, color: 'primary.main' }}>
                     Everything in one place
                   </Typography>
                   <Typography variant="h5">

@@ -62,6 +62,7 @@ function WaitlistButton() {
                     <Input
                     id="waitlist-email"
                     autoComplete="email"
+                    type="email"
                     autoFocus
                     disableUnderline
                     placeholder="Enter your email"
