@@ -33,11 +33,8 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <BookingForm />
-      {/* <WaitlistButton /> */}
-      {/* <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        Personalized Trip Planning & Support
-      </Typography> */}
+      {/* <BookingForm /> */}
+      <WaitlistButton />
     </ProductHeroLayout>
   );
 }
