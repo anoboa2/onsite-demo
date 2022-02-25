@@ -99,7 +99,6 @@ export default function ProductCategories() {
   }
   const handleClose = () => {
     setOpen(!open);
-    console.log("Closing...");
   }
 
   return (
