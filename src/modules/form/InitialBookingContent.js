@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
 import {
     DateRangePicker,
+    DatePicker,
+    DesktopDatePicker,
     LocalizationProvider,
 } from '@mui/lab';
 import {
@@ -14,7 +16,8 @@ import {
     Grid,
     Switch,
     Fade,
-    Container
+    Container,
+    Stack,
 } from '@mui/material';
 
 
@@ -33,7 +36,59 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
 
     return (
         <Grid container columns={12} spacing={3} sx={{ m: 2, pb: 5}} >
-            <Grid item xs={4}>
+            <Grid item xs={6}>
+                <Box sx={{ width: '500px', justifySelf: 'center' }}>
+                <Typography color="black">Travel Dates</Typography>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    {/* <DateRangePicker 
+                    startText="Start Date"
+                    endText="End Date"
+                    name="daterange"
+                    disabled={toggle}
+                    value={values.daterange}
+                    onChange={handleInputChange}
+                    renderInput={(startDate, endDate) => (
+                        <React.Fragment>
+                            <TextField {...startDate} />
+                            <Box color="black" sx={{ mx: 2}}> to </Box>
+                            <TextField {...endDate} />
+                        </React.Fragment>
+                    )}
+                    sx={{ background: 'white', }}
+                    /> */}
+                    <Stack direction="row" sx={{ background: 'white', }}>
+                        <DesktopDatePicker
+                        label="Start Date"
+                        inputFormat="MM/dd/yyyy"
+                        disabled={toggle}
+                        value={values.startdate}
+                        onChange={handleInputChange}
+                        renderInput={(params) => <TextField {...params} />}
+                        sx={{ background: 'white' }}
+                        />
+                        <DesktopDatePicker
+                        label="End Date"
+                        inputFormat="MM/dd/yyyy"
+                        disabled={toggle}
+                        value={values.enddate}
+                        onChange={handleInputChange}
+                        renderInput={(params) => <TextField {...params} />}
+                        sx={{ background: 'white' }}
+                        />
+                    </Stack>
+                </LocalizationProvider>
+                <Box display="flex" alignItems="baseline" justifyContent="flex-start">
+                    <Switch
+                    name="datesunsure"
+                    value={toggle}
+                    checked={toggle}
+                    onChange={handleSwitch}
+                    />
+                    <Typography color="black">I'm not sure of my dates</Typography>
+                </Box>
+                </Box>
+            </Grid>
+            <Grid item xs={6}>
                 <InputLabel id="location-label">Location</InputLabel>
                 <Select
                 labelId="location-label"
@@ -51,40 +106,6 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                         return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
                     })}
                 </Select>
-            </Grid>
-            <Grid item xs={4}>
-                <Box sx={{ width: '500px', justifySelf: 'center' }}>
-                <Typography color="black">Travel Dates</Typography>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <Fade in={toggle}>
-                    <DateRangePicker 
-                    startText="Start Date"
-                    endText="End Date"
-                    name="daterange"
-                    disabled={toggle}
-                    value={values.daterange}
-                    onChange={handleInputChange}
-                    renderInput={(startDate, endDate) => (
-                        <React.Fragment>
-                            <TextField {...startDate} />
-                            <Box color="black" sx={{ mx: 2}}> to </Box>
-                            <TextField {...endDate} />
-                        </React.Fragment>
-                    )}
-                    sx={{ background: 'white', }}
-                    />
-                    </Fade>
-                </LocalizationProvider>
-                <Box display="flex" alignItems="baseline" justifyContent="flex-end">
-                    <Switch
-                    name="datesunsure"
-                    value={toggle}
-                    checked={toggle}
-                    onChange={handleSwitch}
-                    />
-                    <Typography color="black">I'm not sure of my dates</Typography>
-                </Box>
-                </Box>
             </Grid>
         </Grid>
     );
