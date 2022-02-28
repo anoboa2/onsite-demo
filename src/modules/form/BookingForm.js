@@ -38,10 +38,20 @@ const BookingForm = (props) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(`Mock API call: ${JSON.stringify(values)}`)
+        event.preventDefault();
+        let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
+        let message = `<p>Traveler Name: Name<br />Traveler Email: email<br />Location: ${values.location}<br />Start Date: ${values.startdate}<br />End Date: ${values.enddate}<br />Unsure of dates?: ${values.datesunsure}<br />Occasion: ${values.occasion}<br />Activities: ${values.activities}<br />Adults: ${values.numberofadults}<br />Kids: ${values.numberofkids}<br />Budget: ${values.budget}<br /></p>`
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(values)
+        })
+        .then((response) => response.json())
+        .then(json => {
+            console.log(json.response)
+        })
+        console.log('Form submitted to AWS API Gateway')
         setValues(initialValues)
-        console.log("Thank you for submitting your booking.")
+        console.log("Form values reset successfully")
     }
 
 
@@ -53,7 +63,7 @@ const BookingForm = (props) => {
             sx={{ justifyContent: 'center', alignItems: 'center' }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
-                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button></Grid> }
+                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto' }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, }}>Let's Plan!</Button></Grid> }
             </Box>
         </Container>
 
