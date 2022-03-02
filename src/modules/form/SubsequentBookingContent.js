@@ -50,13 +50,13 @@ const activities = [
 const SubsequentBookingContent = ({ values, handleInputChange }) => {
 
     return (
-        <Grid container columns={12} spacing={2} sx={{ m: 2, pb: 5, justifyContent: 'center' }}>
+        <Grid container columns={12} spacing={0} sx={{ mt: 0, mb: 0, ml: 'auto', mr: 'auto', pb: 6, pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
             <Grid container item xs={6}>
                 <Container>
-                    <Typography>Number of People</Typography>
+                    <Typography sx={{ p: 0, color: 'black',  }}>Number of People</Typography>
                 </Container>
                 <Grid item xs={12} sm={2}>
-                    <Box sx={{ m: 2}}>
+                    <Box sx={{ m: 0}}>
                     <InputLabel id="num-adults-label">Adults</InputLabel>
                     <Select
                     labelId="num-adults-label"
@@ -68,6 +68,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     sx={{
                         width: 80,
                         background: 'white',
+                        mb: 5,
                     }}
                     >
                         {numpeople.map((number) => {
@@ -77,7 +78,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
-                    <Box sx={{ m: 2}}>
+                    <Box sx={{ m: 0}}>
                     <InputLabel id="num-kids-label">Kids</InputLabel>
                     <Select
                     labelId="num-kids-label"
@@ -89,6 +90,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     sx={{
                         width: 80,
                         background: 'white',
+                        mb: 5,
                     }}
                     >
                         {numpeople.map((number) => {
@@ -98,13 +100,13 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
                 <TextField
                 label="Budget"
                 variant="filled"
                 name="budget"
                 onChange={handleInputChange}
-                sx={{ width: 300, background: 'white' }} />
+                sx={{ background: 'white', width: '100%', maxWidth: '275px', }} />
             </Grid>
             <Grid item xs={6}>
                 <InputLabel id="occasion-label">Type of Trip</InputLabel>
@@ -127,6 +129,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 sx={{
                     width: 300,
                     background: 'white',
+                    mb: 5,
+                    width: '100%',
+                    maxWidth: '275px',
                 }}
                 >
                     {occasions.map((occasion) => {
@@ -134,8 +139,14 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid item xs={6}>
-                <InputLabel id="activities-label">Activities</InputLabel>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
+            <InputLabel id="activities-label" sx={{
+                    width: '100%',
+                    maxWidth: '275px',
+                }}
+                >
+                    Activities
+                </InputLabel>
                 <Select
                 labelId="activities-label"
                 id="activities-select"
@@ -146,7 +157,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 onChange={handleInputChange}
                 sx={{
                     width: 300,
-                    background: 'white'
+                    background: 'white',
+                    width: '100%',
+                    maxWidth: '275px',
                 }}
                 >
                     {activities.map((activity) => {
@@ -164,9 +177,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 placeholder="Anything else to add?"
                 variant="filled"
                 onChange={handleInputChange}
-                sx={{ width: 300, background: 'white'}} />
+                sx={{ width: '100%', maxWidth: '50%', background: 'white'}} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
                 <Button variant="contained" color="secondary" type="submit">Book Now</Button>
             </Grid>
         </Grid>

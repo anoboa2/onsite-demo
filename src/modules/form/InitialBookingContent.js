@@ -35,9 +35,9 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
     };
 
     return (
-        <Grid container columns={12} spacing={3} sx={{ m: 2, pb: 5}} >
+        <Grid container columns={12} spacing={0} sx={{ ml: 'auto', mr: 'auto', pb: 5, pt: 6, pl: 4, pr: 4}} >
             <Grid item xs={6}>
-                <Box sx={{ width: '500px', justifySelf: 'center' }}>
+                <Box sx={{ width: '100%', justifySelf: 'center' }}>
                 <Typography color="black">Travel Dates</Typography>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                     {/* <DateRangePicker 
@@ -88,8 +88,18 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                 </Box>
                 </Box>
             </Grid>
-            <Grid item xs={6}>
-                <InputLabel id="location-label">Location</InputLabel>
+            <Grid item xs={6} sx={{ 
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-end', 
+                    maxWidth: '275px',
+                }}>
+                <InputLabel id="location-label" sx={{
+                    width: '100%',
+                    maxWidth: '275px',
+                }}>
+                Location
+                </InputLabel>
                 <Select
                 labelId="location-label"
                 id="location-select"
@@ -98,8 +108,10 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                 value={values.location}
                 onChange={handleInputChange}
                 sx={{
-                    width: 300,
+                    width: '100%',
+                    maxWidth: '275px',
                     background: 'white',
+
                 }}
                 >
                     {locations.map((location) => {
