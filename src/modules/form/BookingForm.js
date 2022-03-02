@@ -15,16 +15,18 @@ import withRoot from '../withRoot';
 
 const BookingForm = (props) => {
     const initialValues = {
+        name: 'Alex Noboa',
+        email: 'noboa@example.com',
         location: '',
         startdate: null,
         enddate: null,
-        daterange: [null, null],
         datesunsure: false,
         occasion: [],
         activities: [],
         numberofadults: 1,
         numberofkids: 0,
         budget: 0,
+        notes: '',
     }
     
     const [values, setValues] = useState(initialValues)
@@ -40,7 +42,7 @@ const BookingForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
-        let message = `<p>Traveler Name: Name<br />Traveler Email: email<br />Location: ${values.location}<br />Start Date: ${values.startdate}<br />End Date: ${values.enddate}<br />Unsure of dates?: ${values.datesunsure}<br />Occasion: ${values.occasion}<br />Activities: ${values.activities}<br />Adults: ${values.numberofadults}<br />Kids: ${values.numberofkids}<br />Budget: ${values.budget}<br /></p>`
+
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(values)
@@ -60,10 +62,10 @@ const BookingForm = (props) => {
             <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ justifyContent: 'center', alignItems: 'center' }}
+            sx={{ justifyContent: 'center', alignItems: 'center', m: 0, }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
-                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto' }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, }}>Let's Plan!</Button></Grid> }
+                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid> }
             </Box>
         </Container>
 
