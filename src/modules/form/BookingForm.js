@@ -9,7 +9,7 @@ import Button from '../components/Button'
 import InitialBookingContent from './InitialBookingContent';
 import SubsequentBookingContent from './SubsequentBookingContent';
 import withRoot from '../withRoot';
-import { rownd } from '@rownd/node';
+// import { rownd } from '@rownd/node';
 
 
 
@@ -19,8 +19,8 @@ const BookingForm = (props) => {
         name: 'Alex Noboa',
         email: 'noboa@example.com',
         location: '',
-        startdate: "01/01/1900",
-        enddate: "01/02/1900",
+        startdate: null,
+        enddate: null,
         datesunsure: false,
         occasion: [],
         activities: [],
@@ -44,8 +44,8 @@ const BookingForm = (props) => {
         event.preventDefault();
         let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
 
-        setValues({...values, name: rownd.user.get('full_name')})
-        setValues({...values, email: rownd.user.get('email')})
+        // setValues({...values, name: rownd.user.get('full_name')})
+        // setValues({...values, email: rownd.user.get('email')})
 
         fetch(url, {
             method: 'POST',
