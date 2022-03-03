@@ -155,6 +155,14 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 name="activities"
                 value={values.activities}
                 onChange={handleInputChange}
+                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                renderValue={(selected) => (
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    {selected.map((value) => (
+                        <Chip key={value} label={value} />
+                    ))}
+                    </Box>
+                )}
                 sx={{
                     width: 300,
                     background: 'white',
