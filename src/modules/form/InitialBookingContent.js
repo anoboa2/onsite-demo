@@ -70,7 +70,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                         label="End Date"
                         inputFormat="MM/dd/yyyy"
                         disabled={toggle}
-                        value={values.enddate}
+                        value={values. enddate}
                         onChange={handleInputChange}
                         renderInput={(params) => <TextField {...params} />}
                         sx={{ background: 'white' }}
@@ -122,5 +122,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
         </Grid>
     );
 };
+
+
 
 export default InitialBookingContent;

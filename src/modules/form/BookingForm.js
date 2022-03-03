@@ -9,6 +9,7 @@ import Button from '../components/Button'
 import InitialBookingContent from './InitialBookingContent';
 import SubsequentBookingContent from './SubsequentBookingContent';
 import withRoot from '../withRoot';
+import { rownd } from '@rownd/node';
 
 
 
@@ -18,8 +19,8 @@ const BookingForm = (props) => {
         name: 'Alex Noboa',
         email: 'noboa@example.com',
         location: '',
-        startdate: null,
-        enddate: null,
+        startdate: "01/01/1900",
+        enddate: "01/02/1900",
         datesunsure: false,
         occasion: [],
         activities: [],
@@ -43,6 +44,9 @@ const BookingForm = (props) => {
         event.preventDefault();
         let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
 
+        setValues({...values, name: rownd.user.get('full_name')})
+        setValues({...values, email: rownd.user.get('email')})
+
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(values)
@@ -62,7 +66,7 @@ const BookingForm = (props) => {
             <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ justifyContent: 'center', alignItems: 'center', m: 0, }}
+            sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', backdropFilter: 'blur(2px)', borderRadius: 10, m: 0, width: 1,}}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
                 { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid> }
