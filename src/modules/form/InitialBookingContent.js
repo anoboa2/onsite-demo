@@ -62,7 +62,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                         inputFormat="MM/dd/yyyy"
                         disabled={toggle}
                         value={values.startdate}
-                        onChange={(newValue) => handleInputChange(newValue)}
+                        onChange={handleInputChange}
                         renderInput={(params) => <TextField {...params} />}
                         sx={{ background: 'white' }}
                         />
