@@ -26,15 +26,17 @@ const BookingForm = (props) => {
         numberofkids: 0,
         budget: 0,
     }
-    
+
     const [values, setValues] = useState(initialValues)
     const [display, setDisplay] = useState(false)
-    
 
 
-    function handleInputChange(event) {
-        setValues({ ...values, [event.target.name]: event.target.value })
-        console.log(`Added ${event.target.value} from ${event.target.name} which updated our object to ${JSON.stringify(values)}`)
+
+    function handleInputChange(name, event) {
+        console.log(event);
+        setValues({ ...values, [name]: event });
+        // setValues({ ...values, [event.target.name]: event.target.value })
+        // console.log(`Added ${event.target.value} from ${event.target.name} which updated our object to ${JSON.stringify(values)}`)
     }
 
     const handleSubmit = (event) => {
@@ -48,12 +50,12 @@ const BookingForm = (props) => {
     return (
         <Container>
             <Box
-            component="form"
-            onSubmit={handleSubmit}
-            sx={{ justifyContent: 'center', alignItems: 'center' }}
+                component="form"
+                onSubmit={handleSubmit}
+                sx={{ justifyContent: 'center', alignItems: 'center' }}
             >
-                <InitialBookingContent values={values} handleInputChange={handleInputChange} />
-                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button></Grid> }
+                <InitialBookingContent values={values} handleInputChange={handleInputChange.bind(this)} />
+                {display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)}>Let's Plan!</Button></Grid>}
             </Box>
         </Container>
 
