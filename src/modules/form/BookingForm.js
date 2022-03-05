@@ -9,22 +9,25 @@ import Button from '../components/Button'
 import InitialBookingContent from './InitialBookingContent';
 import SubsequentBookingContent from './SubsequentBookingContent';
 import withRoot from '../withRoot';
+// import { rownd } from '@rownd/node';
 
 
 
 
 const BookingForm = (props) => {
     const initialValues = {
+        name: 'Alex Noboa',
+        email: 'noboa@example.com',
         location: '',
         startdate: null,
         enddate: null,
-        daterange: [null, null],
         datesunsure: false,
         occasion: [],
         activities: [],
         numberofadults: 1,
         numberofkids: 0,
         budget: 0,
+        notes: '',
     }
 
     const [values, setValues] = useState(initialValues)
@@ -40,10 +43,23 @@ const BookingForm = (props) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(`Mock API call: ${JSON.stringify(values)}`)
+        event.preventDefault();
+        let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
+
+        // setValues({...values, name: rownd.user.get('full_name')})
+        // setValues({...values, email: rownd.user.get('email')})
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(values)
+        })
+        .then((response) => response.json())
+        .then(json => {
+            console.log(json.response)
+        })
+        console.log('Form submitted to AWS API Gateway')
         setValues(initialValues)
-        console.log("Thank you for submitting your booking.")
+        console.log("Form values reset successfully")
     }
 
 

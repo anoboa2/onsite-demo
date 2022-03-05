@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
 import {
     DateRangePicker,
+    DatePicker,
+    DesktopDatePicker,
     LocalizationProvider,
 } from '@mui/lab';
 import {
@@ -14,7 +16,8 @@ import {
     Grid,
     Switch,
     Fade,
-    Container
+    Container,
+    Stack,
 } from '@mui/material';
 
 
@@ -86,8 +89,41 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Box>
             </Grid>
+            <Grid item xs={6} sx={{ 
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-end', 
+                    maxWidth: '275px',
+                }}>
+                <InputLabel id="location-label" sx={{
+                    width: '100%',
+                    maxWidth: '275px',
+                }}>
+                Location
+                </InputLabel>
+                <Select
+                labelId="location-label"
+                id="location-select"
+                label="loc"
+                name="location"
+                value={values.location}
+                onChange={handleInputChange}
+                sx={{
+                    width: '100%',
+                    maxWidth: '275px',
+                    background: 'white',
+
+                }}
+                >
+                    {locations.map((location) => {
+                        return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
+                    })}
+                </Select>
+            </Grid>
         </Grid>
     );
 };
+
+
 
 export default InitialBookingContent;
