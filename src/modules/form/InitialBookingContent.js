@@ -79,7 +79,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     label="loc"
                     name="location"
                     value={values.location}
-                    onChange={handleInputChange}
+                    onChange={(evt) => handleInputChange('location', evt.target.value)}
                     sx={{
                         width: '100%',
                         maxWidth: '300px',
