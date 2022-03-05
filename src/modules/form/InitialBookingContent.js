@@ -26,6 +26,7 @@ const locations = [
     { label: 'Miami, FL', value: 'miami' },
 ]
 
+
 const InitialBookingContent = ({ values, handleInputChange }) => {
     const [toggle, setToggle] = useState(false)
 
@@ -35,29 +36,10 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
     };
 
     return (
-        <Grid container columns={12} spacing={3} sx={{ m: 2, pb: 5 }} >
-            <Grid item xs={4}>
-                <InputLabel id="location-label">Location</InputLabel>
-                <Select
-                    labelId="location-label"
-                    id="location-select"
-                    label="loc"
-                    name="location"
-                    value={values.location}
-                    onChange={handleInputChange}
-                    sx={{
-                        width: 300,
-                        background: 'white',
-                    }}
-                >
-                    {locations.map((location) => {
-                        return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
-                    })}
-                </Select>
-            </Grid>
-            <Grid item xs={4}>
-                <Box sx={{ width: '500px', justifySelf: 'center' }}>
-                    <Typography color="black">Travel Dates</Typography>
+        <Grid container columns={12} spacing={0} sx={{ ml: 'auto', mr: 'auto', pb: 5, pt: 6, pl: 4, pr: 4}} >
+            <Grid item xs={6}>
+                <Box sx={{ width: '100%', justifySelf: 'center' }}>
+                    <Typography color="black" sx={{ mb: 2, }}>Travel Dates</Typography>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <Fade in={toggle}>
                             <DateRangePicker
@@ -69,16 +51,16 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                                 onChange={(evt) => handleInputChange('daterange', evt)}
                                 renderInput={(startDate, endDate) => (
                                     <React.Fragment>
-                                        <TextField {...startDate} />
+                                        <TextField sx={{ background: 'white' }} {...startDate} />
                                         <Box color="black" sx={{ mx: 2 }}> to </Box>
-                                        <TextField {...endDate} />
+                                        <TextField sx={{ background: 'white' }} {...endDate} />
                                     </React.Fragment>
                                 )}
-                                sx={{ background: 'white', }}
+                                sx={{ backgroundColor: 'white', }}
                             />
                         </Fade>
                     </LocalizationProvider>
-                    <Box display="flex" alignItems="baseline" justifyContent="flex-end">
+                    <Box display="flex" alignItems="baseline" justifyContent="flex-start">
                         <Switch
                             name="datesunsure"
                             value={toggle}
@@ -89,31 +71,20 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Box>
             </Grid>
-            <Grid item xs={6} sx={{ 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-end', 
-                    maxWidth: '275px',
-                }}>
-                <InputLabel id="location-label" sx={{
-                    width: '100%',
-                    maxWidth: '275px',
-                }}>
-                Location
-                </InputLabel>
+            <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', maxWidth: '275px', }}>
+                <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, }}>Location</InputLabel>
                 <Select
-                labelId="location-label"
-                id="location-select"
-                label="loc"
-                name="location"
-                value={values.location}
-                onChange={handleInputChange}
-                sx={{
-                    width: '100%',
-                    maxWidth: '275px',
-                    background: 'white',
-
-                }}
+                    labelId="location-label"
+                    id="location-select"
+                    label="loc"
+                    name="location"
+                    value={values.location}
+                    onChange={handleInputChange}
+                    sx={{
+                        width: '100%',
+                        maxWidth: '300px',
+                        background: 'white',
+                    }}
                 >
                     {locations.map((location) => {
                         return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
