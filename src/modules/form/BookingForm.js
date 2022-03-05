@@ -66,7 +66,7 @@ const BookingForm = (props) => {
             <Box
                 component="form"
                 onSubmit={handleSubmit}
-                sx={{ px: 5, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', backdropFilter: 'blur(2px)', borderRadius: 10, m: 0, width: 1, }}
+                sx={{ px: { xs: 0, sm: 5, }, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', backdropFilter: 'blur(2px)', borderRadius: 10, m: 0, width: 1, }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange.bind(this)} />
                 {display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4} sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid>}
