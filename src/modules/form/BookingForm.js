@@ -43,7 +43,7 @@ const BookingForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
+        let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
         // setValues({...values, name: rownd.user.get('full_name')})
         // setValues({...values, email: rownd.user.get('email')})
