@@ -56,83 +56,78 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     <Typography sx={{ p: 0, color: 'black',  }}>Number of People</Typography>
                 </Container>
                 <Grid item xs={12} sm={2}>
-                    <Box sx={{ m: 0}}>
-                    <InputLabel id="num-adults-label">Adults</InputLabel>
-                    <Select
-                    labelId="num-adults-label"
-                    id="num-adults-select"
-                    label="num-adults"
-                    name="numberofadults"
-                    value={values.numberofadults}
-                    onChange={handleInputChange}
-                    sx={{
-                        width: 80,
-                        background: 'white',
-                        mb: 5,
-                    }}
-                    >
-                        {numpeople.map((number) => {
-                            return <MenuItem key={number} value={number}>{number}</MenuItem>
-                        })}
-                    </Select>
+                    <Box sx={{ m: 2 }}>
+                        <InputLabel id="num-adults-label">Adults</InputLabel>
+                        <Select
+                            labelId="num-adults-label"
+                            id="num-adults-select"
+                            label="num-adults"
+                            name="numberofadults"
+                            value={values.numberofadults}
+                            onChange={(evt) => handleInputChange('numberofadults', evt.target.value)}
+                            sx={{
+                                width: 80,
+                                background: 'white',
+                            }}
+                        >
+                            {numpeople.map((number) => {
+                                return <MenuItem key={number} value={number}>{number}</MenuItem>
+                            })}
+                        </Select>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
-                    <Box sx={{ m: 0}}>
-                    <InputLabel id="num-kids-label">Kids</InputLabel>
-                    <Select
-                    labelId="num-kids-label"
-                    id="num-kids-select"
-                    label="num-kids"
-                    name="numberofkids"
-                    value={values.numberofkids}
-                    onChange={handleInputChange}
-                    sx={{
-                        width: 80,
-                        background: 'white',
-                        mb: 5,
-                    }}
-                    >
-                        {numpeople.map((number) => {
-                            return <MenuItem key={number} value={number}>{number}</MenuItem>
-                        })}
-                    </Select>
+                    <Box sx={{ m: 2 }}>
+                        <InputLabel id="num-kids-label">Kids</InputLabel>
+                        <Select
+                            labelId="num-kids-label"
+                            id="num-kids-select"
+                            label="num-kids"
+                            name="numberofkids"
+                            value={values.numberofkids}
+                            onChange={(evt) => handleInputChange('numberofkids', evt.target.value)}
+                            sx={{
+                                width: 80,
+                                background: 'white',
+                            }}
+                        >
+                            {numpeople.map((number) => {
+                                return <MenuItem key={number} value={number}>{number}</MenuItem>
+                            })}
+                        </Select>
                     </Box>
                 </Grid>
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
                 <TextField
-                label="Budget"
-                variant="filled"
-                name="budget"
-                onChange={handleInputChange}
-                sx={{ background: 'white', width: '100%', maxWidth: '275px', }} />
+                    label="Budget"
+                    variant="filled"
+                    name="budget"
+                    onChange={(evt) => handleInputChange('budget', evt.target.value)}
+                    sx={{ width: 300, background: 'white' }} />
             </Grid>
             <Grid item xs={6}>
                 <InputLabel id="occasion-label">Type of Trip</InputLabel>
                 <Select
-                labelId="occasion-label"
-                id="occasion-select"
-                label="occasion"
-                multiple
-                name="occasion"
-                value={values.occasion}
-                onChange={handleInputChange}
-                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                renderValue={(selected) => (
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                        <Chip key={value} label={value} />
-                    ))}
-                    </Box>
-                )}
-                sx={{
-                    width: 300,
-                    background: 'white',
-                    mb: 5,
-                    width: '100%',
-                    maxWidth: '275px',
-                }}
+                    labelId="occasion-label"
+                    id="occasion-select"
+                    label="occasion"
+                    multiple
+                    name="occasion"
+                    value={values.occasion}
+                    onChange={(evt) => handleInputChange('occasion', evt.target.value)}
+                    input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                    renderValue={(selected) => (
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                            {selected.map((value) => (
+                                <Chip key={value} label={value} />
+                            ))}
+                        </Box>
+                    )}
+                    sx={{
+                        width: 300,
+                        background: 'white',
+                    }}
                 >
                     {occasions.map((occasion) => {
                         return <MenuItem key={occasion} value={occasion}>{occasion}</MenuItem>
@@ -148,27 +143,17 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     Activities
                 </InputLabel>
                 <Select
-                labelId="activities-label"
-                id="activities-select"
-                label="activities"
-                multiple
-                name="activities"
-                value={values.activities}
-                onChange={handleInputChange}
-                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                renderValue={(selected) => (
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                        <Chip key={value} label={value} />
-                    ))}
-                    </Box>
-                )}
-                sx={{
-                    width: 300,
-                    background: 'white',
-                    width: '100%',
-                    maxWidth: '275px',
-                }}
+                    labelId="activities-label"
+                    id="activities-select"
+                    label="activities"
+                    multiple
+                    name="activities"
+                    value={values.activities}
+                    onChange={(evt) => handleInputChange('activities', evt.target.value)}
+                    sx={{
+                        width: 300,
+                        background: 'white'
+                    }}
                 >
                     {activities.map((activity) => {
                         return <MenuItem key={activity} value={activity}>{activity}</MenuItem>
@@ -178,14 +163,14 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
 
             <Grid item xs={12}>
                 <TextField
-                multiline
-                rows={4}
-                label="Additional Notes"
-                name="notes"
-                placeholder="Anything else to add?"
-                variant="filled"
-                onChange={handleInputChange}
-                sx={{ width: '100%', maxWidth: '50%', background: 'white'}} />
+                    multiline
+                    rows={4}
+                    label="Additional Notes"
+                    name="notes"
+                    placeholder="Anything else to add?"
+                    variant="filled"
+                    onChange={(evt) => handleInputChange('notes', evt.target.value)}
+                    sx={{ width: 300, background: 'white' }} />
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
                 <Button variant="contained" color="secondary" type="submit">Book Now</Button>
