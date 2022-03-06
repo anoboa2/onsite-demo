@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Section from '../components/Section';
-import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox } from '@mui/material';
-import StarRatingComponent from 'react-star-rating-component';
+import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating } from '@mui/material';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 
@@ -67,6 +66,14 @@ function TravelProfile() {
         setValues({...values, [name]: nextValue})
     }
 
+    function validation(event) {
+        if (event.target.value.length > 2) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return(
         <Section>
             <Container component="section" sx={{ mt: 15, mb: 4 }}>
@@ -96,8 +103,8 @@ function TravelProfile() {
                         return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                     })}
                 </FormGroup>
-                <InputLabel>Please rate your lodging preference</InputLabel>
-                <StarRatingComponent name="hotelpreference" starcount={5} value={values.rating} onStarClick={handleStarClick}/>
+                <InputLabel>Please select your lodging rating preference</InputLabel>
+                <Rating id="lodging-rating" value={values.lodgingrating} onChange={(e) => handleChange('', e)}/>
                 <InputLabel>Select your bed preference</InputLabel>
                 <FormGroup>
                     {bedOptions.map((option) => {
@@ -113,7 +120,18 @@ function TravelProfile() {
                 <InputLabel>Do you have any food preference or dietary restrictions?</InputLabel>
                 <FormGroup>
                     {dietaryOptions.map((option) => {
-                            return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                            return (
+                                <FormControl
+                                    error={validation}
+                                >
+                                    <FormControlLabel
+                                        control={<Checkbox value={option}/>}
+                                        label={option}
+                                    >
+                                        {option}
+                                    </FormControlLabel>
+                                </FormControl>
+)
                         })}
                 </FormGroup>
 
