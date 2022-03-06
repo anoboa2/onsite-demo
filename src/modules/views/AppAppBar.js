@@ -28,15 +28,15 @@ function AppAppBar() {
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {/* <Link
+            <Link
               color="inherit"
               variant="h6"
               underline="none"
-              href="/signin"
+              href="/profile"
               sx={rightLink}
             >
-              {'Log In'}
-            </Link> */}
+              {'Profile'}
+            </Link>
             <Link
               variant="h6"
               underline="none"
