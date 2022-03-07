@@ -6,7 +6,7 @@ import Toolbar from '../components/Toolbar';
 
 const rightLink = {
   fontSize: 16,
-  color: 'common.white',
+  color: 'secondary.main',
   ml: 3,
 };
 
@@ -40,17 +40,17 @@ function AppAppBar() {
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {/* <Link
+            <Link
               color="inherit"
               variant="h6"
               underline="none"
-              href="/signin"
+              href="/profile"
               sx={rightLink}
             >
-              {'Log In'}
-            </Link> */}
-            {/* <a href="/signin" data-rph-login-btn data-rph-logged-in-text="Go to Dashboard">Login </a> */}
+              {'Profile'}
+            </Link>
             <Link
+              color="inherit"
               variant="h6"
               underline="none"
               href="/waitlist"

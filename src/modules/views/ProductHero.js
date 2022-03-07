@@ -22,7 +22,7 @@ export default function ProductHero() {
         src={backgroundImage}
         alt="increase priority"
       />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
+      <Typography color="inherit" align="center" variant="h2" marked="center" sx={{mt: 5}}>
       Travel booking, reinvented
       </Typography>
       <Typography

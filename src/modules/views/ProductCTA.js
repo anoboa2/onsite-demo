@@ -10,38 +10,12 @@ import Button from '../components/Button';
 // Update with new waitlist
 
 function ProductCTA() {
-  const [open, setOpen] = React.useState(false);
-  const [email, setEmail] = React.useState("");
-  const [sent, setSent] = React.useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setOpen(true);
-
-    let url = 'https://api.sheety.co/2d1a9568a9af9f0c5b478fb1e08bbbb7/waitlistRegistry/responses';
-    let body = {
-      response: {
-        email: email,
-        timestamp: new Date(Date.now()).toString(),
-        },
-    }
-    fetch(url, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body)
-    })
-    .then((response) => response.json())
-    .then(json => {
-      setSent(true);
-      console.log(json.response);
-    });
+  const handleClick = () => {
+    document.body.scrollTop = 50;
+    document.documentElement.scrollTop = 50;
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <Container component="section" sx={{ my: 10, display: 'flex' }}>
@@ -56,26 +30,20 @@ function ProductCTA() {
               px: 3,
             }}
           >
-            <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
+            <Box sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                Join our waitlist
+                Ready to book your trip?
               </Typography>
               <Typography variant="h5">
-                Onsite will be launching soon.  Stay up-to-date with the latest!
+                Your next trip is only a few clicks away!
               </Typography>
-              <TextField
-                noBorder
-                placeholder="Your email"
-                variant="standard"
-                sx={{ width: '100%', mt: 3, mb: 2 }}
-              />
               <Button
-                type="submit"
                 color="secondary"
                 variant="contained"
-                sx={{ width: '100%' }}
+                onClick={handleClick}
+                sx={{ width: '100%', mt: 2 }}
               >
-                Join Waitlist
+                Lets Go!
               </Button>
             </Box>
           </Box>
@@ -114,11 +82,6 @@ function ProductCTA() {
           />
         </Grid>
       </Grid>
-      <Snackbar
-        open={open}
-        closeFunc={handleClose}
-        message="Thank you! We will send you updates on our latest releases and features."
-      />
     </Container>
   );
 }
