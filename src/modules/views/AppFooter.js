@@ -38,8 +38,8 @@ export default function AppFooter() {
       component="footer"
       sx={{ display: 'flex', bgcolor: 'neutral.main' }}
     >
-      <Container columns={12} sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
-        <Grid container spacing={5}>
+      <Container sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
+        <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={5}>
           <Grid item xs={4}>
             <Grid
               container
