@@ -36,11 +36,11 @@ const image = {
 };
 
 const cardContent = [
-  {icon: '/icon/suv.png', alt: 'fully packed station wagon car', text: 'Choose you booking details and a planning package: Full Travel or Daily Planning'},
-  {icon: '/icon/tickets.png', alt: 'two airplane tickets', text: 'Checkout to receive your trip details form and proposed itinerary'},
-  {icon: '/icon/flight.png', alt: 'plane in flight', text: 'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisified.'},
-  {icon: '/icon/waypoint.png', alt: 'pin on top of map', text: 'Approve the itinerary and we will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will  make all bookings and reservations.'},
-  {icon: '/icon/passport.png', alt: 'silouhette of passport', text: 'A finalized itinerary will be sent including all tickets. You can continue to reach out to your agent at anytime with questions or changes, even while on your trip.'},
+  {icon: '/icon/suv.png', alt: 'fully packed station wagon car', text: 'Select your planning package: Full Trip Plans or Daily Plans'},
+  {icon: '/icon/tickets.png', alt: 'two airplane tickets', text: 'Fill out the booking request form and checkout to receive your proposed itinerary'},
+  {icon: '/icon/flight.png', alt: 'plane in flight', text: 'Provide any feedback, questions, or changes to the itinerary and your agent will quickly provide updates until you are 100% satisfied.'},
+  {icon: '/icon/waypoint.png', alt: 'pin on top of map', text: 'Approve the itinerary and we will provide you with a payment link for the full amount of the trip. Once we receive payment, your agent will make all bookings and reservations.'},
+  {icon: '/icon/passport.png', alt: 'silouhette of passport', text: 'A finalized itinerary will be sent including all tickets and reservations. You can continue to reach out to your agent at any time with questions or changes, even while on your trip.'},
 ];
 
 function ProductHowItWorks(props) {

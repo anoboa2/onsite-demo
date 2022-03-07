@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import MuiContainer from '@mui/material/Container';
 
 const SectionRoot = styled(MuiContainer)(({ theme }) => ({
+    width: '100%',
     background: theme.palette.neutral.main,
     display: 'flex',
     overflow: 'hidden',

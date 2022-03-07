@@ -31,16 +31,6 @@ const iconStyle = {
   },
 };
 
-const LANGUAGES = [
-  {
-    code: 'en-US',
-    name: 'English',
-  },
-  {
-    code: 'fr-FR',
-    name: 'Français',
-  },
-];
 
 export default function AppFooter() { 
   return (
@@ -48,9 +38,9 @@ export default function AppFooter() {
       component="footer"
       sx={{ display: 'flex', bgcolor: 'neutral.main' }}
     >
-      <Container sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
+      <Container columns={12} sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
         <Grid container spacing={5}>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <Grid
               container
               direction="column"
@@ -86,7 +76,7 @@ export default function AppFooter() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <Typography variant="h6" marked="left" gutterBottom>
               Legal
             </Typography>
@@ -99,26 +89,19 @@ export default function AppFooter() {
               </Box>
             </Box>
           </Grid>
-          {/* <Grid item xs={6} sm={8} md={4}>
+          <Grid item xs={4}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Language
+              Contact Us
             </Typography>
-            <TextField
-              select
-              size="medium"
-              variant="standard"
-              SelectProps={{
-                native: true,
-              }}
-              sx={{ mt: 1, width: 150 }}
-            >
-              {LANGUAGES.map((language) => (
-                <option value={language.code} key={language.code}>
-                  {language.name}
-                </option>
-              ))}
-            </TextField>
-          </Grid> */}
+            <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0 }}>
+              <Box component="li" sx={{ py: 0.5 }}>
+                <Typography>info@onsiteplanning.com</Typography>
+              </Box>
+              <Box component="li" sx={{ py: 0.5 }}>
+                <Typography>+1 (844) 200-8332</Typography>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
         <Box sx={{ pt: 2}}>
           <Typography variant="caption" sx={{ color: '#8d9da8' }}>
