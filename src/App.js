@@ -6,6 +6,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Waitlist from './pages/Waitlist';
 import Profile from './pages/Profile';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/signup" element={<SignUp />} /> */}
       <Route path="/waitlist" element={<Waitlist />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/privacy" element={<Privacy />} />
     </Routes>
   );
 }

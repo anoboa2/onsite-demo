@@ -6,7 +6,7 @@ import Toolbar from '../components/Toolbar';
 
 const rightLink = {
   fontSize: 16,
-  color: 'common.white',
+  color: 'secondary.main',
   ml: 3,
 };
 
@@ -50,6 +50,7 @@ function AppAppBar() {
               {'Profile'}
             </Link>
             <Link
+              color="inherit"
               variant="h6"
               underline="none"
               href="/waitlist"
