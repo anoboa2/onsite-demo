@@ -99,12 +99,11 @@ export default function ProductCategories() {
   }
   const handleClose = () => {
     setOpen(!open);
-    console.log("Closing...");
   }
 
   return (
-    <Container component="section" sx={{ mt: 8, mb: 4 }}>
-      <Typography variant="h4" marked="center" align="center" component="h2">
+    <Container component="section" sx={{ mt: 15, mb: 4 }}>
+      <Typography variant="h4" marked="center" align="center" component="h2" sx={{ mb: 10, }}>
         We arrange the best
       </Typography>
       <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap',}}>

@@ -2,9 +2,10 @@ import * as React from 'react';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import WaitlistButton from './WaitlistButton';
+import BookingForm from '../form/BookingForm';
 
 const backgroundImage =
-  '/img/palms-sunset.jpg';
+  '/img/miami-palms.jpg';
 
 export default function ProductHero() {
   return (
@@ -21,7 +22,7 @@ export default function ProductHero() {
         src={backgroundImage}
         alt="increase priority"
       />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
+      <Typography color="inherit" align="center" variant="h2" marked="center" sx={{mt: 5}}>
       Travel booking, reinvented
       </Typography>
       <Typography
@@ -32,10 +33,7 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <WaitlistButton />
-      {/* <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        Personalized Trip Planning & Support
-      </Typography> */}
+      <BookingForm />
     </ProductHeroLayout>
   );
 }
