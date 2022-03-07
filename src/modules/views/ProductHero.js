@@ -33,7 +33,7 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <WaitlistButton />
+      <BookingForm />
     </ProductHeroLayout>
   );
 }
