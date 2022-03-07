@@ -40,7 +40,7 @@ function AppAppBar() {
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            <Link
+            {/* <Link
               color="inherit"
               variant="h6"
               underline="none"
@@ -48,14 +48,13 @@ function AppAppBar() {
               sx={rightLink}
             >
               {'Profile'}
-            </Link>
+            </Link> */}
             <Link
               color="inherit"
               variant="h6"
               underline="none"
               href="/waitlist"
               sx={{ ...rightLink, color: 'secondary.main' }}
-              class="data-rph-login-btn"
             >
               {'Sign Up'}
             </Link>
