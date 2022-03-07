@@ -12,7 +12,7 @@ const SectionRoot = styled(MuiContainer)(({ theme }) => ({
 }));
 
 function Section(props) {
-    return <SectionRoot {...props} />
+    return <SectionRoot {...props}>{props.children}</SectionRoot>
 }
 
 export default Section;
