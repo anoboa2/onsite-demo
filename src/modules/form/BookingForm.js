@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Container,
@@ -14,8 +14,8 @@ import { useRownd } from '@rownd/react';
 
 const BookingForm = (props) => {
     const initialValues = {
-        name: 'Alex Noboa',
-        email: 'noboa@example.com',
+        name: '',
+        email: '',
         location: '',
         daterange: [null, null],
         dateunsure: false,
@@ -26,11 +26,12 @@ const BookingForm = (props) => {
         budget: 0,
         notes: '',
     }
+    const { is_authenticated, user, requestSignIn } = useRownd();
 
     const [values, setValues] = useState(initialValues)
     const [display, setDisplay] = useState(false)
+ 
 
-    const { user } = useRownd()
     console.log(user.data.full_name)
     console.log(user.data.email)
 
@@ -41,9 +42,14 @@ const BookingForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (!is_authenticated) {
+            requestSignIn();
+        }
+
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
-        setValues({...values, name: user.data.first_name})
+        setValues({...values, name: user.data.full_name})
         setValues({...values, email: user.data.email})
 
         fetch(url, {
@@ -51,9 +57,7 @@ const BookingForm = (props) => {
             body: JSON.stringify(values)
         })
         .then((response) => response.json())
-        .then(json => {
-            console.log(json.response)
-        })
+
         console.log('Form submitted to AWS API Gateway')
         setValues(initialValues)
         console.log("Form values reset successfully")
