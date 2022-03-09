@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import AppBar from '../components/AppBar';
 import Toolbar from '../components/Toolbar';
+import { useRownd } from '@rownd/react';
 
 const rightLink = {
   fontSize: 16,
@@ -19,6 +20,14 @@ const onsiteLogo = '/img/onsiteLogoColor.png';
 const onsiteLogoText = '/img/onsiteLogoTextBW.png';
 
 function AppAppBar() {
+  const { is_authenticated, user, requestSignIn } = useRownd();
+
+  // React.useEffect(() => {
+  //   if (!is_authenticated) {
+  //     requestSignIn();
+  //   }
+  // }, [is_authenticated]);
+
   return (
     <div>
       <AppBar position="fixed">
@@ -40,24 +49,36 @@ function AppAppBar() {
             />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {/* <Link
-              color="inherit"
-              variant="h6"
-              underline="none"
-              href="/profile"
-              sx={rightLink}
-            >
-              {'Profile'}
-            </Link> */}
             <Link
               color="inherit"
               variant="h6"
               underline="none"
-              href="/waitlist"
-              sx={{ ...rightLink, color: 'secondary.main' }}
+              href="https://blogonsiteplanning.wordpress.com"
+              sx={rightLink}
             >
-              {'Sign Up'}
+              {'Blog'}
             </Link>
+            {is_authenticated ? (
+              <Link
+                color="inherit"
+                variant="h6"
+                underline="none"
+                href="/profile"
+                sx={rightLink}
+              >
+                {'Profile'}
+              </Link>
+            ) : (
+              <Link
+                color="inherit"
+                variant="h6"
+                underline="none"
+                href="/waitlist"
+                sx={{ ...rightLink, color: 'secondary.main' }}
+              >
+                {'Sign Up'}
+              </Link>
+            )}
           </Box>
         </Toolbar>
       </AppBar>
