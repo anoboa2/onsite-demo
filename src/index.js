@@ -4,12 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RowndProvider } from '@rownd/react';
+
+let key = process.env.ROWND_APP_KEY
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    <RowndProvider appKey={key}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </RowndProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
