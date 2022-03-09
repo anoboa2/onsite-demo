@@ -20,7 +20,7 @@ const BookingForm = (props) => {
         email: 'noboa@example.com',
         location: '',
         daterange: [null, null],
-        datesunsure: false,
+        dateunsure: false,
         occasion: [],
         activities: [],
         numberofadults: 1,
@@ -41,14 +41,14 @@ const BookingForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let url = 'https://wvjy6ieml5.execute-api.us-east-1.amazonaws.com/live';
+        let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
         // setValues({...values, name: rph.user.get('full_name')})
         // setValues({...values, email: rph.user.get('email')})
 
         fetch(url, {
             method: 'POST',
-            body: values
+            body: JSON.stringify(values)
         })
         .then((response) => response.json())
         .then(json => {
