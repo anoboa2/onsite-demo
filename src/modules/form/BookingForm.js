@@ -20,7 +20,7 @@ const BookingForm = (props) => {
         email: 'noboa@example.com',
         location: '',
         daterange: [null, null],
-        datesunsure: false,
+        dateunsure: false,
         occasion: [],
         activities: [],
         numberofadults: 1,
@@ -48,7 +48,7 @@ const BookingForm = (props) => {
 
         fetch(url, {
             method: 'POST',
-            body: values
+            body: JSON.stringify(values)
         })
         .then((response) => response.json())
         .then(json => {
