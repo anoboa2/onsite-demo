@@ -9,7 +9,7 @@ import Button from '../components/Button'
 import InitialBookingContent from './InitialBookingContent';
 import SubsequentBookingContent from './SubsequentBookingContent';
 import withRoot from '../withRoot';
-// import { rownd } from '@rownd/node';
+import { useRownd } from '@rownd/react';
 
 
 
@@ -20,7 +20,7 @@ const BookingForm = (props) => {
         email: 'noboa@example.com',
         location: '',
         daterange: [null, null],
-        datesunsure: false,
+        dateunsure: false,
         occasion: [],
         activities: [],
         numberofadults: 1,
@@ -43,12 +43,12 @@ const BookingForm = (props) => {
         event.preventDefault();
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
-        // setValues({...values, name: rph.user.get('full_name')})
-        // setValues({...values, email: rph.user.get('email')})
+        setValues({...values, name: useRownd.user.getValue('full_name')})
+        setValues({...values, email: useRownd.user.getValue('email')})
 
         fetch(url, {
             method: 'POST',
-            body: values
+            body: JSON.stringify(values)
         })
         .then((response) => response.json())
         .then(json => {
@@ -57,7 +57,7 @@ const BookingForm = (props) => {
         console.log('Form submitted to AWS API Gateway')
         setValues(initialValues)
         console.log("Form values reset successfully")
-        window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+        // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
     }
 
 
