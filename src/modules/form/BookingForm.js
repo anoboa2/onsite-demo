@@ -12,8 +12,6 @@ import withRoot from '../withRoot';
 import { useRownd } from '@rownd/react';
 
 
-
-
 const BookingForm = (props) => {
     const initialValues = {
         name: 'Alex Noboa',
@@ -32,7 +30,9 @@ const BookingForm = (props) => {
     const [values, setValues] = useState(initialValues)
     const [display, setDisplay] = useState(false)
 
-
+    const { user } = useRownd()
+    console.log(user.data.full_name)
+    console.log(user.data.email)
 
     function handleInputChange(name, event) {
         console.log(event);
@@ -43,8 +43,8 @@ const BookingForm = (props) => {
         event.preventDefault();
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
-        setValues({...values, name: useRownd.user.getValue('full_name')})
-        setValues({...values, email: useRownd.user.getValue('email')})
+        setValues({...values, name: user.data.first_name})
+        setValues({...values, email: user.data.email})
 
         fetch(url, {
             method: 'POST',
