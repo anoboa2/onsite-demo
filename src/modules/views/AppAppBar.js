@@ -20,13 +20,7 @@ const onsiteLogo = '/img/onsiteLogoColor.png';
 const onsiteLogoText = '/img/onsiteLogoTextBW.png';
 
 function AppAppBar() {
-  const { is_authenticated, user, requestSignIn } = useRownd();
-
-  // React.useEffect(() => {
-  //   if (!is_authenticated) {
-  //     requestSignIn();
-  //   }
-  // }, [is_authenticated]);
+  const { is_authenticated } = useRownd();
 
   return (
     <div>
@@ -70,10 +64,11 @@ function AppAppBar() {
               </Link>
             ) : (
               <Link
+                data-rph-login-btn
                 color="inherit"
                 variant="h6"
                 underline="none"
-                href="/waitlist"
+                href="/"
                 sx={{ ...rightLink, color: 'secondary.main' }}
               >
                 {'Sign Up'}
