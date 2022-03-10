@@ -24,7 +24,7 @@ const BookingForm = (props) => {
         numberofadults: 1,
         numberofkids: 0,
         budget: 0,
-        notes: '',
+        notes: ''
     }
     const { is_authenticated, user, requestSignIn } = useRownd();
 
@@ -42,26 +42,24 @@ const BookingForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if (!is_authenticated) {
-            requestSignIn();
-        }
-
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
-        setValues({...values, name: user.data.full_name})
-        setValues({...values, email: user.data.email})
+        if (!is_authenticated) requestSignIn();
+        else {
+            setValues({...values, name: user.data.full_name})
+            setValues({...values, email: user.data.email})
 
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(values)
-        })
-        .then((response) => response.json())
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(values)
+            })
+            .then((response) => response.json())
 
-        console.log('Form submitted to AWS API Gateway')
-        setValues(initialValues)
-        console.log("Form values reset successfully")
-        // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+            console.log('Form submitted to AWS API Gateway')
+            setValues(initialValues)
+            console.log("Form values reset successfully")
+            window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+        }
     }
 
 
