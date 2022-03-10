@@ -4,6 +4,7 @@ import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGro
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
+import { useRownd } from '@rownd/react';
 
 const flightOptions = [
     'Economy',
@@ -43,8 +44,10 @@ const dietaryOptions = [
 ]
 
 function TravelProfile() {
+    const { user } = useRownd();
+
     const initialValues = {
-        full_name: "Alex Noboa",
+        full_name: "Test Name",
         email: "",
         domestic_flight: "",
         int_flight: "",
@@ -67,6 +70,9 @@ function TravelProfile() {
         // ROWND
     }
 
+    // setValues({...values, full_name: user.data.full_name})
+    // setValues({...values, email: user.data.email})
+
     return(
         <Section>
             <Box
@@ -88,7 +94,7 @@ function TravelProfile() {
                         <TextField
                             id="full-name-input"
                             variant="filled"
-                            placeholder="Alex Noboa"
+                            placeholder={values.full_name}
                             onChange={(e) => handleChange('full_name', e)}
                             sx={{ minWidth: '300px' }}
                         />
@@ -96,7 +102,7 @@ function TravelProfile() {
                         <TextField
                             id="email-input"
                             variant="filled"
-                            placeholder="email@example.com"
+                            placeholder={values.email}
                             onChange={(e) => handleChange('email', e)}
                         />
                     </Box>
@@ -136,7 +142,7 @@ function TravelProfile() {
                         <InputLabel id="seating-label">Please select your preferred flight seating</InputLabel>
                         <FormGroup id="seating-select">
                             {seatingOptions.map((option) => {
-                                return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                                return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                             })}
                         </FormGroup>
                     </Container>
@@ -159,13 +165,13 @@ function TravelProfile() {
                         <InputLabel id="bed-label">Select your bed preference</InputLabel>
                         <FormGroup id="bed-select">
                             {bedOptions.map((option) => {
-                                    return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
                         <InputLabel id="room-amenities-label">Select your preferred room features</InputLabel>
                         <FormGroup id="room-amenities-select">
                             {roomOptions.map((option) => {
-                                    return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
                     </Container>
@@ -182,7 +188,7 @@ function TravelProfile() {
                         <InputLabel id="dietary-label">Do you have any food preference or dietary restrictions?</InputLabel>
                         <FormGroup id="dietary-select">
                             {dietaryOptions.map((option) => {
-                                    return <FormControlLabel control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
                     </Container>

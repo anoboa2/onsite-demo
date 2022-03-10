@@ -49,6 +49,7 @@ function AppAppBar() {
               underline="none"
               href="https://blogonsiteplanning.wordpress.com"
               sx={rightLink}
+              target="_blank"
             >
               {'Blog'}
             </Link>

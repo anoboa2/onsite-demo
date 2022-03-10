@@ -3,11 +3,15 @@ import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import WaitlistButton from './WaitlistButton';
 import BookingForm from '../form/BookingForm';
+import Button from '../components/Button';
+import { useRownd } from '@rownd/react';
 
 const backgroundImage =
   '/img/miami-palms.jpg';
 
 export default function ProductHero() {
+  const { is_authenticated } = useRownd();
+
   return (
     <ProductHeroLayout
       sxBackground={{
@@ -33,7 +37,12 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      <BookingForm />
+      {is_authenticated ? (
+        <BookingForm />
+      ) : (
+        <Button data-rph-login-btn variant="contained" color="secondary">Sign Up</Button>
+      )}
+      
     </ProductHeroLayout>
   );
 }
