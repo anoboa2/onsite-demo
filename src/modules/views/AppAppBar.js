@@ -65,7 +65,7 @@ function AppAppBar() {
               </Link>
             ) : (
               <Link
-                data-rph-login-btn
+                data-rownd-sign-in-trigger
                 color="inherit"
                 variant="h6"
                 underline="none"
