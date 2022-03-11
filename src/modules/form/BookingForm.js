@@ -31,9 +31,8 @@ const BookingForm = (props) => {
     const [values, setValues] = useState(initialValues)
     const [display, setDisplay] = useState(false)
  
-
-    console.log(user.data.full_name)
-    console.log(user.data.email)
+    // console.log(user.data.full_name)
+    // console.log(user.data.email)
 
     function handleInputChange(name, event) {
         console.log(event);
@@ -66,6 +65,7 @@ const BookingForm = (props) => {
     return (
         <Container>
             <Box
+                id="booking-form"
                 component="form"
                 onSubmit={handleSubmit}
                 sx={{ px: { xs: 0, sm: 5, }, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', backdropFilter: 'blur(2px)', borderRadius: 10, m: 0, width: 1, }}
