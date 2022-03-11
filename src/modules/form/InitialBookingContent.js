@@ -32,7 +32,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
 
     const handleSwitch = (event) => {
         setToggle(event.target.checked)
-        handleInputChange(event)
+        handleInputChange('dateunsure', event)
     };
 
     return (
@@ -43,6 +43,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <Fade in={toggle}>
                             <DateRangePicker
+                                id="booking-date-range-picker"
                                 startText="Start Date"
                                 endText="End Date"
                                 name="daterange"
@@ -51,9 +52,9 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                                 onChange={(evt) => handleInputChange('daterange', evt)}
                                 renderInput={(startDate, endDate) => (
                                     <React.Fragment>
-                                        <TextField sx={{ background: 'white' }} {...startDate} />
+                                        <TextField id="booking-start-date-input" sx={{ background: 'white' }} {...startDate} />
                                         <Box color="black" sx={{ mx: 2 }}> to </Box>
-                                        <TextField sx={{ background: 'white' }} {...endDate} />
+                                        <TextField id="booking-end-date-input" sx={{ background: 'white' }} {...endDate} />
                                     </React.Fragment>
                                 )}
                                 sx={{ backgroundColor: 'white', }}
@@ -62,7 +63,8 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     </LocalizationProvider>
                     <Box display="flex" alignItems="baseline" justifyContent="flex-start">
                         <Switch
-                            name="datesunsure"
+                            id="booking-date-unsure"
+                            name="dateunsure"
                             value={toggle}
                             checked={toggle}
                             onChange={handleSwitch}
@@ -74,9 +76,9 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', maxWidth: '275px', }}>
                 <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel>
                 <Select
+                    id="booking-location-select"
                     hiddenLabel
                     labelId="location-label"
-                    id="location-select"
                     name="location"
                     value={values.location}
                     onChange={(evt) => handleInputChange('location', evt.target.value)}

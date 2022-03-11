@@ -38,13 +38,7 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      {/* {is_authenticated ? ( */}
-        <SignupModal />
-        <BookingForm />
-      {/* ) : (
-        <Button data-rph-login-btn variant="contained" color="secondary">Sign Up</Button>
-      )} */}
-      
+        <BookingForm />      
     </ProductHeroLayout>
   );
 }

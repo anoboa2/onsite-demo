@@ -65,17 +65,7 @@
         //If you want to direct logged in people to a different site
         //_rphConfig.push(['setPostLoginRedirect', 'https://app.onsiteplanning.com']);
         
-        _rphConfig.push(['onLoaded', () => {
-                    // Get new value from button click
-                    const button = document.querySelector('#root > section.css-19wmqo9 > div > form > div > button');
-                    button.addEventListener('click', (evt) => {
-                    evt.preventDefault();
-                        const newEmail = document.querySelector('#waitlist-email').value;
-                        rph.user.setValue('email', newEmail);
-                        //Coming soon: rownd.requestSignIn will automatically kick off a validation
-                        rownd.requestSignIn({ auto_sign_in: true, identifier: newEmail });
-                    });
-                }]);
+
         //
         _rphConfig.push(['onLoaded', () => {
          const loginButton = document.querySelector('#root > div:nth-child(1) > header > div > div.MuiBox-root.css-1j9bsaa > a');
@@ -85,20 +75,33 @@
               rph.requestSignIn();
           });
         }]);
+
+        
+        
+        _rphConfig.push(['onLoaded', () => {
+            // Note: ROWND_DATA_TYPES are specific to rownd.  List below
+            const button = document.querySelector('#button-modal-submit');
+            button.addEventListener('click', (evt) => {
+              evt.preventDefault();
+              evt.stopPropagation();
+
+              const firstName= document.querySelector('#first-name-modal-input').value;
+              rownd.user.setValue('first_name', firstName);
+
+              const lastName= document.querySelector('#last-name-modal-input').value;
+              rownd.user.setValue('last_name', lastName);
+
+              const newEmail= document.querySelector('#email-modal-input').value;
+              rownd.user.setValue('email', newEmail);
+
+          rownd.requestSignIn({ auto_sign_in: true, identifier: newEmail });
+
+          });
+       }]);
+
         //Where to after validation - turn this page into a "We will be in contact soon" type of page 
         _rphConfig.push(['setPostLoginRedirect', '/']);
-        
-        
-        // _rphConfig.push(['setQuestion', {
-        //     title: 'What is your email address?',
-        //     name: 'email',
-        //     fields: ['email'],
-        //     requiredForAccount: false,
-        //     trigger: {
-        //         type: 'auto'
-        //     }
-        // }]);
-        
+
         </script>
     </footer>
   </body>

@@ -31,6 +31,14 @@ function SignupModal(props) {
 
   return (
     <Box>
+      <Button
+        id="button-modal-trigger"
+        variant="contained"
+        color="secondary"
+        onClick={handleOpen}
+      >
+        {'Book Now'}
+      </Button>
       <MuiModal
         id="sign-up-modal"
         open={open}
@@ -52,7 +60,7 @@ function SignupModal(props) {
           <Typography id="sign-up-prompt-text" variant="h6">
             {'One more thing...'}
           </Typography>
-          <Typography id="sign-up-prompt-description" variant="body">
+          <Typography id="sign-up-prompt-description" variant="body1">
             {'We are excited to have you book with us! We will need to gather a few more details to complete your booking request.'}
           </Typography>
           <TextField 
@@ -81,6 +89,7 @@ function SignupModal(props) {
             sx={{ my: 1, }}
           />
           <Button
+            id="button-modal-submit"
             variant="contained"
             color="secondary"
             type="submit"
