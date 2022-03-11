@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import withRoot from '../withRoot';
-
+import { useRownd } from '@rownd/react';
 import {
     Box,
     Container,
@@ -16,7 +15,9 @@ import {
     Typography,
     Grid,
     Switch,
+    InputAdornment,
 } from '@mui/material';
+import SignupModal from '../views/SignupModal';
 
 
 const numpeople = [0, 1, 2, 3, 4, 5, 6]
@@ -48,6 +49,11 @@ const activities = [
 ]
 
 const SubsequentBookingContent = ({ values, handleInputChange }) => {
+    const { is_authenticated } = useRownd();
+
+    function toggleSignupModal() {
+         // TO DO
+    }
 
     return (
         <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ mt: 0, mb: 0, ml: 'auto', mr: 'auto', pb: 6, pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
@@ -103,19 +109,21 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
             <InputLabel id="budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
                 <TextField
+                    hiddenLabel
                     labelId="budget-label"
                     id="budget-input"
                     variant="filled"
                     name="budget"
                     onChange={(evt) => handleInputChange('budget', evt.target.value)}
+                    InputProps={{ startAdornment: <InputAdornment position="start">$</InputAdornment> }}
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6}  sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
                 <InputLabel id="occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
                 <Select
+                    hiddenLabel
                     labelId="occasion-label"
                     id="occasion-select"
-                    label="occasion"
                     multiple
                     name="occasion"
                     value={values.occasion}
@@ -149,9 +157,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     Activities
                 </InputLabel>
                 <Select
+                    hiddenLabel
                     labelId="activities-label"
                     id="activities-select"
-                    label="activities"
                     multiple
                     name="activities"
                     value={values.activities}
@@ -175,8 +183,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-
-            <Grid item xs={12} sx={{ mt: 3, alignContent: 'center', pl: {xs: 0, sm: "20%"} }}>
+            <Grid item xs={12} sx={{ mt: 3, alignContent: 'center', pl: { xs: 0, sm: "20%"} }}>
                 <TextField
                     multiline
                     rows={4}
@@ -185,10 +192,31 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     placeholder="Anything else to add?"
                     variant="filled"
                     onChange={(evt) => handleInputChange('notes', evt.target.value)}
-                    sx={{ width: '100%', maxWidth: '600px', background: 'white', }} />
+                    sx={{
+                        width: '100%',
+                        maxWidth: '600px',
+                        background: 'white',
+                    }}
+                />
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
-                <Button variant="contained" color="secondary" type="submit">Book Now</Button>
+                {is_authenticated ? (
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        type="submit"
+                    >
+                        {'Book Now'}
+                    </Button>
+                ) : (
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={ () => toggleSignupModal }
+                    >
+                        {'Book Now'}
+                    </Button>
+                )}
             </Grid>
         </Grid>
     );

@@ -74,9 +74,9 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', maxWidth: '275px', }}>
                 <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel>
                 <Select
+                    hiddenLabel
                     labelId="location-label"
                     id="location-select"
-                    label="loc"
                     name="location"
                     value={values.location}
                     onChange={(evt) => handleInputChange('location', evt.target.value)}

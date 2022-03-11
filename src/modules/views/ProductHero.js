@@ -5,6 +5,7 @@ import WaitlistButton from './WaitlistButton';
 import BookingForm from '../form/BookingForm';
 import Button from '../components/Button';
 import { useRownd } from '@rownd/react';
+import SignupModal from './SignupModal';
 
 const backgroundImage =
   '/img/miami-palms.jpg';
@@ -37,11 +38,12 @@ export default function ProductHero() {
       >
         Get the most out of your travel by leaving the planning to us
       </Typography>
-      {is_authenticated ? (
+      {/* {is_authenticated ? ( */}
+        <SignupModal />
         <BookingForm />
-      ) : (
+      {/* ) : (
         <Button data-rph-login-btn variant="contained" color="secondary">Sign Up</Button>
-      )}
+      )} */}
       
     </ProductHeroLayout>
   );

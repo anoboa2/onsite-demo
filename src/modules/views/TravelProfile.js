@@ -5,6 +5,7 @@ import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
 import { useRownd } from '@rownd/react';
+import SignupModal from './SignupModal';
 
 const flightOptions = [
     'Economy',
