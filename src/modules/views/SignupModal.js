@@ -7,6 +7,7 @@ import TextField from '../components/TextField';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 import CloseIcon from '@mui/icons-material/Close';
+import { useRownd } from '@rownd/react';
 
 const style = {
   position: 'absolute',
@@ -23,10 +24,16 @@ const style = {
 };
 
 function SignupModal(props) {
+  const { user } = useRownd();
+
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleInputChange = (name, value) => {
+    user.data[name] = value;
+  }
 
 
   return (
@@ -68,6 +75,8 @@ function SignupModal(props) {
             label="First Name"
             placeholder="First Name"
             variant="filled"
+            onChange={(evt) => handleInputChange('first_name', evt.target.value)}
+            value={user.data.first_name}
             required
             sx={{ my: 1, }}
           />
@@ -76,6 +85,8 @@ function SignupModal(props) {
             label="Last Name"
             placeholder="Last Name"
             variant="filled"
+            onChange={(evt) => handleInputChange('last_name', evt.target.value)}
+            value={user.data.last_name}
             required
             sx={{ my: 1, }}
           />
@@ -85,6 +96,8 @@ function SignupModal(props) {
             placeholder="Enter your email"
             variant="filled"
             type="email"
+            onChange={(evt) => handleInputChange('email', evt.target.value)}
+            value={user.data.email}
             required
             sx={{ my: 1, }}
           />
