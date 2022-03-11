@@ -80,6 +80,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                     hiddenLabel
                     labelId="location-label"
                     name="location"
+                    required
                     value={values.location}
                     onChange={(evt) => handleInputChange('location', evt.target.value)}
                     sx={{
