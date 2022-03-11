@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import withRoot from '../withRoot';
-
+import { useRownd } from '@rownd/react';
 import {
     Box,
     Container,
@@ -15,8 +14,9 @@ import {
     Textfield,
     Typography,
     Grid,
-    Switch,
+    InputAdornment,
 } from '@mui/material';
+import SignupModal from '../views/SignupModal';
 
 
 const numpeople = [0, 1, 2, 3, 4, 5, 6]
@@ -48,6 +48,7 @@ const activities = [
 ]
 
 const SubsequentBookingContent = ({ values, handleInputChange }) => {
+    const { is_authenticated } = useRownd();
 
     return (
         <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ mt: 0, mb: 0, ml: 'auto', mr: 'auto', pb: 6, pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
@@ -57,10 +58,10 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 </Container>
                 <Grid item xs={3}>
                     <Box sx={{ m: 2, width: '100%' }}>
-                        <InputLabel id="num-adults-label">Adults</InputLabel>
+                        <InputLabel id="booking-num-adults-label">Adults</InputLabel>
                         <Select
-                            labelId="num-adults-label"
-                            id="num-adults-select"
+                            labelId="booking-num-adults-label"
+                            id="booking-num-adults-select"
                             label="num-adults"
                             name="numberofadults"
                             value={values.numberofadults}
@@ -79,10 +80,10 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 </Grid>
                 <Grid item xs={3}>
                     <Box sx={{ m: 2 }}>
-                        <InputLabel id="num-kids-label">Kids</InputLabel>
+                        <InputLabel id="booking-num-kids-label">Kids</InputLabel>
                         <Select
-                            labelId="num-kids-label"
-                            id="num-kids-select"
+                            labelId="booking-num-kids-label"
+                            id="booking-num-kids-select"
                             label="num-kids"
                             name="numberofkids"
                             value={values.numberofkids}
@@ -101,21 +102,23 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 </Grid>
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-            <InputLabel id="budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+            <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
                 <TextField
-                    labelId="budget-label"
-                    id="budget-input"
+                    hiddenLabel
+                    labelId="booking-budget-label"
+                    id="booking-budget-input"
                     variant="filled"
                     name="budget"
                     onChange={(evt) => handleInputChange('budget', evt.target.value)}
+                    InputProps={{ startAdornment: <InputAdornment position="start">$</InputAdornment> }}
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6}  sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
+                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
                 <Select
-                    labelId="occasion-label"
-                    id="occasion-select"
-                    label="occasion"
+                    hiddenLabel
+                    labelId="booking-occasion-label"
+                    id="booking-occasion-select"
                     multiple
                     name="occasion"
                     value={values.occasion}
@@ -140,7 +143,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                 </Select>
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-            <InputLabel id="activities-label" sx={{
+            <InputLabel id="booking-activities-label" sx={{
                     mb: 1, 
                     width: '100%',
                     maxWidth: '300px',
@@ -149,9 +152,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     Activities
                 </InputLabel>
                 <Select
-                    labelId="activities-label"
-                    id="activities-select"
-                    label="activities"
+                    hiddenLabel
+                    labelId="booking-activities-label"
+                    id="booking-activities-select"
                     multiple
                     name="activities"
                     value={values.activities}
@@ -175,9 +178,9 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-
-            <Grid item xs={12} sx={{ mt: 3, alignContent: 'center', pl: {xs: 0, sm: "20%"} }}>
+            <Grid item xs={12} sx={{ mt: 3, alignContent: 'center', pl: { xs: 0, sm: "20%"} }}>
                 <TextField
+                    id="booking-notes-input"
                     multiline
                     rows={4}
                     label="Additional Notes"
@@ -185,10 +188,25 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     placeholder="Anything else to add?"
                     variant="filled"
                     onChange={(evt) => handleInputChange('notes', evt.target.value)}
-                    sx={{ width: '100%', maxWidth: '600px', background: 'white', }} />
+                    sx={{
+                        width: '100%',
+                        maxWidth: '600px',
+                        background: 'white',
+                    }}
+                />
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
-                <Button variant="contained" color="secondary" type="submit">Book Now</Button>
+                {is_authenticated ? (
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        type="submit"
+                    >
+                        {'Book Now'}
+                    </Button>
+                ) : (
+                    <SignupModal />
+                )}
             </Grid>
         </Grid>
     );
