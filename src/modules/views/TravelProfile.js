@@ -4,8 +4,10 @@ import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGro
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
+import Paper from '../components/Paper';
 import { useRownd } from '@rownd/react';
 import SignupModal from './SignupModal';
+import Button from '../components/Button';
 
 const flightOptions = [
     'Economy',
@@ -44,6 +46,23 @@ const dietaryOptions = [
     'Other',
 ]
 
+const containerStyle = {
+    my: 4,
+    p: 10,
+    background: 'white',
+    borderRadius: 2,
+    boxShadow: 2,
+}
+
+const cardStyle = {
+    width: '20%',
+    maxWidth: 300,
+    height: '30%',
+    maxHeight: 400,
+    background: 'white',
+    
+}
+
 function TravelProfile() {
     const { user } = useRownd();
 
@@ -67,47 +86,42 @@ function TravelProfile() {
         setValues({...values, [name]: event})
     }
 
-    function handleSubmit() {
-        // ROWND
+    function handleSubmit(values) {
+        Object.keys(values)
+        .forEach(function eachKey(key) {
+            user.data[key] = values[key]
+        })
     }
 
-    // setValues({...values, full_name: user.data.full_name})
-    // setValues({...values, email: user.data.email})
 
     return(
         <Section>
             <Box
                 component="form"
-                onSubmit={handleSubmit}
+                onSubmit={(values) => handleSubmit(values)}
                 sx={{ width: '80%', mx: 'auto', }}
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
-                    {/* <Box
-                        id="avatar-img"
-                        component="img"
-                        src="/icon/camera.png"
-                        alt="camera icon"
-                        sx={{ height: 50 }}
-                    /> */}
-                    <Box sx={{ my: 15, width: '100%', }}>
+                    <Box sx={{ my: 15, p: 10, width: '100%', height: '30%', position: 'relative', background: 'white', borderRadius: 2, boxShadow: 2, }}>
                         <Avatar name={values.full_name} />
-                        <InputLabel id="full-name-label">Name</InputLabel>
+                        <InputLabel id="profile-full-name-label">Name</InputLabel>
                         <TextField
-                            id="full-name-input"
+                            id="profile-full-name-input"
                             variant="filled"
                             placeholder={values.full_name}
-                            onChange={(e) => handleChange('full_name', e)}
+                            onChange={(e) => handleChange('full_name', e.target.value)}
                             sx={{ minWidth: '300px' }}
                         />
-                        <InputLabel id="email-label">Email</InputLabel>
+                        <InputLabel id="profile-email-label">Email</InputLabel>
                         <TextField
-                            id="email-input"
+                            id="profile-email-input"
                             variant="filled"
                             placeholder={values.email}
-                            onChange={(e) => handleChange('email', e)}
+                            onChange={(e) => handleChange('email', e.target.value)}
+
                         />
                     </Box>
-                    <Container>
+                    <Container sx={containerStyle}>
                         <Typography
                             variant="h4"
                             marked="center"
@@ -117,19 +131,21 @@ function TravelProfile() {
                         >
                             Transportation
                         </Typography>
-                        <InputLabel id="domestic-flight-label">How do you typically like to fly domestically?</InputLabel>
+                        <Box sx={cardStyle}>
+                            <InputLabel id="profile-domestic-flight-label">How do you typically like to fly domestically?</InputLabel>
+                            <Select
+                                id="profile-domestic-flight-input"
+                                placeholder=""
+                                onChange={(e) => handleChange("domestic_flight", e.target.value)}
+                            >
+                                {flightOptions.map((option) => {
+                                    return <MenuItem key={option} value={option}>{option}</MenuItem>
+                                })}
+                            </Select>
+                        </Box>
+                        <InputLabel id="profile-int-flight-label">How do you typically like to fly internationally?</InputLabel>
                         <Select
-                            id="domestic-flight-input"
-                            placeholder=""
-                            onChange={(e) => handleChange("domestic_flight", e)}
-                        >
-                            {flightOptions.map((option) => {
-                                return <MenuItem key={option} value={option}>{option}</MenuItem>
-                            })}
-                        </Select>
-                        <InputLabel id="int-flight-label">How do you typically like to fly internationally?</InputLabel>
-                        <Select
-                            id="intflight-input"
+                            id="profile-int-flight-input"
                             placeholder=""
                             onChange={(e) => handleChange('', e)}
                         >
@@ -137,17 +153,17 @@ function TravelProfile() {
                                 return <MenuItem key={option} value={option}>{option}</MenuItem>
                             })}
                         </Select>
-                        <InputLabel id="primary-airport-label">Please enter your preferred Airport for Departure</InputLabel>
-                        <TextField id="primary-airport-input"/>
+                        <InputLabel id="profile-primary-airport-label">Please enter your preferred Airport for Departure</InputLabel>
+                        <TextField id="profile-primary-airport-input"/>
                         {/* Add code for Airport Selector */}
-                        <InputLabel id="seating-label">Please select your preferred flight seating</InputLabel>
-                        <FormGroup id="seating-select">
+                        <InputLabel id="profile-seating-label">Please select your preferred flight seating</InputLabel>
+                        <FormGroup id="profile-seating-select">
                             {seatingOptions.map((option) => {
                                 return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                             })}
                         </FormGroup>
                     </Container>
-                    <Container>
+                    <Container sx={containerStyle}>
                         <Typography
                             variant="h4"
                             marked="center"
@@ -157,26 +173,26 @@ function TravelProfile() {
                         >
                             Lodging
                         </Typography>
-                        <InputLabel id="lodging-label">Please select your lodging rating preference</InputLabel>
+                        <InputLabel id="profile-lodging-label">Please select your lodging rating preference</InputLabel>
                         <Rating
-                            id="lodging-rating"
+                            id="profile-lodging-rating"
                             value={values.lodgingrating}
                             onChange={(e) => handleChange('', e)}
                         />
-                        <InputLabel id="bed-label">Select your bed preference</InputLabel>
-                        <FormGroup id="bed-select">
+                        <InputLabel id="profile-bed-label">Select your bed preference</InputLabel>
+                        <FormGroup id="profile-bed-select">
                             {bedOptions.map((option) => {
                                     return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
-                        <InputLabel id="room-amenities-label">Select your preferred room features</InputLabel>
-                        <FormGroup id="room-amenities-select">
+                        <InputLabel id="profile-room-amenities-label">Select your preferred room features</InputLabel>
+                        <FormGroup id="profile-room-amenities-select">
                             {roomOptions.map((option) => {
                                     return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
                     </Container>
-                    <Container>
+                    <Container sx={containerStyle}>
                         <Typography
                             variant="h4"
                             marked="center"
@@ -186,14 +202,15 @@ function TravelProfile() {
                         >
                             Dining
                         </Typography>
-                        <InputLabel id="dietary-label">Do you have any food preference or dietary restrictions?</InputLabel>
-                        <FormGroup id="dietary-select">
+                        <InputLabel id="profile-dietary-label">Do you have any food preference or dietary restrictions?</InputLabel>
+                        <FormGroup id="profile-dietary-select">
                             {dietaryOptions.map((option) => {
                                     return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
                                 })}
                         </FormGroup>
                     </Container>
                 </Container>
+                <Button id="profile-save-button" variant="contained" color="secondary" type="submit">Save</Button>
             </Box>
         </Section>
     )
