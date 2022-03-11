@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RowndProvider } from '@rownd/react';
 
-let key = process.env.ROWND_APP_KEY
+let key = process.env.REACT_APP_ROWND_APP_KEY
 
 ReactDOM.render(
   <React.StrictMode>
