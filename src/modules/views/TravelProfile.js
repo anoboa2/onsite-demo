@@ -220,7 +220,7 @@ function TravelProfile() {
                         </FormGroup>
                     </Container>
                 </Container>
-                <Button id="profile-save-button" variant="contained" color="secondary" type="submit">Save</Button>
+                <Button id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{width: 200, ml: '40%'}}>Save</Button>
             </Box>
         </Section>
     )
