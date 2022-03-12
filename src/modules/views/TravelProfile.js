@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Section from '../components/Section';
 import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating } from '@mui/material';
 import Typography from '../components/Typography';
@@ -80,15 +80,26 @@ function TravelProfile() {
 
     const [values, setValues] = useState(initialValues)
 
+    const loadedUserDataHandle = useRef(false);
+    useEffect(() => {
+        if (!loadedUserDataHandle.current && Object.keys(user.data).length > 0) {
+            setValues({
+                ...values,
+                ...user.data,
+            })
+            loadedUserDataHandle.current = true;
+        }
+    }, [user.data, values])
+
     function handleChange(name, event) {
         console.log(event);
         setValues({...values, [name]: event})
     }
 
-    function handleSubmit(values) {
+    function handleSubmit() {
         Object.keys(values)
         .forEach(function eachKey(key) {
-            user.data[key] = values[key]
+            window.rownd.user.setValue(key, values[key]);
         })
     }
 
@@ -96,7 +107,7 @@ function TravelProfile() {
         <Section>
             <Box
                 component="form"
-                onSubmit={(values) => handleSubmit(values)}
+                onSubmit={handleSubmit}
                 sx={{ width: '80%', mx: 'auto', }}
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
@@ -107,7 +118,7 @@ function TravelProfile() {
                         <TextField
                             id="profile-first-name-input"
                             variant="filled"
-                            defaultValue={user.data.first_name}
+                            value={values.first_name}
                             onChange={(e) => handleChange('first_name', e.target.value)}
                             sx={{ minWidth: '300px' }}
                         />
@@ -115,7 +126,7 @@ function TravelProfile() {
                         <TextField
                             id="profile-last-name-input"
                             variant="filled"
-                            defaultValue={user.data.last_name}
+                            value={values.last_name}
                             onChange={(e) => handleChange('last_name', e.target.value)}
                             sx={{ minWidth: '300px' }}
                         />
@@ -123,7 +134,7 @@ function TravelProfile() {
                         <TextField
                             id="profile-email-input"
                             variant="filled"
-                            defaultValue={values.email}
+                            value={values.email}
                             onChange={(e) => handleChange('email', e.target.value)}
                             sx={{ minWidth: '300px'}}
                         />
@@ -142,7 +153,7 @@ function TravelProfile() {
                             <InputLabel id="profile-domestic-flight-label">How do you typically like to fly domestically?</InputLabel>
                             <Select
                                 id="profile-domestic-flight-input"
-                                defaultValue={user.data.domestive_flight}
+                                value={values.domestic_flight}
                                 onChange={(e) => handleChange("domestic_flight", e.target.value)}
                                 sx={{ minWidth: '300px'}}
                             >
@@ -154,7 +165,7 @@ function TravelProfile() {
                         <InputLabel id="profile-int-flight-label">How do you typically like to fly internationally?</InputLabel>
                         <Select
                             id="profile-int-flight-input"
-                            defaultValue={user.data.int_flight}
+                            value={values.int_flight}
                             onChange={(e) => handleChange('int_flight', e.target.value)}
                             sx={{ minWidth: '300px'}}
                         >
@@ -186,7 +197,6 @@ function TravelProfile() {
                         <Rating
                             id="profile-lodging-rating"
                             value={values.lodging_rating}
-                            defaultValue={user.data.loding_rating}
                             onChange={(e) => handleChange('lodging_rating', e.target.value)}
                         />
                         <InputLabel id="profile-bed-label">Select your bed preference</InputLabel>
