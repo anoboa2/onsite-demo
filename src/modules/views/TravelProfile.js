@@ -4,9 +4,7 @@ import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGro
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
-import Paper from '../components/Paper';
 import { useRownd } from '@rownd/react';
-import SignupModal from './SignupModal';
 import Button from '../components/Button';
 
 const flightOptions = [
@@ -67,13 +65,14 @@ function TravelProfile() {
     const { user } = useRownd();
 
     const initialValues = {
-        full_name: "Test Name",
+        first_name: "",
+        last_name: "",
         email: "",
         domestic_flight: "",
         int_flight: "",
         primary_airport: "",
         seating: [],
-        lodging_rating: 5,
+        lodging_rating: 0,
         bed: [],
         room_amenities: [],
         dietary: [],
@@ -93,7 +92,6 @@ function TravelProfile() {
         })
     }
 
-
     return(
         <Section>
             <Box
@@ -103,22 +101,31 @@ function TravelProfile() {
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
                     <Box sx={{ my: 15, p: 10, width: '100%', height: '30%', position: 'relative', background: 'white', borderRadius: 2, boxShadow: 2, }}>
-                        <Avatar name={values.full_name} />
-                        <InputLabel id="profile-full-name-label">Name</InputLabel>
+                        {/* NEED TO TERNARY OPERATOR FOR IF NAMES ARE BLANK */}
+                        {/* <Avatar name={values.first_name} /> */}
+                        <InputLabel id="profile-first-name-label">First Name</InputLabel>
                         <TextField
-                            id="profile-full-name-input"
+                            id="profile-first-name-input"
                             variant="filled"
-                            placeholder={values.full_name}
-                            onChange={(e) => handleChange('full_name', e.target.value)}
+                            defaultValue={user.data.first_name}
+                            onChange={(e) => handleChange('first_name', e.target.value)}
+                            sx={{ minWidth: '300px' }}
+                        />
+                        <InputLabel id="profile-last-name-label">Last Name</InputLabel>
+                        <TextField
+                            id="profile-last-name-input"
+                            variant="filled"
+                            defaultValue={user.data.last_name}
+                            onChange={(e) => handleChange('last_name', e.target.value)}
                             sx={{ minWidth: '300px' }}
                         />
                         <InputLabel id="profile-email-label">Email</InputLabel>
                         <TextField
                             id="profile-email-input"
                             variant="filled"
-                            placeholder={values.email}
+                            defaultValue={values.email}
                             onChange={(e) => handleChange('email', e.target.value)}
-
+                            sx={{ minWidth: '300px'}}
                         />
                     </Box>
                     <Container sx={containerStyle}>
@@ -131,12 +138,13 @@ function TravelProfile() {
                         >
                             Transportation
                         </Typography>
-                        <Box sx={cardStyle}>
+                        <Box>
                             <InputLabel id="profile-domestic-flight-label">How do you typically like to fly domestically?</InputLabel>
                             <Select
                                 id="profile-domestic-flight-input"
-                                placeholder=""
+                                defaultValue={user.data.domestive_flight}
                                 onChange={(e) => handleChange("domestic_flight", e.target.value)}
+                                sx={{ minWidth: '300px'}}
                             >
                                 {flightOptions.map((option) => {
                                     return <MenuItem key={option} value={option}>{option}</MenuItem>
@@ -146,8 +154,9 @@ function TravelProfile() {
                         <InputLabel id="profile-int-flight-label">How do you typically like to fly internationally?</InputLabel>
                         <Select
                             id="profile-int-flight-input"
-                            placeholder=""
-                            onChange={(e) => handleChange('', e)}
+                            defaultValue={user.data.int_flight}
+                            onChange={(e) => handleChange('int_flight', e.target.value)}
+                            sx={{ minWidth: '300px'}}
                         >
                             {flightOptions.map((option) => {
                                 return <MenuItem key={option} value={option}>{option}</MenuItem>
@@ -176,8 +185,9 @@ function TravelProfile() {
                         <InputLabel id="profile-lodging-label">Please select your lodging rating preference</InputLabel>
                         <Rating
                             id="profile-lodging-rating"
-                            value={values.lodgingrating}
-                            onChange={(e) => handleChange('', e)}
+                            value={values.lodging_rating}
+                            defaultValue={user.data.loding_rating}
+                            onChange={(e) => handleChange('lodging_rating', e.target.value)}
                         />
                         <InputLabel id="profile-bed-label">Select your bed preference</InputLabel>
                         <FormGroup id="profile-bed-select">
@@ -210,7 +220,7 @@ function TravelProfile() {
                         </FormGroup>
                     </Container>
                 </Container>
-                <Button id="profile-save-button" variant="contained" color="secondary" type="submit">Save</Button>
+                <Button id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{width: 200, ml: '40%'}}>Save</Button>
             </Box>
         </Section>
     )

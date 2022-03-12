@@ -14,7 +14,8 @@ import { useRownd } from '@rownd/react';
 
 const BookingForm = (props) => {
     const initialValues = {
-        name: '',
+        first_name: '',
+        last_name: '',
         email: '',
         location: '',
         daterange: [null, null],
@@ -45,7 +46,8 @@ const BookingForm = (props) => {
 
         if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email });
         else {
-            setValues({...values, name: user.data.full_name})
+            setValues({...values, first_name: user.data.first_name})
+            setValues({...values, last_name: user.data.last_name})
             setValues({...values, email: user.data.email})
 
             fetch(url, {
