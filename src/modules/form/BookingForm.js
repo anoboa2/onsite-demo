@@ -10,6 +10,7 @@ import InitialBookingContent from './InitialBookingContent';
 import SubsequentBookingContent from './SubsequentBookingContent';
 import withRoot from '../withRoot';
 import { useRownd } from '@rownd/react';
+import { useLocalStorage } from '../../useLocalStorage';
 
 
 const BookingForm = (props) => {
@@ -29,7 +30,7 @@ const BookingForm = (props) => {
     }
     const { is_authenticated, user, requestSignIn } = useRownd();
 
-    const [values, setValues] = useState(initialValues)
+    const [values, setValues] = useLocalStorage("booking", initialValues)
     const [display, setDisplay] = useState(false)
  
     // console.log(user.data.full_name)
@@ -60,6 +61,7 @@ const BookingForm = (props) => {
             setValues(initialValues)
             console.log("Form values reset successfully")
             window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+            localStorage.removeItem("booking")
         }
     }
 
