@@ -109,6 +109,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     id="booking-budget-input"
                     variant="filled"
                     name="budget"
+                    value={values.budget}
                     onChange={(evt) => handleInputChange('budget', evt.target.value)}
                     InputProps={{ startAdornment: <InputAdornment position="start">$</InputAdornment> }}
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
@@ -187,6 +188,7 @@ const SubsequentBookingContent = ({ values, handleInputChange }) => {
                     name="notes"
                     placeholder="Anything else to add?"
                     variant="filled"
+                    value={values.notes}
                     onChange={(evt) => handleInputChange('notes', evt.target.value)}
                     sx={{
                         width: '100%',
