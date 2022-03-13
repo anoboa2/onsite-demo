@@ -30,8 +30,8 @@ const BookingForm = (props) => {
     }
     const { is_authenticated, user, requestSignIn } = useRownd();
 
-    const [values, setValues] = useLocalStorage("booking", initialValues)
-    const [display, setDisplay] = useState(false)
+    const [values, setValues] = useLocalStorage("last_booking", initialValues)
+    const [display, setDisplay] = useLocalStorage("booking_full_display", false)
  
     // console.log(user.data.full_name)
     // console.log(user.data.email)
@@ -59,9 +59,10 @@ const BookingForm = (props) => {
 
             console.log('Form submitted to AWS API Gateway')
             setValues(initialValues)
+            setDisplay(false)
             console.log("Form values reset successfully")
             window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
-            localStorage.removeItem("booking")
+            localStorage.removeItem("last_booking")
         }
     }
 
