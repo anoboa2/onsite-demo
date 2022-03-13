@@ -32,7 +32,7 @@ function SignupModal(props) {
   const handleClose = () => setOpen(false);
 
   const handleInputChange = (name, value) => {
-    user.data[name] = value;
+    window.rownd.user.setValue(name, value);
   }
 
 
