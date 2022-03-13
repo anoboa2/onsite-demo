@@ -50,6 +50,7 @@ function SignupModal(props) {
         id="sign-up-modal"
         open={open}
         onClose={handleClose}
+        disableEnforceFocus={true}
       >
         <Box component="form" sx={style}>
           <Button
