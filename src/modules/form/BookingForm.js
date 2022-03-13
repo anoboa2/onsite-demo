@@ -63,6 +63,7 @@ const BookingForm = (props) => {
             console.log("Form values reset successfully")
             window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
             localStorage.removeItem("last_booking")
+            localStorage.removeItem("booking_full_display")
         }
     }
 
