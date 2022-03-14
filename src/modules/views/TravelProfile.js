@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Section from '../components/Section';
 import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating } from '@mui/material';
 import Typography from '../components/Typography';
@@ -62,7 +62,7 @@ const cardStyle = {
 }
 
 function TravelProfile() {
-    const { user } = useRownd();
+    const { is_initializing, user } = useRownd();
 
     const initialValues = {
         first_name: "",
@@ -79,28 +79,50 @@ function TravelProfile() {
     }
 
     const [values, setValues] = useState(initialValues)
+    const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
 
-    const loadedUserDataHandle = useRef(false);
     useEffect(() => {
-        if (!loadedUserDataHandle.current && Object.keys(user.data).length > 0) {
+        if (!is_initializing && !hasLoadedUserData) {
             setValues({
                 ...values,
                 ...user.data,
             })
-            loadedUserDataHandle.current = true;
+            setHasLoadedUserData(true);
         }
-    }, [user.data, values])
+    }, [hasLoadedUserData, is_initializing, user.data, values])
 
-    function handleChange(name, event) {
-        console.log(event);
-        setValues({...values, [name]: event})
+    function handleChange(name, value, list=false) {
+        console.log(value);
+        if (list) {
+            if (value) {
+                const copyOflist = values[name];
+                copyOflist.push(value);
+                setValues({
+                    ...values,
+                    [name]: copyOflist,
+                })
+            } else {
+                const copyOflist = values[name];
+                const index = copyOflist.indexOf(value);
+                copyOflist.splice(index, 1);
+                setValues({
+                    ...values,
+                    [name]: copyOflist,
+                })
+            }
+        } else {
+            setValues({
+                ...values,
+                [name]: value,
+            });
+        }
     }
 
-    function handleSubmit() {
-        Object.keys(values)
-        .forEach(function eachKey(key) {
-            window.rownd.user.setValue(key, values[key]);
-        })
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (is_initializing) return;
+
+        window.rownd.user.set(values);
     }
 
     return(
@@ -158,7 +180,15 @@ function TravelProfile() {
                                 sx={{ minWidth: '300px'}}
                             >
                                 {flightOptions.map((option) => {
-                                    return <MenuItem key={option} value={option}>{option}</MenuItem>
+                                    return (
+                                        <MenuItem
+                                            key={option}
+                                            value={option}
+                                            onChange={(e) => handleChange('domestic_flight', e.target.value)}
+                                        >
+                                            {option}
+                                        </MenuItem>
+                                    )
                                 })}
                             </Select>
                         </Box>
@@ -170,16 +200,43 @@ function TravelProfile() {
                             sx={{ minWidth: '300px'}}
                         >
                             {flightOptions.map((option) => {
-                                return <MenuItem key={option} value={option}>{option}</MenuItem>
+                                return (
+                                    <MenuItem
+                                        key={option}
+                                        value={option}
+                                        onChange={(e) => handleChange('domestic_flight', e.target.value)}
+                                    >
+                                        {option}
+                                    </MenuItem>
+                                )
                             })}
                         </Select>
                         <InputLabel id="profile-primary-airport-label">Please enter your preferred Airport for Departure</InputLabel>
-                        <TextField id="profile-primary-airport-input"/>
+                        <TextField
+                            id="profile-primary-airport-input"
+                            value={values.primary_airport}
+                            onChange={(e) => handleChange('primary_airport', e.target.value)}
+                            />
                         {/* Add code for Airport Selector */}
                         <InputLabel id="profile-seating-label">Please select your preferred flight seating</InputLabel>
-                        <FormGroup id="profile-seating-select">
+                        <FormGroup
+                            id="profile-seating-select"
+                            value={values.seating}
+                        >
                             {seatingOptions.map((option) => {
-                                return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
+                                return (
+                                    <FormControlLabel 
+                                        key={option}
+                                        onChange={(e) => handleChange('seating', option, true)}
+                                        control={
+                                            <Checkbox
+                                                value={option}
+                                                checked={values.seating.includes(option)}
+                                            />
+                                        }
+                                        label={option}>{option}
+                                    </FormControlLabel>
+                                )
                             })}
                         </FormGroup>
                     </Container>
@@ -200,16 +257,46 @@ function TravelProfile() {
                             onChange={(e) => handleChange('lodging_rating', e.target.value)}
                         />
                         <InputLabel id="profile-bed-label">Select your bed preference</InputLabel>
-                        <FormGroup id="profile-bed-select">
+                        <FormGroup
+                            id="profile-bed-select"
+                            value={values.bed}
+                        >
                             {bedOptions.map((option) => {
-                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
-                                })}
+                                return (
+                                    <FormControlLabel 
+                                        key={option}
+                                        onChange={(e) => handleChange('bed', e.target.value, true)}
+                                        control={
+                                            <Checkbox
+                                                value={option}
+                                                checked={values.bed.includes(option)}
+                                            />
+                                        }
+                                        label={option}>{option}
+                                    </FormControlLabel>
+                                )
+                            })}
                         </FormGroup>
                         <InputLabel id="profile-room-amenities-label">Select your preferred room features</InputLabel>
-                        <FormGroup id="profile-room-amenities-select">
+                        <FormGroup
+                            id="profile-room-amenities-select"
+                            value={values.room_amenities}
+                        >
                             {roomOptions.map((option) => {
-                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
-                                })}
+                                return (
+                                    <FormControlLabel 
+                                        key={option}
+                                        onChange={(e) => handleChange('room_amenities', e.target.value, true)}
+                                        control={
+                                            <Checkbox
+                                                value={option}
+                                                checked={values.room_amenities.includes(option)}
+                                            />
+                                        }
+                                        label={option}>{option}
+                                    </FormControlLabel>
+                                )
+                            })}
                         </FormGroup>
                     </Container>
                     <Container sx={containerStyle}>
@@ -223,10 +310,24 @@ function TravelProfile() {
                             Dining
                         </Typography>
                         <InputLabel id="profile-dietary-label">Do you have any food preference or dietary restrictions?</InputLabel>
-                        <FormGroup id="profile-dietary-select">
+                        <FormGroup id="profile-dietary-select"
+                            value={values.dietary}
+                            onChange={(e) => handleChange('dietary', e.target.value, true)}
+                        >
                             {dietaryOptions.map((option) => {
-                                    return <FormControlLabel key={option} control={<Checkbox value={option}/>} label={option}>{option}</FormControlLabel>
-                                })}
+                                return (
+                                    <FormControlLabel 
+                                        key={option}
+                                        control={
+                                            <Checkbox
+                                                value={option}
+                                                checked={values.dietary.includes(option)}
+                                            />
+                                        }
+                                        label={option}>{option}
+                                    </FormControlLabel>
+                                )
+                            })}
                         </FormGroup>
                     </Container>
                 </Container>
