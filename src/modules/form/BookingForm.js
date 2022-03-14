@@ -47,13 +47,16 @@ const BookingForm = (props) => {
 
         if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email });
         else {
-            setValues({...values, first_name: user.data.first_name})
-            setValues({...values, last_name: user.data.last_name})
-            setValues({...values, email: user.data.email})
+            const body = {
+                ...values,
+                first_name: user.data.first_name,
+                last_name: user.data.last_name,
+                email: user.data.email,
+            }
 
             fetch(url, {
                 method: 'POST',
-                body: JSON.stringify(values)
+                body: JSON.stringify(body)
             })
             .then((response) => response.json())
 
