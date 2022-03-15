@@ -130,6 +130,7 @@ function TravelProfile() {
             <Box
                 component="form"
                 onSubmit={handleSubmit}
+                onLoad={setValues({...user.data})}
                 sx={{ width: '80%', mx: 'auto', }}
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
