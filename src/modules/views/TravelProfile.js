@@ -68,8 +68,8 @@ function TravelProfile() {
         first_name: "",
         last_name: "",
         email: "",
-        domestic_flight: "",
-        int_flight: "",
+        domestic_flight: [],
+        int_flight: [],
         primary_airport: "",
         seating: [],
         lodging_rating: 0,
@@ -130,7 +130,6 @@ function TravelProfile() {
             <Box
                 component="form"
                 onSubmit={handleSubmit}
-                onLoad={setValues({...user.data})}
                 sx={{ width: '80%', mx: 'auto', }}
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
@@ -255,7 +254,7 @@ function TravelProfile() {
                         <Rating
                             id="profile-lodging-rating"
                             value={values.lodging_rating}
-                            onChange={(e) => handleChange('lodging_rating', e.target.value)}
+                            onChange={(e) => handleChange('lodging_rating', Number(e.target.value))}
                         />
                         <InputLabel id="profile-bed-label">Select your bed preference</InputLabel>
                         <FormGroup
