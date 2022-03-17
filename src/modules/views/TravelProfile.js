@@ -6,6 +6,7 @@ import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
 import { useRownd } from '@rownd/react';
 import Button from '../components/Button';
+import MuiPhoneNumber from 'material-ui-phone-number';
 
 const flightOptions = [
     'Economy',
@@ -68,6 +69,7 @@ function TravelProfile() {
         first_name: "",
         last_name: "",
         email: "",
+        phone_number: "",
         domestic_flight: [],
         int_flight: [],
         primary_airport: "",
@@ -159,6 +161,14 @@ function TravelProfile() {
                             value={values.email}
                             onChange={(e) => handleChange('email', e.target.value)}
                             sx={{ minWidth: '300px'}}
+                        />
+                        <MuiPhoneNumber
+                            id="profile-phone-number-input"
+                            variant="filled"
+                            value={values.phone_number}
+                            defaultCountry={'us'}
+                            autoFormat={false}
+                            onChange={(e) => handleChange('phone_number', e)}
                         />
                     </Box>
                     <Container sx={containerStyle}>
