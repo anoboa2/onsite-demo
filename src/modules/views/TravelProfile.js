@@ -136,8 +136,7 @@ function TravelProfile() {
             >
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
                     <Box sx={{ my: 15, p: 10, width: '100%', height: '30%', position: 'relative', background: 'white', borderRadius: 2, boxShadow: 2, }}>
-                        {/* NEED TO TERNARY OPERATOR FOR IF NAMES ARE BLANK */}
-                        {/* <Avatar name={values.first_name} /> */}
+                        {(user.data.first_name && user.data.last_name) ? (<Avatar name={`${user.data.first_name} ${user.data.last_name}`} />) : null}
                         <InputLabel id="profile-first-name-label">First Name</InputLabel>
                         <TextField
                             id="profile-first-name-input"
