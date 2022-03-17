@@ -162,6 +162,7 @@ function TravelProfile() {
                             onChange={(e) => handleChange('email', e.target.value)}
                             sx={{ minWidth: '300px'}}
                         />
+                        <InputLabel id="profile-phone-number-label">Phone Number</InputLabel>
                         <MuiPhoneNumber
                             id="profile-phone-number-input"
                             variant="filled"
@@ -169,6 +170,7 @@ function TravelProfile() {
                             defaultCountry={'us'}
                             autoFormat={false}
                             onChange={(e) => handleChange('phone_number', e)}
+                            sx={{ maxWidth: '300px', display: 'flex'}}
                         />
                     </Box>
                     <Container sx={containerStyle}>
