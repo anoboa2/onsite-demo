@@ -46,28 +46,28 @@ const BookingForm = (props) => {
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod/';
 
         if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email });
-        // else {
-        const body = {
-            ...values,
-            first_name: user.data.first_name,
-            last_name: user.data.last_name,
-            email: user.data.email,
+        else {
+            const body = {
+                ...values,
+                first_name: user.data.first_name,
+                last_name: user.data.last_name,
+                email: user.data.email,
+            }
+
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(body)
+            })
+            .then((response) => response.json())
+
+            console.log('Form submitted to AWS API Gateway')
+            setValues(initialValues)
+            setDisplay(false)
+            console.log("Form values reset successfully")
+            // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+            localStorage.removeItem("last_booking")
+            localStorage.removeItem("booking_full_display")
         }
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(body)
-        })
-        .then((response) => response.json())
-
-        console.log('Form submitted to AWS API Gateway')
-        setValues(initialValues)
-        setDisplay(false)
-        console.log("Form values reset successfully")
-        // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
-        localStorage.removeItem("last_booking")
-        localStorage.removeItem("booking_full_display")
-        // }
     }
 
 
