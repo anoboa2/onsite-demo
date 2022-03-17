@@ -35,6 +35,30 @@ function SignupModal(props) {
     window.rownd.user.setValue(name, value);
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
+
+    let values = JSON.parse(localStorage.getItem('last_booking'))
+
+    const body = {
+        ...values,
+        first_name: user.data.first_name,
+        last_name: user.data.last_name,
+        email: user.data.email,
+    }
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(body)
+    })
+    .then((response) => response.json())
+
+    console.log('Form submitted via New User flow')
+    localStorage.removeItem("last_booking")
+    localStorage.removeItem("booking_full_display")
+  }
+
 
   return (
     <Box>
@@ -52,7 +76,7 @@ function SignupModal(props) {
         onClose={handleClose}
         disableEnforceFocus={true}
       >
-        <Box component="form" sx={style}>
+        <Box component="form" onSubmit={handleSubmit} sx={style}>
           <Button
             sx={{
               width: 50,
