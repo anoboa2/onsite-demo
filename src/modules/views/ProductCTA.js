@@ -12,8 +12,7 @@ import Button from '../components/Button';
 function ProductCTA() {
 
   const handleClick = () => {
-    document.body.scrollTop = 50;
-    document.documentElement.scrollTop = 50;
+    window.scrollTo({top: 250, left: 0, behavior: 'smooth' });
   };
 
 
