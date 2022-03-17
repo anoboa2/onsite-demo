@@ -6,11 +6,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RowndProvider } from '@rownd/react';
 
-// let key = process.env.ROWND_APP_KEY
+let key = process.env.ROWND_APP_KEY
 
 ReactDOM.render(
   <React.StrictMode>
-    <RowndProvider appKey={'d7e2c6ec-99aa-4614-ad02-41baaa742fc6'} postLoginRedirect="/profile">
+    <RowndProvider appKey={key} postLoginRedirect="/profile">
       <BrowserRouter>
         <App />
       </BrowserRouter>
