@@ -10,7 +10,7 @@ let key = process.env.ROWND_APP_KEY
 
 ReactDOM.render(
   <React.StrictMode>
-    <RowndProvider appKey={key} postLoginRedirect="https://www.onsiteplanning.com/profile">
+    <RowndProvider appKey={key} postLoginRedirect="/profile">
       <BrowserRouter>
         <App />
       </BrowserRouter>
