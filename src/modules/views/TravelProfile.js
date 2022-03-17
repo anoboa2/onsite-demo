@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Section from '../components/Section';
-import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating } from '@mui/material';
+import { Container, Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating, Alert, AlertTitle } from '@mui/material';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
+import Snackbar from '../components/Snackbar';
 import { useRownd } from '@rownd/react';
 import Button from '../components/Button';
 import MuiPhoneNumber from 'material-ui-phone-number';
@@ -82,6 +83,7 @@ function TravelProfile() {
 
     const [values, setValues] = useState(initialValues)
     const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         if (!is_initializing && !hasLoadedUserData) {
@@ -127,13 +129,40 @@ function TravelProfile() {
         window.rownd.user.set(values);
     }
 
+    function saveCheck() {
+        // add logic to verify that the information saved
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+        setOpen(true);
+    }
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+        return;
+        }
+
+        setOpen(false);
+    };
+
+    const action = (
+        <React.Fragment>
+            <Button color="primary" size="small" onClick={handleClose}>
+                CLOSE
+            </Button>
+        </React.Fragment>
+    );
+
     return(
         <Section>
+
             <Box
                 component="form"
                 onSubmit={handleSubmit}
                 sx={{ width: '80%', mx: 'auto', }}
             >
+            {/* <Alert severity="success">
+                <AlertTitle>Success</AlertTitle>
+                You have successfully submitted your booking request! A concierge will reach out within 2 business days to continue your booking.
+            </Alert> */}
                 <Container component="section" sx={{ mt: 15, mb: 4, justifyContent: 'center' }}>
                     <Box sx={{ my: 15, p: 10, width: '100%', height: '30%', position: 'relative', background: 'white', borderRadius: 2, boxShadow: 2, }}>
                         {(user.data.first_name && user.data.last_name) ? (<Avatar name={`${user.data.first_name} ${user.data.last_name}`} />) : null}
@@ -342,7 +371,14 @@ function TravelProfile() {
                         </FormGroup>
                     </Container>
                 </Container>
-                <Button id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{width: 200, ml: '40%'}}>Save</Button>
+                <Button id="profile-save-button" variant="contained" color="secondary" type="submit" onClick={saveCheck} sx={{width: 200, ml: '40%'}}>Save</Button>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={6000}
+                    onClose={handleClose}
+                    message="Successfully saved profile data"
+                    action={action}
+                />
             </Box>
         </Section>
     )
