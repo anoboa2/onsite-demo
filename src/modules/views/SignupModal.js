@@ -39,7 +39,7 @@ function SignupModal(props) {
     event.preventDefault();
     let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
 
-    let values = localStorage.getItem('last_booking')
+    let values = JSON.parse(localStorage.getItem('last_booking'))
 
     const body = {
         ...values,
