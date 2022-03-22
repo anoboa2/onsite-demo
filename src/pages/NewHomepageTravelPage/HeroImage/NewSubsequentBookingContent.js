@@ -50,7 +50,7 @@ const activities = [
 const useStyles = makeStyles((theme) => ({
     maingrid: {
         [theme.breakpoints.down("sm")]: {
-            maxHeight: "670px",
+            maxHeight: "700px",
             overflow: "hidden !important",
         },
     },
@@ -79,7 +79,20 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             marginTop: "6px !important",
         },
-    }
+    },
+    inputlabel: {
+        marginRight: "105px !important"
+    },
+    inputlabel2: {
+        marginBottom: "40px",
+        paddingRight: "320px !important",
+        [theme.breakpoints.down("sm")]: {
+            marginBottom: "15px !important",
+            paddingRight: "0px !important",
+            paddingTop: "10px !important",
+            paddingBottom: "10px !important",
+        },
+    },
 }))
 
 const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
@@ -138,7 +151,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
             </Grid>
             <Grid item xs={6} className={classes.reducebottom}
                 sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+                <InputLabel id="booking-budget-label" className={classes.inputlabel} sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
                 <TextField
                     hiddenLabel
                     labelId="booking-budget-label"
@@ -151,7 +164,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6} className={classes.reducebottom} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
+                <InputLabel id="booking-occasion-label" className={classes.inputlabel2} sx={{ mb: 1, width: '100%', maxWidth: '500px', }}>Type of Trip</InputLabel>
                 <Select
                     hiddenLabel
                     labelId="booking-occasion-label"
@@ -180,10 +193,11 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                 </Select>
             </Grid>
             <Grid className={classes.reducebottom} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-activities-label" sx={{
+                <InputLabel id="booking-activities-label" className={classes.inputlabel} sx={{
                     mb: 1,
                     width: '100%',
                     maxWidth: '300px',
+
                 }}
                 >
                     Activities
