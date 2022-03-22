@@ -9,11 +9,13 @@ import Profile from './pages/Profile';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Nyc from './pages/Nyc';
+import NewHomePage from "./pages/NewHomepageTravelPage/NewHomePage";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<NewHomePage />} />
+      <Route path="/homeeee" element={<Home />} />
       {/* <Route path="/booking" element={<Booking />} /> */}
       {/* <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} /> */}
