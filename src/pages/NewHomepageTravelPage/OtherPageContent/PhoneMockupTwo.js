@@ -22,15 +22,18 @@ const useStyles = makeStyles((theme) => ({
             width: "100%",
         }
     },
-    typographyone: {
-        [theme.breakpoints.down("sm")]: {
 
-        }
-    },
     typographytwo: {
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+        }
+    },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            borderBottom: "none !important",
+            fontSize: "25px !important",
         }
     }
 
@@ -54,9 +57,9 @@ const PhoneMockupTwo = () => {
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
 
-                        <Box className={classes.typographyone}>
+                        <Box>
 
-                            <Typography variant="h4" sx={{ my: 5, }}>
+                            <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
                                 From plan till you arrive <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>
                             </Typography>
                             <Typography variant="h5">

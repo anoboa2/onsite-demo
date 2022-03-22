@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+        }
+    },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
         }
     },
 }))
@@ -60,7 +66,7 @@ const PhoneMockupOne = () => {
 
                             <Box className={classes.gridone}>
 
-                                <Typography variant="h4" sx={{ my: 5, }}>
+                                <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
                                     Local Travel <Typography color="primary.main" className={classes.typography} display="inline-block" variant='h4'>Professionals</Typography>
                                 </Typography>
                                 <Typography variant="h5">

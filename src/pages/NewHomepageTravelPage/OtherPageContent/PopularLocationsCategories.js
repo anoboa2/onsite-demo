@@ -16,10 +16,7 @@ const style = {
     width: "50%",
     overflow: 'scroll',
 };
-const item = {
 
-
-};
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
     position: 'absolute',
@@ -160,12 +157,14 @@ export default function PopularLocationCategories() {
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
                 <Grid >
-                    <Typography className={classes.maintypography} variant="h4" align="center" component="h2" sx={{ mb: 2, }}>
-                        We arrange the <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
-                    </Typography>
-                    <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" sx={{ mb: 2, }}>
-                        Check out some of our <Typography variant='h6' display="inline-block" color="primary.main" className={classes.typography1} > popular</Typography> trips below
-                    </Typography>
+                    <Grid>
+                        <Typography className={classes.maintypography} variant="h4" align="center" component="h2" sx={{ mb: 2, }}>
+                            We arrange the <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
+                        </Typography>
+                        <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" sx={{ mb: 2, }}>
+                            Check out some of our <Typography variant='h6' display="inline-block" color="primary.main" className={classes.typography1} > popular</Typography> trips below
+                        </Typography>
+                    </Grid>
                     <Grid >
                         <Box className={classes.item} width={1200} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
                             {images.map((image) => (

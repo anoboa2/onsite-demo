@@ -50,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+        }
+    },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
         }
     },
 }))
@@ -106,7 +112,7 @@ const NewHowitWorks = () => {
                         zIndex: -1,
                     }}
                 />
-                <Typography variant="h2" component="h2" sx={{ mb: 5 }}>
+                <Typography className={classes.typographyone} variant="h2" component="h2" sx={{ mb: 5 }}>
                     How it <Typography Typography variant="h2" className={classes.typography} color="primary.main" display="inline-block" >works</Typography>
                 </Typography>
                 <div>

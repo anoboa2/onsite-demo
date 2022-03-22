@@ -69,7 +69,8 @@ const useStyles = makeStyles((theme) => ({
 
         }
     },
-    typographyone: {
+    typographytwo: {
+        borderBottom: "none !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "25px !important",
@@ -79,6 +80,13 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+        }
+    },
+    typographythree: {
+
+        [theme.breakpoints.down("sm")]: {
+
             fontSize: "25px !important",
         }
     },
@@ -121,7 +129,7 @@ const RatingsSlider = () => {
                                 justifyContent: "space-between",
                                 padding: "0 10px",
                             }}
-                        ><Typography className={classes.typographyone} marginLeft="40px" textAlign="left" variant="h4">What our happy <Typography variant="h4" color="primary.main" className={classes.typographyone} display="inline-block" >Travelers</Typography> have to say  <Typography textAlign="left" variant="h6" style={{ whiteSpace: 'pre-line' }}>Here are some responses for the travel services we  offer for their locations</Typography></Typography>
+                        ><Typography className={classes.typographythree} marginLeft="40px" textAlign="left" variant="h4">What our happy <Typography variant="h4" color="primary.main" className={classes.typographyone} display="inline-block" >Travelers</Typography> have to say  <Typography className={classes.typographytwo} textAlign="left" variant="h6" style={{ whiteSpace: 'pre-line' }}>Here are some responses for the travel services we  offer for their locations</Typography></Typography>
 
                             {/* <h1 style={{ fontStyle: "italic" }}>View Our Gallery</h1> */}
                             <div style={{ display: "flex" }}>
