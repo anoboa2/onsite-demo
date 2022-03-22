@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "none !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     typographyone: {
