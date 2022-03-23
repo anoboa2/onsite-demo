@@ -1,17 +1,14 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-// import Markdown from '../modules/components/Markdown';
-import Typography from '../modules/components/Typography';
-import AppAppBar from '../modules/views/AppAppBar';
+import NewAppBar from './NewHomepageTravelPage/NewAppBar';
 import AppFooter from '../modules/views/AppFooter';
 import withRoot from '../modules/withRoot';
-import terms from '../modules/views/terms.md';
 
 function Terms() {
   return (
     <React.Fragment>
-      <AppAppBar />
+      <NewAppBar />
       <Container>
         <Box sx={{ mt: 7, mb: 12 }}>
           <body>
