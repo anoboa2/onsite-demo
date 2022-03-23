@@ -72,13 +72,13 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
 
 const images = [
     {
-        url: '/img/miami.jpg',
+        url: '/img/miami.webp',
         title: 'Miami',
         width: '100%',
         pdf: '/img/miami-01.png',
     },
     {
-        url: '/img/new-york-city.jpg',
+        url: '/img/new-york-city.webp',
         title: 'New York City',
         width: '100%',
         pdf: '/img/nyc-01.png',

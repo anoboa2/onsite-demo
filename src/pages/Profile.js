@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AppAppBar from "../modules/views/AppAppBar";
+import NewAppBar from './NewHomepageTravelPage/NewAppBar';
 import TravelProfile from "../modules/views/TravelProfile";
 import AppFooter from '../modules/views/AppFooter';
 import withRoot from '../modules/withRoot';
@@ -8,7 +8,7 @@ import withRoot from '../modules/withRoot';
 function Profile() {
     return (
         <React.Fragment>
-            <AppAppBar />
+            <NewAppBar />
             <TravelProfile />
             <AppFooter />
         </React.Fragment>
