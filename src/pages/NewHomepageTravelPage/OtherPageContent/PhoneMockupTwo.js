@@ -35,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
             borderBottom: "none !important",
             fontSize: "25px !important",
         }
-    }
+    },
+    boxtwo: {
+        marginBottom: "20px !important",
+        [theme.breakpoints.down("sm")]: {
+            marginBottom: "10px !important",
+
+        }
+    },
 
 }))
 
@@ -59,9 +66,9 @@ const PhoneMockupTwo = () => {
 
                         <Box>
 
-                            <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
-                                From plan till you arrive <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>
-                            </Typography>
+                            <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
+                                From plan till you arrive
+                            </Typography><Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography></Box>
                             <Typography variant="h5">
                                 {'We are there every step of the way. Your agent will provide an itinerary for your feedback, make any needed changes now or at any point in your journey, book every aspect of your trip and be there for any questions till you arrive home.'}
                             </Typography>

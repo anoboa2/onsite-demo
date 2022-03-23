@@ -18,6 +18,7 @@ import { makeStyles } from "@mui/styles";
 
 const itemData = [
     {
+        id: 1,
         img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
         title: 'Breakfast',
         details: 'The itinerary you have given me is AMAZING. Just what my boyfriend and I were looking for in Miami! The dinner spots are the perfect, posh vibes we want and it has the perfect amount of relaxation with that side of fun too! Can’t wait to go on our trip. Will definitely be using this service again! ',
@@ -25,6 +26,7 @@ const itemData = [
         rating: 5
     },
     {
+        id: 2,
         img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
         title: 'Burger',
         details: 'Excellent service! Very quick and easy questionnaire to get a personalized itinerary. I love all the individual places included in the itinerary, definitely the best New York experience to feel like a local. Perfect mix of relaxing and sightseeing. The itinerary layout also made it very easy to follow along the whole trip. ',
@@ -32,6 +34,7 @@ const itemData = [
         rating: 5
     },
     {
+        id: 3,
         img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
         title: 'Breakfast',
         details: 'The book was quick, easy and pleasant. I love the options provided to me. Literally it felt like I was served breakfast to bed! ',
@@ -39,6 +42,7 @@ const itemData = [
         rating: 5
     },
     {
+        id: 4,
         img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
         title: 'Burger',
         details: '“She is absolutely great, on top of everything, and has the best recommendations. I would highly recommend her and I will definitely use her help for my next trip! ',
@@ -46,6 +50,7 @@ const itemData = [
         rating: 5
     },
     {
+        id: 5,
         img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
         title: 'Burger',
         details: 'I really liked that everything was planned and reservations were made for me. This was exactly what I was looking for. Looking forward to doing these activities! .',
@@ -65,31 +70,58 @@ const useStyles = makeStyles((theme) => ({
     mainbox: {
         height: 410,
         [theme.breakpoints.down("sm")]: {
-            height: 500,
+            height: 550,
 
         }
     },
     typographytwo: {
+        marginLeft: "10px !important",
         borderBottom: "none !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
+            marginLeft: "40px !important",
         }
     },
     typographyone: {
+        marginRight: "10px !important",
+        marginLeft: "10px !important",
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "25px !important",
+            marginLeft: "40px !important",
         }
     },
     typographythree: {
 
         [theme.breakpoints.down("sm")]: {
-
+            marginLeft: "40px !important",
             fontSize: "25px !important",
         }
     },
+    typographyfour: {
+        [theme.breakpoints.down("sm")]: {
+            marginLeft: "40px !important",
+            fontSize: "25px !important",
+        }
+    },
+    boxone: {
+        display: "flex",
+        flexDirection: "column !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+
+        }
+    },
+    boxtwo: {
+        display: "flex",
+        flexDirection: "row !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+            flexDirection: "column !important",
+        }
+    }
 }))
 
 
@@ -129,7 +161,16 @@ const RatingsSlider = () => {
                                 justifyContent: "space-between",
                                 padding: "0 10px",
                             }}
-                        ><Typography className={classes.typographythree} marginLeft="40px" textAlign="left" variant="h4">What our happy <Typography variant="h4" color="primary.main" className={classes.typographyone} display="inline-block" >Travelers</Typography> have to say  <Typography className={classes.typographytwo} textAlign="left" variant="h6" style={{ whiteSpace: 'pre-line' }}>Here are some responses for the travel services we  offer for their locations</Typography></Typography>
+
+                        ><Box className={classes.boxone}>
+                                <Box className={classes.boxtwo}>
+                                    <Typography className={classes.typographythree} textAlign="left" variant="h4">What our happy</Typography>
+                                    <Typography variant="h4" color="primary.main" className={classes.typographyone}  >Travelers</Typography>
+                                    <Typography className={classes.typographyfour} variant="h4">have to say</Typography></Box>
+                                <Box>  <Typography className={classes.typographytwo} textAlign="left" variant="h6">
+                                    Here are some responses for the travel services we  offer for their locations</Typography>
+                                </Box>
+                            </Box>
 
                             {/* <h1 style={{ fontStyle: "italic" }}>View Our Gallery</h1> */}
                             <div style={{ display: "flex" }}>
@@ -198,9 +239,6 @@ const RatingsSlider = () => {
                                                 <Box
                                                     sx={{ display: "flex", alignItems: "center" }}>
 
-                                                    <Typography variant="body2" component="p" marginLeft={0.5}>
-
-                                                    </Typography>
                                                     <Box
                                                         sx={{
                                                             display: "flex",
