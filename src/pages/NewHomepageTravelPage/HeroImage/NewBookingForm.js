@@ -3,11 +3,14 @@ import {
     Box,
     Container,
     Fade,
-    Grid
+    Grid,
+    Modal,
+    Typography
 } from '@mui/material';
 import Button from '../../../modules/components/Button';
 import NewInitialBookingContent from './NewInitialBookingContent';
-
+import Alert from '@mui/material/Alert';
+import { Snackbar } from "@mui/material";
 import withRoot from '../../../modules/withRoot';
 import { useRownd } from '@rownd/react';
 import { useLocalStorage } from '../../../useLocalStorage';
@@ -108,6 +111,18 @@ const useStyles = makeStyles((theme) => ({
     },
 
 }))
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
+
+
 
 const NewBookingForm = () => {
 
@@ -140,7 +155,10 @@ const NewBookingForm = () => {
         console.log(event);
         setValues({ ...values, [name]: event });
     }
-
+    const [open, setOpen] = useState(false)
+    const handleClose = () => {
+        setOpen(false);
+    };
     const handleSubmit = (event) => {
         event.preventDefault();
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
@@ -160,7 +178,9 @@ const NewBookingForm = () => {
             })
                 .then((response) => response.json())
 
+
             console.log('Form submitted to AWS API Gateway')
+            setOpen(true)
             setValues(initialValues)
             setDisplay(false)
             console.log("Form values reset successfully")
@@ -203,7 +223,24 @@ const NewBookingForm = () => {
                     <NewSubsequentBookingContent values={values}
                         handleInputChange={handleInputChange} />
                 </Grid>
+                <div>
 
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        <Box sx={style}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                                Thank you for submitting
+                            </Typography>
+                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                Your personal travel concierge will reach out to you within 1 business day
+                            </Typography>
+                        </Box>
+                    </Modal>
+                </div>
                 {/* {display ? <SubsequentBookingContent values={values}
                  handleInputChange={handleInputChange} /> : <Grid item xs={6}
                   sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained"

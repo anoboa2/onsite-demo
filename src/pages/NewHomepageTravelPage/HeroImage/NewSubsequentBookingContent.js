@@ -108,7 +108,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     <Box className={classes.boxes} sx={{ width: '100%' }}>
                         <InputLabel id="booking-num-adults-label">Adults</InputLabel>
                         <Select
-                            labelId="booking-num-adults-label"
+                            labelid="booking-num-adults-label"
                             id="booking-num-adults-select"
                             label="num-adults"
                             name="numberofadults"
@@ -130,7 +130,8 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     <Box className={classes.boxes} >
                         <InputLabel id="booking-num-kids-label">Kids</InputLabel>
                         <Select
-                            labelId="booking-num-kids-label"
+
+                            labelid="booking-num-kids-label"
                             id="booking-num-kids-select"
                             label="num-kids"
                             name="numberofkids"
@@ -153,8 +154,8 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                 sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
                 <InputLabel id="booking-budget-label" className={classes.inputlabel} sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
                 <TextField
-                    hiddenLabel
-                    labelId="booking-budget-label"
+                    hiddenlabel="true"
+                    labelid="booking-budget-label"
                     id="booking-budget-input"
                     variant="filled"
                     name="budget"
@@ -166,8 +167,8 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} className={classes.reducebottom} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
                 <InputLabel id="booking-occasion-label" className={classes.inputlabel2} sx={{ mb: 1, width: '100%', maxWidth: '500px', }}>Type of Trip</InputLabel>
                 <Select
-                    hiddenLabel
-                    labelId="booking-occasion-label"
+                    hiddenlabel="true"
+                    labelid="booking-occasion-label"
                     id="booking-occasion-select"
                     multiple
                     name="occasion"
@@ -203,8 +204,8 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     Activities
                 </InputLabel>
                 <Select
-                    hiddenLabel
-                    labelId="booking-activities-label"
+                    hiddenlabel="true"
+                    labelid="booking-activities-label"
                     id="booking-activities-select"
                     multiple
                     name="activities"
@@ -253,6 +254,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                         variant="contained"
                         color="secondary"
                         type="submit"
+                        sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
                     >
                         {'Book Now'}
                     </Button>

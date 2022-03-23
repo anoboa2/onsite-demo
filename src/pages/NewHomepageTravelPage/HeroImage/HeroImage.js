@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #1CCC6F",
         [theme.breakpoints.down("sm")]: {
             fontSize: "17px !important",
-            marginRight: "52px !important",
+            marginRight: "112px !important",
             display: "block !important",
             borderBottom: "none !important",
         },
@@ -46,15 +46,28 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
             display: "block !important",
-            marginRight: "25px !important",
+            marginRight: "45px !important",
         },
     },
-    box: {
-        boxone: {
-            [theme.breakpoints.down("sm")]: {
-
-            },
-        }
+    boxtwo: {
+        marginLeft: "350px !important",
+        display: "flex",
+        flexDirection: "row !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "14px !important",
+            display: "block !important",
+            marginLeft: "0px !important",
+        },
+    },
+    boxthree: {
+        marginLeft: "350px !important",
+        display: "flex",
+        flexDirection: "row !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "14px !important",
+            display: "block !important",
+            marginLeft: "0px !important",
+        },
     }
 }))
 
@@ -66,13 +79,15 @@ const HeroImage = () => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Typography className={classes.typography1} variant="h3">Travel Booking, <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" > Reinvented</Typography></Typography>
+                    <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">Travel Planning, </Typography> <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" > Reinvented</Typography></Box>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
-                    <Typography className={classes.typography3} variant="h5" >
-                        Get the most of your  travel by <Typography variant="h5" className={classes.typography4}>leaving the planning to us</Typography>
-                    </Typography>
+                    <Box className={classes.boxthree}>
+                        <Typography className={classes.typography3} variant="h5" >
+                            Get the most of your  travel by
+                        </Typography><Typography variant="h5" className={classes.typography4}>leaving the planning to us</Typography>
+                    </Box>
 
                     <NewBookingForm />
                 </div>

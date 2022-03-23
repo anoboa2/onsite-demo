@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 const ComingSoon = () => {
     const classes = useStyles()
     return (
-        <Grid sx={6} className={classes.maingrid}>
+        <Grid className={classes.maingrid}>
             <Fade bottom>
                 <Grid sx={item}>
 
@@ -73,10 +73,12 @@ const ComingSoon = () => {
                         <Box className={classes.box}>
                             <Box className={classes.boxone}>
                                 <Typography className={classes.typographyone} variant="h3" >
-                                    Stress Less, Dream More.  Mobile App <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3" className={classes.typographythree} color="primary.main">Coming Soon.</Typography> </Typography>
+                                    Stress Less, Dream More.  Mobile App</Typography>
+                                <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3"
+                                    className={classes.typographythree} color="primary.main">Coming Soon.</Typography>
                             </Box>
                             <Box className={classes.boxtwo}>
-                                <Typography className={classes.typographytwo} variant="h5" sx={{}} style={{ display: "inline-block", whiteSpace: "pre-line" }}>
+                                <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line" }}>
                                     We're working non-stop to bring you the mobile app that curates your dream travel experiences. We'll notify you as soon as it's available. In the meantime, plan your next big adventure with us here on our site. Keep an eye out for updates about the mobile app's release.
                                 </Typography>
                             </Box>
