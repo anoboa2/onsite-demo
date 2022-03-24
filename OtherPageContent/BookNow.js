@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     typographytwo: {

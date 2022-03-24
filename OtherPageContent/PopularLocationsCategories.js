@@ -16,10 +16,7 @@ const style = {
     width: "50%",
     overflow: 'scroll',
 };
-const item = {
 
-
-};
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
     position: 'absolute',
@@ -75,13 +72,13 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
 
 const images = [
     {
-        url: '/img/miami.jpg',
+        url: '/img/miami.webp',
         title: 'Miami',
         width: '100%',
         pdf: '/img/miami-01.png',
     },
     {
-        url: '/img/new-york-city.jpg',
+        url: '/img/new-york-city.webp',
         title: 'New York City',
         width: '100%',
         pdf: '/img/nyc-01.png',
@@ -101,21 +98,26 @@ const images = [
 ];
 const useStyles = makeStyles((theme) => ({
     item: {
-
-
+        [theme.breakpoints.down("md")]: {
+            display: 'flex',
+            flexDirection: 'column !important',
+            width: "200px !important",
+            marginLeft: "30% !important"
+        },
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: 'column !important',
             width: "200px !important",
-
+            marginLeft: "0px !important",
         }
     },
     typography: {
+        marginLeft: "20px !important",
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
-
+            marginLeft: "10px !important",
             borderBottom: "none !important",
-            fontSize: "30px !important",
+            fontSize: "20px !important",
         }
     },
     typography1: {
@@ -123,21 +125,53 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "20px !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
         }
     },
     maintypography: {
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "30px !important",
+            fontSize: "20px !important",
         }
     },
     maintypography1: {
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
+        }
+    },
+    boxone: {
+        display: "flex",
+        flexDirection: "row !important",
+        marginLeft: " 35% !important",
+        [theme.breakpoints.down("md")]: {
+            borderBottom: "none !important",
             fontSize: "20px !important",
+            marginLeft: " 30% !important",
+        },
+        [theme.breakpoints.down("sm")]: {
+            borderBottom: "none !important",
+            fontSize: "20px !important",
+            marginLeft: " 20% !important",
+        },
+    },
+    boxtwo: {
+        display: "flex",
+        flexDirection: "row !important",
+        marginLeft: " 35% !important",
+        [theme.breakpoints.down("md")]: {
+            borderBottom: "none !important",
+            fontSize: "20px !important",
+            marginLeft: " 30% !important",
+        },
+        [theme.breakpoints.down("sm")]: {
+            borderBottom: "none !important",
+            fontSize: "20px !important",
+            marginLeft: " 5% !important",
         }
     },
 
@@ -160,14 +194,22 @@ export default function PopularLocationCategories() {
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
                 <Grid >
-                    <Typography className={classes.maintypography} variant="h4" align="center" component="h2" sx={{ mb: 2, }}>
-                        We arrange the <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
-                    </Typography>
-                    <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" sx={{ mb: 2, }}>
-                        Check out some of our <Typography variant='h6' display="inline-block" color="primary.main" className={classes.typography1} > popular</Typography> trips below
-                    </Typography>
+                    <Grid item xs={12}>
+                        <Box className={classes.boxone}>
+                            <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
+                                We arrange the
+                            </Typography>
+                            <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
+                        </Box>
+                        <Box className={classes.boxtwo}>
+                            <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
+                                Check out some of our popular trips below
+                            </Typography>
+
+                        </Box>
+                    </Grid>
                     <Grid >
-                        <Box className={classes.item} width={1200} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
+                        <Box className={classes.item} width={1200} sx={{ mt: 6, display: 'flex', borderRadius: 50, }}>
                             {images.map((image) => (
                                 <ImageIconButton
                                     key={image.title}

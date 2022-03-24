@@ -16,24 +16,45 @@ const useStyles = makeStyles((theme) => ({
     boxone: {
         display: 'flex',
         flexDirection: 'row',
+        [theme.breakpoints.down("md")]: {
+            display: 'flex',
+            flexDirection: "column !important",
+            width: "100%",
+        },
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: "column !important",
             width: "100%",
         }
     },
-    typographyone: {
-        [theme.breakpoints.down("sm")]: {
 
-        }
-    },
     typographytwo: {
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "20px !important",
         }
-    }
+    },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            borderBottom: "none !important",
+            fontSize: "20px !important",
+        }
+    },
+    boxtwo: {
+        marginBottom: "20px !important",
+        [theme.breakpoints.down("sm")]: {
+            marginBottom: "10px !important",
 
+        }
+    },
+    typography3: {
+        [theme.breakpoints.down("sm")]: {
+            marginTop: "10px !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
+        }
+    },
 }))
 
 const PhoneMockupTwo = () => {
@@ -52,14 +73,14 @@ const PhoneMockupTwo = () => {
                         />
 
                     </Grid>
-                    <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
+                    <Grid item sm={6} xs={12} md={6} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
 
-                        <Box className={classes.typographyone}>
+                        <Box>
 
-                            <Typography variant="h4" sx={{ my: 5, }}>
-                                From plan till you arrive <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>
-                            </Typography>
-                            <Typography variant="h5">
+                            <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
+                                From plan till you arrive
+                            </Typography><Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography></Box>
+                            <Typography className={classes.typography3} variant="h5">
                                 {'We are there every step of the way. Your agent will provide an itinerary for your feedback, make any needed changes now or at any point in your journey, book every aspect of your trip and be there for any questions till you arrive home.'}
                             </Typography>
 
