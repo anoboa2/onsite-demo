@@ -98,6 +98,7 @@ const images = [
 ];
 const useStyles = makeStyles((theme) => ({
     item: {
+        marginLeft: "3% !important",
         [theme.breakpoints.down("md")]: {
             display: 'flex',
             flexDirection: 'column !important',
@@ -109,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: 'column !important',
             width: "70% !important",
             marginLeft: "-5% !important",
-        }
+        },
     },
     typography: {
         marginLeft: "20px !important",
