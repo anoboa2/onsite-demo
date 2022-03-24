@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     locationicon: {
-        paddingLeft: "151px !important",
+        paddingLeft: "26% !important",
         [theme.breakpoints.down("sm")]: {
             marginTop: "18px !important",
             paddingLeft: "0px !important",

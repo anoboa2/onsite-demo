@@ -44,21 +44,38 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#1CCC6F10',
         backdropFilter: 'blur(2px)',
         borderRadius: 10,
-        marginLeft: 300,
+        marginLeft: "25%",
         marginTop: 50,
         width: "95% !important",
-        [theme.breakpoints.down("md")]: {
-            width: "75% !important",
+        position: "static",
+        maxHeight: "25rem !important",
+        [theme.breakpoints.up("lg")]: {
+            width: "105% !important",
             borderRadius: 5,
-            marginLeft: 305,
-            marginTop: 25,
-            width: "70% !important",
+            marginLeft: "25%",
+            marginTop: "10% !important",
+            maxHeight: "170rem !important",
+        },
+        [theme.breakpoints.down("lg")]: {
+            width: "105% !important",
+            borderRadius: 5,
+            marginLeft: "25%",
+            marginTop: "10% !important",
+            maxHeight: "70rem !important",
+        },
+        [theme.breakpoints.down("md")]: {
+            width: "105% !important",
+            borderRadius: 5,
+            marginLeft: "25%",
+            marginTop: "10% !important",
+            maxHeight: "50rem !important",
         },
         [theme.breakpoints.down("sm")]: {
             width: "65% !important",
             borderRadius: 5,
             marginLeft: 135,
             marginTop: 25,
+            maxHeight: "80rem !important",
 
         },
     },
@@ -110,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "1rem !important",
         [theme.breakpoints.down("md")]: {
 
-            marginTop: "40% !important",
+            marginTop: "45% !important",
             marginRight: "4rem !important",
             paddingLeft: "2rem !important",
             paddingRight: "2rem !important",
@@ -140,12 +157,12 @@ const style = {
 
 
 const NewBookingForm = () => {
-    // useEffect(() => {
-    //     console.log("Form values reset successfully")
-    //     // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
-    //     localStorage.removeItem("last_booking")
-    //     localStorage.removeItem("booking_full_display")
-    // });
+    useEffect(() => {
+        console.log("Form values reset successfully")
+        // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+        localStorage.removeItem("last_booking")
+        localStorage.removeItem("booking_full_display")
+    });
 
     const [display, setDisplay] = useLocalStorage("booking_full_display", false)
     const classes = useStyles({ display })

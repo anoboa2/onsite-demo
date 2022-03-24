@@ -68,7 +68,8 @@ const useStyles = makeStyles((theme) => ({
             display: "block !important",
             marginLeft: "0px !important",
         },
-    }
+    },
+
 }))
 
 const HeroImage = () => {
@@ -76,23 +77,27 @@ const HeroImage = () => {
     return (
         <div>
             <div className="hero-image">
+
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
+                    <Box className={classes.thebox}>
 
-                    <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">Travel Planning, </Typography> <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" > Reinvented</Typography></Box>
-                    {/* <div className="typewritereffecttwo"> */}
-                    {/* <TypewriterEffectTwo /> */}
 
-                    <Box className={classes.boxthree}>
-                        <Typography className={classes.typography3} variant="h5" >
-                            Get the most of your  travel by
-                        </Typography><Typography variant="h5" className={classes.typography4}>leaving the planning to us</Typography>
+                        <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">Travel Planning, </Typography> <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" > Reinvented</Typography></Box>
+                        {/* <div className="typewritereffecttwo"> */}
+                        {/* <TypewriterEffectTwo /> */}
+
+                        <Box className={classes.boxthree}>
+                            <Typography className={classes.typography3} variant="h5" >
+                                Get the most of your  travel by
+                            </Typography><Typography variant="h5" className={classes.typography4}>leaving the planning to us</Typography>
+                        </Box>
                     </Box>
-
                     <NewBookingForm />
                 </div>
 
             </div>
+
 
             <ComingSoon />
         </div>
@@ -100,3 +105,4 @@ const HeroImage = () => {
 }
 
 export default HeroImage;
+

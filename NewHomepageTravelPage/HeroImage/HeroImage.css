@@ -19,14 +19,13 @@
   .hero-text {
     text-align: center;
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 22%;
     white-space: nowrap;
-    max-height: 600px;
-    margin-top: 60px;
+    margin-top: "0px !important";
     transform: translate(-50%, -50%);
     color: #334147;
-    font-size: larger;
+  
     
   }
   
@@ -54,7 +53,27 @@
     .hero-image {
       height: 60rem;
       width: 100%;
-      margin-bottom: "600px !important";
+      margin-bottom: "30rem !important";
+      
+      /* Position and center the image to scale nicely on all screens */
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .hero-text {
+      top: 35%;
+      left: 23%;
+      max-height: 800px;
+      margin-top: 8%;
+      
+    }
+  }
+  @media only screen and (max-width: 1000px){
+    .hero-image {
+      height: 45rem;
+      width: 100%;
+      margin-bottom: "30rem !important";
       
       /* Position and center the image to scale nicely on all screens */
       background-position: right;
@@ -64,27 +83,7 @@
     }
     .hero-text {
       top: 40%;
-      left: 23%;
-      max-height: 800px;
-      margin-top: 8%;
-      
-    }
-  }
-  @media only screen and (max-width: 900px){
-    .hero-image {
-      height: 35rem;
-      width: 100%;
-      margin-bottom: "600px !important";
-      
-      /* Position and center the image to scale nicely on all screens */
-      background-position: right;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-    .hero-text {
-      top: 55%;
-      left: 30%;
+      left: 25%;
       max-height: 600px;
       margin-top: 8%;
       
