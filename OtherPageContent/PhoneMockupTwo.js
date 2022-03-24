@@ -41,16 +41,10 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
-    boxtwo: {
-        marginBottom: "20px !important",
-        [theme.breakpoints.down("sm")]: {
-            marginBottom: "10px !important",
 
-        }
-    },
     typography3: {
         [theme.breakpoints.down("sm")]: {
-            marginTop: "10px !important",
+            marginTop: "5% !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
         }

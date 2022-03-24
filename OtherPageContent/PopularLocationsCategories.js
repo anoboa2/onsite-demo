@@ -101,14 +101,14 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("md")]: {
             display: 'flex',
             flexDirection: 'column !important',
-            width: "200px !important",
-            marginLeft: "30% !important"
+            width: "70% !important",
+            marginLeft: "10% !important"
         },
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: 'column !important',
-            width: "200px !important",
-            marginLeft: "0px !important",
+            width: "70% !important",
+            marginLeft: "-5% !important",
         }
     },
     typography: {
@@ -118,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: "10px !important",
             borderBottom: "none !important",
             fontSize: "20px !important",
+            marginLeft: "5% !important",
         }
     },
     typography1: {
@@ -137,8 +138,12 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     maintypography1: {
+        [theme.breakpoints.down("md")]: {
+            marginLeft: "-8% !important",
+            borderBottom: "none !important",
+        },
         [theme.breakpoints.down("sm")]: {
-
+            marginLeft: " 3% !important",
             borderBottom: "none !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
@@ -151,12 +156,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("md")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
-            marginLeft: " 30% !important",
+            marginLeft: "25% !important",
         },
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
-            marginLeft: " 20% !important",
+            marginLeft: "20% !important",
         },
     },
     boxtwo: {

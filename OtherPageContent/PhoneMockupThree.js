@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     item: {
         display: 'flex',
         flexDirection: 'row',
+        paddingLeft: "5% !important",
         [theme.breakpoints.down("md")]: {
             flexDirection: 'column !important',
 
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     gridone: {
-        marginTop: "80px !important",
+        marginTop: "8% !important",
         width: '100%',
         [theme.breakpoints.down("sm")]: {
             marginTop: '0px !important',
@@ -45,16 +46,16 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     googlebutton: {
-        padding: "14px 66px !important",
+        padding: "2.2% 10% !important",
         [theme.breakpoints.down("sm")]: {
-            marginTop: "20px !important",
-            padding: "10px 40px !important",
+            marginTop: "5% !important",
+            padding: "4% 18% !important",
         }
 
     },
     comingsoon: {
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "35px !important",
+            marginLeft: "17% !important",
             whitespace: "nowrap !important",
         }
     },

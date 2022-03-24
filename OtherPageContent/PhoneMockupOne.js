@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
 
         [theme.breakpoints.down("sm")]: {
-            marginTop: '10px !important',
+            marginTop: '5% !important',
         }
     },
     typography: {
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typographytwo: {
         [theme.breakpoints.down("sm")]: {
-            marginTop: "10px !important",
+            marginTop: "5% !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
         }
