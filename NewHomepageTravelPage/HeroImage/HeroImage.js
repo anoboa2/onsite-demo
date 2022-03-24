@@ -22,16 +22,16 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
     typography1: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "20px !important",
-            marginRight: "65px !important",
+            fontSize: "25px !important",
+            marginRight: "10% !important",
         },
     },
     typography2: {
         borderBottom: "3px solid #1CCC6F",
-        marginLeft: "10px !important",
+        marginLeft: "2% !important",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "17px !important",
-            marginRight: "112px !important",
+            fontSize: "25px !important",
+            marginRight: "18% !important",
             display: "block !important",
             borderBottom: "none !important",
             marginLeft: "0px !important",
@@ -39,35 +39,32 @@ const useStyles = makeStyles((theme) => ({
     },
     typography3: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "14px !important",
-            marginRight: "18px !important",
+            fontSize: "15px !important",
+            marginRight: "3% !important",
         },
     },
     typography4: {
-        marginLeft: "10px !important",
+        marginLeft: "2%  !important",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "14px !important",
-            display: "block !important",
-            marginRight: "45px !important",
-            marginLeft: "0px !important",
+            fontSize: "15px !important",
+            marginRight: "11% !important",
         },
     },
     boxtwo: {
-        marginLeft: "350px !important",
+        marginLeft: "31% !important",
         display: "flex",
         flexDirection: "row !important",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "14px !important",
             display: "block !important",
             marginLeft: "0px !important",
         },
     },
     boxthree: {
-        marginLeft: "350px !important",
+        marginLeft: "31% !important",
         display: "flex",
         flexDirection: "row !important",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "14px !important",
+            fontSize: "15px !important",
             display: "block !important",
             marginLeft: "0px !important",
         },

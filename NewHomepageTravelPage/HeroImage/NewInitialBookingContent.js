@@ -117,7 +117,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
             </Grid>
             <Grid className={classes.locationicon} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '275px', }}>
 
-                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} /> Location</Typography>
+                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 35 }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} /> Location</Typography>
                 {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
                 <Select
                     id="booking-location-select"
@@ -129,7 +129,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                     onChange={(evt) => handleInputChange('location', evt.target.value)}
                     sx={{
                         width: '100%',
-                        maxWidth: '300px',
+                        maxWidth: '240px',
                         background: 'white',
                     }}
                 >

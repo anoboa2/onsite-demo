@@ -52,11 +52,12 @@ const useStyles = makeStyles((theme) => ({
             borderRadius: 5,
             marginLeft: 305,
             marginTop: 25,
+            width: "70% !important",
         },
         [theme.breakpoints.down("sm")]: {
-            width: "75% !important",
+            width: "65% !important",
             borderRadius: 5,
-            marginLeft: 105,
+            marginLeft: 135,
             marginTop: 25,
 
         },
@@ -102,14 +103,22 @@ const useStyles = makeStyles((theme) => ({
     // },
     mainbuttonletsplan: {
         width: 100,
-        marginTop: "80px !important",
-        marginRight: "64px !important",
-        paddingLeft: "64px !important",
-        paddingRight: "64px !important",
-        paddingTop: "15px !important",
+        marginTop: "40% !important",
+        marginRight: "4rem !important",
+        paddingLeft: "4rem !important",
+        paddingRight: "4rem !important",
+        paddingTop: "1rem !important",
+        [theme.breakpoints.down("md")]: {
+
+            marginTop: "40% !important",
+            marginRight: "4rem !important",
+            paddingLeft: "2rem !important",
+            paddingRight: "2rem !important",
+            paddingTop: "1rem !important",
+        },
         [theme.breakpoints.down("sm")]: {
-            marginTop: "10px !important",
-            marginRight: "14px !important",
+            marginTop: "0.75rem !important",
+            marginRight: "0.9rem !important",
         },
     },
     sbc: {
@@ -131,6 +140,12 @@ const style = {
 
 
 const NewBookingForm = () => {
+    // useEffect(() => {
+    //     console.log("Form values reset successfully")
+    //     // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+    //     localStorage.removeItem("last_booking")
+    //     localStorage.removeItem("booking_full_display")
+    // });
 
     const [display, setDisplay] = useLocalStorage("booking_full_display", false)
     const classes = useStyles({ display })

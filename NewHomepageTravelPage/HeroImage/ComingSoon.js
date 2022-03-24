@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
         display: "inline-block",
         whiteSpace: "pre-line",
         marginTop: "10%",
+        [theme.breakpoints.down("md")]: {
+
+            marginTop: "50%",
+        },
         [theme.breakpoints.down("sm")]: {
             width: "70%",
             marginLeft: "1%",
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
-            marginRight: "10px !important",
+            marginRight: "5% !important",
         }
     },
     typographytwo: {

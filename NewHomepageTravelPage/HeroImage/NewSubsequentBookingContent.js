@@ -55,9 +55,10 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     reducebottom: {
-        marginBottom: "40px",
+        marginBottom: "14%",
         [theme.breakpoints.down("sm")]: {
-            marginBottom: "15px !important",
+            marginBottom: "5% !important",
+
         },
     },
     boxes: {
@@ -81,16 +82,23 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     inputlabel: {
-        marginRight: "105px !important"
+        marginRight: "25% !important",
+        [theme.breakpoints.down("sm")]: {
+            marginRight: "35% !important",
+
+        },
+
     },
     inputlabel2: {
         marginBottom: "40px",
-        paddingRight: "320px !important",
+        paddingRight: "80% !important",
         [theme.breakpoints.down("sm")]: {
             marginBottom: "15px !important",
             paddingRight: "0px !important",
             paddingTop: "10px !important",
             paddingBottom: "10px !important",
+            paddingRight: "60% !important",
+
         },
     },
 }))
