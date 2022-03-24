@@ -130,6 +130,9 @@ function TravelProfile() {
         let url = 'https://5gftr5ytwb.execute-api.us-east-1.amazonaws.com/prod'
         fetch(url, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(values)
         })
         .then((response) => response.json())
