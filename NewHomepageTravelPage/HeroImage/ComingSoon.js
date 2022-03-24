@@ -39,12 +39,13 @@ const useStyles = makeStyles((theme) => ({
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "20px !important",
+            marginRight: "10px !important",
         }
     },
     typographytwo: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "20px !important",
+            fontSize: "15px !important",
         }
     },
     boxtwo: {
@@ -59,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     }
 }));
