@@ -27,16 +27,27 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             width: "70%",
             marginLeft: "1%",
+            marginTop: "20% !important",
         }
     },
-    typographyone: {
+    boxone: {
         marginLeft: "10%",
         marginBottom: "6%",
         [theme.breakpoints.down("sm")]: {
 
         }
     },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+        }
+    },
     typographytwo: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "20px !important",
+        }
+    },
+    boxtwo: {
         width: "100%",
         marginLeft: "1%",
         marginBottom: "6%",
@@ -48,24 +59,27 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
         }
     }
 }));
 const ComingSoon = () => {
     const classes = useStyles()
     return (
-        <Grid sx={6} className={classes.maingrid}>
+        <Grid className={classes.maingrid}>
             <Fade bottom>
                 <Grid sx={item}>
 
                     <div style={{ display: "flex", justifyContent: "center" }}>
                         <Box className={classes.box}>
-                            <Box className={classes.typographyone}>
-                                <Typography variant="h3" >
-                                    Stress Less, Dream More.  Mobile App <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3" className={classes.typographythree} color="primary.main">Coming Soon.</Typography> </Typography>
+                            <Box className={classes.boxone}>
+                                <Typography className={classes.typographyone} variant="h3" >
+                                    Stress Less, Dream More.  Mobile App</Typography>
+                                <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3"
+                                    className={classes.typographythree} color="primary.main">Coming Soon.</Typography>
                             </Box>
-                            <Box className={classes.typographytwo}>
-                                <Typography variant="h5" sx={{}} style={{ display: "inline-block", whiteSpace: "pre-line" }}>
+                            <Box className={classes.boxtwo}>
+                                <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line" }}>
                                     We're working non-stop to bring you the mobile app that curates your dream travel experiences. We'll notify you as soon as it's available. In the meantime, plan your next big adventure with us here on our site. Keep an eye out for updates about the mobile app's release.
                                 </Typography>
                             </Box>

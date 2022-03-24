@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     locationicon: {
-        paddingLeft: "120px !important",
+        paddingLeft: "151px !important",
         [theme.breakpoints.down("sm")]: {
             marginTop: "18px !important",
             paddingLeft: "0px !important",
@@ -121,7 +121,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                 {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
                 <Select
                     id="booking-location-select"
-                    hiddenLabel
+                    hiddenlabel="true"
                     labelId="location-label"
                     name="location"
                     required
