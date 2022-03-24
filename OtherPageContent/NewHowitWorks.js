@@ -47,11 +47,28 @@ const cardContent = [
 
 const useStyles = makeStyles((theme) => ({
     typography: {
-        borderBottom: "3px solid #0FAACD",
+        marginLeft: "20px !important",
+        borderBottom: "3px solid #0FAACD !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+            marginLeft: "15px !important",
         }
     },
+    typographyone: {
+
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+        }
+    },
+    boxone: {
+        display: "flex",
+        flexDirection: "row !important",
+        marginBottom: "30px !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+        }
+    }
 }))
 
 const NewHowitWorks = () => {
@@ -94,6 +111,12 @@ const NewHowitWorks = () => {
                     alignItems: 'center',
                 }}
             >
+                <Box className={classes.boxone}>
+                    <Typography className={classes.typographyone} variant="h2" component="h2" >
+                        How it
+                    </Typography>
+                    <Typography component="h2" variant="h2" className={classes.typography} color="primary.main"  >works</Typography>
+                </Box>
                 <Box
                     component="img"
                     src="/img/productCurvyLines.png"
@@ -106,9 +129,7 @@ const NewHowitWorks = () => {
                         zIndex: -1,
                     }}
                 />
-                <Typography variant="h2" component="h2" sx={{ mb: 5 }}>
-                    How it <Typography Typography variant="h2" className={classes.typography} color="primary.main" display="inline-block" >works</Typography>
-                </Typography>
+
                 <div>
                     <Grid container spacing={5} sx={{ justifyContent: 'center' }}>
                         {StepCards}

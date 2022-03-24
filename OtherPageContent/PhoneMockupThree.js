@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     item: {
         display: 'flex',
         flexDirection: 'row',
+        [theme.breakpoints.down("md")]: {
+            flexDirection: 'column !important',
+
+        },
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column !important',
 
@@ -41,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     googlebutton: {
-        padding: "10px 55px",
+        padding: "12px 60px !important",
         [theme.breakpoints.down("sm")]: {
             marginTop: "20px !important",
             padding: "10px 40px !important",
@@ -58,6 +62,13 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
+        }
+    },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            borderBottom: "none !important",
+            fontSize: "25px !important",
         }
     }
 }))
@@ -81,7 +92,7 @@ const PhoneMockupOne = () => {
 
                         <Box >
 
-                            <Typography variant="h4" sx={{ my: 5, }}>
+                            <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
                                 Everything in one <Typography color="primary.main" className={classes.typography} display="inline-block" variant='h4'>place</Typography>
                             </Typography>
                             <Typography variant="h5" mb={4} gutterBottom>

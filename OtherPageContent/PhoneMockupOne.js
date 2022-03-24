@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
     item: {
         display: 'flex',
         flexDirection: 'row',
+        [theme.breakpoints.down("md")]: {
+            flexDirection: 'column-reverse !important',
+
+        },
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column-reverse !important',
 
@@ -19,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
     gridtwo: {
         alignContent: 'right',
+        [theme.breakpoints.down("md")]: {
+            justifyContent: 'right !important',
+            alignContent: 'center',
+            order: 4,
+        },
         [theme.breakpoints.down("sm")]: {
             justifyContent: 'left !important',
             alignContent: 'center',
@@ -28,16 +37,31 @@ const useStyles = makeStyles((theme) => ({
     gridone: {
         marginTop: "80px !important",
         width: '100%',
+
         [theme.breakpoints.down("sm")]: {
             marginTop: '10px !important',
         }
     },
     typography: {
         borderBottom: "3px solid #0FAACD",
+        maxWidth: "40%",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            fontSize: "25px !important",
         }
     },
+    typographyone: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "25px !important",
+        }
+    },
+    boxtwo: {
+        display: "flex",
+        flexDirection: "column",
+        [theme.breakpoints.down("sm")]: {
+
+        }
+    }
 }))
 
 const PhoneMockupOne = () => {
@@ -59,10 +83,12 @@ const PhoneMockupOne = () => {
                         <Grid item padding={10} xs={12} container md={12} order={6} sx={{ justifyContent: 'center' }}>
 
                             <Box className={classes.gridone}>
-
-                                <Typography variant="h4" sx={{ my: 5, }}>
-                                    Local Travel <Typography color="primary.main" className={classes.typography} display="inline-block" variant='h4'>Professionals</Typography>
-                                </Typography>
+                                <Box className={classes.boxtwo}>
+                                    <Typography className={classes.typographyone} variant="h4" >
+                                        Local Travel
+                                    </Typography>
+                                    <Typography color="primary.main" className={classes.typography} variant='h4'>Professionals</Typography>
+                                </Box>
                                 <Typography variant="h5">
                                     {'We connect you with local, knowledgeable travel experts from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
                                 </Typography>
