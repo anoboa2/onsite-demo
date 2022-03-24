@@ -51,14 +51,14 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
-            marginLeft: "15px !important",
+            fontSize: "20px !important",
+            marginLeft: "12px !important",
         }
     },
     typographyone: {
 
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     boxone: {

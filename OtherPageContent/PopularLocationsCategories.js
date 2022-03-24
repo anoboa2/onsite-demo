@@ -115,9 +115,9 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "20px !important",
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
-
+            marginLeft: "10px !important",
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     typography1: {
@@ -125,21 +125,23 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "20px !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
         }
     },
     maintypography: {
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     maintypography1: {
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "20px !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
         }
     },
     boxone: {
@@ -154,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
-            marginLeft: " 10% !important",
+            marginLeft: " 20% !important",
         },
     },
     boxtwo: {
@@ -207,7 +209,7 @@ export default function PopularLocationCategories() {
                         </Box>
                     </Grid>
                     <Grid >
-                        <Box className={classes.item} width={1200} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
+                        <Box className={classes.item} width={1200} sx={{ mt: 6, display: 'flex', borderRadius: 50, }}>
                             {images.map((image) => (
                                 <ImageIconButton
                                     key={image.title}

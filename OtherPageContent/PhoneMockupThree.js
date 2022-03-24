@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     googlebutton: {
-        padding: "12px 60px !important",
+        padding: "14px 66px !important",
         [theme.breakpoints.down("sm")]: {
             marginTop: "20px !important",
             padding: "10px 40px !important",
@@ -62,14 +62,21 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
+    },
+    typographytwo: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
+        }
+
     }
 }))
 
@@ -95,7 +102,7 @@ const PhoneMockupOne = () => {
                             <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
                                 Everything in one <Typography color="primary.main" className={classes.typography} display="inline-block" variant='h4'>place</Typography>
                             </Typography>
-                            <Typography variant="h5" mb={4} gutterBottom>
+                            <Typography variant="h5" className={classes.typographytwo} mb={4} gutterBottom>
                                 {'Our app allows you and your companions to see your complete itinerary, day by day, including maps, tickets, images and reviews as well as chat with your agent any time you have a question or  need to make a change.'}
                             </Typography>
                             <Button variant="outlined" style={{

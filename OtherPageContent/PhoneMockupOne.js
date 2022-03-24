@@ -47,12 +47,12 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "40%",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "20px !important",
         }
     },
     boxtwo: {
@@ -60,6 +60,13 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         [theme.breakpoints.down("sm")]: {
 
+        }
+    },
+    typographytwo: {
+        [theme.breakpoints.down("sm")]: {
+            marginTop: "10px !important",
+            fontSize: "15px !important",
+            fontWeight: "lighter !important",
         }
     }
 }))
@@ -89,7 +96,7 @@ const PhoneMockupOne = () => {
                                     </Typography>
                                     <Typography color="primary.main" className={classes.typography} variant='h4'>Professionals</Typography>
                                 </Box>
-                                <Typography variant="h5">
+                                <Typography className={classes.typographytwo} variant="h5">
                                     {'We connect you with local, knowledgeable travel experts from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
                                 </Typography>
 
