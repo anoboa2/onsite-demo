@@ -172,6 +172,7 @@ const RatingsSlider = () => {
                                 display: "flex",
                                 justifyContent: "space-between",
                                 padding: "0 10px",
+
                             }}
 
                         ><Box className={classes.boxone}>
