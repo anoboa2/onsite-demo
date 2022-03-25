@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
             display: "block !important",
             marginLeft: "0px !important",
         },
+        alignItems: "baseline",
     },
     boxthree: {
         marginLeft: "350px !important",
@@ -79,16 +80,17 @@ const HeroImage = () => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">{'Travel Planning, '}</Typography> <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >{' Reinvented'}</Typography></Box>
+                    <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">{'Travel Planning, '}</Typography><p>&nbsp;</p><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >{' Reinvented'}</Typography></Box>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
                     <Box className={classes.boxthree}>
                         <Typography className={classes.typography3} variant="h5" >
-                            {'Get the most of your travel by '}
+                            {'Get the most of your travel by'}
                         </Typography>
+                        <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>
-                            {' leaving the planning to us'}
+                            {'leaving the planning to us'}
                         </Typography>
                     </Box>
 
