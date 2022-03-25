@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     thetypo1: {
-        fontSize: "1rem !important",
+        fontSize: "1.2rem !important",
         [theme.breakpoints.down("lg")]: {
             fontSize: "1rem !important",
         },

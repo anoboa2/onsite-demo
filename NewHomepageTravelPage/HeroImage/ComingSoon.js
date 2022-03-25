@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     boxone: {
-        width: "70%",
+        width: "80%",
         marginLeft: "10%",
         marginBottom: "6%",
         [theme.breakpoints.down("sm")]: {
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     typographyone: {
+        textAlign: "center",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
             marginRight: "5% !important",
