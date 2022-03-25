@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     item: {
         display: 'flex',
         flexDirection: 'row',
-        paddingLeft: "5% !important",
+        padding: "5% !important",
         [theme.breakpoints.down("md")]: {
             flexDirection: 'column !important',
 
@@ -34,29 +34,39 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             justifyContent: 'center !important',
             alignContent: 'center',
-            paddingBottom: '0px !important'
+            paddingBottom: '0px !important',
+            maxWidth: "95%",
+
         }
     },
     gridone: {
         marginTop: "8% !important",
+        padding: "2% !important",
         width: '100%',
         [theme.breakpoints.down("sm")]: {
             marginTop: '0px !important',
-            paddingTop: '0px !important'
+            paddingTop: '0px !important',
         }
     },
     googlebutton: {
-        padding: "2.2% 10% !important",
+        padding: "3% 12% !important",
+
         [theme.breakpoints.down("sm")]: {
             marginTop: "5% !important",
-            padding: "4% 18% !important",
+            padding: "1.5% 4% !important",
         }
 
     },
+    buttonbox: {
+        display: "flex",
+        justifyContent: "space-around",
+        width: "100%",
+    },
     comingsoon: {
+        textAlign: "center",
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "17% !important",
-            whitespace: "nowrap !important",
+
+
         }
     },
     typography: {
@@ -78,7 +88,11 @@ const useStyles = makeStyles((theme) => ({
             fontWeight: "lighter !important",
         }
 
-    }
+    },
+    thebox: {
+
+
+    },
 }))
 
 const PhoneMockupOne = () => {
@@ -86,7 +100,7 @@ const PhoneMockupOne = () => {
     return (
         <Grid container>
             <Fade bottom>
-                <Grid sx={item} className={classes.item}>
+                <Grid className={classes.item}>
                     <Grid className={classes.gridtwo} item container md={6} order={5} sx={{ justifyContent: 'center' }}>
                         <Box
                             component="img"
@@ -96,7 +110,7 @@ const PhoneMockupOne = () => {
                         />
 
                     </Grid>
-                    <Grid className={classes.gridone} item padding={10} container md={6} order={5} sx={{ justifyContent: 'center' }}>
+                    <Grid className={classes.gridone} item container md={6} order={5} sx={{ justifyContent: 'center' }}>
 
                         <Box >
 
@@ -106,28 +120,30 @@ const PhoneMockupOne = () => {
                             <Typography variant="h5" className={classes.typographytwo} mb={4} gutterBottom>
                                 {'Our app allows you and your companions to see your complete itinerary, day by day, including maps, tickets, images and reviews as well as chat with your agent any time you have a question or  need to make a change.'}
                             </Typography>
-                            <Button variant="outlined" style={{
-                                padding: "10px 55px",
-                                borderRadius: "30px",
-                                border: "1px solid",
-                                fontSize: "15px",
-                                marginRight: "20px"
-                            }}>
-                                <AppleIcon />
-                                AppStore
-                            </Button>
-                            <Button variant="contained" className={classes.googlebutton} style={{
-                                backgroundColor: "#00aaca",
+                            <Box className={classes.buttonbox}>
+                                <Button variant="outlined" className={classes.googlebutton} style={{
 
-                                borderRadius: "30px",
-                                color: "white",
-                                fontSize: "15px",
+                                    borderRadius: "30px",
+                                    border: "1px solid",
+                                    fontSize: "0.9rem",
 
-                            }}>
-                                <GoogleIcon />
-                                Google Play
-                            </Button>
-                            <Typography className={classes.comingsoon} ml={19} mt={1} variant="h5">Coming Soon!!</Typography>
+                                }}>
+                                    <AppleIcon />
+                                    AppStore
+                                </Button>
+                                <Button variant="contained" className={classes.googlebutton} style={{
+                                    backgroundColor: "#00aaca",
+                                    borderRadius: "30px",
+                                    color: "white",
+                                    fontSize: "0.9rem",
+
+                                }}>
+                                    <GoogleIcon />
+                                    Google Play
+                                </Button>
+                            </Box>
+                            <Box className={classes.comingsoon}>
+                                <Typography mt={1} variant="h5">Coming Soon!!</Typography></Box>
                         </Box>
 
                     </Grid>

@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("md")]: {
             justifyContent: 'right !important',
             alignContent: 'center',
-            order: 4,
+
         },
         [theme.breakpoints.down("sm")]: {
-            justifyContent: 'left !important',
+            justifyContent: 'right!important',
             alignContent: 'center',
-            order: 4,
+
         }
     },
     gridone: {
@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
+            paddingLeft: "2%",
         }
     },
     typographyone: {
@@ -59,14 +60,20 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         [theme.breakpoints.down("sm")]: {
+            flexDirection: "row",
 
-        }
+        },
+    },
+    thegrid: {
+        padding: "5%",
     },
     typographytwo: {
+
         [theme.breakpoints.down("sm")]: {
             marginTop: "5% !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
+
         }
     }
 }))
@@ -86,8 +93,8 @@ const PhoneMockupOne = () => {
                         />
 
                     </Grid>
-                    <Grid >
-                        <Grid item padding={10} xs={12} container md={12} order={6} sx={{ justifyContent: 'center' }}>
+                    <Grid container className={classes.thegrid}>
+                        <Grid item xs={12} order={6} sx={{ justifyContent: 'center' }}>
 
                             <Box className={classes.gridone}>
                                 <Box className={classes.boxtwo}>

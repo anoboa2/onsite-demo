@@ -41,13 +41,23 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
-
+    thegrid: {
+        padding: "5%",
+    },
     typography3: {
         [theme.breakpoints.down("sm")]: {
             marginTop: "5% !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
         }
+    },
+    thebox: {
+        marginTop: "20%",
+        [theme.breakpoints.down("md")]: {
+            maxWidth: "95%",
+            marginTop: "0 !important",
+        },
+
     },
 }))
 
@@ -67,9 +77,10 @@ const PhoneMockupTwo = () => {
                         />
 
                     </Grid>
-                    <Grid item sm={6} xs={12} md={6} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
 
-                        <Box>
+                    <Grid className={classes.thegrid} item sm={6} xs={12} md={6} container order={5} sx={{ justifyContent: 'left' }}>
+
+                        <Box className={classes.thebox}>
 
                             <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
                                 From plan till you arrive
@@ -79,6 +90,7 @@ const PhoneMockupTwo = () => {
                             </Typography>
 
                         </Box>
+
 
                     </Grid>
                 </Grid>

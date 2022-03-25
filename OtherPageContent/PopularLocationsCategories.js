@@ -35,12 +35,12 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
     display: 'block',
     padding: 0,
     borderRadius: 0,
-    marginLeft: 70,
     height: '40vh',
+    width: "40% !important",
     [theme.breakpoints.down('md')]: {
-        width: '100% !important',
-        height: 100,
-        marginTop: "20px !important",
+        width: '40% !important',
+        height: 150,
+        marginTop: "0.75rem !important"
     },
     '&:hover': {
         zIndex: 1,
@@ -98,22 +98,20 @@ const images = [
 ];
 const useStyles = makeStyles((theme) => ({
     item: {
-        marginLeft: "3% !important",
+        display: " flex",
+        justifyContent: "space-around",
         [theme.breakpoints.down("md")]: {
-            display: 'flex',
-            flexDirection: 'column !important',
-            width: "70% !important",
-            marginLeft: "10% !important"
+            display: " flex",
+            justifyContent: "space-around",
         },
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
-            flexDirection: 'column !important',
-            width: "70% !important",
-            marginLeft: "-5% !important",
+            alignContent: 'space-between',
+
         },
     },
     typography: {
-        marginLeft: "20px !important",
+
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             marginLeft: "10px !important",
@@ -123,15 +121,15 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     typography1: {
-        borderBottom: "3px solid #0FAACD",
-        [theme.breakpoints.down("sm")]: {
 
+        [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "15px !important",
             fontWeight: "lighter !important",
         }
     },
     maintypography: {
+        paddingRight: "1%",
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
@@ -139,21 +137,22 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     maintypography1: {
+        borderBottom: "3px solid #0FAACD",
+
+        color: "#0FAACD !important",
+
+
         [theme.breakpoints.down("md")]: {
-            marginLeft: "-8% !important",
             borderBottom: "none !important",
         },
         [theme.breakpoints.down("sm")]: {
-            marginLeft: " 3% !important",
             borderBottom: "none !important",
-            fontSize: "15px !important",
-            fontWeight: "lighter !important",
+            fontSize: "20px !important",
         }
     },
     boxone: {
-        display: "flex",
-        flexDirection: "row !important",
-        marginLeft: " 35% !important",
+
+
         [theme.breakpoints.down("md")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
@@ -165,10 +164,20 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: "20% !important",
         },
     },
+    firstbox: {
+        display: " flex",
+        justifyContent: "center"
+    },
+    mainbox: {
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+
+    },
     boxtwo: {
         display: "flex",
         flexDirection: "row !important",
-        marginLeft: " 35% !important",
+
         [theme.breakpoints.down("md")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
@@ -199,23 +208,25 @@ export default function PopularLocationCategories() {
     return (
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
-                <Grid >
-                    <Grid item xs={12}>
-                        <Box className={classes.boxone}>
+                <Grid container>
+
+                    <Box className={classes.mainbox}>
+                        <Box className={classes.firstbox}>
                             <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
-                                We arrange the
+                                We arrange the</Typography>
+                            <Typography variant="h4" className={classes.maintypography1}>
+                                best
                             </Typography>
-                            <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
                         </Box>
-                        <Box className={classes.boxtwo}>
-                            <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
+                        <Box>
+                            <Typography className={classes.typography1} variant="h6" align="center" component="h2" >
                                 Check out some of our popular trips below
                             </Typography>
-
                         </Box>
-                    </Grid>
-                    <Grid >
-                        <Box className={classes.item} width={1200} sx={{ mt: 6, display: 'flex', borderRadius: 50, }}>
+                    </Box>
+
+                    <Grid container item sx={{ width: "100%" }} xs={12}>
+                        <Box className={classes.item} sx={{ mt: 6, display: 'flex', borderRadius: 50, width: "100%" }}>
                             {images.map((image) => (
                                 <ImageIconButton
                                     key={image.title}
