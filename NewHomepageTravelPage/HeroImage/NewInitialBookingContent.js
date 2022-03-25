@@ -21,52 +21,14 @@ import {
 } from '@mui/material';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Button from '../../../modules/components/Button';
-import { makeStyles } from "@mui/styles";
-
 
 const locations = [
     { label: 'New York City, NY', value: 'nyc' },
     { label: 'Miami, FL', value: 'miami' },
 ]
 
-const useStyles = makeStyles((theme) => ({
-    daterange: {
-        [theme.breakpoints.down("sm")]: {
-            width: 200,
-        },
-    },
-    maingrid: {
-        marginTop: 30,
-        paddingBottom: 50,
-        paddingLeft: 40,
-        paddingRight: 40,
-        [theme.breakpoints.down("sm")]: {
-            paddingBottom: "0px !important",
-            marginTop: "20px !important"
-        },
-    },
-    typographyone: {
-        [theme.breakpoints.down("sm")]: {
-            fontSize: "18px !important",
-        },
-    },
-    typographytwo: {
-        [theme.breakpoints.down("sm")]: {
-            fontSize: "18px !important",
-        },
-    },
-    locationicon: {
-        paddingLeft: "151px !important",
-        [theme.breakpoints.down("sm")]: {
-            marginTop: "18px !important",
-            paddingLeft: "0px !important",
-        },
-    }
-}))
 
 const NewInitialBookingContent = ({ values, handleInputChange }) => {
-    const classes = useStyles()
     const [toggle, setToggle] = useState(false)
 
     const handleSwitch = (event) => {
@@ -75,13 +37,10 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
     };
 
     return (
-        <Grid className={classes.maingrid} container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{}} >
-            <Grid item xs={6} className={classes.daterange}>
-                <Box>
-                    <Box sx={{ alignItems: "center" }}>
-                        <Typography className={classes.typographyone} variant='h5' color="black" sx={{ mb: 2, mr: 37 }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} /> Travel Dates</Typography>
-                    </Box>
-
+        <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ ml: 'auto', mr: 'auto', pb: 5, pt: 6, pl: 4, pr: 4 }} >
+            <Grid item xs={6}>
+                <Box sx={{ width: '100%', justifySelf: 'center' }}>
+                    <Typography color="black" sx={{ mb: 2, }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} />Travel Dates</Typography>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <Fade in={toggle}>
                             <DateRangePicker
@@ -115,13 +74,11 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                     </Box> */}
                 </Box>
             </Grid>
-            <Grid className={classes.locationicon} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '275px', }}>
-
-                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} /> Location</Typography>
-                {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
+            <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', maxWidth: '275px', }}>
+                <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} />Location</InputLabel>
                 <Select
                     id="booking-location-select"
-                    hiddenlabel="true"
+                    hiddenLabel
                     labelId="location-label"
                     name="location"
                     required
@@ -138,8 +95,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-
-        </Grid >
+        </Grid>
     );
 };
 
