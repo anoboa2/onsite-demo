@@ -13,31 +13,20 @@ const item = {
 };
 
 const useStyles = makeStyles((theme) => ({
-    maingrid: {
-        [theme.breakpoints.down("lg")]: {
-            marginTop: "20%",
-        },
-        [theme.breakpoints.down("sm")]: {
-            marginTop: "250%",
-        }
-    },
     box: {
-        width: "50%",
-        marginLeft: "7%",
-        display: "inline-block",
-        whiteSpace: "pre-line",
-        marginTop: "10%",
+        width: "80%",
         [theme.breakpoints.down("md")]: {
-
             marginTop: "50%",
         },
         [theme.breakpoints.down("sm")]: {
             width: "70%",
             marginLeft: "1%",
-            marginTop: "20% !important",
+            marginTop: "240%",
+
         }
     },
     boxone: {
+        width: "70%",
         marginLeft: "10%",
         marginBottom: "6%",
         [theme.breakpoints.down("sm")]: {
@@ -65,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typographythree: {
         borderBottom: "3px solid #0FAACD",
+        color: "#0FAACD !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
@@ -74,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const ComingSoon = () => {
     const classes = useStyles()
     return (
-        <Grid className={classes.maingrid}>
+        <Grid container className={classes.maingrid}>
             <Fade bottom>
                 <Grid sx={item}>
 
@@ -82,9 +72,9 @@ const ComingSoon = () => {
                         <Box className={classes.box}>
                             <Box className={classes.boxone}>
                                 <Typography className={classes.typographyone} variant="h3" >
-                                    Stress Less, Dream More.  Mobile App</Typography>
-                                <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3"
-                                    className={classes.typographythree} color="primary.main">Coming Soon.</Typography>
+                                    Stress Less, Dream More. Mobile App. <span> </span>
+                                    <span variant="h3"
+                                        className={classes.typographythree}  >Coming Soon.</span></Typography>
                             </Box>
                             <Box className={classes.boxtwo}>
                                 <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line" }}>

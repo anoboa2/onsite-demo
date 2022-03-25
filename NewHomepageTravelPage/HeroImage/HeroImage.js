@@ -1,12 +1,14 @@
 
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
-import NewBookingForm from "./NewBookingForm";
+
 import ComingSoon from "./ComingSoon";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import newheroimage from "./newheroimage.webp";
+import NewBookingForm from "./NewBookingForm";
 
 
 // const useStyles = makeStyles((theme) => ({
@@ -21,6 +23,9 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     typography1: {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
         [theme.breakpoints.down("sm")]: {
             fontSize: "25px !important",
             marginRight: "10% !important",
@@ -69,38 +74,119 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: "0px !important",
         },
     },
+    thetypo: {
+        fontSize: "3rem !important",
+        [theme.breakpoints.down("lg")]: {
+            fontSize: "2.5rem !important",
+        },
+        [theme.breakpoints.down("md")]: {
+            fontSize: "1.8rem !important",
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "0.95rem !important",
+        },
+    },
+    span: {
+        color: "#0FAACD",
+        textDecoration: "underline 3px",
+        [theme.breakpoints.down("sm")]: {
+            textDecoration: "none",
+        },
+    },
+    mainbox: {
+        position: "absolute",
+        top: "30%",
+        left: "8%",
+        width: "60%",
+        display: "flex",
+        flexDirection: "column",
+        [theme.breakpoints.down("lg")]: {
+            width: "65%",
+            top: "30%",
+            left: "5%",
+        },
+        [theme.breakpoints.down("md")]: {
+            width: "63%",
+            top: "22%",
+            left: "5%",
+        },
+        [theme.breakpoints.down("sm")]: {
+            width: "65%",
+            top: "15%",
+            left: "5%",
+        },
+    },
+    thetypo1: {
+        fontSize: "1rem !important",
+        [theme.breakpoints.down("lg")]: {
+            fontSize: "1rem !important",
+        },
+        [theme.breakpoints.down("md")]: {
+            fontSize: "0.85rem !important",
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "0.55rem !important",
+        },
+    },
+    newbookingform: {
+        width: "90% !important",
+        display: "flex",
+        [theme.breakpoints.up("lg")]: {
+            position: "absolute",
+            top: "45%",
+            left: "1%",
 
+        },
+
+        [theme.breakpoints.down("lg")]: {
+            position: "absolute",
+            width: "65%",
+            top: "45%",
+            left: "3%",
+        },
+        [theme.breakpoints.down("md")]: {
+            width: "63%",
+            top: "32%",
+            position: "absolute",
+        },
+        [theme.breakpoints.down("sm")]: {
+            width: "100%",
+            top: "21% !important",
+            position: "absolute",
+        },
+    },
+    spanone: {
+        display: "none",
+        [theme.breakpoints.down("md")]: {
+
+
+        },
+    },
+    overallbox: {
+        alignContent: 'flex-start'
+    }
 }))
 
 const HeroImage = () => {
     const classes = useStyles()
     return (
-        <div>
-            <div className="hero-image">
 
-                <div className="hero-text" >
-                    {/* <TypewriterEffectOne /> */}
-                    <Box className={classes.thebox}>
+        <Grid container>
+            <img src={newheroimage} className="bg" alt="" />
+            <Box className={classes.overallbox}>
+                <Box className={classes.mainbox}>
+                    <Typography variant="h2" component="h2" className={classes.thetypo}>Travel Planning! <span className={classes.span}>Reinvented</span> </Typography>
+                    <Typography variant="h5" className={classes.thetypo1}>
+                        Get the most of your  travel by <span className={classes.spanone}><br /></span> leaving the planning to us </Typography>
+                </Box>
 
-
-                        <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">Travel Planning, </Typography> <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" > Reinvented</Typography></Box>
-                        {/* <div className="typewritereffecttwo"> */}
-                        {/* <TypewriterEffectTwo /> */}
-
-                        <Box className={classes.boxthree}>
-                            <Typography className={classes.typography3} variant="h5" >
-                                Get the most of your  travel by
-                            </Typography><Typography variant="h5" className={classes.typography4}>leaving the planning to us</Typography>
-                        </Box>
-                    </Box>
+                <Grid className={classes.newbookingform}>
                     <NewBookingForm />
-                </div>
-
-            </div>
-
+                </Grid>
+            </Box>
 
             <ComingSoon />
-        </div>
+        </Grid>
     );
 }
 

@@ -17,7 +17,6 @@ import {
     InputAdornment,
 } from '@mui/material';
 import SignupModal from '../../../modules/views/SignupModal';
-import { makeStyles } from '@mui/styles';
 
 
 const numpeople = [0, 1, 2, 3, 4, 5, 6]
@@ -47,76 +46,21 @@ const activities = [
     'Relaxation',
     'Shopping',
 ]
-const useStyles = makeStyles((theme) => ({
-    maingrid: {
-        [theme.breakpoints.down("sm")]: {
-            maxHeight: "700px",
-            overflow: "hidden !important",
-        },
-    },
-    reducebottom: {
-        marginBottom: "14%",
-        [theme.breakpoints.down("sm")]: {
-            marginBottom: "5% !important",
 
-        },
-    },
-    boxes: {
-        margin: "12px",
-        [theme.breakpoints.down("sm")]: {
-            margin: "0px 12px !important",
-        },
-    },
-    typographyone: {
-        paddingRight: "248px",
-        [theme.breakpoints.down("sm")]: {
-            paddingRight: "0px !important",
-            paddingTop: "10px !important",
-            paddingBottom: "10px !important",
-        },
-    },
-    reducetop: {
-        marginTop: "24px !important",
-        [theme.breakpoints.down("sm")]: {
-            marginTop: "6px !important",
-        },
-    },
-    inputlabel: {
-        marginRight: "25% !important",
-        [theme.breakpoints.down("sm")]: {
-            marginRight: "35% !important",
-
-        },
-
-    },
-    inputlabel2: {
-        marginBottom: "40px",
-        paddingRight: "80% !important",
-        [theme.breakpoints.down("sm")]: {
-            marginBottom: "15px !important",
-            paddingRight: "0px !important",
-            paddingTop: "10px !important",
-            paddingBottom: "10px !important",
-            paddingRight: "60% !important",
-
-        },
-    },
-}))
-
-const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
+const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
     const { is_authenticated } = useRownd();
-    const classes = useStyles()
+
     return (
-        <Grid container className={classes.maingrid} columns={{ xs: 6, sm: 12, }} sx={{ maxHeight: 'sm', mt: 0, mb: 0, ml: 'auto', mr: 'auto', pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
-            <Grid x container item xs={6}>
+        <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ mt: 0, mb: 0, ml: 'auto', mr: 'auto', pb: 6, pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
+            <Grid container item xs={6}>
                 <Container>
-                    <Typography className={classes.typographyone} sx={{ color: 'black', }}>Number of People</Typography>
+                    <Typography sx={{ p: 0, color: 'black', }}>Number of People</Typography>
                 </Container>
                 <Grid item xs={3}>
-                    <Box className={classes.boxes} sx={{ width: '100%' }}>
+                    <Box sx={{ width: '100%' }}>
                         <InputLabel id="booking-num-adults-label">Adults</InputLabel>
                         <Select
-                            labelid="booking-num-adults-label"
+                            labelId="booking-num-adults-label"
                             id="booking-num-adults-select"
                             label="num-adults"
                             name="numberofadults"
@@ -135,11 +79,10 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
                 <Grid item xs={3}>
-                    <Box className={classes.boxes} >
+                    <Box >
                         <InputLabel id="booking-num-kids-label">Kids</InputLabel>
                         <Select
-
-                            labelid="booking-num-kids-label"
+                            labelId="booking-num-kids-label"
                             id="booking-num-kids-select"
                             label="num-kids"
                             name="numberofkids"
@@ -158,12 +101,11 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item xs={6} className={classes.reducebottom}
-                sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-budget-label" className={classes.inputlabel} sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
+                <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
                 <TextField
-                    hiddenlabel="true"
-                    labelid="booking-budget-label"
+                    hiddenLabel
+                    labelId="booking-budget-label"
                     id="booking-budget-input"
                     variant="filled"
                     name="budget"
@@ -172,11 +114,11 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     InputProps={{ startAdornment: <InputAdornment position="start">$</InputAdornment> }}
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
-            <Grid item xs={6} className={classes.reducebottom} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="booking-occasion-label" className={classes.inputlabel2} sx={{ mb: 1, width: '100%', maxWidth: '500px', }}>Type of Trip</InputLabel>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
+                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
                 <Select
-                    hiddenlabel="true"
-                    labelid="booking-occasion-label"
+                    hiddenLabel
+                    labelId="booking-occasion-label"
                     id="booking-occasion-select"
                     multiple
                     name="occasion"
@@ -201,19 +143,18 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid className={classes.reducebottom} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-activities-label" className={classes.inputlabel} sx={{
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
+                <InputLabel id="booking-activities-label" sx={{
                     mb: 1,
                     width: '100%',
                     maxWidth: '300px',
-
                 }}
                 >
                     Activities
                 </InputLabel>
                 <Select
-                    hiddenlabel="true"
-                    labelid="booking-activities-label"
+                    hiddenLabel
+                    labelId="booking-activities-label"
                     id="booking-activities-select"
                     multiple
                     name="activities"
@@ -238,7 +179,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid className={classes.reducetop} item xs={12} mb={1} sx={{ alignContent: 'center', pl: { xs: 0, sm: "20%" } }}>
+            <Grid item xs={12} sx={{ mt: 3, alignContent: 'center', pl: { xs: 0, sm: "20%" } }}>
                 <TextField
                     id="booking-notes-input"
                     multiline
@@ -256,13 +197,12 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     }}
                 />
             </Grid>
-            <Grid className={classes.reducetop} item mb={2} xs={12} sx={{ textAlign: 'center', mt: 4, }}>
+            <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
                 {is_authenticated ? (
                     <Button
                         variant="contained"
                         color="secondary"
                         type="submit"
-                        sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
                     >
                         {'Book Now'}
                     </Button>
@@ -274,4 +214,4 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
     );
 };
 
-export default NewSubsequentBookingContent;
+export default SubsequentBookingContenttwo;

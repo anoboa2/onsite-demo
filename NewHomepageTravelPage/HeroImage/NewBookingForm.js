@@ -4,145 +4,17 @@ import {
     Container,
     Fade,
     Grid,
-    Modal,
-    Typography
+    Modal
 } from '@mui/material';
 import Button from '../../../modules/components/Button';
-import NewInitialBookingContent from './NewInitialBookingContent';
-import Alert from '@mui/material/Alert';
-import { Snackbar } from "@mui/material";
+
 import withRoot from '../../../modules/withRoot';
 import { useRownd } from '@rownd/react';
 import { useLocalStorage } from '../../../useLocalStorage';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
+import NewInitialBookingContent from './NewInitialBookingContent';
 import NewSubsequentBookingContent from './NewSubsequentBookingContent';
+import Typography from '../../../modules/components/Typography';
 
-
-// const boxstyle = {
-//     px: { xs: 0, sm: 5, },
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#ffffff80',
-//     backdropFilter: 'blur(2px)',
-//     borderRadius: 10,
-//     ml: 30,
-//     mt: 90,
-//     width: 0.8,
-//     height: {
-
-//     }
-// };
-
-const useStyles = makeStyles((theme) => ({
-    bookingformcontainer: {
-
-    },
-    boxstyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#1CCC6F10',
-        backdropFilter: 'blur(2px)',
-        borderRadius: 10,
-        marginLeft: "25%",
-        marginTop: 50,
-        width: "95% !important",
-        position: "static",
-        maxHeight: "25rem !important",
-        [theme.breakpoints.up("lg")]: {
-            width: "105% !important",
-            borderRadius: 5,
-            marginLeft: "25%",
-            marginTop: "10% !important",
-            maxHeight: "170rem !important",
-        },
-        [theme.breakpoints.down("lg")]: {
-            width: "105% !important",
-            borderRadius: 5,
-            marginLeft: "25%",
-            marginTop: "10% !important",
-            maxHeight: "70rem !important",
-        },
-        [theme.breakpoints.down("md")]: {
-            width: "105% !important",
-            borderRadius: 5,
-            marginLeft: "25%",
-            marginTop: "10% !important",
-            maxHeight: "50rem !important",
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "65% !important",
-            borderRadius: 5,
-            marginLeft: 135,
-            marginTop: 25,
-            maxHeight: "80rem !important",
-
-        },
-    },
-    buttonletsplan: {
-        display: (props) => (props.display ? "none " : "flex "),
-
-        [theme.breakpoints.down("sm")]: {
-            paddingLeft: "110px !important",
-            paddingBottom: "10px !important"
-        },
-    },
-
-    gridone: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignContent: 'flex-start',
-        [theme.breakpoints.down("sm")]: {
-            alignContent: 'center',
-            flexDirection: 'column !important'
-        },
-    },
-    gridtwo: {
-        display: 'flex',
-        flexDirection: 'row',
-        [theme.breakpoints.down("sm")]: {
-            alignContent: 'center',
-            flexDirection: 'column !important'
-        },
-
-
-    },
-    // mainbuttonletsplan: {
-
-    //     [theme.breakpoints.down("sm")]: {
-    //         width: 100,
-    //         marginTop: 0,
-    //         marginRight: "100px !important",
-    //         paddingLeft: 0,
-    //         paddingRight: 0
-    //     },
-
-    // },
-    mainbuttonletsplan: {
-        width: 100,
-        marginTop: "40% !important",
-        marginRight: "4rem !important",
-        paddingLeft: "4rem !important",
-        paddingRight: "4rem !important",
-        paddingTop: "1rem !important",
-        [theme.breakpoints.down("md")]: {
-
-            marginTop: "45% !important",
-            marginRight: "4rem !important",
-            paddingLeft: "2rem !important",
-            paddingRight: "2rem !important",
-            paddingTop: "1rem !important",
-        },
-        [theme.breakpoints.down("sm")]: {
-            marginTop: "0.75rem !important",
-            marginRight: "0.9rem !important",
-        },
-    },
-    sbc: {
-        display: (props) => (props.display ? "flex" : "none"),
-    },
-
-}))
 const style = {
     position: 'absolute',
     top: '50%',
@@ -153,20 +25,7 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-
-
-
-const NewBookingForm = () => {
-    useEffect(() => {
-        console.log("Form values reset successfully")
-        // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
-        localStorage.removeItem("last_booking")
-        localStorage.removeItem("booking_full_display")
-    });
-
-    const [display, setDisplay] = useLocalStorage("booking_full_display", false)
-    const classes = useStyles({ display })
-
+const NewBookingForm = (props) => {
     const initialValues = {
         first_name: '',
         last_name: '',
@@ -184,11 +43,16 @@ const NewBookingForm = () => {
     const { is_authenticated, user, requestSignIn } = useRownd();
 
     const [values, setValues] = useLocalStorage("last_booking", initialValues)
-
+    const [display, setDisplay] = useLocalStorage("booking_full_display", false)
 
     // console.log(user.data.full_name)
     // console.log(user.data.email)
-
+    // useEffect(() => {
+    //     console.log("Form values reset successfully")
+    //     // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
+    //     localStorage.removeItem("last_booking")
+    //     localStorage.removeItem("booking_full_display")
+    // });
     function handleInputChange(name, event) {
         console.log(event);
         setValues({ ...values, [name]: event });
@@ -197,6 +61,7 @@ const NewBookingForm = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod';
@@ -216,10 +81,9 @@ const NewBookingForm = () => {
             })
                 .then((response) => response.json())
 
-
             console.log('Form submitted to AWS API Gateway')
-            setOpen(true)
             setValues(initialValues)
+            setOpen(true)
             setDisplay(false)
             console.log("Form values reset successfully")
             // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
@@ -230,62 +94,38 @@ const NewBookingForm = () => {
 
 
     return (
-        <Container className={classes.bookingformcontainer}>
+        <Container>
             <Box
                 id="booking-form"
                 component="form"
                 onSubmit={handleSubmit}
-                className={classes.boxstyle}
-
+                sx={{ px: { xs: 0, sm: 5, }, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', backdropFilter: 'blur(2px)', backgroundColor: '#1CCC6F10', borderRadius: 10, m: 0, width: 1, }}
             >
-                <Grid className={classes.gridone} >
-                    <Grid className={classes.gridtwo} sx={{}}>
-                        <NewInitialBookingContent
-                            values={values}
-                            handleInputChange={handleInputChange.bind(this)}
-                        />
-                        <Grid item className={classes.buttonletsplan} >
-                            <Box>
-                                <Button variant="contained" className={classes.mainbuttonletsplan} sx={{
-
-                                }}
-                                    color="secondary" onClick={() => setDisplay(true)}
-                                >Let's Plan!</Button>
-                            </Box>
-                        </Grid>
-
-
-                    </Grid>
-                </Grid>
-                <Grid item className={classes.sbc}>
-                    <NewSubsequentBookingContent values={values}
-                        handleInputChange={handleInputChange} />
-                </Grid>
-                <div>
-
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                    >
-                        <Box sx={style}>
-                            <Typography id="modal-modal-title" variant="h6" component="h2">
-                                Thank you for submitting
-                            </Typography>
-                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                Your personal travel concierge will reach out to you within 1 business day
-                            </Typography>
-                        </Box>
-                    </Modal>
-                </div>
-                {/* {display ? <SubsequentBookingContent values={values}
-                 handleInputChange={handleInputChange} /> : <Grid item xs={6}
-                  sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained"
-                   color="secondary" onClick={() => setDisplay(true)}
-                    sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid>} */}
+                <NewInitialBookingContent
+                    values={values}
+                    handleInputChange={handleInputChange.bind(this)}
+                />
+                {display ? <NewSubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={6} sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid>}
             </Box>
-        </Container >
+            <div>
+
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                            Thank you for submitting
+                        </Typography>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                            Your personal travel concierge will reach out to you within 1 business day
+                        </Typography>
+                    </Box>
+                </Modal>
+            </div>
+        </Container>
 
     );
 }
