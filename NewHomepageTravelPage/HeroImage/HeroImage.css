@@ -1,0 +1,11 @@
+img.bg {
+  position: relative; 
+   width: 100%;
+}
+Typography span{
+  color: "#0FAACD";
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+ 
+}
