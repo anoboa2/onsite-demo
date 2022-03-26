@@ -6,6 +6,9 @@ import NewBookingForm from "./HeroImage/NewBookingForm";
 import withRoot from "../../modules/withRoot";
 import AppFooter from "../../modules/views/AppFooter";
 import OtherPageContent from "./OtherPageContent/OtherPageContent";
+import ComingSoon from "./HeroImage/ComingSoon";
+import MainHeroContent from "./HeroImage/MainHeroContent";
+
 
 
 
@@ -25,7 +28,8 @@ const NewHomePage = () => {
     return (
         <div className={classes.main}>
             <NewAppBar />
-            <HeroImage />
+            <MainHeroContent />
+            <ComingSoon />
             <OtherPageContent />
             <AppFooter />
         </div>
