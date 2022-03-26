@@ -1,4 +1,3 @@
-
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import Typography from "../../../modules/components/Typography";
@@ -87,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     span: {
-        color: "#0FAACD",
+        color: "#52d681",
         textDecoration: "underline 3px",
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none",
@@ -100,6 +99,11 @@ const useStyles = makeStyles((theme) => ({
         width: "60%",
         display: "flex",
         flexDirection: "column",
+        [theme.breakpoints.up("xl")]: {
+            width: "65%",
+            top: "30%",
+            left: "20%",
+        },
         [theme.breakpoints.down("lg")]: {
             width: "65%",
             top: "30%",
@@ -131,10 +135,18 @@ const useStyles = makeStyles((theme) => ({
     newbookingform: {
         width: "90% !important",
         display: "flex",
-        [theme.breakpoints.up("lg")]: {
+        maxHeight: "100vh !important",
+        [theme.breakpoints.up("xl")]: {
+            width: "100% !important",
             position: "absolute",
             top: "45%",
-            left: "1%",
+            left: "0%",
+
+        },
+        [theme.breakpoints.up("lg")]: {
+            position: "absolute",
+            top: "50% !important",
+            left: "0%",
 
         },
 
@@ -143,6 +155,11 @@ const useStyles = makeStyles((theme) => ({
             width: "65%",
             top: "45%",
             left: "3%",
+        },
+        [theme.breakpoints.up("md")]: {
+            width: "63%",
+            top: "36%",
+            position: "absolute",
         },
         [theme.breakpoints.down("md")]: {
             width: "63%",
@@ -171,7 +188,7 @@ const HeroImage = () => {
     const classes = useStyles()
     return (
 
-        <Grid container>
+        <Grid className="gridd" container>
             <img src={newheroimage} className="bg" alt="" />
             <Box className={classes.overallbox}>
                 <Box className={classes.mainbox}>
@@ -184,11 +201,7 @@ const HeroImage = () => {
                     <NewBookingForm />
                 </Grid>
             </Box>
-
-            <ComingSoon />
         </Grid>
     );
 }
-
-export default HeroImage;
-
+export default HeroImage

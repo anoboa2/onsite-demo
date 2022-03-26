@@ -14,16 +14,22 @@ const item = {
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        width: "80%",
-        [theme.breakpoints.down("md")]: {
-            marginTop: "50%",
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "70%",
-            marginLeft: "1%",
-            marginTop: "240%",
+        // width: "80%",
+        // [theme.breakpoints.up("lg")]: {
+        //     marginTop: "0% !important",
 
-        }
+        // },
+        // [theme.breakpoints.up("md")]: {
+        //     marginTop: "20% !important",
+        // },
+        // [theme.breakpoints.up("sm")]: {
+        //     marginTop: "50% !important",
+
+        // },
+        // [theme.breakpoints.up("xs")]: {
+        //     marginTop: "240%",
+        //     marginLeft: "1%",
+        // },
     },
     boxone: {
         width: "80%",
@@ -44,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             fontSize: "15px !important",
         }
+    },
+    maingrid: {
+        padding: "10%"
     },
     boxtwo: {
         width: "100%",
