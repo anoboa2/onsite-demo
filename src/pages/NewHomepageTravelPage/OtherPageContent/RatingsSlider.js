@@ -173,7 +173,7 @@ const RatingsSlider = () => {
                             </Box>
 
                             {/* <h1 style={{ fontStyle: "italic" }}>View Our Gallery</h1> */}
-                            <div style={{ display: "flex" }}>
+                            {/* <div style={{ display: "flex" }}>
                                 <ButtonBase
                                     style={{
                                         width: 35,
@@ -208,7 +208,7 @@ const RatingsSlider = () => {
                                 >
                                     <ArrowCircleRightIcon />
                                 </ButtonBase>
-                            </div>
+                            </div> */}
                         </div>
                         <div style={{ margin: 30 }}>
                             <Slider {...settings}

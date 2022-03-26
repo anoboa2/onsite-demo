@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "baseline",
     },
     boxthree: {
-        marginLeft: "350px !important",
-        display: "flex",
+        // marginLeft: "350px !important",
+        display: "block-inline",
         flexDirection: "row !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
@@ -86,12 +86,12 @@ const HeroImage = () => {
 
                     <Box className={classes.boxthree}>
                         <Typography className={classes.typography3} variant="h5" >
-                            {'Get the most of your travel by'}
+                            {'Get the most of your travel by leaving the planning to us'}
                         </Typography>
-                        <p>&nbsp;</p>
+                        {/* <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>
                             {'leaving the planning to us'}
-                        </Typography>
+                        </Typography> */}
                     </Box>
 
                     <NewBookingForm />
