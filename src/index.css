@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-html, body{
+html{
   overflow-x: hidden;
+}
+body{
+  overflow-x: clip;
 }
