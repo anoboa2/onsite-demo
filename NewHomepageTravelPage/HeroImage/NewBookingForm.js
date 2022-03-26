@@ -94,7 +94,7 @@ const NewBookingForm = (props) => {
 
 
     return (
-        <Container>
+        <Container maxWidth={false}>
             <Box
                 id="booking-form"
                 component="form"
