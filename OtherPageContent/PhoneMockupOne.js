@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typography: {
         borderBottom: "3px solid #0FAACD",
-        maxWidth: "40%",
+        maxWidth: "16%",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
