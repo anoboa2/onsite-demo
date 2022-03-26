@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "baseline",
     },
     boxthree: {
-        // marginLeft: "350px !important",
-        display: "block-inline",
+        marginLeft: "350px !important",
+        display: "flex",
         flexDirection: "row !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
