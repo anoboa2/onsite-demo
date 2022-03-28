@@ -18,14 +18,25 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: "underline 3px !important",
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none ",
+            fontSize: "22px !important",
         },
     },
     typo1: {
         [theme.breakpoints.down("sm")]: {
-            maxWidth: "10%"
+            maxWidth: "100%",
+            fontSize: "22px !important",
         },
 
-    }
+    },
+    typo2: {
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: "80%",
+            fontSize: "16px !important",
+            marginBottom: "24px !important"
+        },
+
+    },
+
 }))
 export default function MainHeroContent() {
     const { is_authenticated } = useRownd();
@@ -45,10 +56,10 @@ export default function MainHeroContent() {
                 alt="increase priority"
             />
 
-            <Typography zIndex="3" color="inherit" align="center" variant="h2" sx={{ mt: { sx: 0.5, sm: 1 } }} >
+            <Typography className={classes.typo1} zIndex="3" color="inherit" align="center" variant="h2" sx={{ mt: { xs: 0.2, sm: 1 } }} >
                 Travel Planning, <span className={classes.span}>Reinvented</span>
             </Typography>
-            <Typography
+            <Typography className={classes.typo2}
                 color="inherit"
                 align="center"
                 variant="h5"
