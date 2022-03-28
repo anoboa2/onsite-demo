@@ -1,0 +1,14 @@
+img.bg {
+  position: relative; 
+   width: 100%;
+}
+Typography span{
+  color: "#52d681";
+}
+
+gridd{
+  max-height: "100vh !important";
+}
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+ 
+}
