@@ -1,7 +1,7 @@
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Container, makeStyles } from "@material-ui/core";
+
 import React, { useEffect, useState } from 'react';
 import Section from '../../../modules/components/Section';
-import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating, Grid } from '@mui/material';
+import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating, Grid, Container } from '@mui/material';
 import Typography from "../../../modules/components/Typography";
 import TextField from '../../../modules/components/TextField';
 import Avatar from '../../../modules/components/Avatar';
@@ -13,6 +13,8 @@ import DatePicker from '@mui/lab/DatePicker';
 import Alert from '@mui/material/Alert';
 import { Snackbar } from "@mui/material";
 import { textAlign } from "@mui/system";
+import { makeStyles } from "@mui/styles";
+
 
 const flightOptions = [
     'Economy',
@@ -152,6 +154,10 @@ const MainProfile = () => {
         }
     }
     // const [checked, setChecked] = React.useState(true)
+
+
+
+
     // let dietx =
     //     dietaryOptions.map((option) => {
     //         // const toggleCheckbox = (event, option) => {
@@ -191,6 +197,7 @@ const MainProfile = () => {
 
         window.rownd.user.set(values);
 
+
     }
 
     const [datevalue, setdateValue] = React.useState(new Date());
@@ -211,7 +218,7 @@ const MainProfile = () => {
                     {/* NEED TO TERNARY OPERATOR FOR IF NAMES ARE BLANK */}
                     {/* <Avatar name={values.first_name} /> */}
 
-                    <Grid item className={classes.gridone} container px={4} py={5} direction="column" alignItems="center" justify="center">
+                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center">
                         <Typography
                             variant="h4"
                             marked="center"
@@ -273,10 +280,10 @@ const MainProfile = () => {
                     </Grid>
                 </Box>
             </Container>
-            <Container sx={containerStyle}>
+            <Container sx={{ mb: 4, justifyContent: 'center' }}>
                 <Box className={classes.boxone} sx={{ opacity: 0.8, width: '100%', height: '30%', position: 'relative', borderRadius: 2, boxShadow: 2, }}>
 
-                    <Grid item className={classes.gridone} container px={4} py={5} direction="column" alignItems="center" justify="center" maxWidth="100vw">
+                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center" maxWidth="100vw">
                         <Typography
                             variant="h4"
                             marked="center"
@@ -340,18 +347,19 @@ const MainProfile = () => {
                                 value={values.seating}
                             >
                                 {seatingOptions.map((option) => {
-                                    return (
+                                    return (<>
                                         <FormControlLabel
                                             key={option}
                                             onChange={(e) => handleChange('seating', option, true)}
                                             control={
                                                 <Checkbox
-                                                    value={option}
+                                                    value={option.value}
                                                     checked={values.seating.includes(option)}
                                                 />
                                             }
                                             label={option}>{option}
                                         </FormControlLabel>
+                                    </>
                                     )
                                 })}
                             </FormGroup>
@@ -359,10 +367,10 @@ const MainProfile = () => {
                     </Grid>
                 </Box>
             </Container>
-            <Container sx={containerStyle}>
+            <Container sx={{ mb: 4, justifyContent: 'center' }}>
                 <Box className={classes.boxone} sx={{ opacity: 0.8, width: '100%', height: '30%', position: 'relative', borderRadius: 2, boxShadow: 2, }}>
 
-                    <Grid item className={classes.gridone} container px={4} py={5} direction="column" alignItems="center" justify="center" maxWidth="100vw">
+                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center" maxWidth="100vw">
                         <Typography
                             variant="h4"
                             marked="center"
@@ -427,10 +435,10 @@ const MainProfile = () => {
                     </Grid>
                 </Box>
             </Container>
-            <Container sx={containerStyle}>
+            <Container sx={{ mb: 4, justifyContent: 'center' }}>
                 <Box className={classes.boxone} sx={{ opacity: 0.8, width: '100%', height: '30%', position: 'relative', borderRadius: 2, boxShadow: 2, }}>
 
-                    <Grid item className={classes.gridone} container px={4} py={5} direction="column" alignItems="center" justify="center">
+                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center">
                         <Typography
                             variant="h4"
                             marked="center"
