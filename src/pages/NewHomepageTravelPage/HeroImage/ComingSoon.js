@@ -46,19 +46,29 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
-    boxtwo: {
-        width: "100%",
-        marginLeft: "1%",
-        marginBottom: "6%",
+    span: {        
+        color: "#0FAACD !important", 
+        borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
-
-        }
+            textDecoration: "none !important",
+            display: "block !important",
+            fontSize: "25px !important",
+            borderBottom: "none !important",
+        },
     },
     typographythree: {
-        borderBottom: "3px solid #0FAACD",
+        borderBottom: "3px solid #0FAACD",        
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "25px !important",
+        }
+    },
+    boxtwo: {
+        width: "100%",
+        marginLeft: "1%",
+        marginBottom: "6%", 
+        [theme.breakpoints.down("sm")]: {
+
         }
     }
 }));
@@ -73,9 +83,8 @@ const ComingSoon = () => {
                         <Box className={classes.box}>
                             <Box className={classes.boxone}>
                                 <Typography className={classes.typographyone} variant="h3" >
-                                    Stress Less, Dream More.  Mobile App</Typography>
-                                <Typography style={{ display: "inline-block", whiteSpace: "pre-line" }} variant="h3"
-                                    className={classes.typographythree} color="primary.main">Coming Soon.</Typography>
+                                    Stress Less, Dream More. Mobile App <span className={classes.span}>Coming Soon.</span></Typography>
+                               
                             </Box>
                             <Box className={classes.boxtwo}>
                                 <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line" }}>

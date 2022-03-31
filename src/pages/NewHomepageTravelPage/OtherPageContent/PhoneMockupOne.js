@@ -40,6 +40,16 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "25px !important",
         }
     },
+    span: {        
+        color: "#0FAACD !important", 
+        borderBottom: "3px solid #0FAACD",
+        [theme.breakpoints.down("sm")]: {
+            textDecoration: "none !important",
+            display: "block !important",
+            fontSize: "25px !important",
+            borderBottom: "none !important",
+        },
+    },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "25px !important",
@@ -75,10 +85,10 @@ const PhoneMockupOne = () => {
                             <Box className={classes.gridone}>
                                 <Box className={classes.boxtwo}>
                                     <Typography className={classes.typographyone} variant="h4" >
-                                        Local Travel
-                                    </Typography><Typography color="primary.main" className={classes.typography} variant='h4'>Professionals</Typography>
+                                        Local Travel <span className={classes.span}> Professionals</span>
+                                    </Typography>
                                 </Box>
-                                <Typography variant="h5">
+                                <Typography variant="h5" sx={{mt: 4}}>
                                     {'We connect you with local, knowledgeable travel experts from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
                                 </Typography>
 

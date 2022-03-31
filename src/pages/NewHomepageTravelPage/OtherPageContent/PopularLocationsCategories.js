@@ -190,7 +190,7 @@ export default function PopularLocationCategories() {
                         </Box>
                     </Grid>
                     <Grid >
-                        <Box className={classes.item} width={1200} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
+                        <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
                             {images.map((image) => (
                                 <ImageIconButton
                                     key={image.title}
