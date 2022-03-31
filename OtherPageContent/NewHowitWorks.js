@@ -55,11 +55,18 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: "12px !important",
         }
     },
-    typographyone: {
-
+    typographyone: { 
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
         }
+    },
+    span: {        
+        color: "#0FAACD !important",
+        textDecoration: "underline 3px !important",
+        [theme.breakpoints.down("sm")]: {
+            textDecoration: "none !important",
+            fontSize: "25px !important",
+        },
     },
     boxone: {
         display: "flex",
@@ -113,9 +120,8 @@ const NewHowitWorks = () => {
             >
                 <Box className={classes.boxone}>
                     <Typography className={classes.typographyone} variant="h2" component="h2" >
-                        How it
-                    </Typography>
-                    <Typography component="h2" variant="h2" className={classes.typography} color="primary.main"  >works</Typography>
+                        How it <span className={classes.span}> works</span>
+                    </Typography> 
                 </Box>
                 <Box
                     component="img"

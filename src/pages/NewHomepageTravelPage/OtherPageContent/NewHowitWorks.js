@@ -61,6 +61,16 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "25px !important",
         }
     },
+    span: {        
+        color: "#0FAACD !important", 
+        borderBottom: "3px solid #0FAACD",
+        [theme.breakpoints.down("sm")]: {
+            textDecoration: "none !important",
+            display: "block !important",
+            fontSize: "25px !important",
+            borderBottom: "none !important",
+        },
+    },
     boxone: {
         display: "flex",
         flexDirection: "row !important",
@@ -111,10 +121,9 @@ const NewHowitWorks = () => {
                 }}
             >
                 <Box className={classes.boxone}>
-                    <Typography className={classes.typographyone} variant="h2" component="h2" sx={{ mb: 5 }}>
-                        How it
-                    </Typography>
-                    <Typography component="h2" variant="h2" className={classes.typography} color="primary.main" display="inline-block" >works</Typography>
+                    <Typography className={classes.typographyone} variant="h2" component="h2" sx={{ mb: 4 }}>
+                        How it <span className={classes.span} >works</span>
+                    </Typography> 
                 </Box>
                 <Box
                     component="img"
