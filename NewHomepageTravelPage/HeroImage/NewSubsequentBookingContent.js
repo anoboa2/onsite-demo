@@ -15,6 +15,10 @@ import {
     Typography,
     Grid,
     InputAdornment,
+    FormControl,
+    FormLabel,
+    RadioGroup,
+    Radio
 } from '@mui/material';
 import SignupModal from '../../../modules/views/SignupModal';
 
@@ -203,19 +207,19 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                 />
             </Grid>
             <Grid>
-                <FormLabel id="contact-preference-radio-buttons-label">How would you prefer to be contacted?</FormLabel>
-                <RadioGroup
-                    row
-                    aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="email"
-                    name="contact-preference-radio-button"
-                    id="contact-preference-radio-button"
-                    value={values.contact_pref}
-                    onChange={(evt) => handleInputChange('contact_pref', evt.target.value)}
-                >
-                    <FormControlLabel value="phone" control={<Radio />} label="Phone (Text)" />
-                    <FormControlLabel value="email" control={<Radio />} label="Email" />
-                </RadioGroup>
+                <FormControl>
+                    <FormLabel id="contact-preference-radio-buttons-label">How would you prefer to be contacted?</FormLabel>
+                    <RadioGroup
+                        row
+                        defaultValue="email"
+                        id="contact-preference-radio-button"
+                        value={values.contact_pref}
+                        onChange={(evt) => handleInputChange('contact_pref', evt.target.value)}
+                    >
+                        <FormControlLabel value="phone" control={<Radio />} label="Phone (Text)" />
+                        <FormControlLabel value="email" control={<Radio />} label="Email" />
+                    </RadioGroup>
+                </FormControl>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center', mt: 4, }}>
                 {is_authenticated ? (
