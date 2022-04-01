@@ -38,7 +38,8 @@ const NewBookingForm = (props) => {
         numberofadults: 1,
         numberofkids: 0,
         budget: 0,
-        notes: ''
+        notes: '',
+        contact_pref: ''
     }
     const { is_authenticated, user, requestSignIn } = useRownd();
 
