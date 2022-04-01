@@ -127,10 +127,10 @@ const MainProfile = () => {
         }
     }, [hasLoadedUserData, is_initializing, user.data, values])
 
-    function handleChange(name, value, list = false) {
+    function handleChange(name, value, list = false, checked = false) {
         console.log(value);
         if (list) {
-            if (value) {
+            if (checked) {
                 const copyOflist = values[name];
                 copyOflist.push(value);
                 setValues({
@@ -218,7 +218,7 @@ const MainProfile = () => {
                     {/* NEED TO TERNARY OPERATOR FOR IF NAMES ARE BLANK */}
                     {/* <Avatar name={values.first_name} /> */}
 
-                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center">
+                    <Grid item className={classes.gridone} container px={2} py={5} direction="column" alignItems="center" justify="center" maxWidth="100vw">
                         <Typography
                             variant="h4"
                             marked="center"
@@ -228,22 +228,27 @@ const MainProfile = () => {
                         >
                             Personal Information
                         </Typography>
-                        <Box maxWidth="50%">
-                            <InputLabel id="profile-first-name-label" sx={{ whiteSpace: "normal !important", }} >First Name</InputLabel>
-                            <TextField
-                                id="profile-first-name-input"
-                                variant="filled"
-                                value={values.first_name}
-                                onChange={(e) => handleChange('first_name', e.target.value)}
-                                sx={{ minWidth: '90%', borderRadius: '10px !important', marginBottom: "15px" }}
-                            />
+                        <Box className={classes.innerbox} whiteSpace={5}>
+                            <Box>
+                                {/*The span here will ensure that the field is of same width as other fields */}
+                                <InputLabel id="profile-first-name-label" sx={{ whiteSpace: "normal !important", }} >
+                                    First Name<span style={{visibility:"hidden"}}>- adding additional text here to display</span>
+                                </InputLabel>
+                                <TextField
+                                    id="profile-first-name-input"
+                                    variant="filled"
+                                    value={values.first_name}
+                                    onChange={(e) => handleChange('first_name', e.target.value)}
+                                    sx={{ minWidth: '90%', marginBottom: "15px" }}
+                                />
+                            </Box>
                             <InputLabel id="profile-last-name-label" sx={{ whiteSpace: "normal !important", }} >Last Name</InputLabel>
                             <TextField
                                 id="profile-last-name-input"
                                 variant="filled"
                                 value={values.last_name}
                                 onChange={(e) => handleChange('last_name', e.target.value)}
-                                sx={{ minWidth: '90%', borderRadius: '25px', marginBottom: "15px" }}
+                                sx={{ minWidth: '90%', marginBottom: "15px" }}
                             />
                             <InputLabel id="profile-email-label" sx={{ whiteSpace: "normal !important", }} >Email</InputLabel>
                             <TextField
@@ -251,7 +256,7 @@ const MainProfile = () => {
                                 variant="filled"
                                 value={values.email}
                                 onChange={(e) => handleChange('email', e.target.value)}
-                                sx={{ minWidth: '90%', borderRadius: '25px', marginBottom: "15px" }}
+                                sx={{ minWidth: '90%', marginBottom: "15px" }}
                             />
                             <InputLabel id="profile-email-label" sx={{ whiteSpace: "normal !important", }} >Phone Number</InputLabel>
                             <TextField
@@ -259,7 +264,7 @@ const MainProfile = () => {
                                 variant="filled"
                                 value={values.phone_number}
                                 onChange={(e) => handleChange('phone_number', e.target.value)}
-                                sx={{ minWidth: '90%', borderRadius: '25px', marginBottom: "15px" }}
+                                sx={{ minWidth: '90%', marginBottom: "15px" }}
                             />
                             <InputLabel id="profile-email-label" sx={{ whiteSpace: "normal !important", }} >Date of Birth</InputLabel>
                             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -274,9 +279,7 @@ const MainProfile = () => {
                                 />
 
                             </LocalizationProvider>
-
                         </Box>
-
                     </Grid>
                 </Box>
             </Container>
@@ -295,12 +298,12 @@ const MainProfile = () => {
                         </Typography>
                         <Box className={classes.innerbox} whiteSpace={5}>
                             <Box>
-                                <InputLabel id="profile-domestic-flight-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }}  >How do you typically like to fly domestically?</InputLabel>
+                                <InputLabel id="profile-domestic-flight-label" sx={{ whiteSpace: "normal !important" }}  >How do you typically like to fly domestically?</InputLabel>
                                 <Select
                                     id="profile-domestic-flight-input"
                                     value={values.domestic_flight}
                                     onChange={(e) => handleChange("domestic_flight", e.target.value)}
-                                    sx={{ minWidth: '90%' }}
+                                    sx={{ minWidth: '90%', marginBottom: "15px" }}
                                 >
                                     {flightOptions.map((option) => {
                                         return (
@@ -315,12 +318,12 @@ const MainProfile = () => {
                                     })}
                                 </Select>
                             </Box>
-                            <InputLabel id="profile-int-flight-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >How do you typically like to fly internationally?</InputLabel>
+                            <InputLabel id="profile-int-flight-label" sx={{ whiteSpace: "normal !important" }} >How do you typically like to fly internationally?</InputLabel>
                             <Select
                                 id="profile-int-flight-input"
                                 value={values.int_flight}
                                 onChange={(e) => handleChange('int_flight', e.target.value)}
-                                sx={{ minWidth: '90%' }}
+                                sx={{ minWidth: '90%', marginBottom: "15px" }}
                             >
                                 {flightOptions.map((option) => {
                                     return (
@@ -334,14 +337,15 @@ const MainProfile = () => {
                                     )
                                 })}
                             </Select>
-                            <InputLabel id="profile-primary-airport-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >Please enter your preferred Airport for Departure</InputLabel>
+                            <InputLabel id="profile-primary-airport-label" sx={{ whiteSpace: "normal !important" }} >Please enter your preferred Airport for Departure</InputLabel>
                             <TextField
                                 id="profile-primary-airport-input"
                                 value={values.primary_airport}
                                 onChange={(e) => handleChange('primary_airport', e.target.value)}
+                                sx={{ minWidth: '90%', marginBottom: "15px" }}
                             />
                             {/* Add code for Airport Selector */}
-                            <InputLabel id="profile-seating-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >Please select your preferred flight seating</InputLabel>
+                            <InputLabel id="profile-seating-label" sx={{ whiteSpace: "normal !important" }} >Please select your preferred flight seating</InputLabel>
                             <FormGroup
                                 id="profile-seating-select"
                                 value={values.seating}
@@ -350,7 +354,7 @@ const MainProfile = () => {
                                     return (<>
                                         <FormControlLabel
                                             key={option}
-                                            onChange={(e) => handleChange('seating', option, true)}
+                                            onChange={(e) => handleChange('seating', option, true, e.target.checked)}
                                             control={
                                                 <Checkbox
                                                     value={option.value}
@@ -380,58 +384,66 @@ const MainProfile = () => {
                         >
                             Lodging
                         </Typography>
-                        <InputLabel id="profile-lodging-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }}   >
-                            Please select your lodging rating preference</InputLabel>
-                        <Rating
-                            id="profile-lodging-rating"
-                            value={values.lodging_rating}
-                            onChange={(e) => handleChange('lodging_rating', Number(e.target.value))}
-                        />
-                        <InputLabel id="profile-bed-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >Select your bed preference</InputLabel>
-                        <FormGroup
-                            id="profile-bed-select"
-                            value={values.bed}
+                        <Box className={classes.innerbox} whiteSpace={5}>
+                            <Box>
+                                <InputLabel id="profile-lodging-label" sx={{ whiteSpace: "normal !important" }}   >
+                                    Select your lodging rating preference</InputLabel>
+                                <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: "15px" }} >
+                                    <Rating
+                                        id="profile-lodging-rating"
+                                        value={values.lodging_rating}
+                                        onChange={(e) => handleChange('lodging_rating', Number(e.target.value))}
+                                    />
+                                    <Box sx={{ ml: 2 }}>(1-5 Stars)</Box>
+                                </Box>
+                                <InputLabel id="profile-bed-label" sx={{ whiteSpace: "normal !important" }} >Select your bed preference</InputLabel>
+                                <FormGroup
+                                    id="profile-bed-select"
+                                    value={values.bed}
+                                    sx={{ marginBottom: "15px" }}
+                                >
+                                    {bedOptions.map((option) => {
+                                        return (
 
-                        >
-                            {bedOptions.map((option) => {
-                                return (
+                                            <FormControlLabel
+                                                key={option}
+                                                onChange={(e) => handleChange('bed', e.target.value, true, e.target.checked)}
+                                                control={
+                                                    <Checkbox
+                                                        value={option}
+                                                        checked={values.bed.includes(option)}
+                                                    />
+                                                }
+                                                label={option}>{option}
+                                            </FormControlLabel>
 
-                                    <FormControlLabel
-                                        key={option}
-                                        onChange={(e) => handleChange('bed', e.target.value, true)}
-                                        control={
-                                            <Checkbox
-                                                value={option}
-                                                checked={values.bed.includes(option)}
-                                            />
-                                        }
-                                        label={option}>{option}
-                                    </FormControlLabel>
-
-                                )
-                            })}
-                        </FormGroup>
-                        <InputLabel id="profile-room-amenities-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >Select your preferred room features</InputLabel>
-                        <FormGroup
-                            id="profile-room-amenities-select"
-                            value={values.room_amenities}
-                        >
-                            {roomOptions.map((option) => {
-                                return (
-                                    <FormControlLabel
-                                        key={option}
-                                        onChange={(e) => handleChange('room_amenities', e.target.value, true)}
-                                        control={
-                                            <Checkbox
-                                                value={option}
-                                                checked={values.room_amenities.includes(option)}
-                                            />
-                                        }
-                                        label={option}>{option}
-                                    </FormControlLabel>
-                                )
-                            })}
-                        </FormGroup>
+                                        )
+                                    })}
+                                </FormGroup>
+                                <InputLabel id="profile-room-amenities-label" sx={{ whiteSpace: "normal !important" }} >Select your preferred room features</InputLabel>
+                                <FormGroup
+                                    id="profile-room-amenities-select"
+                                    value={values.room_amenities}
+                                    sx={{ marginBottom: "15px" }}
+                                >
+                                    {roomOptions.map((option) => {
+                                        return (
+                                            <FormControlLabel
+                                                key={option}
+                                                onChange={(e) => handleChange('room_amenities', e.target.value, true, e.target.checked)}
+                                                control={
+                                                    <Checkbox
+                                                        value={option}
+                                                        checked={values.room_amenities.includes(option)}
+                                                    />
+                                                }
+                                                label={option}>{option}
+                                            </FormControlLabel>
+                                        )
+                                    })}
+                                </FormGroup>
+                            </Box>
+                        </Box>
                     </Grid>
                 </Box>
             </Container>
@@ -448,28 +460,30 @@ const MainProfile = () => {
                         >
                             Dining
                         </Typography>
-                        <InputLabel id="profile-dietary-label" sx={{ whiteSpace: "normal !important", textAlign: "center" }} >Do you have any food preference or dietary restrictions?</InputLabel>
-                        <FormGroup id="profile-dietary-select"
-                            value={values.dietary}
-                            onChange={(e) => handleChange('dietary', e.target.value, true)}
-                        >
-                            {dietaryOptions.map((option) => {
-                                return (
-                                    <FormControlLabel
-                                        key={option}
-                                        control={
-                                            <Checkbox
-                                                value={option}
-                                                checked={values.dietary.includes(option)}
+                        <Box className={classes.innerbox} whiteSpace={5}>
+                            <InputLabel id="profile-dietary-label" sx={{ whiteSpace: "normal !important" }} >Select food preference or dietary restrictions</InputLabel>
+                            <FormGroup id="profile-dietary-select"
+                                value={values.dietary}
+                                onChange={(e) => handleChange('dietary', e.target.value, true, e.target.checked)}
+                                sx={{ marginBottom: "15px" }}
+                            >
+                                {dietaryOptions.map((option) => {
+                                    return (
+                                        <FormControlLabel
+                                            key={option}
+                                            control={
+                                                <Checkbox
+                                                    value={option}
+                                                    checked={values.dietary.includes(option)}
 
-                                            />
-                                        }
-                                        label={option}>{option}
-                                    </FormControlLabel>
-                                )
-                            })}
-                        </FormGroup>
-
+                                                />
+                                            }
+                                            label={option}>{option}
+                                        </FormControlLabel>
+                                    )
+                                })}
+                            </FormGroup>
+                        </Box>
                     </Grid>
 
                 </Box>
