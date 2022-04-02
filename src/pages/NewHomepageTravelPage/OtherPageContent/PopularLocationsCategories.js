@@ -105,12 +105,12 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     typography: {
-        marginLeft: "20px !important",
+        marginLeft: "10px !important",
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     },
     typography1: {
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
 
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     },
     maintypography1: {
@@ -138,7 +138,6 @@ const useStyles = makeStyles((theme) => ({
     boxone: {
         display: "flex",
         flexDirection: "row !important",
-        marginLeft: " 30% !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
@@ -148,7 +147,6 @@ const useStyles = makeStyles((theme) => ({
     boxtwo: {
         display: "flex",
         flexDirection: "row !important",
-        marginLeft: " 30% !important",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
@@ -174,13 +172,16 @@ export default function PopularLocationCategories() {
     return (
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
-                <Grid >
+                <Grid container
+                    spacing={0}
+                    direction="column"
+                    alignItems="center"
+                    justifyContent="center" >
                     <Grid item xs={12}>
                         <Box className={classes.boxone}>
                             <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
-                                We arrange the
+                                We arrange the<Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >best</Typography>
                             </Typography>
-                            <Typography variant='h4' display="inline-block" color="primary.main" className={classes.typography} >  best</Typography>
                         </Box>
                         <Box className={classes.boxtwo}>
                             <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
@@ -189,7 +190,7 @@ export default function PopularLocationCategories() {
 
                         </Box>
                     </Grid>
-                    <Grid >
+                    <Grid item xs={12} width={"100%"}>
                         <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
                             {images.map((image) => (
                                 <ImageIconButton
