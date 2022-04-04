@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     typography3: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
+            maxWidth: "60%",
+            whiteSpace: "break-spaces",
+            paddingLeft: "20px"
         },
     },
     typography4: {
