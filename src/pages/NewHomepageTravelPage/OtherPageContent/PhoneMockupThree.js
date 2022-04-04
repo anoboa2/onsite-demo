@@ -58,13 +58,13 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     }
 }))
@@ -91,8 +91,8 @@ const PhoneMockupOne = () => {
                             <Typography className={classes.typographyone} variant="h4" sx={{ my: 5, }}>
                                 Everything in one <Typography color="primary.main" className={classes.typography} display="inline-block" variant='h4'>place</Typography>
                             </Typography>
-                            <Typography variant="h5" mb={4} gutterBottom>
-                                {'Our app allows you and your companions to see your complete itinerary, day by day, including maps, tickets, images and reviews as well as chat with your agent any time you have a question or  need to make a change.'}
+                            <Typography variant="h5" mb={4} gutterBottom style={{ textAlign: "justify" }}>
+                                Our app allows you and your companions to see your complete itinerary, day by day, including maps, tickets, images and reviews as well as chat with your agent any time you have a question or  need to make a change.
                             </Typography>
                             <Button variant="outlined" style={{
                                 padding: "10px 55px",

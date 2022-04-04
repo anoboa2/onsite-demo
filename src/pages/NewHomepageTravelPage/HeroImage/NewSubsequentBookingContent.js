@@ -159,6 +159,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     id="booking-budget-input"
                     variant="filled"
                     name="budget"
+                    required
                     value={values.budget}
                     onChange={(evt) => handleInputChange('budget', evt.target.value)}
                     InputProps={{ startAdornment: <InputAdornment position="start">$</InputAdornment> }}

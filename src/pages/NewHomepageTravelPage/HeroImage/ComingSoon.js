@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     },
     typographytwo: {
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none !important",
             display: "block !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
             borderBottom: "none !important",
         },
     },
@@ -87,7 +87,7 @@ const ComingSoon = () => {
                                
                             </Box>
                             <Box className={classes.boxtwo}>
-                                <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line" }}>
+                                <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }}>
                                     We're working non-stop to bring you the mobile app that curates your dream travel experiences. We'll notify you as soon as it's available. In the meantime, plan your next big adventure with us here on our site. Keep an eye out for updates about the mobile app's release.
                                 </Typography>
                             </Box>

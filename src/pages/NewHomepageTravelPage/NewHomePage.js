@@ -2,10 +2,10 @@ import React from "react";
 import HeroImage from "./HeroImage/HeroImage";
 import { makeStyles } from "@mui/styles";
 import NewAppBar from "./NewAppBar";
-import NewBookingForm from "./HeroImage/NewBookingForm";
 import withRoot from "../../modules/withRoot";
 import AppFooter from "../../modules/views/AppFooter";
 import OtherPageContent from "./OtherPageContent/OtherPageContent";
+import ComingSoon from "./HeroImage/ComingSoon";
 
 
 
@@ -26,6 +26,7 @@ const NewHomePage = () => {
         <div className={classes.main}>
             <NewAppBar />
             <HeroImage />
+            <ComingSoon />
             <OtherPageContent />
             <AppFooter />
         </div>

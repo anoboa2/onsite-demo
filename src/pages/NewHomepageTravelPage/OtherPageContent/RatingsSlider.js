@@ -90,14 +90,14 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "3px solid #0FAACD",
     [theme.breakpoints.down("sm")]: {
       borderBottom: "none !important",
-      fontSize: "25px !important",
+      fontSize: "35px !important",
       marginLeft: "40px !important",
     },
   },
   typographythree: {
     [theme.breakpoints.down("sm")]: {
       marginLeft: "40px !important",
-      fontSize: "25px !important",
+      fontSize: "35px !important",
     },
   },
   typographyfour: {
@@ -285,6 +285,7 @@ const RatingsSlider = () => {
                               variant="h6"
                               component="h3"
                               marginTop={0}
+                              style={{ textAlign: "justify" }}
                             >
                               {newData.details}
                             </Typography>
