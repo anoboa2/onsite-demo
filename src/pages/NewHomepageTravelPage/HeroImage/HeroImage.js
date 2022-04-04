@@ -21,6 +21,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     typography1: {
+        marginRight: "6px !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
             marginRight: "65px !important",
@@ -38,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     typography3: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
-            marginRight: "18px !important",
         },
     },
     typography4: {
@@ -50,9 +50,9 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     boxtwo: {
-        marginLeft: "350px !important",
         display: "flex",
         flexDirection: "row !important",
+        marginLeft: "140px",
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
             display: "block !important",
@@ -61,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "baseline",
     },
     boxthree: {
-        marginLeft: "350px !important",
         display: "flex",
         flexDirection: "row !important",
+        marginLeft: "140px",
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
             display: "block !important",
@@ -80,13 +80,20 @@ const HeroImage = () => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Box className={classes.boxtwo}>   <Typography className={classes.typography1} variant="h3">{'Travel Planning, '}</Typography><p>&nbsp;</p><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >{' Reinvented'}</Typography></Box>
+                    <Box className={classes.boxtwo}>
+                        <Typography className={classes.typography1} variant="h3">
+                            Travel Planning,
+                        </Typography>
+                        <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                            Reinvented
+                        </Typography>
+                    </Box>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
                     <Box className={classes.boxthree}>
                         <Typography className={classes.typography3} variant="h5" >
-                            {'Get the most of your travel by leaving the planning to us'}
+                            Get the most of your travel by leaving the planning to us
                         </Typography>
                         {/* <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>
@@ -96,10 +103,7 @@ const HeroImage = () => {
 
                     <NewBookingForm />
                 </div>
-
             </div>
-
-            <ComingSoon />
         </div>
     );
 }

@@ -44,15 +44,12 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#1CCC6F10',
         backdropFilter: 'blur(2px)',
         borderRadius: 10,
-        marginLeft: 300,
         marginTop: 50,
         width: 900,
         [theme.breakpoints.down("sm")]: {
             width: 350,
             borderRadius: 5,
-            marginLeft: 123,
             marginTop: 25,
-
         },
     },
     buttonletsplan: {

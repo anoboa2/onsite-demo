@@ -46,13 +46,13 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none !important",
             display: "block !important",
-            fontSize: "25px !important",
+            fontSize: "35px !important",
             borderBottom: "none !important",
         },
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "25px !important",
+            fontSize: "35px !important",
         }
     },
     boxtwo: {
@@ -88,7 +88,7 @@ const PhoneMockupOne = () => {
                                         Local Travel <span className={classes.span}> Professionals</span>
                                     </Typography>
                                 </Box>
-                                <Typography variant="h5" sx={{mt: 4}}>
+                                <Typography variant="h5" sx={{mt: 4}} style={{ textAlign: "justify" }}>
                                     {'We connect you with local, knowledgeable travel experts from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
                                 </Typography>
 
