@@ -30,8 +30,8 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     title: "Burger",
     details:
-      "Excellent service! Very quick and easy questionnaire to get a personalized itinerary. I love all the individual places included in the itinerary, definitely the best New York experience to feel like a local. Perfect mix of relaxing and sightseeing. The itinerary layout also made it very easy to follow along the whole trip. ",
-    name: "-Alexa D.",
+      "Izanna helped us plan our babymoon during peak tourist with only a month to spare. She was highly responsive, personal and truly listened to our unique needs! Would definitely recommend. ",
+    name: "-Taylor R.",
     rating: 5,
   },
   {
