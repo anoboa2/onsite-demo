@@ -34,6 +34,7 @@ const item = {
 
 const image = {
     height: 55,
+    width: 55,
     my: 4,
 };
 

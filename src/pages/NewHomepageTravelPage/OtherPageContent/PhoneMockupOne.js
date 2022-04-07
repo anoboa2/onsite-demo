@@ -75,7 +75,7 @@ const PhoneMockupOne = () => {
                             component="img"
                             src={iphone13}
                             alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 400, sm: 600 } }}
+                            sx={{ height: { xs: 400, sm: 600 }, width: { xs: 400, sm: 600 } }}
                         />
 
                     </Grid>
@@ -89,7 +89,7 @@ const PhoneMockupOne = () => {
                                     </Typography>
                                 </Box>
                                 <Typography variant="h5" sx={{mt: 4}} style={{ textAlign: "justify" }}>
-                                    {'We connect you with local, knowledgeable travel experts from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
+                                    {'We connect you with local, knowledgeable travel specialists from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
                                 </Typography>
 
                             </Box>

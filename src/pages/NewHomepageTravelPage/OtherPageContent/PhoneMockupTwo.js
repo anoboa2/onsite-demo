@@ -58,7 +58,7 @@ const PhoneMockupTwo = () => {
                             component="img"
                             src={iphone12}
                             alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 400, sm: 700 } }}
+                            sx={{ height: { xs: 400, sm: 700 }, width: { xs: 400, sm: 600 } }}
                         />
 
                     </Grid>

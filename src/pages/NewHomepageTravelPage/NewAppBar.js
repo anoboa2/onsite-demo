@@ -50,12 +50,14 @@ function NewAppBar() {
                             src={onsiteLogo}
                             alt="Onsite Image Logo in Color; a flying plane leaving an O-shaped trail"
                             height='35px'
+                            width='45px'
                             style={image}
                         />
                         <img
                             src={onsiteLogoText}
                             alt="Onsite Logo in Black and White Typography"
                             height='30px'
+                            width='110px'
                             style={image}
                         />
                     </Link>
