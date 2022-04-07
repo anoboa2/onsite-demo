@@ -8,7 +8,6 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import "./RatingsSlider.css";
 import { ButtonBase } from "@material-ui/core";
-import "./images/miami.webp";
 import { Box, Grid, Paper, Rating } from "@mui/material";
 import Typography from "../../../modules/components/Typography";
 import { Fade } from "react-reveal";
