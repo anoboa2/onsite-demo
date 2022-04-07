@@ -85,10 +85,10 @@ const HeroImage = () => {
 
                     <Box className={classes.boxtwo}>
                         <Typography className={classes.typography1} variant="h3">
-                            Travel Planning,
+                            We make the plans,
                         </Typography>
                         <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
-                            Reinvented
+                        you make the memories
                         </Typography>
                     </Box>
                     {/* <div className="typewritereffecttwo"> */}
@@ -96,7 +96,7 @@ const HeroImage = () => {
 
                     <Box className={classes.boxthree}>
                         <Typography className={classes.typography3} variant="h5" >
-                            Get the most of your travel by leaving the planning to us
+                            Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
                         </Typography>
                         {/* <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>

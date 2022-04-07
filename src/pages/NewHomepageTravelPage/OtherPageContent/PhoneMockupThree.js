@@ -80,7 +80,7 @@ const PhoneMockupOne = () => {
                             component="img"
                             src={threeframe}
                             alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 300, sm: 600 } }}
+                            sx={{ height: { xs: 300, sm: 600 }, width: { xs: 400, sm: 600 } }}
                         />
 
                     </Grid>
