@@ -45,7 +45,7 @@ const BookNow = () => {
                             Ready to book your trip?
                         </Typography >
                         <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
-                            Your next trip is a few clicks away
+                            Your next trip to NYC or Miami is a few clicks away
                         </Typography>
                         <Button onClick={handleClick}
                             variant="contained" style={{

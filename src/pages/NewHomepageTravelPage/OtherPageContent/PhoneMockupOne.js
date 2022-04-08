@@ -89,7 +89,7 @@ const PhoneMockupOne = () => {
                                     </Typography>
                                 </Box>
                                 <Typography variant="h5" sx={{mt: 4}} style={{ textAlign: "justify" }}>
-                                    {'We connect you with local, knowledgeable travel specialists from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences.'}
+                                    {'We connect you with local, knowledgeable travel specialists from wherever you are looking to go and let them plan the perfect trip based on their personal experience and your occasion, time and preferences. We currently have travel specialists in New York City and Miami and we\'re expanding throughout the US.'}
                                 </Typography>
 
                             </Box>
