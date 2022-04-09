@@ -1,20 +1,54 @@
 
 import React, { useEffect, useState } from 'react';
-import Section from '../../../modules/components/Section';
-import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating, Grid, Container } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, Rating, Grid, Container, CircularProgress } from '@mui/material';
 import Typography from "../../../modules/components/Typography";
 import TextField from '../../../modules/components/TextField';
-import Avatar from '../../../modules/components/Avatar';
 import { useRownd } from '@rownd/react';
 import Button from "../../../modules/components/Button";
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
-import Alert from '@mui/material/Alert';
-import { Snackbar } from "@mui/material";
-import { textAlign } from "@mui/system";
+import { notification } from 'antd'
 import { makeStyles } from "@mui/styles";
 
+const getNotificationStyle = type => {
+    return {
+        success: {
+            marginTop: '60px',
+            color: 'rgba(0, 0, 0, 0.65)',
+            border: '1px solid #b7eb8f',
+            backgroundColor: '#f6ffed'
+        },
+        warning: {
+            marginTop: '60px',
+            color: 'rgba(0, 0, 0, 0.65)',
+            border: '1px solid #ffe58f',
+            backgroundColor: '#fffbe6'
+        },
+        error: {
+            marginTop: '60px',
+            color: 'rgba(0, 0, 0, 0.65)',
+            border: '1px solid #ffa39e',
+            backgroundColor: '#fff1f0'
+        },
+        info: {
+            marginTop: '60px',
+            color: 'rgba(0, 0, 0, 0.65)',
+            border: '1px solid #91d5ff',
+            backgroundColor: '#e6f7ff'
+        }
+    }[type]
+}
+
+const openCustomNotificationWithIcon = (messageHeader, messageBody, type) => {
+    notification[type]({
+        message: messageHeader,
+        description: messageBody,
+        style: getNotificationStyle(type),
+        duration: 0
+    })
+}
 
 const flightOptions = [
     'Economy',
@@ -97,7 +131,6 @@ const MainProfile = () => {
 
 
     const { is_initializing, user } = useRownd();
-
     const initialValues = {
         first_name: "",
         last_name: "",
@@ -113,9 +146,13 @@ const MainProfile = () => {
         room_amenities: [],
         dietary: [],
     }
+    const navigate = useNavigate();
 
     const [values, setValues] = useState(initialValues)
     const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
+    const [value, setValue] = React.useState(new Date());
+    const [loading, setLoading] = React.useState(false);
+    const classes = useStyles();
 
     useEffect(() => {
         if (!is_initializing && !hasLoadedUserData) {
@@ -189,20 +226,30 @@ const MainProfile = () => {
     //         return;
     //     }
     //     setOpenAlert(false);
-    // };
-    const [value, setValue] = React.useState(new Date());
-    function handleSubmit(event) {
+    // }; 
+
+    async function handleSubmit(event) {
         event.preventDefault();
         if (is_initializing) return;
+        setLoading(true)
+        try {
+            setValues({
+                ...values,
+                ...user.data,
+            })
+            await window.rownd.user.set(values)
 
-        window.rownd.user.set(values);
+            openCustomNotificationWithIcon('Successfully submitted', 'Sucessfully subitted user profile data.', 'success')
+            window.scrollTo({ top: 0, behavior: "smooth" })
+            navigate('/')
 
-
+        } catch (error) {
+            openCustomNotificationWithIcon('Error in sbumittion', 'Error with user profile data.', 'error')
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        } finally {
+            setLoading(false)
+        }
     }
-
-    const [datevalue, setdateValue] = React.useState(new Date());
-
-    const classes = useStyles();
     return (<div>
 
         <Box
@@ -232,7 +279,7 @@ const MainProfile = () => {
                             <Box>
                                 {/*The span here will ensure that the field is of same width as other fields */}
                                 <InputLabel id="profile-first-name-label" sx={{ whiteSpace: "normal !important", }} >
-                                    First Name<span style={{visibility:"hidden"}}>- adding additional text here to display</span>
+                                    First Name<span style={{ visibility: "hidden" }}>- adding additional text here to display</span>
                                 </InputLabel>
                                 <TextField
                                     id="profile-first-name-input"
@@ -489,7 +536,10 @@ const MainProfile = () => {
                 </Box>
             </Container>
             <Box margin="auto" sx={{ maxWidth: 200 }} >
-                <Button margin="auto" id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{ width: 200, mb: 10 }}>Save</Button>
+                <Button disabled={loading} margin="auto" id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{ width: 200, mb: 10 }}>
+                    {loading && <CircularProgress style={{color: "#fff"}} size={10} />}
+                    Save
+                </Button>
             </Box>
             {/* <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openAlert} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
