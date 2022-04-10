@@ -9,47 +9,9 @@ import Button from "../../../modules/components/Button";
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
-import { notification } from 'antd'
+import Alert from '@mui/material/Alert';
+import { Snackbar } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
-const getNotificationStyle = type => {
-    return {
-        success: {
-            marginTop: '60px',
-            color: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid #b7eb8f',
-            backgroundColor: '#f6ffed'
-        },
-        warning: {
-            marginTop: '60px',
-            color: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid #ffe58f',
-            backgroundColor: '#fffbe6'
-        },
-        error: {
-            marginTop: '60px',
-            color: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid #ffa39e',
-            backgroundColor: '#fff1f0'
-        },
-        info: {
-            marginTop: '60px',
-            color: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid #91d5ff',
-            backgroundColor: '#e6f7ff'
-        }
-    }[type]
-}
-
-const openCustomNotificationWithIcon = (messageHeader, messageBody, type) => {
-    notification[type]({
-        message: messageHeader,
-        description: messageBody,
-        style: getNotificationStyle(type),
-        duration: 0
-    })
-}
-
 const flightOptions = [
     'Economy',
     'Premium Economy',
@@ -129,7 +91,6 @@ const useStyles = makeStyles((theme) => ({
 
 const MainProfile = () => {
 
-
     const { is_initializing, user } = useRownd();
     const initialValues = {
         first_name: "",
@@ -147,25 +108,40 @@ const MainProfile = () => {
         dietary: [],
     }
     const navigate = useNavigate();
-
+    const [state = { notLoaded: true }, setState] = useState(null);
     const [values, setValues] = useState(initialValues)
+    const [openAlert, setOpenAlert] = useState(false)
+    const [openFailureAlert, setOpenFailureAlert] = useState(false)
     const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
     const [value, setValue] = React.useState(new Date());
+    const [datevalue, setdateValue] = React.useState(new Date());
     const [loading, setLoading] = React.useState(false);
     const classes = useStyles();
 
     useEffect(() => {
+        setState(useRownd.is_authenticated)
         if (!is_initializing && !hasLoadedUserData) {
+
             setValues({
                 ...values,
                 ...user.data,
+                ...useRownd.is_authenticated,
+                ...useRownd.is_initializing,
             })
             setHasLoadedUserData(true);
+            if (!state) {
+                return <ErrorComponent />
+            } else {
+                return navigate('/profile')
+            }
         }
     }, [hasLoadedUserData, is_initializing, user.data, values])
 
+    const LoadingComponent = () => <div> Loading... </div>
+    const ErrorComponent = () => <div> Please contact admin </div>
+
     function handleChange(name, value, list = false, checked = false) {
-        console.log(value);
+
         if (list) {
             if (checked) {
                 const copyOflist = values[name];
@@ -189,11 +165,8 @@ const MainProfile = () => {
                 [name]: value,
             });
         }
-    }
+    };
     // const [checked, setChecked] = React.useState(true)
-
-
-
 
     // let dietx =
     //     dietaryOptions.map((option) => {
@@ -220,13 +193,14 @@ const MainProfile = () => {
     //         )
     //     })
 
-    // const [openAlert, setOpenAlert] = useState(false)
-    // const handleClose = (event, reason) => {
-    //     if (reason === 'clickaway') {
-    //         return;
-    //     }
-    //     setOpenAlert(false);
-    // }; 
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenAlert(false);
+        setOpenFailureAlert(false);
+    };
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -239,17 +213,15 @@ const MainProfile = () => {
             })
             await window.rownd.user.set(values)
 
-            openCustomNotificationWithIcon('Successfully submitted', 'Sucessfully subitted user profile data.', 'success')
+            setOpenAlert(true);
             window.scrollTo({ top: 0, behavior: "smooth" })
-            navigate('/')
-
         } catch (error) {
-            openCustomNotificationWithIcon('Error in sbumittion', 'Error with user profile data.', 'error')
+            setOpenFailureAlert(true);
             window.scrollTo({ top: 0, behavior: "smooth" })
         } finally {
             setLoading(false)
         }
-    }
+    };
     return (<div>
 
         <Box
@@ -537,17 +509,24 @@ const MainProfile = () => {
             </Container>
             <Box margin="auto" sx={{ maxWidth: 200 }} >
                 <Button disabled={loading} margin="auto" id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{ width: 200, mb: 10 }}>
-                    {loading && <CircularProgress style={{color: "#fff"}} size={10} />}
+                    {loading && <CircularProgress style={{ color: "#fff" }} size={10} />}
                     Save
                 </Button>
             </Box>
-            {/* <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openAlert} autoHideDuration={6000} onClose={handleClose}>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openAlert}
+                onClose={handleClose}>
                 <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
                     Profile Updated Successfully!
                 </Alert>
-            </Snackbar> */}
-        </Box >
-    </div >
+            </Snackbar>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openFailureAlert}
+                onClose={handleClose}>
+                <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                    Error when updating Profile!
+                </Alert>
+            </Snackbar>
+        </Box>
+    </div>
     );
 }
 
