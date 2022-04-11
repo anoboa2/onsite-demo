@@ -15,7 +15,6 @@ const item = {
 const useStyles = makeStyles((theme) => ({
     maingrid: {
         [theme.breakpoints.down("sm")]: {
-            marginTop: "180%",
         }
     },
     box: {
@@ -23,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "7%",
         display: "inline-block",
         whiteSpace: "pre-line",
-        marginTop: "10%",
         [theme.breakpoints.down("sm")]: {
             width: "70%",
             marginLeft: "1%",
