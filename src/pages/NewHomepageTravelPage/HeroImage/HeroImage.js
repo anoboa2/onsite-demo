@@ -1,11 +1,8 @@
 
-import { Box } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
-import NewBookingForm from "./NewBookingForm";
-import ComingSoon from "./ComingSoon";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 
 
@@ -41,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "14px !important",
             maxWidth: "60%",
             whiteSpace: "break-spaces",
-            paddingLeft: "20px"
         },
     },
     typography4: {
@@ -83,28 +79,33 @@ const HeroImage = () => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Box className={classes.boxtwo}>
-                        <Typography className={classes.typography1} variant="h3">
-                            We make the plans,
-                        </Typography>
-                        <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                    <Typography className={classes.typography1} variant="h3">
+                        We make the plans,
+                    </Typography>
+                    <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
                         you make the memories
-                        </Typography>
-                    </Box>
+                    </Typography>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
-                    <Box className={classes.boxthree}>
-                        <Typography className={classes.typography3} variant="h5" >
-                            Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
-                        </Typography>
-                        {/* <p>&nbsp;</p>
+                    <Typography className={classes.typography3} variant="h5" >
+                        Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
+                    </Typography>
+                    <br />
+                    <br />
+                    {/* <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>
                             {'leaving the planning to us'}
                         </Typography> */}
-                    </Box>
-
-                    <NewBookingForm />
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        href="/booking"
+                        sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
+                    >
+                        Let''s Plan
+                    </Button>
+                    {/*<NewBookingForm />*/}
                 </div>
             </div>
         </div>
