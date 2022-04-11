@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^4.19.5",
     "final-form": "^4.20.4",
     "lib": "^4.3.3",
     "luxon": "^2.3.0",

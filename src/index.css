@@ -17,3 +17,6 @@ html{
 body{
   overflow-x: clip;
 }
+.code-box-demo .ant-btn {
+  margin-right: 1em;
+}

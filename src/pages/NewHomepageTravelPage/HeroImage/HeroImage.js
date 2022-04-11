@@ -1,12 +1,10 @@
 
-import { Box } from "@mui/material";
-import React from "react";
+import { Button, Modal } from "@mui/material";
+import React, { useState } from "react";
 import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
-import NewBookingForm from "./NewBookingForm";
-import ComingSoon from "./ComingSoon";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import { Box } from "@mui/system";
 
 
 // const useStyles = makeStyles((theme) => ({
@@ -41,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "14px !important",
             maxWidth: "60%",
             whiteSpace: "break-spaces",
-            paddingLeft: "20px"
         },
     },
     typography4: {
@@ -75,7 +72,26 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
+
 const HeroImage = () => {
+    const [open, setOpen] = useState(false)
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleLearnMore = () => {
+        setOpen(true);
+    }
     const classes = useStyles()
     return (
         <div>
@@ -83,30 +99,72 @@ const HeroImage = () => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Box className={classes.boxtwo}>
-                        <Typography className={classes.typography1} variant="h3">
-                            We make the plans,
-                        </Typography>
-                        <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                    <Typography className={classes.typography1} variant="h3">
+                        We make the plans,
+                    </Typography>
+                    <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
                         you make the memories
-                        </Typography>
-                    </Box>
+                    </Typography>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
-                    <Box className={classes.boxthree}>
-                        <Typography className={classes.typography3} variant="h5" >
-                            Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
-                        </Typography>
-                        {/* <p>&nbsp;</p>
+                    <Typography className={classes.typography3} variant="h5" >
+                        Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
+                    </Typography>
+                    <br />
+                    <br />
+                    {/* <p>&nbsp;</p>
                         <Typography variant="h5" className={classes.typography4}>
                             {'leaving the planning to us'}
                         </Typography> */}
+                    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                        <Box sx={{ p: 1, m: 1, }}>
+                            <Button
+                                variant="contained"
+                                href="/booking"
+                                style={{
+                                    backgroundColor: "#00aaca", padding: "10px 55px",
+                                    borderRadius: "30px",
+                                    color: "white",
+                                    fontSize: "15px"
+                                }}
+                            >
+                                Request Booking
+                            </Button>
+                        </Box>
+                        <Box sx={{ p: 1, m: 1, }}>
+                            <Button
+                                variant="contained"
+                                onClick={handleLearnMore}
+                                style={{
+                                    backgroundColor: "#fff",
+                                    padding: "10px 55px",
+                                    borderRadius: "30px",
+                                    color: "#00aaca",
+                                    fontSize: "15px"
+                                }}
+                            >
+                                Learn More
+                            </Button>
+                        </Box>
                     </Box>
-
-                    <NewBookingForm />
+                    {/*<NewBookingForm />*/}
                 </div>
             </div>
+            <div>
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                            Page content coming soon!
+                        </Typography>
+                    </Box>
+                </Modal></div>
+
         </div>
     );
 }

@@ -46,8 +46,7 @@ function Snackbar(props) {
 
   return (
     <MuiSnackbar
-      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      autoHideDuration={6000}
+      anchorOrigin={{ vertical: 'top', horizontal: 'center' }} 
       TransitionComponent={Transition}
       ContentProps={{
         classes: {

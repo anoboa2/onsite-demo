@@ -17,9 +17,9 @@
   
   /* Place text in the middle of the image */
   .hero-text {
-    text-align: center;
     top: 30%;
     left: 27%;
+    margin-left: 100px;
     white-space: nowrap;
     max-height: 600px;
     margin-top: 60px;
@@ -51,6 +51,6 @@
       left: 37%;
       max-height: 400px;
       margin-top: 30px;
-      
+      margin-left: 20px;
     }
   }

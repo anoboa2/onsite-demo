@@ -8,8 +8,8 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import "./RatingsSlider.css";
 import { ButtonBase } from "@material-ui/core";
-import { Box, Grid, Paper, Rating } from "@mui/material";
-import Typography from "../../../modules/components/Typography";
+import { Box, Grid, Paper, Stack,Avatar } from "@mui/material";
+import Typography from "../../../modules/components/Typography"; 
 import { Fade } from "react-reveal";
 import { makeStyles } from "@mui/styles";
 
@@ -20,7 +20,7 @@ const itemData = [
     title: "Breakfast",
     details:
       "The itinerary you have given me is AMAZING. Just what my boyfriend and I were looking for in Miami! The dinner spots are the perfect, posh vibes we want and it has the perfect amount of relaxation with that side of fun too! Can’t wait to go on our trip. Will definitely be using this service again! ",
-    name: "-Christina G.",
+    name: "Christina G.",
     rating: 5,
   },
   {
@@ -29,7 +29,7 @@ const itemData = [
     title: "Burger",
     details:
       "Izanna helped us plan our babymoon during peak tourist with only a month to spare. She was highly responsive, personal and truly listened to our unique needs! Would definitely recommend. ",
-    name: "-Taylor R.",
+    name: "Taylor R.",
     rating: 5,
   },
   {
@@ -38,7 +38,7 @@ const itemData = [
     title: "Breakfast",
     details:
       "The book was quick, easy and pleasant. I love the options provided to me. Literally it felt like I was served breakfast to bed! ",
-    name: "– Julia L.",
+    name: "Julia L.",
     rating: 5,
   },
   {
@@ -47,7 +47,7 @@ const itemData = [
     title: "Burger",
     details:
       "“She is absolutely great, on top of everything, and has the best recommendations. I would highly recommend her and I will definitely use her help for my next trip! ",
-    name: "-Mana A.",
+    name: "Mana A.",
     rating: 5,
   },
   {
@@ -56,7 +56,7 @@ const itemData = [
     title: "Burger",
     details:
       "I really liked that everything was planned and reservations were made for me. This was exactly what I was looking for. Looking forward to doing these activities! .",
-    name: "-Emma T",
+    name: "Emma T",
     rating: 5,
   },
 ];
@@ -248,49 +248,39 @@ const RatingsSlider = () => {
               >
                 {itemData.map((newData) => (
                   <>
-                    <div style={{ margin: 20 }}>
-                      <Paper elevation={3} sx={{ borderRadius: "40px" }}>
-                        {/* Wrap typography inside a box component to be able to give padding and other properties */}
-                        {/* paddingX means X axis */}
-
+                    <div style={{ margin: 20}}>
+                      <Box sx={{display: "flex", justifyContent:"center", alignItems: "center" }}>
+                        <Box sx={{ display: "inline-block",position: "relative",alignItems: "center",
+                          }}>
+                            <Stack direction="row" spacing={4}>                                   
+                                <Avatar                                      
+                                  alt={newData.name}
+                                  src={newData.img}
+                                  sx={{width: 66, height: 66 }}
+                                />                                 
+                              </Stack>
+                              <Typography variant="h5" component="h5" sx={{textAlign: "justify"}}>
+                                {newData.name}
+                              </Typography>
+                        </Box>
+                      </Box>
+                      <Paper elevation={3} sx={{marginTop:"-55px", borderRadius: "40px" }}> 
                         <Box
                           paddingX={1}
                           className={classes.mainbox}
                           padding={4}
-                          sx={{ borderRadius: "20px" }}
-                        >
-                          {/* you can adjust custom styles in a box which is just like a div by giving it a prop of sx */}
-                          <Box sx={{ display: "flex", alignItems: "center" }}>
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                marginBottom: "10px",
-                              }}
-                            >
-                              {" "}
-                              {/* <Rating
-                                name="read-only"
-                                value={newData.rating}
-                                readOnly
-                                precision={0.5}
-                                size="medium"
-                              /> */}
-                            </Box>
-                          </Box>
+                          sx={{ borderRadius: "20px" }} > 
                           <Box>
                             <Typography
                               variant="h6"
                               component="h3"
                               marginTop={0}
-                              style={{ textAlign: "justify" }}
+                              style={{paddingTop:"30px", textAlign: "justify" }}
                             >
                               {newData.details}
                             </Typography>
                           </Box>
-                          <Typography variant="h5" component="h5">
-                            {newData.name}
-                          </Typography>
+                         
                         </Box>
                       </Paper>
 

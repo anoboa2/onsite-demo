@@ -36,7 +36,9 @@ import NewSubsequentBookingContent from './NewSubsequentBookingContent';
 
 const useStyles = makeStyles((theme) => ({
     bookingformcontainer: {
-
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex !important'
     },
     boxstyle: {
         justifyContent: 'center',
@@ -103,10 +105,6 @@ const useStyles = makeStyles((theme) => ({
             marginRight: "14px !important",
         },
     },
-    sbc: {
-        display: (props) => (props.display ? "flex" : "none"),
-    },
-
 }))
 const style = {
     position: 'absolute',
@@ -150,7 +148,6 @@ const NewBookingForm = () => {
     // console.log(user.data.email)
 
     function handleInputChange(name, event) {
-        console.log(event);
         setValues({ ...values, [name]: event });
     }
     const [open, setOpen] = useState(false)

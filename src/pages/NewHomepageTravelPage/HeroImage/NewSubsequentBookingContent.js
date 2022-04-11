@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typographyone: {
-        paddingRight: "248px",
+        width: "100%",
         [theme.breakpoints.down("sm")]: {
             paddingRight: "0px !important",
             paddingTop: "10px !important",
@@ -150,9 +150,11 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item xs={6} className={classes.reducebottom}
-                sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-budget-label" className={classes.inputlabel} sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+            <Grid item xs={6} className={classes.reducebottom} 
+                sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end',  }}>
+                <InputLabel id="booking-budget-label" className={classes.inputlabel}  required="required" 
+                   sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+                   
                 <TextField
                     hiddenlabel="true"
                     labelid="booking-budget-label"
