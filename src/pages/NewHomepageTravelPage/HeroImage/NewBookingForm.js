@@ -36,7 +36,9 @@ import NewSubsequentBookingContent from './NewSubsequentBookingContent';
 
 const useStyles = makeStyles((theme) => ({
     bookingformcontainer: {
-
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex !important'
     },
     boxstyle: {
         justifyContent: 'center',
@@ -103,10 +105,6 @@ const useStyles = makeStyles((theme) => ({
             marginRight: "14px !important",
         },
     },
-    sbc: {
-        display: (props) => (props.display ? "flex" : "none"),
-    },
-
 }))
 const style = {
     position: 'absolute',

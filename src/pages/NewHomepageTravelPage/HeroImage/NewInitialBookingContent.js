@@ -63,11 +63,13 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typographyone: {
+        width: "100%",
         [theme.breakpoints.down("sm")]: {
             fontSize: "18px !important",
         },
     },
     typographytwo: {
+        width: "100%",
         [theme.breakpoints.down("sm")]: {
             fontSize: "18px !important",
         },
@@ -174,7 +176,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                 className={classes.preference}
                 item xs={6} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                 <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
-                    <ConnectWithoutContactIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Contact Preference</Typography>
+                    Contact Preference</Typography>
                 <Box sx={{ alignItems: "left" }}>
                     <Typography className={classes.typographyone} color="black">
                         <Radio onChange={selectionChangeHandler} checked={selected === 'Phone'} value="Phone" label="Phone" /> Phone

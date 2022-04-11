@@ -89,7 +89,7 @@ const HeroImage = () => {
         setOpen(false);
     };
 
-    const handleLearnMore =() => {
+    const handleLearnMore = () => {
         setOpen(true);
     }
     const classes = useStyles()
@@ -121,9 +121,13 @@ const HeroImage = () => {
                         <Box sx={{ p: 1, m: 1, }}>
                             <Button
                                 variant="contained"
-                                color="secondary"
                                 href="/booking"
-                                sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
+                                style={{
+                                    backgroundColor: "#00aaca", padding: "10px 55px",
+                                    borderRadius: "30px",
+                                    color: "white",
+                                    fontSize: "15px"
+                                }}
                             >
                                 Request Booking
                             </Button>
@@ -131,9 +135,14 @@ const HeroImage = () => {
                         <Box sx={{ p: 1, m: 1, }}>
                             <Button
                                 variant="contained"
-                                color="info"
                                 onClick={handleLearnMore}
-                                sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
+                                style={{
+                                    backgroundColor: "#fff",
+                                    padding: "10px 55px",
+                                    borderRadius: "30px",
+                                    color: "#00aaca",
+                                    fontSize: "15px"
+                                }}
                             >
                                 Learn More
                             </Button>

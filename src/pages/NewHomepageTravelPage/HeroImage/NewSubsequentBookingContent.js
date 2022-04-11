@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typographyone: {
-        paddingRight: "248px",
+        width: "100%",
         [theme.breakpoints.down("sm")]: {
             paddingRight: "0px !important",
             paddingTop: "10px !important",
