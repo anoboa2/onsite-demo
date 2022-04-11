@@ -150,7 +150,6 @@ const NewBookingForm = () => {
     // console.log(user.data.email)
 
     function handleInputChange(name, event) {
-        console.log(event);
         setValues({ ...values, [name]: event });
     }
     const [open, setOpen] = useState(false)

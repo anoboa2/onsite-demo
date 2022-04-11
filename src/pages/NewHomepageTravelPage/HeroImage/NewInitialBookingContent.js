@@ -17,10 +17,13 @@ import {
     Switch,
     Fade,
     Container,
+    RadioGroup,
     Stack,
+    Radio,
 } from '@mui/material';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import Button from '../../../modules/components/Button';
 import { makeStyles } from "@mui/styles";
 
@@ -33,14 +36,27 @@ const locations = [
 const useStyles = makeStyles((theme) => ({
     daterange: {
         [theme.breakpoints.down("sm")]: {
-            width: 200,
+            width: "200px",
+        },
+    },
+    notSureDates: {
+        padding: "10px 0 0 0",
+        [theme.breakpoints.down("sm")]: {
+            width: "200px",
+        },
+    },
+    preference: {
+        padding: "10px 0 0 106px !important",
+        [theme.breakpoints.down("sm")]: {
+            padding: "10px 0 0 56px !important",
+            width: "200px",
         },
     },
     maingrid: {
-        marginTop: 30,
-        paddingBottom: 50,
-        paddingLeft: 40,
-        paddingRight: 40,
+        marginTop: "30px",
+        paddingBottom: "50px",
+        paddingLeft: "40px",
+        paddingRight: "40px",
         [theme.breakpoints.down("sm")]: {
             paddingBottom: "0px !important",
             marginTop: "20px !important"
@@ -68,11 +84,17 @@ const useStyles = makeStyles((theme) => ({
 const NewInitialBookingContent = ({ values, handleInputChange }) => {
     const classes = useStyles()
     const [toggle, setToggle] = useState(false)
+    const [selected, setSelected] = useState('');
 
+    const selectionChangeHandler = (event) => {
+        setSelected(event.target.value);
+        handleInputChange('contact_pref', event.target.value)
+    };
     const handleSwitch = (event) => {
         setToggle(event.target.checked)
-        handleInputChange('dateunsure', event)
+        handleInputChange('dateunsure', event.target.checked)
     };
+
 
     return (
         <Grid className={classes.maingrid} container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{}} >
@@ -117,7 +139,8 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
             </Grid>
             <Grid className={classes.locationicon} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '275px', }}>
 
-                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} /> Location</Typography>
+                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
+                    <LocationOnIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Location</Typography>
                 {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
                 <Select
                     id="booking-location-select"
@@ -139,8 +162,31 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                 </Select>
             </Grid>
 
+            <Grid item xs={6} className={classes.notSureDates}>
+                <Box>
+                    <Box display="flex" alignItems="baseline" justifyContent="flex-start">
+                        <Switch id="booking-date-unsure" name="dateunsure" value={toggle} onChange={handleSwitch}></Switch>
+                        <Typography color="black">I'm not sure of my dates</Typography>
+                    </Box>
+                </Box>
+            </Grid>
+            <Grid
+                className={classes.preference}
+                item xs={6} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
+                    <ConnectWithoutContactIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Contact Preference</Typography>
+                <Box sx={{ alignItems: "left" }}>
+                    <Typography className={classes.typographyone} color="black">
+                        <Radio onChange={selectionChangeHandler} checked={selected === 'Phone'} value="Phone" label="Phone" /> Phone
+                    </Typography>
+
+                    <Typography className={classes.typographyone} color="black">
+                        <Radio onChange={selectionChangeHandler} checked={selected === 'Mobile'} value="Mobile" label="Mobile" /> Mobile
+                    </Typography>
+                </Box>
+            </Grid>
         </Grid >
-    );
+    )
 };
 
 

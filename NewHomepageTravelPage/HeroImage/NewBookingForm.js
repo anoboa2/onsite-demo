@@ -55,7 +55,6 @@ const NewBookingForm = (props) => {
     //     localStorage.removeItem("booking_full_display")
     // });
     function handleInputChange(name, event) {
-        console.log(event);
         setValues({ ...values, [name]: event });
     }
     const [open, setOpen] = useState(false)

@@ -1,10 +1,9 @@
 
 import React, { useEffect, useState } from 'react';
-import Section from '../../../modules/components/Section';
-import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, FormControl, Rating, Grid, Container } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, Rating, Grid, Container, CircularProgress } from '@mui/material';
 import Typography from "../../../modules/components/Typography";
 import TextField from '../../../modules/components/TextField';
-import Avatar from '../../../modules/components/Avatar';
 import { useRownd } from '@rownd/react';
 import Button from "../../../modules/components/Button";
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
@@ -12,10 +11,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import Alert from '@mui/material/Alert';
 import { Snackbar } from "@mui/material";
-import { textAlign } from "@mui/system";
 import { makeStyles } from "@mui/styles";
-
-
 const flightOptions = [
     'Economy',
     'Premium Economy',
@@ -95,9 +91,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MainProfile = () => {
 
-
     const { is_initializing, user } = useRownd();
-
     const initialValues = {
         first_name: "",
         last_name: "",
@@ -113,22 +107,41 @@ const MainProfile = () => {
         room_amenities: [],
         dietary: [],
     }
-
+    const navigate = useNavigate();
+    const [state = { notLoaded: true }, setState] = useState(null);
     const [values, setValues] = useState(initialValues)
+    const [openAlert, setOpenAlert] = useState(false)
+    const [openFailureAlert, setOpenFailureAlert] = useState(false)
     const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
+    const [value, setValue] = React.useState(new Date());
+    const [datevalue, setdateValue] = React.useState(new Date());
+    const [loading, setLoading] = React.useState(false);
+    const classes = useStyles();
 
     useEffect(() => {
+        setState(useRownd.is_authenticated)
         if (!is_initializing && !hasLoadedUserData) {
+
             setValues({
                 ...values,
                 ...user.data,
+                ...useRownd.is_authenticated,
+                ...useRownd.is_initializing,
             })
             setHasLoadedUserData(true);
+            if (!state) {
+                return <ErrorComponent />
+            } else {
+                return navigate('/profile')
+            }
         }
     }, [hasLoadedUserData, is_initializing, user.data, values])
 
+    const LoadingComponent = () => <div> Loading... </div>
+    const ErrorComponent = () => <div> Please contact admin </div>
+
     function handleChange(name, value, list = false, checked = false) {
-        console.log(value);
+
         if (list) {
             if (checked) {
                 const copyOflist = values[name];
@@ -152,11 +165,8 @@ const MainProfile = () => {
                 [name]: value,
             });
         }
-    }
+    };
     // const [checked, setChecked] = React.useState(true)
-
-
-
 
     // let dietx =
     //     dietaryOptions.map((option) => {
@@ -183,26 +193,35 @@ const MainProfile = () => {
     //         )
     //     })
 
-    // const [openAlert, setOpenAlert] = useState(false)
-    // const handleClose = (event, reason) => {
-    //     if (reason === 'clickaway') {
-    //         return;
-    //     }
-    //     setOpenAlert(false);
-    // };
-    const [value, setValue] = React.useState(new Date());
-    function handleSubmit(event) {
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenAlert(false);
+        setOpenFailureAlert(false);
+    };
+
+    async function handleSubmit(event) {
         event.preventDefault();
         if (is_initializing) return;
+        setLoading(true)
+        try {
+            setValues({
+                ...values,
+                ...user.data,
+            })
+            await window.rownd.user.set(values)
 
-        window.rownd.user.set(values);
-
-
-    }
-
-    const [datevalue, setdateValue] = React.useState(new Date());
-
-    const classes = useStyles();
+            setOpenAlert(true);
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        } catch (error) {
+            setOpenFailureAlert(true);
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        } finally {
+            setLoading(false)
+        }
+    };
     return (<div>
 
         <Box
@@ -232,7 +251,7 @@ const MainProfile = () => {
                             <Box>
                                 {/*The span here will ensure that the field is of same width as other fields */}
                                 <InputLabel id="profile-first-name-label" sx={{ whiteSpace: "normal !important", }} >
-                                    First Name<span style={{visibility:"hidden"}}>- adding additional text here to display</span>
+                                    First Name<span style={{ visibility: "hidden" }}>- adding additional text here to display</span>
                                 </InputLabel>
                                 <TextField
                                     id="profile-first-name-input"
@@ -489,15 +508,25 @@ const MainProfile = () => {
                 </Box>
             </Container>
             <Box margin="auto" sx={{ maxWidth: 200 }} >
-                <Button margin="auto" id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{ width: 200, mb: 10 }}>Save</Button>
+                <Button disabled={loading} margin="auto" id="profile-save-button" variant="contained" color="secondary" type="submit" sx={{ width: 200, mb: 10 }}>
+                    {loading && <CircularProgress style={{ color: "#fff" }} size={10} />}
+                    Save
+                </Button>
             </Box>
-            {/* <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openAlert} autoHideDuration={6000} onClose={handleClose}>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openAlert}
+                onClose={handleClose}>
                 <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
                     Profile Updated Successfully!
                 </Alert>
-            </Snackbar> */}
-        </Box >
-    </div >
+            </Snackbar>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={openFailureAlert}
+                onClose={handleClose}>
+                <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                    Error when updating Profile!
+                </Alert>
+            </Snackbar>
+        </Box>
+    </div>
     );
 }
 
