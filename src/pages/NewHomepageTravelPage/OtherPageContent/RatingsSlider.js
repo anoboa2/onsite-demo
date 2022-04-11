@@ -1,22 +1,23 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 import { useRef } from "react";
 import { useEffect } from "react";
 import "./RatingsSlider.css";
-import { ButtonBase } from "@material-ui/core";
 import { Box, Grid, Paper, Stack,Avatar } from "@mui/material";
 import Typography from "../../../modules/components/Typography"; 
 import { Fade } from "react-reveal";
 import { makeStyles } from "@mui/styles";
+import Christina from "./images/Christina.jpg";
+import Emma from "./images/Emma.jpg";
+import Julia from "./images/Julia.jpg";
+import Mana from "./images/Mana.jpg";
+import Taylor from "./images/Taylor R.jpg";
 
 const itemData = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Christina,
     title: "Breakfast",
     details:
       "The itinerary you have given me is AMAZING. Just what my boyfriend and I were looking for in Miami! The dinner spots are the perfect, posh vibes we want and it has the perfect amount of relaxation with that side of fun too! Can’t wait to go on our trip. Will definitely be using this service again! ",
@@ -25,7 +26,7 @@ const itemData = [
   },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Taylor,
     title: "Burger",
     details:
       "Izanna helped us plan our babymoon during peak tourist with only a month to spare. She was highly responsive, personal and truly listened to our unique needs! Would definitely recommend. ",
@@ -34,7 +35,7 @@ const itemData = [
   },
   {
     id: 3,
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Julia,
     title: "Breakfast",
     details:
       "The book was quick, easy and pleasant. I love the options provided to me. Literally it felt like I was served breakfast to bed! ",
@@ -43,7 +44,7 @@ const itemData = [
   },
   {
     id: 4,
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Mana,
     title: "Burger",
     details:
       "“She is absolutely great, on top of everything, and has the best recommendations. I would highly recommend her and I will definitely use her help for my next trip! ",
@@ -52,7 +53,7 @@ const itemData = [
   },
   {
     id: 5,
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Emma,
     title: "Burger",
     details:
       "I really liked that everything was planned and reservations were made for me. This was exactly what I was looking for. Looking forward to doing these activities! .",
