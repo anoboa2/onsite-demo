@@ -121,7 +121,7 @@ const style = {
 
 const NewBookingForm = () => {
 
-    // const [display, setDisplay] = useLocalStorage("booking_full_display", false)
+    const [display, setDisplay] = useLocalStorage("booking_full_display", false)
     const classes = useStyles({ display })
 
     const initialValues = {
