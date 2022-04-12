@@ -179,7 +179,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                     Contact Preference</Typography>
                 <Box sx={{ alignItems: "left" }}>
                     <Typography className={classes.typographyone} color="black">
-                        <Radio onChange={selectionChangeHandler} checked={selected === 'Phone'} value="Phone" label="Phone" /> Phone
+                        <Radio onChange={selectionChangeHandler} checked={selected === 'Email'} value="Email" label="Email" /> Email
                     </Typography>
 
                     <Typography className={classes.typographyone} color="black">
