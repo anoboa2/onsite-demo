@@ -8,11 +8,11 @@ import { Box, Grid, Paper, Stack,Avatar } from "@mui/material";
 import Typography from "../../../modules/components/Typography"; 
 import { Fade } from "react-reveal";
 import { makeStyles } from "@mui/styles";
-import Christina from "./images/Christina.jpg";
-import Emma from "./images/Emma.jpg";
-import Julia from "./images/Julia.jpg";
-import Mana from "./images/Mana.jpg";
-import Taylor from "./images/Taylor R.jpg";
+import Christina from "./images/Christina.webp";
+import Emma from "./images/Emma.webp";
+import Julia from "./images/Julia.webp";
+import Mana from "./images/Mana.webp";
+import Taylor from "./images/Taylor R.webp";
 
 const itemData = [
   {
