@@ -14,6 +14,8 @@ import {
     Switch,
     Fade,
     Radio,
+    RadioGroup,
+    FormControlLabel,
 } from '@mui/material';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -170,13 +172,17 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                 <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
                     Contact Preference</Typography>
                 <Box sx={{ alignItems: "left" }}>
-                    <Typography className={classes.typographyone} color="black">
-                        <Radio onChange={selectionChangeHandler} checked={selected === 'Email'} value="Email" label="Email" /> Email
-                    </Typography>
-
-                    <Typography className={classes.typographyone} color="black">
-                        <Radio onChange={selectionChangeHandler} checked={selected === 'Email'} value="Email" label="Email" /> Mobile
-                    </Typography>
+                    <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        defaultValue="Email"
+                        name="contact-preference-group"
+                        value={values.contact_pref}
+                        required
+                        onChange={selectionChangeHandler}
+                    >
+                        <FormControlLabel value="Email" control={<Radio />} label="Email" />
+                        <FormControlLabel value="Mobile" control={<Radio />} label="Mobile" />
+                    </RadioGroup>
                 </Box>
             </Grid>
         </Grid >

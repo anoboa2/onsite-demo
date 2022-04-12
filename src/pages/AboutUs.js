@@ -14,8 +14,8 @@ function AboutUs() {
         <React.Fragment>
             <NewAppBar />
             <HeroImage details={about}/>
-            <AboutUsQuote />
             <PhoneMockupTwo img={About} details={about}/>
+            <AboutUsQuote />
             <AboutTeam />
             <BookNow />
             <AppFooter />

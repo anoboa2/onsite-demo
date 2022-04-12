@@ -11,13 +11,12 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         [theme.breakpoints.down("sm")]: {
-
-
         }
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
+            whiteSpace: "break-spaces"
         }
     },
     typographytwo: {
