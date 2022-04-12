@@ -40,6 +40,19 @@ const itemData = [
 ];
 
 const useStyles = makeStyles((theme) => ({
+    item: {
+        display: 'flex',
+        flexDirection: 'row !important',
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "40px",
+        [theme.breakpoints.down("sm")]: {
+            display: 'flex',
+            flexDirection: 'column !important',
+            justifyContent: "center",
+            alignItems: "center",
+        }
+    },
     mainbox: {
         [theme.breakpoints.down("sm")]: {
         },
@@ -152,48 +165,36 @@ const AboutTeam = () => {
                                 </Box>
                             </Box>
                         </div>
-                        <div style={{ margin: 30, display: "grid", gridAutoFlow: "column" }}>
-                            {itemData.map((newData) => (
-                                <>
-                                    <div style={{ margin: 20 }}>
-                                        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                            <Box sx={{
-                                                display: "inline-block", position: "relative", alignItems: "center",
-                                            }}>
-                                                <Stack direction="row" style={{ marginBottom: "10px", justifyContent: "center" }} spacing={4}>
-                                                    <Avatar
-                                                        alt={newData.name}
-                                                        src={newData.img}
-                                                        sx={{ width: 100, height: 100 }}
-                                                    />
-                                                </Stack>
-                                                <Typography variant="h5" component="h5" sx={{ textAlign: "justify" }}>
-                                                    {newData.name}
-                                                </Typography>
-                                            </Box>
+                        <Grid item xs={12} width={"100%"}>
+                            <Box className={classes.item} width={"100%"}>
+                                {itemData.map((newData) => (
+                                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <Box sx={{
+                                            display: "inline-block", position: "relative", alignItems: "center",
+                                        }}>
+                                            <Stack direction="row" style={{ marginBottom: "10px", justifyContent: "center" }} spacing={4}>
+                                                <Avatar
+                                                    alt={newData.name}
+                                                    src={newData.img}
+                                                    sx={{ width: 100, height: 100 }}
+                                                />
+                                            </Stack>
+                                            <Typography variant="h5" component="h5" sx={{ textAlign: "center" }}>
+                                                {newData.name}
+                                            </Typography>
+                                            <Typography
+                                                variant="h6"
+                                                component="h6"
+                                                marginTop={0}
+                                                style={{ textAlign: "center" }}
+                                            >
+                                                {newData.designation}
+                                            </Typography>
                                         </Box>
-                                        <Paper elevation={3} className={classes.paperbox} sx={{ marginTop: "-55px", borderRadius: "40px", boxShadow: 0 }}>
-                                            <Box
-                                                paddingX={1}
-                                                className={classes.mainbox}
-                                                padding={4}
-                                                sx={{ borderRadius: "20px" }} >
-                                                <Box>
-                                                    <Typography
-                                                        variant="h6"
-                                                        component="h6"
-                                                        marginTop={0}
-                                                        style={{ paddingTop: "30px", textAlign: "center" }}
-                                                    >
-                                                        {newData.designation}
-                                                    </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Paper>
-                                    </div>
-                                </>
-                            ))}
-                        </div>
+                                    </Box>
+                                ))}
+                            </Box>
+                        </Grid>
                     </div>
                 </Grid>
             </Fade>
