@@ -183,7 +183,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                     </Typography>
 
                     <Typography className={classes.typographyone} color="black">
-                        <Radio onChange={selectionChangeHandler} checked={selected === 'Mobile'} value="Mobile" label="Mobile" /> Mobile
+                        <Radio onChange={selectionChangeHandler} checked={selected === 'Email'} value="Email" label="Email" /> Mobile
                     </Typography>
                 </Box>
             </Grid>
