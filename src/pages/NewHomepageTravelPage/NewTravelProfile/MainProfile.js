@@ -219,6 +219,14 @@ const MainProfile = () => {
             await window.rownd.user.set(values)
 
             setOpenAlert(true);
+
+            let url = 'https://5gftr5ytwb.execute-api.us-east-1.amazonaws.com/prod'
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(values),
+            })
+                .then(response => response.json())
+                
             window.scrollTo({ top: 0, behavior: "smooth" })
         } catch (error) {
             setOpenFailureAlert(true);

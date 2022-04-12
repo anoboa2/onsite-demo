@@ -177,7 +177,7 @@ const NewBookingForm = () => {
             console.log('Form submitted to AWS API Gateway')
             setOpen(true)
             setValues(initialValues)
-            setDisplay(false)
+            // setDisplay(false)
             console.log("Form values reset successfully")
             // window.location.assign("https://buy.stripe.com/5kA7vi4cketEgWk6oM")
             localStorage.removeItem("last_booking")
@@ -201,7 +201,7 @@ const NewBookingForm = () => {
                             values={values}
                             handleInputChange={handleInputChange.bind(this)}
                         />
-                        <Grid item className={classes.buttonletsplan} >
+                        {/* <Grid item className={classes.buttonletsplan} >
                             <Box>
                                 <Button variant="contained" className={classes.mainbuttonletsplan} sx={{
 
@@ -209,7 +209,7 @@ const NewBookingForm = () => {
                                     color="secondary" onClick={() => setDisplay(true)}
                                 >Let's Plan!</Button>
                             </Box>
-                        </Grid>
+                        </Grid> */}
 
 
                     </Grid>
