@@ -12,7 +12,7 @@ import Christina from "./images/Christina.webp";
 import Emma from "./images/Emma.webp";
 import Julia from "./images/Julia.webp";
 import Mana from "./images/Mana.webp";
-import Taylor from "./images/Taylor R.webp";
+import Taylor from "./images/Taylor-R.webp";
 
 const itemData = [
   {
