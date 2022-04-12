@@ -8,11 +8,13 @@ import BookNow from "../pages/NewHomepageTravelPage/OtherPageContent/BookNow"
 import AboutTeam from "../pages/NewHomepageTravelPage/OtherPageContent/aboutTeam"
 import About from "../pages/NewHomepageTravelPage/OtherPageContent/images/About-Us-Picture.webp"
 import { about } from '../Constants';
+import AboutUsQuote from './NewHomepageTravelPage/OtherPageContent/aboutusQuote';
 function AboutUs() {
     return (
         <React.Fragment>
             <NewAppBar />
             <HeroImage details={about}/>
+            <AboutUsQuote />
             <PhoneMockupTwo img={About} details={about}/>
             <AboutTeam />
             <BookNow />

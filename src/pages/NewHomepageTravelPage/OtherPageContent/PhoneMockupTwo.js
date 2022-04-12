@@ -5,12 +5,6 @@ import React from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
 
-const item = {
-
-
-};
-
-
 const useStyles = makeStyles((theme) => ({
     boxone: {
         display: 'flex',
@@ -45,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const PhoneMockupTwo = ({img, details}) => {
+const PhoneMockupTwo = ({ img, details }) => {
     const classes = useStyles()
     return (
         <Grid container>
@@ -53,27 +47,21 @@ const PhoneMockupTwo = ({img, details}) => {
                 <Grid className={classes.boxone}>
                     <Grid item sm={6} xs={12} order={1} sx={{ justifyContent: 'center' }}>
                         <Box
-
                             component="img"
                             src={img}
                             alt="iphone mockup of mobile app itinerary pages"
                             sx={{ height: { xs: 400, sm: 700 }, width: { xs: 400, sm: 600 } }}
                         />
-
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
-
                         <Box>
-
                             <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
                                 {details.secondHeader}
-                            </Typography>{details.isHome &&<Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>}</Box>
+                            </Typography>{details.isHome && <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>}</Box>
                             <Typography variant="h5" style={{ textAlign: "justify" }}>
-                               {details.secondText}
+                                {details.secondText}
                             </Typography>
-
                         </Box>
-
                     </Grid>
                 </Grid>
             </Fade>
