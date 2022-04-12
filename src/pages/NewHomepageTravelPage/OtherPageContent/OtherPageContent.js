@@ -4,8 +4,8 @@ import NewHowitWorks from "./NewHowitWorks";
 import PhoneMockupThree from "./PhoneMockupThree";
 import PhoneMockupOne from "./PhoneMockupOne";
 import PhoneMockupTwo from "./PhoneMockupTwo";
-import { Fade } from "react-reveal";
 import PopularLocationCategories from "./PopularLocationsCategories";
+import MessageFromFounder from "./messageFromFounder";
 
 
 const OtherPageContent = ({img, details}) => {
@@ -16,6 +16,7 @@ const OtherPageContent = ({img, details}) => {
             <PhoneMockupOne />
             <PhoneMockupThree />
             <PopularLocationCategories />
+            <MessageFromFounder />
             <BookNow />
             <RatingsSlider />
         </div>
