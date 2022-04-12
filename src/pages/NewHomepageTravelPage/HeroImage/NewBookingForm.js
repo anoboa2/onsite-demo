@@ -137,7 +137,7 @@ const NewBookingForm = () => {
         numberofkids: 0,
         budget: 0,
         notes: '',
-        contact_pref: ''
+        contact_pref: 'Email'
     }
     const { is_authenticated, user, requestSignIn } = useRownd();
 
