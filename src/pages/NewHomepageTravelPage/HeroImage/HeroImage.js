@@ -69,6 +69,14 @@ const useStyles = makeStyles((theme) => ({
             display: "block !important",
             marginLeft: "0px !important",
         },
+    },
+    boxfour: {
+        display: 'flex',
+        flexDirection: 'row',
+        [theme.breakpoints.down("sm")]: {
+            flexDirection: 'column',
+            alignItems: 'center'
+        },
     }
 }))
 
@@ -83,7 +91,7 @@ const style = {
     p: 4,
 };
 
-const HeroImage = () => {
+const HeroImage = ({ details }) => {
     const [open, setOpen] = useState(false)
     const handleClose = () => {
         setOpen(false);
@@ -100,16 +108,16 @@ const HeroImage = () => {
                     {/* <TypewriterEffectOne /> */}
 
                     <Typography className={classes.typography1} variant="h3">
-                        We make the plans,
+                        {details.header}
                     </Typography>
                     <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
-                        you make the memories
+                        {details.subHeader}
                     </Typography>
                     {/* <div className="typewritereffecttwo"> */}
                     {/* <TypewriterEffectTwo /> */}
 
                     <Typography className={classes.typography3} variant="h5" >
-                        Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime
+                        {details.text}
                     </Typography>
                     <br />
                     <br />
@@ -117,37 +125,38 @@ const HeroImage = () => {
                         <Typography variant="h5" className={classes.typography4}>
                             {'leaving the planning to us'}
                         </Typography> */}
-                    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                        <Box sx={{ p: 1, m: 1, }}>
-                            <Button
-                                variant="contained"
-                                href="/booking"
-                                style={{
-                                    backgroundColor: "#00aaca", padding: "10px 55px",
-                                    borderRadius: "30px",
-                                    color: "white",
-                                    fontSize: "15px"
-                                }}
-                            >
-                                Request Booking
-                            </Button>
-                        </Box>
-                        <Box sx={{ p: 1, m: 1, }}>
-                            <Button
-                                variant="contained"
-                                onClick={handleLearnMore}
-                                style={{
-                                    backgroundColor: "#fff",
-                                    padding: "10px 55px",
-                                    borderRadius: "30px",
-                                    color: "#00aaca",
-                                    fontSize: "15px"
-                                }}
-                            >
-                                Learn More
-                            </Button>
-                        </Box>
-                    </Box>
+                    {details.isHome &&
+                        <Box className={classes.boxfour}>
+                            <Box sx={{ p: 1, m: 1, }}>
+                                <Button
+                                    variant="contained"
+                                    href="/booking"
+                                    style={{
+                                        backgroundColor: "#00aaca", padding: "10px 55px",
+                                        borderRadius: "30px",
+                                        color: "white",
+                                        fontSize: "15px"
+                                    }}
+                                >
+                                    Request Booking
+                                </Button>
+                            </Box>
+                            <Box sx={{ p: 1, m: 1, }}>
+                                <Button
+                                    variant="contained"
+                                    onClick={handleLearnMore}
+                                    style={{
+                                        backgroundColor: "#fff",
+                                        padding: "10px 55px",
+                                        borderRadius: "30px",
+                                        color: "#00aaca",
+                                        fontSize: "15px"
+                                    }}
+                                >
+                                    Learn More
+                                </Button>
+                            </Box>
+                        </Box>}
                     {/*<NewBookingForm />*/}
                 </div>
             </div>

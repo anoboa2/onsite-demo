@@ -8,11 +8,11 @@ import { Fade } from "react-reveal";
 import PopularLocationCategories from "./PopularLocationsCategories";
 
 
-const OtherPageContent = () => {
+const OtherPageContent = ({img, details}) => {
     return (
         <div>
             <NewHowitWorks />
-            <PhoneMockupTwo />
+            <PhoneMockupTwo img={img} details={details}/>
             <PhoneMockupOne />
             <PhoneMockupThree />
             <PopularLocationCategories />

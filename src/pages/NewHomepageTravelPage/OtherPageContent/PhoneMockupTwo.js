@@ -4,13 +4,6 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
-import iphone12 from "./images/iphone12-mockup1.webp";
-
-const item = {
-
-
-};
-
 
 const useStyles = makeStyles((theme) => ({
     boxone: {
@@ -46,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const PhoneMockupTwo = () => {
+const PhoneMockupTwo = ({ img, details }) => {
     const classes = useStyles()
     return (
         <Grid container>
@@ -54,27 +47,21 @@ const PhoneMockupTwo = () => {
                 <Grid className={classes.boxone}>
                     <Grid item sm={6} xs={12} order={1} sx={{ justifyContent: 'center' }}>
                         <Box
-
                             component="img"
-                            src={iphone12}
+                            src={img}
                             alt="iphone mockup of mobile app itinerary pages"
                             sx={{ height: { xs: 400, sm: 700 }, width: { xs: 400, sm: 600 } }}
                         />
-
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
-
                         <Box>
-
                             <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
-                                From plan till you arrive
-                            </Typography><Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography></Box>
+                                {details.secondHeader}
+                            </Typography>{details.isHome && <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>}</Box>
                             <Typography variant="h5" style={{ textAlign: "justify" }}>
-                                We are there every step of the way. Your agent will provide an itinerary for your feedback, make any needed changes now or at any point in your journey, book every aspect of your trip and be there for any questions till you arrive home.
+                                {details.secondText}
                             </Typography>
-
                         </Box>
-
                     </Grid>
                 </Grid>
             </Fade>
