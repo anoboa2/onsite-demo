@@ -48,7 +48,7 @@ function NewAppBar() {
                     >
                         <img
                             src={onsiteLogo}
-                            alt="Onsite Image Logo in Color; a flying plane leaving an O-shaped trail"
+                            alt="Onsite Logo in Color; a flying plane leaving an O-shaped trail"
                             height='35px'
                             width='45px'
                             style={image}
@@ -62,6 +62,15 @@ function NewAppBar() {
                         />
                     </Link>
                     <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                        <Link
+                            color="inherit"
+                            variant="h6"
+                            underline="none"
+                            href="/aboutus"
+                            sx={rightLink}
+                        >
+                            {'About Us'}
+                        </Link>
                         <Link
                             color="inherit"
                             variant="h6"
