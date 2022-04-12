@@ -2,7 +2,6 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
-import Container from '@mui/material/Container';
 import Modal from '@mui/material/Modal';
 import Typography from '../../../modules/components/Typography';
 import { Grid } from '@mui/material';

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, Rating, Grid, Container, CircularProgress } from '@mui/material';
+import { Box, InputLabel, Select, MenuItem, FormControlLabel, FormGroup, Checkbox, Rating, Grid, Container, CircularProgress, IconButton, Avatar } from '@mui/material';
 import Typography from "../../../modules/components/Typography";
 import TextField from '../../../modules/components/TextField';
 import { useRownd } from '@rownd/react';
@@ -202,6 +202,11 @@ const MainProfile = () => {
         setOpenFailureAlert(false);
     };
 
+    const handleFileUpload = async (event) => {
+        await window.rownd.user.uploadFile('photo', event.target.files[0]);
+        handleChange('photo', event.target.value)
+    };
+
     async function handleSubmit(event) {
         event.preventDefault();
         if (is_initializing) return;
@@ -256,6 +261,32 @@ const MainProfile = () => {
                             Personal Information
                         </Typography>
                         <Box className={classes.innerbox} whiteSpace={5}>
+                            <Box sx={{ width: '100%' }} >
+                                <label htmlFor="contained-button-file">
+                                    <IconButton style={{
+                                                margin: '0 0 0 0',
+                                                spacing: 3,
+                                                width: "86px", height: "86px",
+                                                border: 1
+                                            }}>
+                                        {/*<Avatar src={value.profile_photo}
+                                            style={{
+                                                margin: '0 0 0 0',
+                                                spacing: 3,
+                                                width: "86px", height: "86px"
+                                            }} />*/}
+                                        <img data-rownd-field-mapping="photo" alt="pic" />
+                                    </IconButton>
+                                </label>
+
+                                <input accept="image/*"
+                                    className={classes.input}
+                                    id="contained-button-file"
+                                    onChange={(e) => handleFileUpload(e)}
+                                    multiple
+                                    type="file"
+                                />
+                            </Box>
                             <Box>
                                 {/*The span here will ensure that the field is of same width as other fields */}
                                 <InputLabel id="profile-first-name-label" sx={{ whiteSpace: "normal !important", }} >

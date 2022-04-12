@@ -6,7 +6,6 @@ import './HeroImage.css';
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 
-
 // const useStyles = makeStyles((theme) => ({
 //     typography1: {
 //         [theme.breakpoints.down("sm")]: {
@@ -19,6 +18,14 @@ import { Box } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
     typography1: {
+        marginRight: "6px !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "20px !important",
+            marginRight: "65px !important",
+        },
+    },
+    typography12: {
+        paddingTop: "100px",
         marginRight: "6px !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
@@ -107,24 +114,18 @@ const HeroImage = ({ details }) => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Typography className={classes.typography1} variant="h3">
+                    <Typography className={details.isHome ? classes.typography1 : classes.typography12} variant="h3">
                         {details.header}
                     </Typography>
-                    <Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                    {details.subHeader && <><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
                         {details.subHeader}
                     </Typography>
-                    {/* <div className="typewritereffecttwo"> */}
-                    {/* <TypewriterEffectTwo /> */}
-
-                    <Typography className={classes.typography3} variant="h5" >
+                        <br /></>}
+                    <Typography className={classes.typography3} maxWidth="50%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
                         {details.text}
                     </Typography>
                     <br />
                     <br />
-                    {/* <p>&nbsp;</p>
-                        <Typography variant="h5" className={classes.typography4}>
-                            {'leaving the planning to us'}
-                        </Typography> */}
                     {details.isHome &&
                         <Box className={classes.boxfour}>
                             <Box sx={{ p: 1, m: 1, }}>
@@ -157,7 +158,6 @@ const HeroImage = ({ details }) => {
                                 </Button>
                             </Box>
                         </Box>}
-                    {/*<NewBookingForm />*/}
                 </div>
             </div>
             <div>
