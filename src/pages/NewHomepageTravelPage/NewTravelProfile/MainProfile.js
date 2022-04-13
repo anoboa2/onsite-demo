@@ -224,8 +224,11 @@ const MainProfile = () => {
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
             })
-                .then(response => response.json())
+            .then(response => response.json())
                 
             window.scrollTo({ top: 0, behavior: "smooth" })
         } catch (error) {
