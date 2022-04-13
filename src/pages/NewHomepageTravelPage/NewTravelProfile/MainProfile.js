@@ -204,7 +204,7 @@ const MainProfile = () => {
 
     const handleFileUpload = async (event) => {
         await window.rownd.user.uploadFile('photo', event.target.files[0]);
-        handleChange('photo', event.target.value)
+        // handleChange('photo', event.target.value)
     };
 
     async function handleSubmit(event) {

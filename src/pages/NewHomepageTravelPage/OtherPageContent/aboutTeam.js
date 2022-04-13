@@ -168,7 +168,7 @@ const AboutTeam = () => {
                         <Grid item xs={12} width={"100%"}>
                             <Box className={classes.item} width={"100%"}>
                                 {itemData.map((newData) => (
-                                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", p: 2, justifyContent: "center", alignItems: "center" }}>
                                         <Box sx={{
                                             display: "inline-block", position: "relative", alignItems: "center",
                                         }}>
