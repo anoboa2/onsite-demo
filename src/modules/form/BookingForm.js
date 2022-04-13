@@ -45,7 +45,7 @@ const BookingForm = (props) => {
         event.preventDefault();
         let url = 'https://fz7rq6tvx4.execute-api.us-east-1.amazonaws.com/prod/';
 
-        if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email });
+        if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email, post_login_redirect: '/profile?source=booking' });
         else {
             const body = {
                 ...values,
