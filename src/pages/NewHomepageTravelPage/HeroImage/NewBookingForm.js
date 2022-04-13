@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
     Box,
     Container,
-    Fade,
     Grid,
     Modal,
     Typography
 } from '@mui/material';
-import Button from '../../../modules/components/Button';
 import NewInitialBookingContent from './NewInitialBookingContent';
-import Alert from '@mui/material/Alert';
-import { Snackbar } from "@mui/material";
 import withRoot from '../../../modules/withRoot';
 import { useRownd } from '@rownd/react';
 import { useLocalStorage } from '../../../useLocalStorage';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import NewSubsequentBookingContent from './NewSubsequentBookingContent';
 
