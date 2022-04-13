@@ -287,7 +287,7 @@ const MainProfile = () => {
                                                 spacing: 3,
                                                 width: "86px", height: "86px"
                                             }} />*/}
-                                        <img data-rownd-field-mapping="photo" alt="pic" />
+                                        <img width="86px" height="86px" data-rownd-field-mapping="photo" alt="pic" />
                                     </IconButton>
                                 </label>
 
