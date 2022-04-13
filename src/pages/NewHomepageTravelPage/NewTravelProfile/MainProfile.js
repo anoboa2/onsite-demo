@@ -12,6 +12,8 @@ import DatePicker from '@mui/lab/DatePicker';
 import Alert from '@mui/material/Alert';
 import { Snackbar } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useLocation } from "react-router-dom";
+
 const flightOptions = [
     'Economy',
     'Premium Economy',
@@ -90,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const MainProfile = () => {
-
+    const [isBooking, setIsBooking] = useState(false)
     const { is_initializing, user } = useRownd();
     const initialValues = {
         first_name: "",
@@ -117,6 +119,14 @@ const MainProfile = () => {
     const [datevalue, setdateValue] = React.useState(new Date());
     const [loading, setLoading] = React.useState(false);
     const classes = useStyles();
+    const search = useLocation().search;
+
+    useEffect(() => {
+        const source = new URLSearchParams(search).get("source");
+        if (source === 'booking') {
+            setIsBooking(true)
+        }
+    }, [])
 
     useEffect(() => {
         setState(useRownd.is_authenticated)
@@ -131,8 +141,6 @@ const MainProfile = () => {
             setHasLoadedUserData(true);
             if (!state) {
                 return <ErrorComponent />
-            } else {
-                return navigate('/profile')
             }
         }
     }, [hasLoadedUserData, is_initializing, user.data, values])
@@ -200,6 +208,7 @@ const MainProfile = () => {
         }
         setOpenAlert(false);
         setOpenFailureAlert(false);
+        setIsBooking(false);
     };
 
     const handleFileUpload = async (event) => {
@@ -228,8 +237,8 @@ const MainProfile = () => {
                     'Content-Type': 'application/json'
                 },
             })
-            .then(response => response.json())
-                
+                .then(response => response.json())
+
             window.scrollTo({ top: 0, behavior: "smooth" })
         } catch (error) {
             setOpenFailureAlert(true);
@@ -267,18 +276,18 @@ const MainProfile = () => {
                             <Box sx={{ width: '100%' }} >
                                 <label htmlFor="contained-button-file">
                                     <IconButton style={{
-                                                margin: '0 0 0 0',
-                                                spacing: 3,
-                                                width: "86px", height: "86px",
-                                                border: 1
-                                            }}>
+                                        margin: '0 0 0 0',
+                                        spacing: 3,
+                                        width: "86px", height: "86px",
+                                        border: 1
+                                    }}>
                                         {/*<Avatar src={value.profile_photo}
                                             style={{
                                                 margin: '0 0 0 0',
                                                 spacing: 3,
                                                 width: "86px", height: "86px"
                                             }} />*/}
-                                        <img data-rownd-field-mapping="photo" alt="pic" />
+                                        <img width="86px" height="86px" data-rownd-field-mapping="photo" alt="pic" />
                                     </IconButton>
                                 </label>
 
@@ -565,6 +574,12 @@ const MainProfile = () => {
                 onClose={handleClose}>
                 <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
                     Error when updating Profile!
+                </Alert>
+            </Snackbar>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={isBooking}
+                onClose={handleClose}>
+                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                    Booking Request was successfully submitted to Onsite, please complete setting up your Profile.
                 </Alert>
             </Snackbar>
         </Box>
