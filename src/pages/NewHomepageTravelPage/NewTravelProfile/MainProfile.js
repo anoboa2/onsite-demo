@@ -579,7 +579,7 @@ const MainProfile = () => {
             <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={isBooking}
                 onClose={handleClose}>
                 <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
-                    Booking Request was successfully submitted to Onsite, please complete setting up your Profile.
+                    Booking Request was successfully submitted to Onsite. Your travel specialist will reach out to you within 1 business day. Please complete setting up your travel profile below.
                 </Alert>
             </Snackbar>
         </Box>
