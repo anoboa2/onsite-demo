@@ -9,10 +9,10 @@ import { Fade } from 'react-reveal';
 import { makeStyles } from '@mui/styles';
 
 const style = {
-    position: 'absolute',
+    position: 'relative',
     top: '2%',
-    left: '25%',
-    width: "50%",
+    left: '20%',
+    width: "60%",
     overflow: 'scroll',
 };
 
@@ -74,13 +74,13 @@ const images = [
         url: '/img/miami.webp',
         title: 'Miami',
         width: '100%',
-        pdf: '/img/miami-01.png',
+        pdf: '/img/Miami.pdf',
     },
     {
         url: '/img/new-york-city.webp',
         title: 'New York City',
         width: '100%',
-        pdf: '/img/nyc-01.png',
+        pdf: '/img/NYC.pdf',
     },
     // {
     //   url: '/img/iceland.jpg',
@@ -241,12 +241,13 @@ export default function PopularLocationCategories() {
                             ))}
                             <Modal sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, overflow: 'scroll' }} open={open} onClick={handleClose}>
                                 <Box
-                                    component="img"
+                                    component="iframe"
                                     src={pdf}
                                     sx={style}
                                     onClick="null"
-                                >
-                                </Box>
+                                    height="100%"
+                                > 
+                                 </Box>
                             </Modal>
                         </Box>
                     </Grid>
