@@ -159,7 +159,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                     maxWidth: '300px',
                 }}
                 >
-                    Activities
+                    What activities do you want to book?
                 </InputLabel>
                 <Select
                     hiddenLabel
