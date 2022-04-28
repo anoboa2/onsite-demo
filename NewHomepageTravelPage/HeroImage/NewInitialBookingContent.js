@@ -40,7 +40,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
         <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ ml: 'auto', mr: 'auto', pb: 5, pt: 6, pl: 4, pr: 4 }} >
             <Grid item xs={6}>
                 <Box sx={{ width: '100%', justifySelf: 'center' }}>
-                    <Typography color="black" sx={{ mb: 2, }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} />Travel Dates</Typography>
+                    <Typography color="black" sx={{ mb: 2, }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} />When are you planning to travel?</Typography>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <Fade in={toggle}>
                             <DateRangePicker
@@ -75,7 +75,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                 </Box>
             </Grid>
             <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', maxWidth: '275px', }}>
-                <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} />Location</InputLabel>
+                <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}><LocationOnIcon sx={{ color: "#1ccc6f !important", }} />What destination are you traveling to?</InputLabel>
                 <Select
                     id="booking-location-select"
                     hiddenLabel
