@@ -32,11 +32,25 @@ import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact
 import Button from '../../../modules/components/Button';
 import SignupModal from '../../../modules/views/SignupModal';
 import { makeStyles } from "@mui/styles";
-
+// import { locations } from "./locations";
 
 const locations = [
-    { label: 'New York City, NY', value: 'nyc' },
-    { label: 'Miami, FL', value: 'miami' },
+    { label: 'New York City, NY', value: 'New York City' },
+    { label: 'Miami, FL', value: 'Miami' },
+    { label: 'Los Angeles, CA', value: 'Los Angeles' },
+    { label: 'Denver, CO', value: 'Denver' },
+    { label: 'Chicago, IL', value: 'Chicago' },
+    { label: 'Seattle, WA', value: 'Seattle' },
+    { label: 'Napa Valley, CA', value: 'Napa Valley' },
+    { label: 'Mexico City, MX', value: 'Mexico City' },
+    { label: 'Cabo San Lucas, MX', value: 'Cabo San Lucas' },
+    { label: 'Tulum, MX', value: 'Tulum' },
+    { label: 'Dubai, UAE', value: 'Dubai' },
+    { label: 'Orlando, FL', value: 'Orlando' },
+    { label: 'Washington, DC', value: 'Washington DC' },
+    { label: 'San Diego, CA', value: 'San Diego' },
+    { label: 'Cancun, MX', value: 'Cancun' },
+    { label: 'Dallas, TX', value: 'Dallas' }
 ]
 
 const numpeople = [0, 1, 2, 3, 4, 5, 6]
