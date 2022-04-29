@@ -176,7 +176,7 @@ const NewBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} className={classes.daterange}>
                 <Box>
                     <Box sx={{ alignItems: "center" }}>
-                        <Typography className={classes.typographyone} variant='h5' color="black" sx={{ mb: 2, mr: 37 }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} /> Travel Dates</Typography>
+                        <Typography className={classes.typographyone} variant='h5' color="black" sx={{ mb: 2, mr: 37 }}><ConnectingAirportsIcon sx={{ color: "#1ccc6f !important" }} /> When are you planning to travel?</Typography>
                     </Box>
 
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -215,7 +215,7 @@ const NewBookingContent = ({ values, handleInputChange }) => {
             <Grid className={classes.locationicon} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '275px', }}>
 
                 <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
-                    <LocationOnIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Location</Typography>
+                    <LocationOnIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Where would you like to go?</Typography>
                 {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
                 {/* <Select
                     id="booking-location-select"

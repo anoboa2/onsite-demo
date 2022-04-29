@@ -102,7 +102,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
         <Grid container className={classes.maingrid} columns={{ xs: 6, sm: 12, }} sx={{ maxHeight: 'sm', mt: 0, mb: 0, ml: 'auto', mr: 'auto', pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
             <Grid x container item xs={6}>
                 <Container>
-                    <Typography className={classes.typographyone} sx={{ color: 'black', }}>Number of People</Typography>
+                    <Typography className={classes.typographyone} sx={{ color: 'black', }}>How many travelers?</Typography>
                 </Container>
                 <Grid item xs={3}>
                     <Box className={classes.boxes} sx={{ width: '100%' }}>
@@ -153,7 +153,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
             <Grid item xs={6} className={classes.reducebottom} 
                 sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end',  }}>
                 <InputLabel id="booking-budget-label" className={classes.inputlabel}  required="required" 
-                   sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+                   sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>What's your budget?</InputLabel>
                    
                 <TextField
                     hiddenlabel="true"
@@ -168,7 +168,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6} className={classes.reducebottom} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="booking-occasion-label" className={classes.inputlabel2} sx={{ mb: 1, width: '100%', maxWidth: '500px', }}>Type of Trip</InputLabel>
+                <InputLabel id="booking-occasion-label" className={classes.inputlabel2} sx={{ mb: 1, width: '100%', maxWidth: '500px', }}>Why are you traveling?</InputLabel>
                 <Select
                     hiddenlabel="true"
                     labelid="booking-occasion-label"
@@ -204,7 +204,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
 
                 }}
                 >
-                    Activities
+                    Which activities do you want to book?
                 </InputLabel>
                 <Select
                     hiddenlabel="true"
