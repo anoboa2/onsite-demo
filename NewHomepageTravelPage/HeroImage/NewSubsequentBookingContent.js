@@ -63,7 +63,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
         <Grid container columns={{ xs: 6, sm: 12, }} spacing={0} sx={{ mt: 0, mb: 0, ml: 'auto', mr: 'auto', pb: 6, pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
             <Grid container item xs={6}>
                 <Container>
-                    <Typography sx={{ p: 0, color: 'black', }}>Number of People</Typography>
+                    <Typography sx={{ p: 0, color: 'black', }}>How many travelers?</Typography>
                 </Container>
                 <Grid item xs={3}>
                     <Box sx={{ width: '100%' }}>
@@ -111,7 +111,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                 </Grid>
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Budget</InputLabel>
+                <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>What’s your budget?</InputLabel>
                 <TextField
                     hiddenLabel
                     labelId="booking-budget-label"
@@ -124,7 +124,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Type of Trip</InputLabel>
+                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Why are you traveling?</InputLabel>
                 <Select
                     hiddenLabel
                     labelId="booking-occasion-label"
@@ -208,7 +208,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
             </Grid>
             <Grid>
                 <FormControl>
-                    <FormLabel id="contact-preference-radio-buttons-label">How would you prefer to be contacted?</FormLabel>
+                    <FormLabel id="contact-preference-radio-buttons-label">How should we contact you?</FormLabel>
                     <RadioGroup
                         row
                         defaultValue="email"
