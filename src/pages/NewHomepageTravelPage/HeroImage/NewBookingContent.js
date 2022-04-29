@@ -217,7 +217,7 @@ const NewBookingContent = ({ values, handleInputChange }) => {
                 <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
                     <LocationOnIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Location</Typography>
                 {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
-                <Select
+                {/* <Select
                     id="booking-location-select"
                     hiddenlabel="true"
                     labelId="location-label"
@@ -234,7 +234,20 @@ const NewBookingContent = ({ values, handleInputChange }) => {
                     {locations.map((location) => {
                         return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
                     })}
-                </Select>
+                </Select> */}
+                <Autocomplete 
+                    id="booking-location-select"
+                    options={locations}
+                    required
+                    value={values.location}
+                    onChange={(evt) => handleInputChange('location', evt.target.value)}
+                    sx={{
+                        width: '100%',
+                        maxWidth: '300px',
+                        background: 'white',
+                    }}
+                    renderInput={(params) => <TextField {...params} label="Location" />}
+                />
             </Grid>
 
             <Grid item xs={6} className={classes.notSureDates}>
