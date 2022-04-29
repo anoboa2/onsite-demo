@@ -23,8 +23,22 @@ import { makeStyles } from "@mui/styles";
 
 
 const locations = [
-    { label: 'New York City, NY', value: 'nyc' },
-    { label: 'Miami, FL', value: 'miami' },
+    { label: 'New York City, NY', value: 'New York City' },
+    { label: 'Miami, FL', value: 'Miami' },
+    { label: 'Los Angeles, CA', value: 'Los Angeles' },
+    { label: 'Denver, CO', value: 'Denver' },
+    { label: 'Chicago, IL', value: 'Chicago' },
+    { label: 'Seattle, WA', value: 'Seattle' },
+    { label: 'Napa Valley, CA', value: 'Napa Valley' },
+    { label: 'Mexico City, MX', value: 'Mexico City' },
+    { label: 'Cabo San Lucas, MX', value: 'Cabo San Lucas' },
+    { label: 'Tulum, MX', value: 'Tulum' },
+    { label: 'Dubai, UAE', value: 'Dubai' },
+    { label: 'Orlando, FL', value: 'Orlando' },
+    { label: 'Washington, DC', value: 'Washington DC' },
+    { label: 'San Diego, CA', value: 'San Diego' },
+    { label: 'Cancun, MX', value: 'Cancun' },
+    { label: 'Dallas, TX', value: 'Dallas' }
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -137,25 +151,19 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
 
                 <Typography className={classes.typographytwo} variant='h5' color="black" sx={{ mb: 2, mr: 25 }}>
                     <LocationOnIcon sx={{ color: "#1ccc6f !important", }} required="required" /> Location</Typography>
-                {/* <InputLabel id="location-label" sx={{ width: '100%', maxWidth: '300px', mb: 2, mt: { xs: 4, sm: 0, } }}>Location</InputLabel> */}
-                <Select
-                    id="booking-location-select"
-                    hiddenlabel="true"
-                    labelId="location-label"
-                    name="location"
-                    required
-                    value={values.location}
-                    onChange={(evt) => handleInputChange('location', evt.target.value)}
-                    sx={{
-                        width: '100%',
-                        maxWidth: '300px',
-                        background: 'white',
-                    }}
-                >
-                    {locations.map((location) => {
-                        return <MenuItem key={location.value} value={location.value}>{location.label}</MenuItem>
-                    })}
-                </Select>
+                    <Autocomplete 
+                        id="booking-location-select"
+                        options={locations}
+                        required
+                        value={values.location}
+                        onChange={(evt) => handleInputChange('location', evt.target.value)}
+                        sx={{
+                            width: '100%',
+                            maxWidth: '300px',
+                            background: 'white',
+                        }}
+                        renderInput={(params) => <TextField {...params} label="Location" />}
+                    />
             </Grid>
 
             <Grid item xs={6} className={classes.notSureDates}>
