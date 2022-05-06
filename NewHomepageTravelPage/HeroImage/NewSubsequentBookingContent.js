@@ -110,7 +110,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
                 <InputLabel id="booking-budget-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>What’s your budget?</InputLabel>
                 <TextField
                     hiddenLabel
@@ -152,15 +152,8 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                     })}
                 </Select>
             </Grid>
-            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
-                <InputLabel id="booking-activities-label" sx={{
-                    mb: 1,
-                    width: '100%',
-                    maxWidth: '300px',
-                }}
-                >
-                    What activities do you want to book?
-                </InputLabel>
+            <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
+                <InputLabel id="booking-activities-label" sx={{mb: 1, width: '100%',maxWidth: '300px',}}>What activities do you want to book?</InputLabel>
                 <Select
                     hiddenLabel
                     labelId="booking-activities-label"
