@@ -124,7 +124,7 @@ const SubsequentBookingContenttwo = ({ values, handleInputChange }) => {
                     sx={{ background: 'white', width: '100%', maxWidth: '300px', }} />
             </Grid>
             <Grid item xs={6} sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', }}>
-                <InputLabel id="booking-occasion-label" sx={{ mb: 1, width: '100%', maxWidth: '300px', }}>Why are you traveling?</InputLabel>
+                <InputLabel id="booking-occasion-label" sx={{ mb: 1, padding-right: 195px !important, width: '100%', maxWidth: '300px', }}>Why are you traveling?</InputLabel>
                 <Select
                     hiddenLabel
                     labelId="booking-occasion-label"
