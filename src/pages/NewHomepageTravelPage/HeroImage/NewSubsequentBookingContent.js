@@ -80,12 +80,8 @@ const useStyles = makeStyles((theme) => ({
             marginTop: "6px !important",
         },
     },
-    inputlabel: {
-        marginRight: "105px !important"
-    },
     inputlabel2: {
         marginBottom: "40px",
-        paddingRight: "320px !important",
         [theme.breakpoints.down("sm")]: {
             marginBottom: "15px !important",
             paddingRight: "0px !important",
