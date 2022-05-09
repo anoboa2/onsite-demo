@@ -71,7 +71,7 @@ function SignupModal(props) {
                 color="secondary"
                 onClick={handleOpen}
             >
-                {'Book Now'}
+                {'Request Your Trip'}
             </Button>
             <MuiModal
                 id="sign-up-modal"
