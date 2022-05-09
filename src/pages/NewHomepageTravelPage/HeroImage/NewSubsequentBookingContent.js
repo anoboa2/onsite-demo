@@ -259,7 +259,7 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                         type="submit"
                         sx={{ pt: 1, pr: 1, pl: 1, pb: 1 }}
                     >
-                        {'Book Now'}
+                        {'Request Your Trip'}
                     </Button>
                 ) : (
                     <SignupModal />
