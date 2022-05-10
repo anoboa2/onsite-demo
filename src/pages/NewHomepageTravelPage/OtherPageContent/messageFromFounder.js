@@ -40,8 +40,8 @@ const MessageFromFounder = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
-            <Box pt={"20px"}>
-                <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
+            <Box pt={"20px"} padding-top="132px">
+                <Typography className={classes.maintypography} variant="h4" align="left" margin-left="322px" component="h2" >
                     Message from Founder
                 </Typography>
                 <Box
@@ -59,7 +59,7 @@ const MessageFromFounder = () => {
                         </Grid>
                         <Grid item sm={10} xs={12}>
                             <Typography className={classes.typographyone} padding={10} marginBottom="40px" variant="h5">
-                                I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel
+                                “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
                             </Typography >
                         </Grid>
                     </Grid>
