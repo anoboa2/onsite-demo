@@ -54,7 +54,7 @@ const MessageFromFounder = () => {
                         <Grid item sm={2} xs={12} className={classes.boxthree}>
                             <Avatar
                                 src={Izanna}
-                                sx={{ width: 200, height: 200 }}
+                                sx={{ width: 222, height: 222 }}
                             />
                         </Grid>
                         <Grid item sm={10} xs={12}>
