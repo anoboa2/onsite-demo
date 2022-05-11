@@ -122,7 +122,7 @@ const NewBookingForm = () => {
     const initialValues = {
         first_name: '',
         last_name: '',
-        email: '',
+        email: 'Email',
         location: '',
         daterange: [null, null],
         dateunsure: false,
