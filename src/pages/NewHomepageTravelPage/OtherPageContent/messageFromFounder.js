@@ -13,6 +13,14 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
+    
+   foundermessg: {
+        [theme.breakpoints.down("sm")]: {
+            paddingTop: "132px !important",
+            marginLeft: "322px !important",
+        }
+    },
+    
     boxone: {
         display: "flex",
         justifyContent: "center",
@@ -40,8 +48,8 @@ const MessageFromFounder = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
-            <Box pt={"20px"} padding-top="132px">
-                <Typography className={classes.maintypography} variant="h4" align="left" margin-left="322px" component="h2" >
+            <Box pt={"20px"} className={classes.foundermessg}>
+                <Typography className={classes.maintypography} variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
                 <Box
