@@ -48,7 +48,7 @@ const MessageFromFounder = () => {
     return (
         <Fade bottom>
             <Box pt={"132px"}>
-                <Typography className={classNames(classes.maintypography, foundermessg)} variant="h4" align="left" component="h2" >
+                <Typography className={classNames(classes.maintypography, classes.foundermessg)} variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
                 <Box
