@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
     
    foundermessg: {
         [theme.breakpoints.down("sm")]: {
-            paddingTop: "132px !important",
             marginLeft: "322px !important",
         }
     },
@@ -48,8 +47,8 @@ const MessageFromFounder = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
-            <Box pt={"20px"} className={classes.foundermessg}>
-                <Typography className={classes.maintypography} variant="h4" align="left" component="h2" >
+            <Box pt={"132px"}>
+                <Typography className={classNames(classes.maintypography, foundermessg)} variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
                 <Box
