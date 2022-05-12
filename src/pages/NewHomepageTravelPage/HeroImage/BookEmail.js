@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const BookNow = () => {
+const BookEmail = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
@@ -58,4 +58,4 @@ const BookNow = () => {
     );
 }
 
-export default BookNow;
+export default BookEmail;
