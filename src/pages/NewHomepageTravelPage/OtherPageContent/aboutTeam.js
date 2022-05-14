@@ -133,7 +133,7 @@ const AboutTeam = () => {
         <Grid>
             <Fade bottom>
                 <Grid>
-                    <div style={{ marginTop: "50px", marginBottom: "100px" , margin-right: "100px" }}>
+                    <div style={{ marginTop: "50px", marginBottom: "100px" , marginRight: "100px" }}>
                         <div
                             style={{
                                 display: "flex",
