@@ -18,7 +18,7 @@ const itemData = [
         img: Izanna,
         title: "Breakfast",
         designation:
-            "Founder and Chief Executive Office",
+            "Founder and Chief Executive Officer",
         name: "Izanna Levintova"
     },
     {
@@ -133,11 +133,12 @@ const AboutTeam = () => {
         <Grid>
             <Fade bottom>
                 <Grid>
-                    <div style={{ marginTop: "50px", marginBottom: "100px" }}>
+                    <div style={{ marginTop: "50px", marginBottom: "100px" , margin-right: "100px" }}>
                         <div
                             style={{
                                 display: "flex",
                                 padding: "0 10px",
+                                margin-left: "109px";
                                 align: "center",
                                 width: "100%",
                                 justifyContent: "center"
@@ -168,7 +169,7 @@ const AboutTeam = () => {
                         <Grid item xs={12} width={"100%"}>
                             <Box className={classes.item} width={"100%"}>
                                 {itemData.map((newData) => (
-                                    <Box sx={{ display: "flex", p: 2, justifyContent: "center", alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", padding: "30px !important", justifyContent: "center", alignItems: "center" }}>
                                         <Box sx={{
                                             display: "inline-block", position: "relative", alignItems: "center",
                                         }}>
@@ -176,7 +177,7 @@ const AboutTeam = () => {
                                                 <Avatar
                                                     alt={newData.name}
                                                     src={newData.img}
-                                                    sx={{ width: 100, height: 100 }}
+                                                    sx={{ width: 150, height: 150 }}
                                                 />
                                             </Stack>
                                             <Typography variant="h5" component="h5" sx={{ textAlign: "center" }}>
