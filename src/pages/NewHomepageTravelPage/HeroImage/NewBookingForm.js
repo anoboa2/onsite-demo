@@ -12,6 +12,7 @@ import { useRownd } from '@rownd/react';
 import { useLocalStorage } from '../../../useLocalStorage';
 import { makeStyles } from "@mui/styles";
 import NewSubsequentBookingContent from './NewSubsequentBookingContent';
+import BookEmail from './BookEmail';
 
 
 // const boxstyle = {
