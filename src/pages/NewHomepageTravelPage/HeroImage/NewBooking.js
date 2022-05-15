@@ -10,6 +10,7 @@ function NewBooking() {
         <React.Fragment>
             <NewAppBar />
             <NewBookingForm />
+            <BookEmail />
             <AppFooter />
         </React.Fragment>
     )
