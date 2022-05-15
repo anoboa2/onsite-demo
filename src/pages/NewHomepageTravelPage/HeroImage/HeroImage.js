@@ -6,6 +6,7 @@ import './HeroImage.css';
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import learnMore from './videos/Learn-More.mov'
+import LearnMore from '../../pages/LearnMore';
 
 // const useStyles = makeStyles((theme) => ({
 //     typography1: {
@@ -147,7 +148,7 @@ const HeroImage = ({ details }) => {
                             <Box sx={{ p: 1, m: 1, }}>
                                 <Button
                                     variant="contained"
-                                    onClick={handleLearnMore}
+                                    href="/LearnMore"
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 55px",
