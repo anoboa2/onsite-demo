@@ -103,28 +103,7 @@ export default function AppFooter() {
             </Box>
           </Grid>
         </Grid>
-        <Box sx={{ pt: 2}}>
-          <Typography variant="caption" sx={{ color: '#8d9da8' }}>
-        {'Icons made by '}
-        <Link href="https://www.freepik.com" rel="sponsored" title="Freepik" color="inherit">
-          Freepik
-        </Link>
-        {' from '}
-        <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon" color="inherit">
-          www.flaticon.com
-        </Link>
-        {' is licensed by '}
-        <Link
-          href="https://creativecommons.org/licenses/by/3.0/"
-          title="Creative Commons BY 3.0"
-          target="_blank"
-          rel="noopener noreferrer"
-          color="inherit"
-        >
-          CC 3.0 BY
-        </Link>
-      </Typography>
-      </Box>
+
       </Container>
     </Typography>
   );
