@@ -2,6 +2,7 @@ import * as React from 'react';
 import AppFooter from '../../../modules/views/AppFooter';
 import withRoot from '../../../modules/withRoot';
 import NewAppBar from '../NewAppBar';
+import BookEmail from './BookEmail';
 import NewBookingForm from './NewBookingForm';
 
 function NewBooking() {

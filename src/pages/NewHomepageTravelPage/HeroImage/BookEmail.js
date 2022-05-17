@@ -4,7 +4,8 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
-import './BookNow.css';
+import '../OtherPageContent/BookNow.css';
+import './HeroImage.css';
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const BookNow = () => {
+const BookEmail = () => {
     const classes = useStyles()
     return (
         <Fade bottom>

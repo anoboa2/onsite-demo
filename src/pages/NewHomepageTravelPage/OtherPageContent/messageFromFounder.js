@@ -5,6 +5,7 @@ import React from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
 import Izanna from "./images/Izanna-Levintova.webp";
+import classNames from 'classnames/bind';
 
 const useStyles = makeStyles((theme) => ({
     typographyone: {
