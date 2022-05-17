@@ -17,22 +17,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 
-const pages = ['About Us', 'Blog', 'Profile', 'Sign Up'];
-
-
-const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-
-    
+const pages = ['About Us', 'Blog', 'Profile', 'Sign Up'];    
     
 const rightLink = {
     fontSize: 16,
@@ -63,6 +48,16 @@ const onsiteLogoText = '/img/onsiteLogoTextBW.webp';
 
 function NewAppBar() {
     const { is_authenticated } = useRownd();
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+    const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+    };
+  
+    const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+    };
+  
     const classes = useStyles()
     return (
         <div >

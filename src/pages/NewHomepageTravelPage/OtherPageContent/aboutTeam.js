@@ -138,7 +138,7 @@ const AboutTeam = () => {
                             style={{
                                 display: "flex",
                                 padding: "0 10px",
-                                margin-left: "109px";
+                                marginLeft: "109px",
                                 align: "center",
                                 width: "100%",
                                 justifyContent: "center"
