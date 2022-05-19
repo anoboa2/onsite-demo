@@ -6,7 +6,7 @@ import Toolbar from '../../modules/components/Toolbar';
 import { useRownd } from '@rownd/react';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-
+import { useNavigate } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Typography from '../../modules/components/Typography';
 import Menu from '@mui/material/Menu';
@@ -14,10 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-
-const pages = ['About Us', 'Blog', 'Profile', 'Sign Up'];    
+import AdbIcon from '@mui/icons-material/Adb'; 
     
 const rightLink = {
     fontSize: 16,
@@ -49,6 +46,30 @@ const onsiteLogoText = '/img/onsiteLogoTextBW.webp';
 function NewAppBar() {
     const { is_authenticated } = useRownd();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const navigate = useNavigate();
+
+    let pages = [
+        {
+            label: 'About Us',
+            key:'aboutUs',
+            path: '/aboutUs',
+            isTarget: false
+        },
+        {
+            label: 'Blog',
+            key:'blog',
+            path: 'https://blogonsiteplanning.wordpress.com',
+            isTarget: false
+        }];  
+
+    if(is_authenticated) {
+        pages.push({
+            label: 'Profile',
+            key:'profile',
+            path: '/profile',
+            isTarget: false
+        })
+    }
 
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -57,6 +78,21 @@ function NewAppBar() {
     const handleCloseNavMenu = () => {
       setAnchorElNav(null);
     };
+
+    const updateMenu = (menuDetails) => {
+        handleCloseNavMenu()
+        switch(menuDetails.key){
+            case ('aboutUs' || 'profile') :
+                navigate(menuDetails.path)
+                return;
+            case 'blog':
+                window.open(menuDetails.path)
+                return
+            default:
+                return false
+
+        }
+    }
   
     const classes = useStyles()
     return (
@@ -84,8 +120,6 @@ function NewAppBar() {
                             style={image}
                         />
                     </Link>
-
-
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                        <IconButton
                           size="large"
@@ -97,7 +131,6 @@ function NewAppBar() {
                         >
                           <MenuIcon />
                         </IconButton>
-
                         <Menu
                           id="menu-appbar"
                           anchorEl={anchorElNav}
@@ -116,19 +149,37 @@ function NewAppBar() {
                             display: { xs: 'block', md: 'none' },
                           }}
                         >
-                          {pages.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
-                              <Typography textAlign="center">{page}</Typography>
+                          {pages.map((page, index) => (
+                            <>
+                            <MenuItem key={page.key} onClick={() => updateMenu(page)}>
+                            <Typography textAlign="center">{page.label}</Typography>
                             </MenuItem>
+                            {index === pages.length -1 && !is_authenticated &&
+                            <MenuItem key={page.key} onClick={() => updateMenu(page)}>
+                            <Link
+                                data-rownd-sign-in-trigger
+                                style={{margin:'0px', color:'dimgray'}}
+                                variant="h6"
+                                underline="none"
+                                href="/"
+                                onClick={handleCloseNavMenu}
+                                sx={{...rightLink, color: 'secondary.main' }}
+                            >
+                                {'Sign Up'}
+                            </Link>
+                            </MenuItem>
+                        }
+                        </>
                           ))}
                         </Menu>
-
-                        <Link
-                            color="inherit"
-                            variant="h6"
-                            underline="none"
-                            href="/aboutus"
-                            sx={rightLink}
+                    </Box>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Link
+                        color="inherit"
+                        variant="h6"
+                        underline="none"
+                        href="/aboutus"
+                        sx={rightLink}
                         >
                             {'About Us'}
                         </Link>
@@ -159,7 +210,7 @@ function NewAppBar() {
                                 variant="h6"
                                 underline="none"
                                 href="/"
-                                sx={{ ...rightLink, color: 'secondary.main' }}
+                                sx={{...rightLink, color: 'secondary.main' }}
                             >
                                 {'Sign Up'}
                             </Link>
