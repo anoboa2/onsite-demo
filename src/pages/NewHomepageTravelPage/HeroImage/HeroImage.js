@@ -135,7 +135,7 @@ const HeroImage = ({ details }) => {
                                     href="/booking"
                                     style={{
                                         backgroundColor: "#00aaca", padding: "10px 55px",
-                                        borderRadius: "30px",
+                                        borderRadius: "10px",
                                         color: "white",
                                         fontSize: "15px"
                                     }}
@@ -150,7 +150,7 @@ const HeroImage = ({ details }) => {
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 55px",
-                                        borderRadius: "30px",
+                                        borderRadius: "10px",
                                         color: "#00aaca",
                                         fontSize: "15px"
                                     }}
