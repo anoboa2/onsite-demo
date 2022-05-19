@@ -58,7 +58,7 @@ const MessageFromFounder = () => {
                             />
                         </Grid>
                         <Grid item sm={10} xs={12}>
-                        <Typography className={classNames(classes.maintypography)} marginLeft="62px !important"  paddingTop="30px" variant="h4" align="left" component="h2" >
+                        <Typography className={classNames(classes.maintypography)} marginLeft="50px !important"  paddingTop="30px" variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
                             <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="70px" variant="h5">
