@@ -6,6 +6,8 @@ import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
 import '../OtherPageContent/BookNow.css';
 import './HeroImage.css';
+import TextField from '../../../modules/components/TextField';
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -27,6 +29,53 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
+const FormGroup = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 53px;
+  margin-top: 6.5em;
+  
+`;
+
+const EmailInput = styled.input`
+  outline: none;
+  border: none;
+  background-color: #fff;
+  padding-left: 1.5em;
+  padding-right: 3em;
+  border-radius: 17px;
+  font-size: 20px;
+  color: #000;
+  height: 100%;
+  &::placeholder {
+    color: #272727;
+  }
+`;
+
+const SubscribeButton = styled.button`
+  position: absolute;
+  right: -15px;
+  top: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #00AACA;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 0 10px;
+  &:hover {
+    background-color: #0FAACD;
+  }
+`;
+
 
 const BookEmail = () => {
     const classes = useStyles()
@@ -37,19 +86,19 @@ const BookEmail = () => {
                 <div className="book-image">
 
                     <Box className="book-text">
-                        <Typography className={classes.typographyone} marginBottom="40px" variant="h4">
+                        <Typography className={classes.typographyone} marginBottom="95px" variant="h4">
                             Not Ready to Book Yet? We’ll keep you informed with all our latest travel updates
                         </Typography >
                         {/* <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
                             Your next trip to NYC or Miami is a few clicks away
                         </Typography> */}
-                        <Button href="/SignupModalNewsletter"
-                            variant="contained" style={{
-                                backgroundColor: "#00aaca", padding: "10px 55px",
-                                borderRadius: "30px",
-                                color: "white",
-                                fontSize: "15px"
-                            }}>Suscribe</Button>
+                    </Box>
+
+                    <Box className="book-text">
+                        <FormGroup>
+                        <EmailInput type="text" placeholder="example@email.com"  method="POST"/>
+                        <SubscribeButton>Subscribe</SubscribeButton>
+                        </FormGroup>
                     </Box>
 
                 </div>
