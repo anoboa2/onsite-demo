@@ -62,7 +62,7 @@ const MessageFromFounder = () => {
                     Message from Founder
                 </Typography>
                             <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="70px" variant="h5">
-                                “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
+                                “I want to inspire people from all over the world to step outside their comfort zones and experience something<br /> new through travel”
                             </Typography >
                         </Grid>
                     </Grid>
