@@ -49,7 +49,8 @@ const MessageFromFounder = () => {
                     alignItems="center"
                     justifyContent="center">
                     <Grid container
-                        spacing={0}
+                        
+                        md={10} xs={10} order={4}
                         className={classes.boxtwo} >
                         <Grid item sm={2} xs={12} className={classes.boxthree}>
                             <Avatar
@@ -62,7 +63,7 @@ const MessageFromFounder = () => {
                     Message from Founder
                 </Typography>
                             <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="70px" variant="h5">
-                                “I want to inspire people from all over the world to step outside their comfort zones and experience something<br /> new through travel”
+                                “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
                             </Typography >
                         </Grid>
                     </Grid>
