@@ -21,6 +21,7 @@ function Copyright() {
 const iconStyle = {
   width: 48,
   height: 48,
+  borderRadius: "10px",
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
