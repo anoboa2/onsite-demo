@@ -42,7 +42,7 @@ const MessageFromFounder = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
-            <Box pt={"50px"}>
+            <Box pt={"70px"}>
 
                 <Box
                     display="flex"
@@ -62,7 +62,7 @@ const MessageFromFounder = () => {
                         <Typography className={classNames(classes.maintypography)} marginLeft="50px !important"  paddingTop="30px" variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
-                            <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="70px" variant="h5">
+                            <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="80px" variant="h5">
                                 “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
                             </Typography >
                         </Grid>
