@@ -61,7 +61,7 @@ const MessageFromFounder = () => {
                         <Typography className={classNames(classes.maintypography)} marginLeft="62px !important"  paddingTop="30px" variant="h4" align="left" component="h2" >
                     Message from Founder
                 </Typography>
-                            <Typography className={classes.typographyone} padding="45px" marginBottom="70px" variant="h5">
+                            <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="70px" variant="h5">
                                 “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
                             </Typography >
                         </Grid>
