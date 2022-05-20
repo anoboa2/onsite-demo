@@ -15,6 +15,9 @@ export const about = {
 }
 
 export const learn = {
+    isLearn : true,
     header : "The Best Travel Itineraries for you",
-    text : "Onsite curates itineraries based on your desires and your needs."
+    subHeader : "based on your desires and your needs.",
+    text : "Imagine the time you can save with just one startup itinerary that's tailored to you."
 }
+    
