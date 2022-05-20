@@ -70,9 +70,11 @@ const item = {
 
 const useStyles = makeStyles((theme) => ({
   mainbox: {
-    height: 410,
+    height: 250,
+    marginBottom: "50px",
     [theme.breakpoints.down("sm")]: {
-      height: 550,
+      height: 320,
+      marginBottom: "58px",
     },
   },
   typographytwo: {
@@ -116,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
   boxtwo: {
     display: "flex",
     flexDirection: "row !important",
-    paddingBottom: "25px",
+    paddingBottom: "15px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "25px !important",
       flexDirection: "column !important",
@@ -259,15 +261,15 @@ const RatingsSlider = () => {
                                 <Avatar                                      
                                   alt={newData.name}
                                   src={newData.img}
-                                  sx={{width: 66, height: 66 }}
+                                  sx={{width: 95, height: 95 }}
                                 />                                 
                               </Stack>
-                              <Typography variant="h5" component="h5" sx={{textAlign: "justify"}}>
+                              <Typography variant="h6" component="h5" sx={{textAlign: "justify", marginTop:"10px" }}>
                                 {newData.name}
                               </Typography>
                         </Box>
                       </Box>
-                      <Paper elevation={3} sx={{marginTop:"-55px", borderRadius: "40px" }}> 
+                      <Paper elevation={3} sx={{marginTop:"-75px", borderRadius: "40px" , paddingTop:"55px"}}> 
                         <Box
                           paddingX={1}
                           className={classes.mainbox}
@@ -275,10 +277,9 @@ const RatingsSlider = () => {
                           sx={{ borderRadius: "20px" }} > 
                           <Box>
                             <Typography
-                              variant="h6"
                               component="h3"
                               marginTop={0}
-                              style={{paddingTop:"30px", textAlign: "justify" }}
+                              style={{textAlign: "justify" }}
                             >
                               {newData.details}
                             </Typography>
