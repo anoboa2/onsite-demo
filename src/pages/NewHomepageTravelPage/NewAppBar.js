@@ -112,7 +112,7 @@ function NewAppBar() {
                             style={image}
                         />
                     </Link>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent:"right" }}>
                        <IconButton
                           size="large"
                           aria-label="account of current user"
@@ -165,7 +165,7 @@ function NewAppBar() {
                           ))}
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:"right" }}>
                     <Link
                         color="inherit"
                         variant="h6"
