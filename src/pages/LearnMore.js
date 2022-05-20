@@ -8,10 +8,8 @@ import AppFooter from '../modules/views/AppFooter';
 import Typography from '../modules/components/Typography';
 import withRoot from '../modules/withRoot';
 import "./learmore.css";
-import YoutubeEmbed from "./YoutubeEmbed";
 import { learn } from '../Constants';
 import Learn from './NewHomepageTravelPage/HeroImage/Learn';
-import { Grid } from '@mui/material';
 
 
 const useStyles = makeStyles((theme) => ({
