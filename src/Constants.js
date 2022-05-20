@@ -13,3 +13,8 @@ export const about = {
     secondHeader : "What Makes Us Different",
     secondText : "We are travel aficionados. We design and then book itineraries based on your travel profile, interests, and budget. Our local travel specialists curate the best travel plans based on their experiences in your destination. Plus, we enable you to live like a local and show you as much as possible instead of rushing through a city or booking private tours by yourself."
 }
+
+export const learn = {
+    header : "The Best Travel Itineraries for you",
+    text : "Onsite curates itineraries based on your desires and your needs."
+}

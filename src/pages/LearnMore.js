@@ -9,7 +9,7 @@ import Typography from '../modules/components/Typography';
 import withRoot from '../modules/withRoot';
 import "./learmore.css";
 import YoutubeEmbed from "./YoutubeEmbed";
-import { about } from '../Constants';
+import { learn } from '../Constants';
 import HeroImage from './NewHomepageTravelPage/HeroImage/HeroImage';
 import { Grid } from '@mui/material';
 
@@ -71,7 +71,7 @@ function LearnMore() {
   return (
     <React.Fragment>
       <NewAppBar />
-      <HeroImage details={about}/>
+      <HeroImage details={learn}/>
       <Grid Container>
     
 
@@ -90,8 +90,8 @@ function LearnMore() {
                         <Box className={classes.thebox}>
 
                             <Box className={classes.boxtwo}>
-                            <Typography className={classes.typographyone}  variant="h4" >
-                            As the world's leading expert in on-location travel planning, Onsite curates itineraries based on your desires and your needs.</Typography>
+                            <Typography className={classes.typographyone} color="#0FAACD" variant="h4" >
+                            As the world's leading expert in on-location travel planning</Typography>
 
                             <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'></Typography></Box>
                             <Typography className={classes.typography3} variant="h7">
