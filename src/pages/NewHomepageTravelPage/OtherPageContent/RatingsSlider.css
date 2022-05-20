@@ -2,7 +2,7 @@
     /* border: 2px solid; */
     height: 4px;
     width: 70px;
-    background: lightgray;
+    background: #0FAACD;
     border-radius: 5px;
   }
   
@@ -11,7 +11,7 @@
   }
   
   .line-indicator li.slick-active {
-    background: blue;
+    background: #21c37e;
   }
   .buttons {
     background: orangered !important;

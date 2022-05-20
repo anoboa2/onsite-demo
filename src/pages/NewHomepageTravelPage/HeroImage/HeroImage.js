@@ -122,7 +122,7 @@ const HeroImage = ({ details }) => {
                         {details.subHeader}
                     </Typography>
                         <br /></>}
-                    <Typography className={classes.typography3} maxWidth="50%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
+                    <Typography className={classes.typography3} maxWidth="40%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
                         {details.text}
                     </Typography>
                     <br />

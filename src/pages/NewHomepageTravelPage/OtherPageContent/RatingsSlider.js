@@ -64,6 +64,7 @@ const itemData = [
 
 const item = {
   display: "flex",
+  color: "#21c37e",
   flexDirection: "column",
 };
 
@@ -115,6 +116,7 @@ const useStyles = makeStyles((theme) => ({
   boxtwo: {
     display: "flex",
     flexDirection: "row !important",
+    paddingBottom: "25px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "25px !important",
       flexDirection: "column !important",
