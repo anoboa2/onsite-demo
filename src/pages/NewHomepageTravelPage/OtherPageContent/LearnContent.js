@@ -4,6 +4,8 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
+import YoutubeEmbed from "../../YoutubeEmbed";
+
 
 const useStyles = makeStyles((theme) => ({
     boxone: {
@@ -46,13 +48,11 @@ const LearnContent = ({ details }) => {
             <Fade bottom>
                 <Grid className={classes.boxone}>
                     <Grid item sm={6} xs={12} order={1} sx={{ justifyContent: 'center' }}>
-                        <Box
-
-                            alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 400, sm: 700 }, width: { xs: 400, sm: 600 } }}
-                        />
+                    <div className="LearnMore">
+                        <YoutubeEmbed embedId="0yQ2JXlCeTs" />
+                        </div>
                     </Grid>
-                    <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
+                    <Grid item sm={6} xs={12} md={10} padding={8} container order={5} sx={{ justifyContent: 'left' }}>
                         <Box>
                             <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
                                 {details.secondHeader}
