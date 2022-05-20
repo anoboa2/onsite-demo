@@ -46,6 +46,7 @@ const EmailInput = styled.input`
   padding-left: 1.5em;
   padding-right: 3em;
   border-radius: 17px;
+  font-family: "Kumbh Sans", sans-serif;
   font-size: 20px;
   color: #000;
   height: 100%;
@@ -96,7 +97,7 @@ const BookEmail = () => {
 
                     <Box className="book-text">
                         <FormGroup>
-                        <EmailInput type="text" placeholder="example@email.com"  method="POST"/>
+                        <EmailInput type="text" placeholder="name@email.com"  method="POST"/>
                         <SubscribeButton>Subscribe</SubscribeButton>
                         </FormGroup>
                     </Box>
