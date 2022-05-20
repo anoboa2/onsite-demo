@@ -45,7 +45,7 @@ const BookNow = () => {
                         <Button href="/booking"
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
-                                borderRadius: "30px",
+                                borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px"
                             }}>Let's Go</Button>

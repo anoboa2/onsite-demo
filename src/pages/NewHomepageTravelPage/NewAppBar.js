@@ -40,8 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const onsiteLogo = '/img/onsiteLogoColor.webp';
-const onsiteLogoText = '/img/onsiteLogoTextBW.webp';
+const onsiteLogo = '/img/Onsite_Logo.png';
 
 function NewAppBar() {
     const { is_authenticated } = useRownd();
@@ -108,15 +107,8 @@ function NewAppBar() {
                         <img
                             src={onsiteLogo}
                             alt="Onsite Logo in Color; a flying plane leaving an O-shaped trail"
-                            height='35px'
-                            width='45px'
-                            style={image}
-                        />
-                        <img
-                            src={onsiteLogoText}
-                            alt="Onsite Logo in Black and White Typography"
-                            height='30px'
-                            width='110px'
+                            height='40px'
+                            width='150px'
                             style={image}
                         />
                     </Link>
@@ -224,3 +216,4 @@ function NewAppBar() {
 }
 
 export default NewAppBar;
+

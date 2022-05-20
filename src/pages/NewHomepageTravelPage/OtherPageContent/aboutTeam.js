@@ -49,8 +49,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: 'column !important',
-            justifyContent: "center",
-            alignItems: "center",
+
         }
     },
     mainbox: {
@@ -63,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "20px !important",
-            marginLeft: "40px !important",
+           
         },
     },
     typographyone: {
@@ -73,18 +72,18 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
             fontSize: "35px !important",
-            marginLeft: "40px !important",
+            
         },
     },
     typographythree: {
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "40px !important",
+            
             fontSize: "35px !important",
         },
     },
     typographyfour: {
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "40px !important",
+            
             fontSize: "25px !important",
         },
     },
@@ -120,7 +119,7 @@ const AboutTeam = () => {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 600,
+                breakpoint: 400,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -133,12 +132,12 @@ const AboutTeam = () => {
         <Grid>
             <Fade bottom>
                 <Grid>
-                    <div style={{ marginTop: "50px", marginBottom: "100px" , marginRight: "100px" }}>
+                    <div style={{ marginTop: "50px", marginBottom: "100px" , marginRight: "0px" , align: "center" }}>
                         <div
                             style={{
                                 display: "flex",
-                                padding: "0 10px",
-                                marginLeft: "109px",
+                                padding: "10px",
+                                marginLeft: "0x",
                                 align: "center",
                                 width: "100%",
                                 justifyContent: "center"
@@ -166,10 +165,10 @@ const AboutTeam = () => {
                                 </Box>
                             </Box>
                         </div>
-                        <Grid item xs={12} width={"100%"}>
-                            <Box className={classes.item} width={"100%"}>
+                        <Grid item xs={12} width={"96.88%"}>
+                            <Box className={classes.item} width={"96.88%"}>
                                 {itemData.map((newData) => (
-                                    <Box sx={{ display: "flex", padding: "30px !important", justifyContent: "center", alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", padding: "30px !important", justifyContent: "center", alignItems: "center" , align: "center"}}>
                                         <Box sx={{
                                             display: "inline-block", position: "relative", alignItems: "center",
                                         }}>

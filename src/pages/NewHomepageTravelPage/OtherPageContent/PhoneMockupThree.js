@@ -96,7 +96,7 @@ const PhoneMockupOne = () => {
                             </Typography>
                             <Button variant="outlined" style={{
                                 padding: "10px 55px",
-                                borderRadius: "30px",
+                                borderRadius: "10px",
                                 border: "1px solid",
                                 fontSize: "15px",
                                 marginRight: "20px"
@@ -106,8 +106,8 @@ const PhoneMockupOne = () => {
                             </Button>
                             <Button variant="contained" className={classes.googlebutton} style={{
                                 backgroundColor: "#00aaca",
-
-                                borderRadius: "30px",
+                                padding: "10px 40px",
+                                borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px",
 

@@ -15,12 +15,6 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     
-   foundermessg: {
-        [theme.breakpoints.down("sm")]: {
-            marginLeft: "322px !important",
-        }
-    },
-    
     boxone: {
         display: "flex",
         justifyContent: "center",
@@ -48,16 +42,15 @@ const MessageFromFounder = () => {
     const classes = useStyles()
     return (
         <Fade bottom>
-            <Box pt={"132px"}>
-                <Typography className={classNames(classes.maintypography, classes.foundermessg)} variant="h4" align="left" component="h2" >
-                    Message from Founder
-                </Typography>
+            <Box pt={"70px"}>
+
                 <Box
                     display="flex"
                     alignItems="center"
                     justifyContent="center">
                     <Grid container
-                        spacing={0}
+                        
+                        md={10} xs={10} order={4}
                         className={classes.boxtwo} >
                         <Grid item sm={2} xs={12} className={classes.boxthree}>
                             <Avatar
@@ -66,7 +59,10 @@ const MessageFromFounder = () => {
                             />
                         </Grid>
                         <Grid item sm={10} xs={12}>
-                            <Typography className={classes.typographyone} padding={10} marginBottom="40px" variant="h5">
+                        <Typography className={classNames(classes.maintypography)} marginLeft="50px !important"  paddingTop="30px" variant="h4" align="left" component="h2" >
+                    Message from Founder
+                </Typography>
+                            <Typography style={{ textAlign: "justify" }} padding="45px" marginBottom="80px" variant="h5">
                                 “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
                             </Typography >
                         </Grid>

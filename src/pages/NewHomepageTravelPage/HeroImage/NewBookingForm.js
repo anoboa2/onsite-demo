@@ -32,6 +32,7 @@ import BookEmail from './BookEmail';
 
 const useStyles = makeStyles((theme) => ({
     bookingformcontainer: {
+        paddingBottom:"75px !important",
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex !important'

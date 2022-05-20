@@ -123,7 +123,7 @@ const PhoneMockupOne = () => {
                             <Box className={classes.buttonbox}>
                                 <Button variant="outlined" className={classes.googlebutton} style={{
 
-                                    borderRadius: "30px",
+                                    borderRadius: "10px",
                                     border: "1px solid",
                                     fontSize: "0.9rem",
 
@@ -133,7 +133,7 @@ const PhoneMockupOne = () => {
                                 </Button>
                                 <Button variant="contained" className={classes.googlebutton} style={{
                                     backgroundColor: "#00aaca",
-                                    borderRadius: "30px",
+                                    borderRadius: "10px",
                                     color: "white",
                                     fontSize: "0.9rem",
 

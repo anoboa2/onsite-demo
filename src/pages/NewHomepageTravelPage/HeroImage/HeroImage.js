@@ -5,7 +5,6 @@ import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
-import learnMore from './videos/Learn-More.mov'
 
 // const useStyles = makeStyles((theme) => ({
 //     typography1: {
@@ -123,7 +122,7 @@ const HeroImage = ({ details }) => {
                         {details.subHeader}
                     </Typography>
                         <br /></>}
-                    <Typography className={classes.typography3} maxWidth="50%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
+                    <Typography className={classes.typography3} maxWidth="40%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
                         {details.text}
                     </Typography>
                     <br />
@@ -136,22 +135,22 @@ const HeroImage = ({ details }) => {
                                     href="/booking"
                                     style={{
                                         backgroundColor: "#00aaca", padding: "10px 55px",
-                                        borderRadius: "30px",
+                                        borderRadius: "10px",
                                         color: "white",
                                         fontSize: "15px"
                                     }}
-                                >
+                                 >
                                     Request Booking
-                                </Button>
-                            </Box>
+                                  </Button>
+                                </Box>
                             <Box sx={{ p: 1, m: 1, }}>
-                                <Button
+                                <Button href="/learnmore"
                                     variant="contained"
-                                    href="/LearnMore"
+                                    
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 55px",
-                                        borderRadius: "30px",
+                                        borderRadius: "10px",
                                         color: "#00aaca",
                                         fontSize: "15px"
                                     }}
@@ -162,52 +161,7 @@ const HeroImage = ({ details }) => {
                         </Box>}
                 </div>
             </div>
-            <div>
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            <video width="750" height="500" controls >
-                                <source src={learnMore} type="video/mp4" />
-                            </video>
-                        </Typography>
-                        <Box style={{ display: 'flex', justifyContent: 'center' }}>
-                            <Box sx={{ p: 1, m: 1, }}>
-                                <Button
-                                    variant="contained"
-                                    href="/booking"
-                                    style={{
-                                        backgroundColor: "#00aaca", padding: "10px 55px",
-                                        borderRadius: "30px",
-                                        color: "white",
-                                        fontSize: "15px"
-                                    }}
-                                >
-                                    Sign me up
-                                </Button>
-                            </Box>
-                            <Box sx={{ p: 1, m: 1, }}>
-                                <Button
-                                    variant="contained"
-                                    onClick={handleClose}
-                                    style={{
-                                        backgroundColor: "#fff",
-                                        padding: "10px 55px",
-                                        borderRadius: "30px",
-                                        color: "#00aaca",
-                                        fontSize: "15px"
-                                    }}
-                                >
-                                    Exit
-                                </Button>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Modal></div>
+                
 
         </div>
     );

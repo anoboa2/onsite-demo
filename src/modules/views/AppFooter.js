@@ -21,13 +21,14 @@ function Copyright() {
 const iconStyle = {
   width: 48,
   height: 48,
+  borderRadius: "10px",
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: 'secondary.light',
   mr: 1,
   '&:hover': {
-    bgcolor: 'warning.dark',
+    bgcolor: "#0FAACD",
   },
 };
 
