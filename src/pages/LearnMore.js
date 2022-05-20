@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { makeStyles } from '@mui/styles';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import { Fade } from 'react-reveal';
 import NewAppBar from './NewHomepageTravelPage/NewAppBar';
 import AppFooter from '../modules/views/AppFooter';
-import Typography from '../modules/components/Typography';
 import withRoot from '../modules/withRoot';
 import "./learmore.css";
 import { learn } from '../Constants';
 import Learn from './NewHomepageTravelPage/HeroImage/Learn';
+import LearnContent from './NewHomepageTravelPage/OtherPageContent/LearnContent';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +27,7 @@ const LearnMore = () => {
         <div className={classes.main}>
             <NewAppBar />
             <Learn details={learn} />
+            <LearnContent details={learn}/>
             <AppFooter />
         </div>
     );
