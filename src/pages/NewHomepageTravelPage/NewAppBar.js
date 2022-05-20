@@ -107,8 +107,8 @@ function NewAppBar() {
                         <img
                             src={onsiteLogo}
                             alt="Onsite Logo in Color; a flying plane leaving an O-shaped trail"
-                            height='55px'
-                            width='180px'
+                            height='40px'
+                            width='150px'
                             style={image}
                         />
                     </Link>
