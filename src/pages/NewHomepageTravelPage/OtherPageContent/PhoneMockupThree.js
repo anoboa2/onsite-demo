@@ -106,7 +106,7 @@ const PhoneMockupOne = () => {
                             </Button>
                             <Button variant="contained" className={classes.googlebutton} style={{
                                 backgroundColor: "#00aaca",
-
+                                padding: "10px 40px",
                                 borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px",
