@@ -122,6 +122,7 @@ const NewInitialBookingContent = ({ values, handleInputChange }) => {
                                 startText="Start Date"
                                 endText="End Date"
                                 name="daterange"
+                                disablePast
                                 disabled={toggle}
                                 value={values.daterange}
                                 onChange={(evt) => handleInputChange('daterange', evt)}
