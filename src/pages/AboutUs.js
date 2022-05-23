@@ -9,7 +9,23 @@ import AboutTeam from "../pages/NewHomepageTravelPage/OtherPageContent/aboutTeam
 import About from "../pages/NewHomepageTravelPage/OtherPageContent/images/About-Us-Picture.webp"
 import { about } from '../Constants';
 import AboutUsQuote from './NewHomepageTravelPage/OtherPageContent/aboutusQuote';
-function AboutUs() {
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+    main: {
+        background: 'linear-gradient(to right bottom,#f9fafb , #f8eeec)',
+        backgroundPosition: 1,
+        [theme.breakpoints.down("sm")]: {
+            width: "100% !important",
+            height: "100% !important",
+
+        },
+    },
+}));
+
+
+const AboutUs = () => {
+    const classes = useStyles();
     return (
         <React.Fragment>
             <NewAppBar />

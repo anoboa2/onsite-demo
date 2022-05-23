@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typography12: {
-        paddingTop: "100px",
+        paddingTop: "31px",
         marginRight: "6px !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
