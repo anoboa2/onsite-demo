@@ -1,5 +1,5 @@
 
-import { Button, Modal } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typography12: {
-        paddingTop: "31px",
+        paddingTop: "-20px",
         marginRight: "6px !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "20px !important",
