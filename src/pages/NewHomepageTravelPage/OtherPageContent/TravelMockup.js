@@ -51,7 +51,7 @@ const TravelMockup = ({ img, details }) => {
                             component="img"
                             src={img}
                             alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 350, sm: 480 }, width: { xs: 350, sm: 550 } }}
+                            sx={{ height: { xs: 260, sm: 410 }, width: { xs: 350, sm: 550 } }}
                         />
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
