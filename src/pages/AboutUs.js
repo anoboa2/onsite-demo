@@ -6,7 +6,7 @@ import HeroImage from "../pages/NewHomepageTravelPage/HeroImage/HeroImage";
 import PhoneMockupTwo from "../pages/NewHomepageTravelPage/OtherPageContent/PhoneMockupTwo"
 import BookNow from "../pages/NewHomepageTravelPage/OtherPageContent/BookNow"
 import AboutTeam from "../pages/NewHomepageTravelPage/OtherPageContent/aboutTeam"
-import About from "../pages/NewHomepageTravelPage/OtherPageContent/images/About-Us-Picture.webp"
+import About from "../pages/NewHomepageTravelPage/OtherPageContent/images/travelPlanning.gif"
 import { about } from '../Constants';
 import AboutUsQuote from './NewHomepageTravelPage/OtherPageContent/aboutusQuote';
 import { makeStyles } from '@mui/styles';
@@ -30,8 +30,8 @@ const AboutUs = () => {
         <React.Fragment>
             <NewAppBar />
             <HeroImage details={about}/>
-            <PhoneMockupTwo img={About} details={about}/>
             <AboutUsQuote />
+            <PhoneMockupTwo img={About} details={about}/>
             <AboutTeam />
             <BookNow />
             <AppFooter />
