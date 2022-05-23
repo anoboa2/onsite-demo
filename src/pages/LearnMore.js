@@ -7,6 +7,7 @@ import "./learmore.css";
 import { learn } from '../Constants';
 import Learn from './NewHomepageTravelPage/HeroImage/Learn';
 import LearnContent from './NewHomepageTravelPage/OtherPageContent/LearnContent';
+import AnimationLearn from './NewHomepageTravelPage/HeroImage/AnimationLearn';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +28,7 @@ const LearnMore = () => {
         <div className={classes.main}>
             <NewAppBar />
             <Learn details={learn} />
+            <AnimationLearn/>
             <LearnContent details={learn}/>
             <AppFooter />
         </div>
