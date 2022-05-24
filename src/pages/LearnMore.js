@@ -8,6 +8,7 @@ import { learn } from '../Constants';
 import Learn from './NewHomepageTravelPage/HeroImage/Learn';
 import LearnContent from './NewHomepageTravelPage/OtherPageContent/LearnContent';
 import AnimationLearn from './NewHomepageTravelPage/HeroImage/AnimationLearn';
+import BookNow from './NewHomepageTravelPage/OtherPageContent/BookNow';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,13 +26,16 @@ const useStyles = makeStyles((theme) => ({
 const LearnMore = () => {
     const classes = useStyles();
     return (
+
         <div className={classes.main}>
             <NewAppBar />
             <Learn details={learn} />
             <AnimationLearn/>
             <LearnContent details={learn}/>
+            <BookNow/>
             <AppFooter />
         </div>
+        
     );
 }
 
