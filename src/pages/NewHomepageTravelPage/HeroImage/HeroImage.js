@@ -132,15 +132,15 @@ const HeroImage = ({ details }) => {
                             <Box sx={{ p: 1, m: 1, }}>
                                 <Button
                                     variant="contained"
-                                    href="/booking"
+                                    href="https://try.onsiteplanning.com/onsiteplanning/"
                                     style={{
-                                        backgroundColor: "#00aaca", padding: "10px 55px",
+                                        backgroundColor: "#00aaca", padding: "10px 30px",
                                         borderRadius: "10px",
                                         color: "white",
                                         fontSize: "15px"
                                     }}
                                  >
-                                    Request Booking
+                                    Get Matched With Travel Specialist
                                   </Button>
                                 </Box>
                             <Box sx={{ p: 1, m: 1, }}>
