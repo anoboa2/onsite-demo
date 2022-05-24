@@ -93,7 +93,13 @@ const useStyles = makeStyles((theme) => ({
 
 const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
     const { is_authenticated } = useRownd();
+    const [activityOpen, setActivityOpen] = useState(false);
+    const [occasionOpen, setOccassionOpen] = useState(false);
     const classes = useStyles()
+    const handleCancel = (type)=>{
+        handleInputChange(type, [])
+    }
+    console.log(values, occasions);
     return (
         <Grid container className={classes.maingrid} columns={{ xs: 6, sm: 12, }} sx={{ maxHeight: 'sm', mt: 0, mb: 0, ml: 'auto', mr: 'auto', pt: 0, pl: 4, pr: 4, alignItems: 'flex-end', }}>
             <Grid x container item xs={6}>
@@ -186,10 +192,18 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                         maxWidth: '300px',
                         background: 'white'
                     }}
+                    open={occasionOpen}
+                    onOpen={()=>setOccassionOpen(true)}
                 >
                     {occasions.map((occasion) => {
-                        return <MenuItem key={occasion} value={occasion}>{occasion}</MenuItem>
+                        return <MenuItem key={occasion} value={occasion}>
+                            <input type="checkbox" checked={values.occasion.includes(occasion)} ></input>    
+                            {occasion}</MenuItem>
                     })}
+                    <div style={{display:"flex", justifyContent:"space-evenly"}}>
+                    <Button onClick={()=>setOccassionOpen(false)} variant="outlined" style={{width:"45%", margin:"5px", height:"40px", color:"black", border:"1px solid black"}}>Okay</Button>
+                    <Button onClick={()=>(handleCancel("occasion"), setOccassionOpen(false))} variant="outlined" style={{width:"45%", margin:"5px", height:"40px", color:"black", border:"1px solid black"}}>Cancel</Button>
+                    </div>
                 </Select>
             </Grid>
             <Grid className={classes.reducebottom} item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', }}>
@@ -223,10 +237,19 @@ const NewSubsequentBookingContent = ({ values, handleInputChange }) => {
                         maxWidth: '300px',
                         background: 'white'
                     }}
+                    onOpen={()=> setActivityOpen(true)}
+                    open={activityOpen}
+                    
                 >
                     {activities.map((activity) => {
-                        return <MenuItem key={activity} value={activity}>{activity}</MenuItem>
+                        return <MenuItem divider={true} key={activity} value={activity}>
+                            <input type="checkbox" checked={values.activities.includes(activity)} ></input>
+                            {activity}</MenuItem>
                     })}
+                    <div style={{display:"flex", justifyContent:"space-evenly"}}>
+                    <Button onClick={()=> setActivityOpen(false)} variant="outlined" style={{width:"45%", height:"40px", color:"black", border:"1px solid black"}}>Okay</Button>
+                    <Button onClick={()=>(handleCancel("activities"), setActivityOpen(false))} variant="outlined" style={{width:"45%", height:"40px", color:"black", border:"1px solid black"}}>Cancel</Button>
+                    </div>
                 </Select>
             </Grid>
             <Grid className={classes.reducetop} item xs={12} mb={1} sx={{ alignContent: 'center', pl: { xs: 0, sm: "20%" } }}>
