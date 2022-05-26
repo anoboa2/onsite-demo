@@ -1,13 +1,14 @@
 import { Button, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
 import '../OtherPageContent/BookNow.css';
 import './HeroImage.css';
 import TextField from '../../../modules/components/TextField';
 import styled from "styled-components";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -80,9 +81,34 @@ const SubscribeButton = styled.button`
 
 const BookEmail = () => {
     const classes = useStyles()
+    const [email, setEmail] = useState("")
+    const [isSubscribed, setIsSubscribed] = useState(false)
+
+    const subscribe = async () => {
+        if (!isSubscribed) {
+            let url = 'https://ye5ivlf9ce.execute-api.us-east-1.amazonaws.com/prod/';
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({ email }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+                .then(response => response.json())
+                .then((response) => {
+                    if (response.statusCode === 200) {
+                        setEmail("")
+                        setIsSubscribed(true)
+                    }
+                    else {
+                        setIsSubscribed(false)
+                    }
+                });
+        }
+    }
+
     return (
         <Fade bottom>
-
             <Grid className={classes.item}>
                 <div className="book-image">
 
@@ -97,11 +123,10 @@ const BookEmail = () => {
 
                     <Box className="book-text">
                         <FormGroup>
-                        <EmailInput type="text" placeholder="name@email.com"  method="POST"/>
-                        <SubscribeButton>Subscribe</SubscribeButton>
+                            <EmailInput onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder="name@email.com" method="POST" />
+                            <SubscribeButton onClick={subscribe} >{isSubscribed ? "Subscribed" : "Subscribe"}</SubscribeButton>
                         </FormGroup>
                     </Box>
-
                 </div>
             </Grid>
         </Fade>
