@@ -1,8 +1,9 @@
 // import InstagramEmbed from 'react-instagram-embed';
 import InstagramFeed from "react-ig-feed";
-import "react-ig-feed/dist/index.css";
+//import "react-ig-feed/dist/index.css";
+import './Instagram.css';
 import Typography from "../../../modules/components/Typography";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid , Link } from "@mui/material";
 import { Fade } from "react-reveal";
 import { makeStyles } from "@mui/styles";
 
@@ -35,12 +36,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       borderBottom: "none !important",
       fontSize: "35px !important",
+      textAlign: "center",
       marginLeft: "40px !important",
     },
   },
   typographythree: {
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "40px !important",
+      marginLeft: "50px !important",
+      textAlign: "center",
       fontSize: "35px !important",
     },
   },
@@ -48,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginLeft: "40px !important",
       fontSize: "25px !important",
+       textAlign: "center",
     },
   },
   boxone: {
@@ -83,7 +87,7 @@ const Instagram = () => {
                 width: "100%",
                 justifyContent: "center"
               }}
-            >
+             >
               <Box className={classes.boxone}>
                 <Box className={classes.boxtwo}>
                   <Typography
@@ -98,10 +102,10 @@ const Instagram = () => {
                     color="primary.main"
                     className={classes.typographyone}
                   >
-                    @onsitetravelapp
+                 <Link href="https://instagram.com/Onsitetravelapp" underline="none" > @onsitetravelapp</Link>
                   </Typography>
                   <Typography className={classes.typographyfour} variant="h4">
-                  ✅
+                  📷
                   </Typography>
                 </Box>
                 <Box>
@@ -119,11 +123,12 @@ const Instagram = () => {
               </div>
           </div>
           </Grid>
+          <>
+      <InstagramFeed token="IGQVJYSU5pV3FhLTAwaWFSV2lFLVZAGUWFkcGk5ZAVpUOWg1ejdGZA1F4Q3hEV1R4MzBoemV1V21WWUQxcWlJNWZAIeXJTOTVDaGZA5STlyM0k3X3g0TDA1ZAjcwQS15N3RPb1BJMzNCVzJVMkN2R0NzOVE2dQZDZD" counter="4" />
+      </>
       </Fade>
 
-      <>
-      <InstagramFeed justifyContent="center" token="IGQVJYSU5pV3FhLTAwaWFSV2lFLVZAGUWFkcGk5ZAVpUOWg1ejdGZA1F4Q3hEV1R4MzBoemV1V21WWUQxcWlJNWZAIeXJTOTVDaGZA5STlyM0k3X3g0TDA1ZAjcwQS15N3RPb1BJMzNCVzJVMkN2R0NzOVE2dQZDZD" counter="4" />
-      </>
+
 
     </Grid>
     
