@@ -6,6 +6,7 @@ import PhoneMockupOne from "./PhoneMockupOne";
 import PhoneMockupTwo from "./PhoneMockupTwo";
 import PopularLocationCategories from "./PopularLocationsCategories";
 import MessageFromFounder from "./messageFromFounder";
+import Instagram from "../HeroImage/Instagram";
 
 
 const OtherPageContent = ({img, details}) => {
@@ -19,6 +20,7 @@ const OtherPageContent = ({img, details}) => {
             <MessageFromFounder />
             <BookNow />
             <RatingsSlider />
+            <Instagram/>
         </div>
     );
 }
