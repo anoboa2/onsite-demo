@@ -127,9 +127,11 @@ const BookEmail = () => {
 
                     <Box className="book-text">
                         {isSubscribed ?
-                            <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
-                                Subscribed successfully
-                            </Alert>
+                            <FormGroup>
+                                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                                    Subscribed successfully
+                                </Alert>
+                            </FormGroup>
                             :
                             <FormGroup>
                                 <EmailInput onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder="name@email.com" method="POST" />
