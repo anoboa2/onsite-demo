@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material';
+import { Alert, Grid, Snackbar } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
@@ -6,9 +6,7 @@ import { Fade } from 'react-reveal';
 import Typography from '../../../modules/components/Typography';
 import '../OtherPageContent/BookNow.css';
 import './HeroImage.css';
-import TextField from '../../../modules/components/TextField';
 import styled from "styled-components";
-import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -82,7 +80,8 @@ const SubscribeButton = styled.button`
 const BookEmail = () => {
     const classes = useStyles()
     const [email, setEmail] = useState("")
-    const [isSubscribed, setIsSubscribed] = useState(false)
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const subscribe = async () => {
         if (!isSubscribed) {
@@ -99,38 +98,59 @@ const BookEmail = () => {
                     if (response.statusCode === 200) {
                         setEmail("")
                         setIsSubscribed(true)
+                        setIsOpen(true)
                     }
                     else {
                         setIsSubscribed(false)
+                        setIsOpen(true)
                     }
                 });
         }
     }
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setIsOpen(false);
+    };
 
     return (
-        <Fade bottom>
-            <Grid className={classes.item}>
-                <div className="book-image">
+        <>
+            <Snackbar
+                open={isOpen}
+                autoHideDuration={6000}
+                anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+                onClose={handleClose}
+            >{isSubscribed ?
+                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                    Subscribed successfully
+                </Alert> : <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                    Enter Valid Email ID
+                </Alert>}
+            </Snackbar>
+            <Fade bottom>
+                <Grid className={classes.item}>
+                    <div className="book-image">
 
-                    <Box className="book-text">
-                        <Typography className={classes.typographyone} marginBottom="95px" variant="h4">
-                            Not Ready to Book Yet? We’ll keep you informed with all our latest travel updates
-                        </Typography >
-                        {/* <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
+                        <Box className="book-text">
+                            <Typography className={classes.typographyone} marginBottom="95px" variant="h4">
+                                Not Ready to Book Yet? We’ll keep you informed with all our latest travel updates
+                            </Typography >
+                            {/* <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
                             Your next trip to NYC or Miami is a few clicks away
                         </Typography> */}
-                    </Box>
+                        </Box>
 
-                    <Box className="book-text">
-                        <FormGroup>
-                            <EmailInput onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder="name@email.com" method="POST" />
-                            <SubscribeButton onClick={subscribe} >{isSubscribed ? "Subscribed" : "Subscribe"}</SubscribeButton>
-                        </FormGroup>
-                    </Box>
-                </div>
-            </Grid>
-        </Fade>
-
+                        <Box className="book-text">
+                            <FormGroup>
+                                <EmailInput onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder="name@email.com" method="POST" />
+                                <SubscribeButton onClick={subscribe} >Subscribe</SubscribeButton>
+                            </FormGroup>
+                        </Box>
+                    </div>
+                </Grid>
+            </Fade>
+        </>
     );
 }
 
