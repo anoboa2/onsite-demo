@@ -35,4 +35,10 @@
       <changefreq>weekly</changefreq>
       <priority>0.3</priority>
    </url>
+       <url>
+      <sitemap>
+      <loc>http://www.onsiteplanning.com/learnmore</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.3</priority>
+   </url>
 </urlset>
