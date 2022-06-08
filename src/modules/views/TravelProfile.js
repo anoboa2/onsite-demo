@@ -64,7 +64,7 @@ const cardStyle = {
 }
 
 function TravelProfile() {
-    const { is_initializing, user } = useRownd();
+    const { is_initializing, user, is_authenticated, requestSignIn } = useRownd();
 
     const initialValues = {
         first_name: "",
@@ -138,6 +138,10 @@ function TravelProfile() {
         .then((response) => response.json())
         .then((response) => console.log(`Travel Profile response code: ${response.statusCode}`))
         console.log('Submitted to Airtable')
+        
+        if (!is_authenticated) {
+            requestSignIn();
+        }
     }
 
     function saveCheck() {
