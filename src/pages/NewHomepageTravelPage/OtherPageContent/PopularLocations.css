@@ -1,29 +1,23 @@
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+}
 
-/* The hero image */
-.popular-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image:  url("rectangles.png");
-  
-    /* Set a specific height */
-    height: 400px;
-    width: 100%;
-  
-    /* Position and center the image to scale nicely on all screens */
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.flexbox-container > div {
+	width: 50%;
+	padding: 20px;
+}
+
+.flexbox-container > div:first-child {
+	margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+  .flexbox-container {
+    flex-direction: column;
+    width: 350%;
+    justify-content: center;
+    margin-left: -9px;
   }
-  
-  /* Place text in the middle of the image */
-  .popular-text {
-    text-align: center;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    white-space: nowrap;
-    transform: translate(-50%, -50%);
-    color: #334147;
-    font-size: larger;
-  }
+}
  

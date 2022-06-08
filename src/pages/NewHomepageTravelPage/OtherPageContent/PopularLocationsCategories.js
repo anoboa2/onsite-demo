@@ -1,100 +1,23 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import ButtonBase from '@mui/material/ButtonBase';
-import Modal from '@mui/material/Modal';
 import Typography from '../../../modules/components/Typography';
 import { Grid } from '@mui/material';
 import { Fade } from 'react-reveal';
 import { makeStyles } from '@mui/styles';
 
-const style = {
-    position: 'relative',
-    top: '2%',
-    left: '20%',
-    width: "60%",
-    overflow: 'scroll',
-};
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
+import './PopularLocations.css'
+
+import Dining from "./images/Dining.jpg";
+import Accommodations from "./images/Accommodations.jpg";
+import Transportation from "./images/Transportation.jpg";
+import Activities from "./images/Activities.jpg";
 
 
-const ImageBackdrop = styled('div')(({ theme }) => ({
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    borderRadius: 50,
-    background: '#000',
-    opacity: 0.5,
-    transition: theme.transitions.create('opacity'),
-}));
 
-const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
-    position: 'relative',
-    display: 'block',
-    padding: 0,
-    borderRadius: 0,
-    marginLeft: 70,
-    height: '40vh',
-    [theme.breakpoints.down('md')]: {
-        width: '100% !important',
-        height: 100,
-        marginTop: "20px !important",
-    },
-    '&:hover': {
-        zIndex: 1,
-    },
-    '&:hover .imageBackdrop': {
-        opacity: 0.15,
-    },
-    '&:hover .imageMarked': {
-        opacity: 0,
-    },
-    '&:hover .imageTitle': {
-        border: '4px solid currentColor',
-        borderRadius: 10,
-    },
-    '& .imageTitle': {
-        position: 'relative',
-        padding: `${theme.spacing(2)} ${theme.spacing(4)} 14px`,
-    },
-    '& .imageMarked': {
-        height: 3,
-        width: 18,
-        background: theme.palette.common.white,
-        position: 'absolute',
-        bottom: -2,
-        left: 'calc(50% - 9px)',
-        transition: theme.transitions.create('opacity'),
-    },
-}));
-
-const images = [
-    {
-        url: '/img/miami.webp',
-        title: 'Miami',
-        width: '100%',
-        pdf: '/img/Miami.pdf',
-    },
-    {
-        url: '/img/new-york-city.webp',
-        title: 'New York City',
-        width: '100%',
-        pdf: '/img/NYC.pdf',
-    },
-    // {
-    //   url: '/img/iceland.jpg',
-    //   title: 'Iceland',
-    //   width: '40%',
-    //   pdf: '/docs/iceland-2021-7-day-itinerary.pdf',
-    // },
-    // {
-    //   url: '/img/orlando.jpg',
-    //   title: 'Orlando',
-    //   width: '60%',
-    //   pdf: '/docs/universal-studios-florida-itinerary-lauren.pdf',
-    // },
-];
 const useStyles = makeStyles((theme) => ({
     item: {
         [theme.breakpoints.down("sm")]: {
@@ -157,17 +80,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PopularLocationCategories() {
     const classes = useStyles()
-    const [open, setOpen] = React.useState(false);
-    const [pdf, setPdf] = React.useState(null)
-
-    const handleOpen = (image) => {
-        setOpen(true);
-        setPdf(image.pdf)
-    }
-    const handleClose = () => {
-        setOpen(!open);
-    }
-
     return (
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
@@ -190,65 +102,114 @@ export default function PopularLocationCategories() {
                         </Box>
                     </Grid>
                     <Grid item xs={12} width={"100%"}>
-                        <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', borderRadius: 50, }}>
-                            {images.map((image) => (
-                                <ImageIconButton
-                                    key={image.title}
-                                    onClick={() => handleOpen(image)}
-                                    style={{
-                                        width: image.width,
+                        <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
 
-                                    }}
-                                >
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            left: 0,
-                                            right: 0,
-                                            top: 0,
-                                            bottom: 0,
-                                            borderRadius: 12,
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center 40%',
-                                            backgroundImage: `url(${image.url})`,
-                                        }}
-                                    />
-                                    <ImageBackdrop className="imageBackdrop" />
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            left: 0,
-                                            right: 0,
-                                            top: 0,
-                                            bottom: 0,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: 'common.white',
-                                        }}
-                                    >
-                                        <Typography
-                                            component="h3"
-                                            variant="h6"
-                                            color="inherit"
-                                            className="imageTitle"
-                                        >
-                                            {image.title}
-                                            <div className="imageMarked" />
-                                        </Typography>
-                                    </Box>
-                                </ImageIconButton>
-                            ))}
-                            <Modal sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, overflow: 'scroll' }} open={open} onClick={handleClose}>
-                                <Box
-                                    component="iframe"
-                                    src={pdf}
-                                    sx={style}
-                                    onClick="null"
-                                    height="100%"
-                                > 
-                                 </Box>
-                            </Modal>
+                        <div class="flexbox-container">
+
+                            
+                        <div>
+                        <Card sx={{ maxWidth: 400 }}>
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="200"
+                            src={Dining}
+                            alt="Dining"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Dining
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
+                             in purus dignissim, sed venenatis risus faucibus.
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Card>
+                        </div>
+
+
+                        <div>
+                        
+                        <Card sx={{ maxWidth: 400 }}>
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="200"
+                            src={Accommodations}
+                            alt="Accommodations"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Accommodations
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
+                             in purus dignissim, sed venenatis risus faucibus.
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Card>
+                        </div>
+                        </div>
+
+                        </Box>
+                    </Grid>
+
+                    <Grid item xs={12} width={"100%"}>
+                        <Box className={classes.item} width={"100%"} sx={{ mt: 2, display: 'flex', justifyContent: 'center'}}>
+
+                        <div class="flexbox-container">
+
+                            
+                        <div>
+                        <Card sx={{ maxWidth: 400 }}>
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="200"
+                            src={Transportation}
+                            alt="Transportation"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Transportation
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
+                             in purus dignissim, sed venenatis risus faucibus.
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Card>
+                        </div>
+
+
+                        <div>
+                        
+                        <Card sx={{ maxWidth: 400 }}>
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="200"
+                            src={Activities}
+                            alt="Activities"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Activities
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
+                             in purus dignissim, sed venenatis risus faucibus.
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Card>
+                        </div>
+                        </div>
+
                         </Box>
                     </Grid>
                 </Grid>
