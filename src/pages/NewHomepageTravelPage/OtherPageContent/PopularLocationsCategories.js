@@ -96,7 +96,7 @@ export default function PopularLocationCategories() {
                         </Box>
                         <Box className={classes.boxtwo}>
                             <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
-                                Check out some of our popular trips below
+                            Check out the services we offer below
                             </Typography>
 
                         </Box>
@@ -117,12 +117,11 @@ export default function PopularLocationCategories() {
                             alt="Dining"
                             />
                             <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h6" component="div">
                             Dining
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
-                             in purus dignissim, sed venenatis risus faucibus.
+                            From fine dining to casual dining, we make sure only the best reservations are booked for you. Have a dietary restriction? No problem, we’ll accommodate for you.
                             </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -141,12 +140,11 @@ export default function PopularLocationCategories() {
                             alt="Accommodations"
                             />
                             <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h6" component="div">
                             Accommodations
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
-                             in purus dignissim, sed venenatis risus faucibus.
+                            Do you prefer 4 star or 5 star Hotels? Maybe you’re interested in airbnbs or villas more. We value your preferences and reserve accordingly.
                             </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -173,12 +171,11 @@ export default function PopularLocationCategories() {
                             alt="Transportation"
                             />
                             <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h6" component="div">
                             Transportation
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
-                             in purus dignissim, sed venenatis risus faucibus.
+                            Whether you need airfare or ground transportation booked, we will make sure your travel needs are always satisfied.
                             </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -197,12 +194,11 @@ export default function PopularLocationCategories() {
                             alt="Activities"
                             />
                             <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h6" component="div">
                             Activities
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante
-                             in purus dignissim, sed venenatis risus faucibus.
+                            Adventure? Cultural experiences? Water sports? No matter the activity, we will add your plans to your travel plans that best fit your travel personality.
                             </Typography>
                             </CardContent>
                         </CardActionArea>
