@@ -140,7 +140,9 @@ function TravelProfile() {
         console.log('Submitted to Airtable')
         
         if (!is_authenticated) {
-            requestSignIn();
+            requestSignIn({
+                auto_sign_in: true
+            });
         }
     }
 
