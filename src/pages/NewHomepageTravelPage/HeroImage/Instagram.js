@@ -124,7 +124,7 @@ const Instagram = () => {
           </div>
           </Grid>
           <>
-      <InstagramFeed token="IGQVJYSU5pV3FhLTAwaWFSV2lFLVZAGUWFkcGk5ZAVpUOWg1ejdGZA1F4Q3hEV1R4MzBoemV1V21WWUQxcWlJNWZAIeXJTOTVDaGZA5STlyM0k3X3g0TDA1ZAjcwQS15N3RPb1BJMzNCVzJVMkN2R0NzOVE2dQZDZD" counter="4" />
+      <InstagramFeed token="IGQVJYNF8wMG1tQl9ROEt1UWVLbUZAseE5JVHFiU2hmaUxMNlRRdzZAfRGV0N0VseTdqa0JaV1lON1RyajVieWhfbHhrMmFoLW9LbWwzaWhpeU4zYVR5VmRQU0ZAZARVJMVTFicjk3UEMwVGEzQTBPaGx2dAZDZD" counter="4" />
       </>
       </Fade>
 
