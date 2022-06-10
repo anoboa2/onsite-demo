@@ -42,13 +42,19 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         padding: "55px",
-        marginLeft: "-60px",
+        marginLeft: "625px",
+        paddingTop: "1px",
+        marginTop: "-55px",
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column',
             alignItems: 'center',
             padding: "1px",
             margin: "1px",
             paddingTop: "40px",
+            marginTop: "-60px",
+            marginBottom: "70px",
+            justifyContent: 'center',
+            marginLeft: "7px",
             
         },
     }
@@ -77,8 +83,11 @@ const PhoneMockupTwo = ({ img, details }) => {
                             <Typography variant="h5" style={{ textAlign: "justify" }}>
                                 {details.secondText}
                             </Typography>
-
-                            <Box className={classes.boxfour}>
+                        </Box>
+                        
+                    </Grid>
+                </Grid>
+                <Box className={classes.boxfour}>
                              <Box sx={{ p: -1, m: 1, }}>
                                 <Button
                                     variant="contained"
@@ -94,10 +103,6 @@ const PhoneMockupTwo = ({ img, details }) => {
                                   </Button>
                                 </Box>
                             </Box>
-                        </Box>
-                        
-                    </Grid>
-                </Grid>
             </Fade>
         </Grid>
     );
