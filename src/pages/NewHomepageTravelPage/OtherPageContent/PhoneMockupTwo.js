@@ -66,7 +66,7 @@ const PhoneMockupTwo = ({ img, details }) => {
                             component="img"
                             src={img}
                             alt="cards itinerary and invoice"
-                            sx={{ height: { xs: 400, sm: 480 }, width: { xs: 400, sm: 550 } }}
+                            sx={{ height: { xs: 400, sm: 485 }, width: { xs: 400, sm: 600 } }}
                         />
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
