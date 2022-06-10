@@ -3,6 +3,7 @@ import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Fade } from 'react-reveal';
+import { Button } from "@mui/material";
 import Typography from '../../../modules/components/Typography';
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +38,21 @@ const useStyles = makeStyles((theme) => ({
         }
     },
 
+    boxfour: {
+        display: 'flex',
+        flexDirection: 'row',
+        padding: "55px",
+        marginLeft: "-60px",
+        [theme.breakpoints.down("sm")]: {
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: "1px",
+            margin: "1px",
+            paddingTop: "40px",
+            
+        },
+    }
+
 }))
 
 const PhoneMockupTwo = ({ img, details }) => {
@@ -49,19 +65,37 @@ const PhoneMockupTwo = ({ img, details }) => {
                         <Box
                             component="img"
                             src={img}
-                            alt="iphone mockup of mobile app itinerary pages"
-                            sx={{ height: { xs: 400, sm: 700 }, width: { xs: 400, sm: 600 } }}
+                            alt="cards itinerary and invoice"
+                            sx={{ height: { xs: 400, sm: 480 }, width: { xs: 400, sm: 550 } }}
                         />
                     </Grid>
                     <Grid item sm={6} xs={12} md={12} padding={10} container order={5} sx={{ justifyContent: 'left' }}>
                         <Box>
                             <Box className={classes.boxtwo}><Typography className={classes.typographyone} variant="h4" >
                                 {details.secondHeader}
-                            </Typography>{details.isHome && <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>home</Typography>}</Box>
+                            </Typography>{details.isHome && <Typography className={classes.typographytwo} color="primary.main" display="inline-block" variant='h4'>We Value You</Typography>}</Box>
                             <Typography variant="h5" style={{ textAlign: "justify" }}>
                                 {details.secondText}
                             </Typography>
+
+                            <Box className={classes.boxfour}>
+                             <Box sx={{ p: -1, m: 1, }}>
+                                <Button
+                                    variant="contained"
+                                    href="https://try.onsiteplanning.com/onsiteplanning/"
+                                    style={{
+                                        backgroundColor: "#00aaca", padding: "10px 30px",
+                                        borderRadius: "10px",
+                                        color: "white",
+                                        fontSize: "15px"
+                                    }}
+                                 >
+                                    Get Matched With Travel Specialist
+                                  </Button>
+                                </Box>
+                            </Box>
                         </Box>
+                        
                     </Grid>
                 </Grid>
             </Fade>

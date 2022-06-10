@@ -3,8 +3,8 @@ export const home = {
     header : " We make the plans,",
     subHeader : "you make the memories",
     text : "Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime",
-    secondHeader : "From plan till you arrive",
-    secondText : "We are there every step of the way. Your agent will provide an itinerary for your feedback, make any needed changes now or at any point in your journey, book every aspect of your trip and be there for any questions till you arrive home."
+    secondHeader : "You Value Price Transparency,",
+    secondText : "We are the fastest growing and most valued travel company because we believe in growing trustworthy relationships with our travelers. We are transparent with our travelers about pricing, for 5% of your total trip cost, Onsite does everything from plan until you arrive home. Our travelers don’t have to worry about doing anything."
 }
 
 export const about = {
