@@ -6,7 +6,7 @@ import withRoot from "../../modules/withRoot";
 import AppFooter from "../../modules/views/AppFooter";
 import OtherPageContent from "./OtherPageContent/OtherPageContent";
 import ComingSoon from "./HeroImage/ComingSoon";
-import sesgados2 from "../NewHomepageTravelPage/OtherPageContent/images/sesgados2.png";
+import sesgados3 from "../NewHomepageTravelPage/OtherPageContent/images/sesgados3.png";
 import {home} from "../../Constants"
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ const NewHomePage = () => {
             <NewAppBar />
             <HeroImage details={home} />
             <ComingSoon />
-            <OtherPageContent img={sesgados2} details={home}/>
+            <OtherPageContent img={sesgados3} details={home}/>
             <AppFooter />
         </div>
     );
