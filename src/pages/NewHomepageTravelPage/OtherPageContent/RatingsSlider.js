@@ -13,6 +13,8 @@ import Emma from "./images/Emma.webp";
 import Julia from "./images/Julia.webp";
 import Mana from "./images/Mana.webp";
 import Taylor from "./images/Taylor-R.webp";
+import Bonnie from "./images/Bonnie.jpg";
+import Gauri from "./images/Gauri.png";
 
 const itemData = [
   {
@@ -58,6 +60,24 @@ const itemData = [
     details:
       "I really liked that everything was planned and reservations were made for me. This was exactly what I was looking for. Looking forward to doing these activities! .",
     name: "Emma T",
+    rating: 5,
+  },
+  {
+    id: 6,
+    img: Bonnie,
+    title: "Burger",
+    details:
+      "Will be using this service again, she worked with all my changing needs and was very understanding about it. Went above and beyond to take care of everything.",
+    name: "Bonnie S",
+    rating: 5,
+  },
+  {
+    id: 7,
+    img: Gauri,
+    title: "Burger",
+    details:
+      "Izanna planned a great and easy to follow itinerary for me and my sister's trip to Miami 5 days 4 nights. She included adventurous water sports, dolphin interaction and amazing restaurants & clubs just like we wanted. I would recommend Onsite Travel!.",
+    name: "Gauri S",
     rating: 5,
   },
 ];
