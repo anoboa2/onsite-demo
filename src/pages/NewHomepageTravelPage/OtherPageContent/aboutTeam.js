@@ -16,6 +16,7 @@ const itemData = [
     {
         id: 1,
         img: Izanna,
+        alt:"Izanna",
         title: "Breakfast",
         designation:
             "Founder and Chief Executive Officer",
@@ -24,6 +25,7 @@ const itemData = [
     {
         id: 2,
         img: Alex,
+        alt:"Alex",
         title: "Burger",
         designation:
             "Co-Founder and Chief Technology Officer",
@@ -32,6 +34,7 @@ const itemData = [
     {
         id: 3,
         img: Peter,
+        alt:"Peter",
         title: "Breakfast",
         designation:
             "Head of Marketing",
