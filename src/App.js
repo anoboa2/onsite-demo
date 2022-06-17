@@ -8,7 +8,6 @@ import NewBooking from "./pages/NewHomepageTravelPage/HeroImage/NewBooking";
 import AboutUs from "./pages/AboutUs";
 import LearnMore from "./pages/LearnMore";
 import NotFoundError from "./pages/NewHomepageTravelPage/NotFoundError";
-import axios from "axios";
 
 
 const axios = require('axios');
