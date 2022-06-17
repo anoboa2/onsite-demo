@@ -11,16 +11,13 @@ import NotFoundError from "./pages/NewHomepageTravelPage/NotFoundError";
 import axios from "axios";
 
 
-const currentVersion = 2
-let data = localStorage.getItem('data')
-let version = localStorage.getItem('version')
-if (!version || version < currentVersion) {
-  axios.get('/data').then((response) => {
-    data = response.data.data
-    localStorage.setItem('data', response.data.data)
-    localStorage.setItem('version', currentVersion)
-  })
-}
+const axios = require('axios');
+const { axiosETAGCache } = require('axios-etag-cache');
+
+axiosETAGCache(axios)
+  .get('https://www.onsiteplanning.com/')
+  .then(console.log)
+  .catch(console.error);
 
 function App() {
   return (
