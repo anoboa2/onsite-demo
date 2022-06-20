@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Tiktok Tag Manager -->
-    <script>
+    <script defer>
       !function (w, d, t) {
         w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
       
@@ -12,7 +12,7 @@
     </script>
     <!-- End Tiktok Tag Manager -->
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -20,7 +20,7 @@
     <!-- End Google Tag Manager -->  
 
     <!-- Data Schema (JSON-LD) --> 
-    <script type="application/ld+json">
+    <script defer type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "WebSite",
@@ -61,16 +61,16 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <link rel="preload" href="https://fonts.googleapis.com">
-  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com" as="font" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Kumbh+Sans&family=Tenor+Sans&display=swap" rel="stylesheet">
     <title>Onsite Planning</title>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC6HMN"
+    <noscript defer><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC6HMN"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript defer>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
