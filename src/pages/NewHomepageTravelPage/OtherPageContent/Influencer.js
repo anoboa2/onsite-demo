@@ -95,7 +95,7 @@ const Influencer = () => {
                         </Box>
                         <Box className={classes.boxtwo}>
                             <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
-                            Check out Izanna's instagram for more : <Link href="https://www.instagram.com/izanna.lev/" underline="none" > @izanna.lev</Link>
+                            Check out Izanna's instagram for more <Link href="https://www.instagram.com/izanna.lev/" underline="none" > @izanna.lev</Link>
                             </Typography>
 
                         </Box>
