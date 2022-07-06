@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/styles";
-import { Grid } from '@mui/material';
+import { Grid , Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Fade } from 'react-reveal';
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
     boxone: {
         display: "flex",
+        marginTop: " -30% !important",
         marginBottom: " 3% !important",
         flexDirection: "row !important",
         [theme.breakpoints.down("sm")]: {
@@ -74,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
 
-}))
+})) 
 
 const Influencer = () => {
     const classes = useStyles()
@@ -94,12 +95,12 @@ const Influencer = () => {
                         </Box>
                         <Box className={classes.boxtwo}>
                             <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
-                            Add izanna's biography
+                            Check out Izanna's instagram for more : <Link href="https://www.instagram.com/izanna.lev/" underline="none" > @izanna.lev</Link>
                             </Typography>
 
                         </Box>
                     </Grid>
-                    <Grid item xs={12} width={"100%"}>
+                    <Grid item xs={12} width={"100%"} marginTop={"-5%"} >
                         <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
 
                         <div class="flexbox-container">
@@ -124,7 +125,7 @@ const Influencer = () => {
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary">
-                            View Itinerary
+                            view image gallery
                             </Button>
                         </CardActions>
                         </Card>
@@ -151,7 +152,7 @@ const Influencer = () => {
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary">
-                            View Itinerary
+                            view image gallery
                             </Button>
                         </CardActions>
                         </Card>
@@ -178,7 +179,7 @@ const Influencer = () => {
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary">
-                            View Itinerary
+                            view image gallery
                             </Button>
                         </CardActions>
                         </Card>

@@ -6,7 +6,7 @@ import HeroImage from "./NewHomepageTravelPage/HeroImage/HeroImage";
 import { influ } from '../Constants';
 import { makeStyles } from '@mui/styles';
 import Influencer from './NewHomepageTravelPage/OtherPageContent/Influencer';
-import AnimationLearn from './NewHomepageTravelPage/HeroImage/AnimationLearn';
+import AnimationInfluencer from './NewHomepageTravelPage/HeroImage/AnimationInfluencer';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -26,8 +26,8 @@ const Influyente = () => {
     return (
         <div className={classes.main}>
             <NewAppBar />
-            <HeroImage details={influ}/>
-            <AnimationLearn />
+            {/* <HeroImage details={influ}/> */}
+            <AnimationInfluencer />
             <Influencer details={influ} />
             <AppFooter />
         </div>
