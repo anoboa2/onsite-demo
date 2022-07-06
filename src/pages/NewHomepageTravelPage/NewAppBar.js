@@ -170,6 +170,15 @@ function NewAppBar() {
                         color="inherit"
                         variant="h6"
                         underline="none"
+                        href="/influencer"
+                        sx={rightLink}
+                        >
+                            {'Influencer'}
+                        </Link>
+                    <Link
+                        color="inherit"
+                        variant="h6"
+                        underline="none"
                         href="/aboutus"
                         sx={rightLink}
                         >

@@ -16,6 +16,15 @@ export const about = {
     secondText : "Our local travel specialists curate the best travel plans based on their experiences in your destination. Plus, we enable you to live like a local and show you as much as possible instead of rushing through a city or booking private tours by yourself."
 }
 
+export const influ = {
+    isInflu : true,
+    header : "Influencers Onsite",
+    subHeader : "Travelers",
+    text : "We design and then book itineraries based on your travel profile, interests, and budget.",
+    secondHeader : "Izanna's Recent",
+    secondText : "Our local travel specialists curate the best travel plans based on their experiences in your destination. Plus, we enable you to live like a local and show you as much as possible instead of rushing through a city or booking private tours by yourself."
+}
+
 export const learn = {
     isLearn : true,
     header : "The Best Travel Itineraries for you",

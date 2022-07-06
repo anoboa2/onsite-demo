@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import LearnMore from "./pages/LearnMore";
 import NotFoundError from "./pages/NewHomepageTravelPage/NotFoundError";
 import axios from "axios";
+import Influyente from "./pages/Influyente";
 
 
 const currentVersion = 2
@@ -33,6 +34,7 @@ function App() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/influencer" element={<Influyente />} />
       <Route path="/*" element={<NotFoundError />} />
     </Routes>
     </div>
