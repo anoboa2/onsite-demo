@@ -14,7 +14,7 @@ const item = {
 
 const useStyles = makeStyles((theme) => ({
     maingrid: {
-        marginTop: "-10px" ,
+        marginTop: "-20px" ,
         marginLeft: "200px" ,
         marginLeft: "10px" ,
         [theme.breakpoints.down("sm")]: {
