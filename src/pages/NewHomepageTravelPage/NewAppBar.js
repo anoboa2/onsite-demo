@@ -49,6 +49,12 @@ function NewAppBar() {
 
     let pages = [
         {
+            label: 'Influencer',
+            key:'influencer',
+            path: '/influencer',
+            isTarget: false
+        },
+        {
             label: 'About Us',
             key:'aboutUs',
             path: '/aboutUs',
