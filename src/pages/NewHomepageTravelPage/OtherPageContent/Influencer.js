@@ -8,11 +8,57 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-
+import Modal from '@mui/material/Modal';
+import Backdrop from '@mui/material/Backdrop';
+import { ReactPhotoCollage } from "react-photo-collage";
+import CloseIcon from '@mui/icons-material/Close';
+import { styled } from '@mui/material/styles';
 
 import Iceland from "./images/Iceland.jpg";
 import Bermuda from "./images/Bermuda.jpg";
 import Italy from "./images/Italy.jpg";
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 620,
+    height: 600,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const setting = {
+    width: "560px",
+    height: ["250px", "250px"],
+    layout: [2, 2],
+    photos: [
+      {
+        source:
+          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1526656892012-7b336603ed46?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=31c8e58b58c25dfcc18452ed29b52951&auto=format&fit=crop&w=334&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1521024221340-efe7d7fa239b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9ad8a99d809d3fa3a9e8dff3ecc81878&auto=format&fit=crop&w=750&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      }
+      
+    ],
+    showNumOfRemainingPhotos: true
+  };
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -78,6 +124,9 @@ const useStyles = makeStyles((theme) => ({
 })) 
 
 const Influencer = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     const classes = useStyles()
     return (
         <Grid mb={5} pl={4} pr={4} pt={5}>
@@ -124,9 +173,50 @@ const Influencer = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary">
+                            <Button size="small" color="primary" onClick={handleOpen} >
                             view image gallery
                             </Button>
+                            <Modal
+                                aria-labelledby="transition-modal-title"
+                                aria-describedby="transition-modal-description"
+                                open={open}
+                                onClose={handleClose}
+                                BackdropComponent={Backdrop}
+                                BackdropProps={{
+                                timeout: 500,
+                                }} 
+                                sx={{
+                                    zIndex: 1
+                                }}
+                            >
+                                <Fade in={open} >
+                                <Box sx={style}>
+                                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                                   Travel to Iceland
+                                    </Typography>
+
+                            <Button
+                                sx={{
+                                    width: 50,
+                                    height: 50,
+                                    color: 'black',
+                                    position: 'absolute',
+                                    right: '5px',
+                                    top: '5px',
+                                }}
+                             >
+                                <CloseIcon onClick={handleClose} />
+                            </Button>
+
+                                    <ReactPhotoCollage       
+                                    sx={{
+                                    zIndex: 9999
+                                }}{...setting } >
+                                </ReactPhotoCollage>
+                                    
+                                </Box>
+                                </Fade>
+                            </Modal>
                         </CardActions>
                         </Card>
                         </div>
