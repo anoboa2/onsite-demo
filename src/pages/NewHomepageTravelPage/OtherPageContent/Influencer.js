@@ -8,40 +8,57 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import Modal from '@mui/material/Modal';
+import ModalIceland from '@mui/material/Modal';
+import ModalBermuda from '@mui/material/Modal';
+import ModalItaly from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import { ReactPhotoCollage } from "react-photo-collage";
 import CloseIcon from '@mui/icons-material/Close';
-import { styled } from '@mui/material/styles';
 
 import Iceland from "./images/Iceland.jpg";
 import Bermuda from "./images/Bermuda.jpg";
 import Italy from "./images/Italy.jpg";
 
-const style = {
+import './BookNow.css';
+
+const style1 = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 620,
-    height: 600,
+    width: 622,
+    height: 660,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
   };
 
-  const setting = {
+
+
+  const style3 = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 622,
+    height: 660,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const setting1 = {
     width: "560px",
     height: ["250px", "250px"],
     layout: [2, 2],
     photos: [
       {
         source:
-          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+          "https://images.unsplash.com/photo-1531168556467-80aace0d0144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1526656892012-7b336603ed46?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=31c8e58b58c25dfcc18452ed29b52951&auto=format&fit=crop&w=334&q=80"
+          "https://images.unsplash.com/photo-1489593426629-5e4e00ce821c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
@@ -54,6 +71,70 @@ const style = {
       {
         source:
           "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      }
+      
+    ],
+    showNumOfRemainingPhotos: true
+  };
+
+  const iceland = {
+    width: "560px",
+    height: ["250px", "250px"],
+    layout: [2, 2],
+    photos: [
+      {
+        source:
+          "https://images.unsplash.com/photo-1531168556467-80aace0d0144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1489593426629-5e4e00ce821c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1521024221340-efe7d7fa239b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9ad8a99d809d3fa3a9e8dff3ecc81878&auto=format&fit=crop&w=750&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+      }
+      
+    ],
+    showNumOfRemainingPhotos: true
+  };
+
+  const italy = {
+    width: "560px",
+    height: ["235px", "235px"],
+    layout: [2, 2],
+    photos: [
+      {
+        source:
+        "https://images.unsplash.com/photo-1657262264728-97387f41b722?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657263084919-d1523080ca74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657262264793-7944c090372d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657263084850-a543af10cd82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657262264840-8b63681ee659?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657263084786-4b2e0a14fdf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       }
       
     ],
@@ -170,13 +251,18 @@ const Influencer = () => {
                                 Iceland
                             </Typography>
 
+                            <Typography variant="body2" color="text.secondary">
+                            add small description of the place or module
+                            </Typography>
+
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary" onClick={handleOpen} >
                             view image gallery
                             </Button>
-                            <Modal
+                            <ModalIceland
+                                id="iceland-modal"
                                 aria-labelledby="transition-modal-title"
                                 aria-describedby="transition-modal-description"
                                 open={open}
@@ -190,10 +276,10 @@ const Influencer = () => {
                                 }}
                             >
                                 <Fade in={open} >
-                                <Box sx={style}>
+                                <Box sx={style1}>
                                     <Typography id="transition-modal-title" variant="h6" component="h2">
                                    Travel to Iceland
-                                    </Typography>
+                                    </Typography><br />
 
                             <Button
                                 sx={{
@@ -211,12 +297,22 @@ const Influencer = () => {
                                     <ReactPhotoCollage       
                                     sx={{
                                     zIndex: 9999
-                                }}{...setting } >
+                                }}{...iceland } >
                                 </ReactPhotoCollage>
-                                    
+
+                                <div className="book-text2">
+                                <Button href="/booking"
+                            variant="contained" style={{
+                                backgroundColor: "#00aaca", padding: "10px 55px",
+                                marginTop: "27px",
+                                borderRadius: "10px",
+                                color: "white",
+                                fontSize: "15px"
+                            }}>Buy Now</Button>
+                            </div>
                                 </Box>
                                 </Fade>
-                            </Modal>
+                            </ModalIceland>
                         </CardActions>
                         </Card>
                         </div>
@@ -238,6 +334,10 @@ const Influencer = () => {
                                 Bermuda
                             </Typography>
 
+                            <Typography variant="body2" color="text.secondary">
+                            add small description of the place or module
+                            </Typography>
+
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
@@ -251,8 +351,7 @@ const Influencer = () => {
                         {/* /Italy/ */}
 
                         <div>
-                        
-                        <Card sx={{ maxWidth: 400}}>
+                        <Card sx={{ maxWidth: 400 }}>
                         <CardActionArea>
                             <CardMedia
                             component="img"
@@ -265,12 +364,67 @@ const Influencer = () => {
                                 Italy
                             </Typography>
 
+                            <Typography variant="body2" color="text.secondary">
+                            add small description of the place or module
+                            </Typography>
+
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary">
+                            <Button size="small" color="primary" onClick={handleOpen} >
                             view image gallery
                             </Button>
+                            <ModalItaly
+                                aria-labelledby="transition-modal-title"
+                                aria-describedby="transition-modal-description"
+                                open={open}
+                                onClose={handleClose}
+                                BackdropComponent={Backdrop}
+                                BackdropProps={{
+                                timeout: 500,
+                                }} 
+                                sx={{
+                                    zIndex: 1
+                                }}
+                            >
+                                <Fade in={open} >
+                                <Box sx={style3}>
+                                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                                   Travel to Italy
+                                    </Typography><br />
+
+                            <Button
+                                sx={{
+                                    width: 50,
+                                    height: 50,
+                                    color: 'black',
+                                    position: 'absolute',
+                                    right: '5px',
+                                    top: '5px',
+                                }}
+                             >
+                                <CloseIcon onClick={handleClose} />
+                            </Button>
+
+                                    <ReactPhotoCollage       
+                                    sx={{
+                                    zIndex: 9999
+                                }}{...italy } >
+                                </ReactPhotoCollage>
+
+                                <div className="book-text2">
+                                <Button href="/booking"
+                            variant="contained" style={{
+                                backgroundColor: "#00aaca", padding: "10px 55px",
+                                marginTop: "27px",
+                                borderRadius: "10px",
+                                color: "white",
+                                fontSize: "15px"
+                            }}>Buy Now</Button>
+                            </div>
+                                </Box>
+                                </Fade>
+                            </ModalItaly>
                         </CardActions>
                         </Card>
                         </div>
