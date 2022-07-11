@@ -7,6 +7,7 @@ import { influ } from '../Constants';
 import Influencer from './NewHomepageTravelPage/OtherPageContent/Influencer';
 import AnimationInfluencer from './NewHomepageTravelPage/HeroImage/AnimationInfluencer';
 import Container from '@mui/material/Container';
+import DiscountInfluencer from './NewHomepageTravelPage/OtherPageContent/DiscountInfluencer';
 
 
 const Influyente = () => {
@@ -17,6 +18,7 @@ const Influyente = () => {
             <AnimationInfluencer />
             <Influencer details={influ} />
             </Container>
+            <DiscountInfluencer />
             {/* <HeroImage details={influ}/> */}
             <AppFooter />
         </React.Fragment>

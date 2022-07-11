@@ -10,12 +10,13 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ModalIceland from '@mui/material/Modal';
 import ModalItaly from '@mui/material/Modal';
+import ModalParis from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import { ReactPhotoCollage } from "react-photo-collage";
 import CloseIcon from '@mui/icons-material/Close';
 
 import Iceland from "./images/Iceland.jpg";
-import Bermuda from "./images/Bermuda.jpg";
+import Paris from "./images/Paris.jpg";
 import Italy from "./images/Italy.jpg";
 
 import './BookNow.css';
@@ -77,6 +78,42 @@ const style1 = {
     showNumOfRemainingPhotos: true
   };
 
+
+  const paris = {
+    width: "560px",
+    height: ["235px", "235px"],
+    layout: [2, 2],
+    photos: [
+      {
+        source:
+        "https://images.unsplash.com/photo-1657317600657-4d9236858f13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+        "https://images.unsplash.com/photo-1657577780796-cd84acffdd51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657577780673-ea0fe926593f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657578275713-d5dd57c7b3a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657578273352-bd3aabc645e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657577780673-ea0fe926593f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      }
+      
+    ],
+    showNumOfRemainingPhotos: true
+  };
+
+
   const italy = {
     width: "560px",
     height: ["235px", "235px"],
@@ -84,11 +121,11 @@ const style1 = {
     photos: [
       {
         source:
-        "https://images.unsplash.com/photo-1657262264728-97387f41b722?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+        "https://images.unsplash.com/photo-1657317600657-4d9236858f13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1657317600657-4d9236858f13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+        "https://images.unsplash.com/photo-1657262264728-97387f41b722?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
       },
       {
         source:
@@ -177,6 +214,7 @@ const useStyles = makeStyles((theme) => ({
 const Influencer = () => {
     const [open, setOpen] = React.useState(false);
     const [openItaly, setOpenItaly] = React.useState(false);
+    const [openParis, setOpenParis] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     
@@ -188,6 +226,14 @@ const Influencer = () => {
 
     const handleCloseItaly = () => {
         setOpenItaly(false);
+    };
+
+    const handleOpenParis = () => {
+        setOpenParis(true);
+    };
+
+    const handleCloseParis = () => {
+        setOpenParis(false);
     };
     
     return (
@@ -214,22 +260,23 @@ const Influencer = () => {
                     <Grid item xs={12} width={"100%"} marginTop={"-5%"} >
                         <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
 
-                        <div class="flexbox-container">
+                     <div class="flexbox-container">
+                        
+                        {/* /Paris/ */}
 
-                        {/* /Iceland/ */}
-                            
                         <div>
+                        
                         <Card sx={{ maxWidth: 400 }}>
                         <CardActionArea>
                             <CardMedia
                             component="img"
                             height="350"
-                            src={Iceland}
+                            src={Paris}
                             alt="green iguana"
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h6" component="div">
-                                Iceland
+                                Paris
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
@@ -239,14 +286,15 @@ const Influencer = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary" onClick={handleOpen} >
-                            view image gallery
+                            <Button size="small" color="primary" onClick={handleOpenParis}>
+                            Preview itinerary
                             </Button>
-                            <ModalIceland
-                                aria-labelledby="iceland-modal-title"
-                                aria-describedby="iceland-modal-description"
-                                open={open}
-                                onClose={handleClose}
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
+                            <ModalParis
+                                aria-labelledby="paris-modal-title"
+                                aria-describedby="paris-modal-description"
+                                open={openParis}
+                                onClose={handleCloseParis}
                                 BackdropComponent={Backdrop}
                                 BackdropProps={{
                                 timeout: 500,
@@ -255,10 +303,10 @@ const Influencer = () => {
                                     zIndex: 1
                                 }}
                             >
-                                <Fade in={open} >
-                                <Box sx={style1}>
-                                    <Typography id="iceland-modal-title" variant="h6" component="h2">
-                                   Travel to Iceland
+                                <Fade in={openParis} >
+                                <Box sx={style3}>
+                                    <Typography id="paris-modal-title" variant="h6" component="h2">
+                                   Travel to Paris
                                     </Typography><br />
 
                             <Button
@@ -271,13 +319,13 @@ const Influencer = () => {
                                     top: '5px',
                                 }}
                              >
-                                <CloseIcon onClick={handleClose} />
+                                <CloseIcon onClick={handleCloseParis} />
                             </Button>
 
                                     <ReactPhotoCollage       
                                     sx={{
                                     zIndex: 9999
-                                }}{...iceland } >
+                                }}{...paris } >
                                 </ReactPhotoCollage>
 
                                 <div className="book-text2">
@@ -292,38 +340,7 @@ const Influencer = () => {
                             </div>
                                 </Box>
                                 </Fade>
-                            </ModalIceland>
-                        </CardActions>
-                        </Card>
-                        </div>
-
-                        {/* /Bermuda/ */}
-
-                        <div>
-                        
-                        <Card sx={{ maxWidth: 400 }}>
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            height="350"
-                            src={Bermuda}
-                            alt="green iguana"
-                            />
-                            <CardContent>
-                            <Typography gutterBottom variant="h6" component="div">
-                                Bermuda
-                            </Typography>
-
-                            <Typography variant="body2" color="text.secondary">
-                            add small description of the place or module
-                            </Typography>
-
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                            view image gallery
-                            </Button>
+                            </ModalParis>
                         </CardActions>
                         </Card>
                         </div>
@@ -352,8 +369,9 @@ const Influencer = () => {
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary" onClick={handleOpenItaly} >
-                            view image gallery
+                            Preview itinerary
                             </Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
                             <ModalItaly
                                 aria-labelledby="italy-modal-title"
                                 aria-describedby="italy-modal-description"
@@ -409,7 +427,90 @@ const Influencer = () => {
                         </Card>
                         </div>
 
+                        {/* /Iceland/ */}
+                            
+                        <div>
+                        <Card sx={{ maxWidth: 400 }}>
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="350"
+                            src={Iceland}
+                            alt="green iguana"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h6" component="div">
+                                Iceland
+                            </Typography>
+
+                            <Typography variant="body2" color="text.secondary">
+                            add small description of the place or module
+                            </Typography>
+
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                            <Button size="small" color="primary" onClick={handleOpen} >
+                            Preview itinerary
+                            </Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
+                            <ModalIceland
+                                aria-labelledby="iceland-modal-title"
+                                aria-describedby="iceland-modal-description"
+                                open={open}
+                                onClose={handleClose}
+                                BackdropComponent={Backdrop}
+                                BackdropProps={{
+                                timeout: 500,
+                                }} 
+                                sx={{
+                                    zIndex: 1
+                                }}
+                            >
+                                <Fade in={open} >
+                                <Box sx={style1}>
+                                    <Typography id="iceland-modal-title" variant="h6" component="h2">
+                                   Travel to Iceland
+                                    </Typography><br />
+
+                            <Button
+                                sx={{
+                                    width: 50,
+                                    height: 50,
+                                    color: 'black',
+                                    position: 'absolute',
+                                    right: '5px',
+                                    top: '5px',
+                                }}
+                             >
+                                <CloseIcon onClick={handleClose} />
+                            </Button>
+
+                                    <ReactPhotoCollage       
+                                    sx={{
+                                    zIndex: 9999
+                                }}{...iceland } >
+                                </ReactPhotoCollage>
+
+                                <div className="book-text2">
+                                <Button href="/booking"
+                            variant="contained" style={{
+                                backgroundColor: "#00aaca", padding: "10px 55px",
+                                marginTop: "27px",
+                                borderRadius: "10px",
+                                color: "white",
+                                fontSize: "15px"
+                            }}>Buy Now</Button>
+                            </div>
+                                </Box>
+                                </Fade>
+                            </ModalIceland>
+                        </CardActions>
+                        </Card>
                         </div>
+
+
+                     </div>
 
                         </Box>
                     </Grid>
