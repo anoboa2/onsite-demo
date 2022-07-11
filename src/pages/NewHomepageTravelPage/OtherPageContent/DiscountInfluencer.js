@@ -42,7 +42,7 @@ const DiscountInfluencer = () => {
                         If you'd like your travel plans to be personalized to fit your preferences?
                         </Typography >
                         <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
-                        please reach out to us here. We will connect you to a specialist for additional fee of 5% of your total trip cost
+                        Please reach out to us here. We will connect you to a specialist for additional fee of 5% of your total trip cost
                         </Typography>
                         <Button 
                             href="https://try.onsiteplanning.com/onsiteplanning/"
