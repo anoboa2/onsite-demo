@@ -17,7 +17,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
-import Italy from "./images/Italy.jpg";
+import Italy2 from "./images/Italy2.JPG";
 
 import './CardInfluencer.css';
 
@@ -353,7 +353,7 @@ const Influencer = () => {
                             <CardMedia
                             component="img"
                             height="350"
-                            src={Italy}
+                            src={Italy2}
                             alt="green iguana"
                             />
                             <CardContent>
