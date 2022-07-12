@@ -47,7 +47,6 @@ const style1 = {
     p: 4,
   };
 
-
   const iceland = {
     width: "560px",
     height: ["235px", "235px"],
@@ -142,6 +141,14 @@ const style1 = {
       {
         source:
           "https://images.unsplash.com/photo-1657263084919-d1523080ca74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657643042129-5f3b80a5533a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657643042462-2916050e46a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       }
       
     ],
@@ -174,8 +181,14 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     maintypography: {
+        
+        marginTop: " 15% !important",
+        marginBottom: " -1% !important",
+        
         [theme.breakpoints.down("sm")]: {
 
+            marginTop: " 10% !important",
+            marginBottom: " 5% !important",
             borderBottom: "none !important",
             fontSize: "35px !important",
         }
@@ -187,13 +200,28 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
+
+    maintypography3: {
+
+        marginBottom: " 3% !important",
+        marginTop: " 2% !important",
+        [theme.breakpoints.down("sm")]: {
+            marginBottom: " 3% !important",
+            marginTop: " 8% !important",
+            borderBottom: "none !important",
+            fontSize: "20px !important",
+        }
+    },
+
     boxone: {
         display: "flex",
         marginTop: " -30% !important",
         marginBottom: " 3% !important",
         flexDirection: "row !important",
+        justifyContent: "center",
         [theme.breakpoints.down("sm")]: {
             borderBottom: "none !important",
+            justifyContent: "center",
             fontSize: "20px !important",
             marginLeft: " 10% !important",
         }
@@ -254,7 +282,11 @@ const Influencer = () => {
                             <Typography className={classes.maintypography1} variant="h6" align="center" component="h2" >
                             Check out Izanna's instagram for more <Link href="https://www.instagram.com/izanna.lev/" underline="none" > @izanna.lev</Link>
                             </Typography>
-
+                        </Box>
+                        <Box className={classes.boxtwo}>
+                        <Typography className={classes.maintypography3} variant="body1" align="center" component="h2" >
+                        Izanna has had a passion for traveling the world ever since she was a little girl. From organizing family trips to now inspiring others to pack their bags and book that trip. Below are some of her popular itineraries, you can preview and purchase. For customization requests, please use the link at the bottom of the page
+                            </Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={12} width={"100%"} marginTop={"-5%"} >
@@ -272,7 +304,7 @@ const Influencer = () => {
                             component="img"
                             height="350"
                             src={Paris}
-                            alt="green iguana"
+                            alt="Izanna Paris"
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h6" component="div">
@@ -280,7 +312,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            add small description of the place or module
+                            Itinerary for 3 days in the magical Paris, France
                             </Typography>
 
                             </CardContent>
@@ -354,7 +386,7 @@ const Influencer = () => {
                             component="img"
                             height="350"
                             src={Italy2}
-                            alt="green iguana"
+                            alt="Izanna Italy"
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h6" component="div">
@@ -362,7 +394,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            add small description of the place or module
+                            Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy
                             </Typography>
 
                             </CardContent>
@@ -436,7 +468,7 @@ const Influencer = () => {
                             component="img"
                             height="350"
                             src={Iceland}
-                            alt="green iguana"
+                            alt="Izanna Iceland"
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h6" component="div">
@@ -444,7 +476,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            add small description of the place or module
+                            Itinerary for 7 days in Iceland <br/> <br/>
                             </Typography>
 
                             </CardContent>
