@@ -90,6 +90,9 @@ function NewAppBar() {
             case ('aboutUs' || 'profile') :
                 navigate(menuDetails.path)
                 return;
+            case 'influencer':
+                    navigate(menuDetails.path)
+                    return
             case 'blog':
                 window.open(menuDetails.path)
                 return

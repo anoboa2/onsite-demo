@@ -41,4 +41,10 @@
       <changefreq>weekly</changefreq>
       <priority>0.3</priority>
    </url>
+   <url>
+      <sitemap>
+      <loc>https://www.onsiteplanning.com/influencer</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.3</priority>
+   </url>
 </urlset>
