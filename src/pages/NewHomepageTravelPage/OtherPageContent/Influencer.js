@@ -19,7 +19,7 @@ import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
 import Italy from "./images/Italy.jpg";
 
-import './BookNow.css';
+import './CardInfluencer.css';
 
 
 const style1 = {
@@ -260,7 +260,7 @@ const Influencer = () => {
                     <Grid item xs={12} width={"100%"} marginTop={"-5%"} >
                         <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
 
-                     <div class="flexbox-container">
+                     <div class="flexbox-container2">
                         
                         {/* /Paris/ */}
 
