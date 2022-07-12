@@ -17,7 +17,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
-import Italy2 from "./images/Italy2.JPG";
+import Italy2 from "./images/Italy2.png";
 
 import './CardInfluencer.css';
 
