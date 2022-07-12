@@ -12,6 +12,11 @@
 	margin-right: 20px;
 }
 
+  .react-responsive-modal-modal {
+    width: 390px;
+  }
+
+
 @media (max-width: 800px) {
   .flexbox-container2 {
     flex-direction: column;

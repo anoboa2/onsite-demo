@@ -22,55 +22,62 @@ import Italy2 from "./images/Italy2.JPG";
 import './CardInfluencer.css';
 
 
-const style1 = {
+const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 622,
+    width: 400,
     height: 660,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
-  };
-
-
-  const style3 = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 622,
-    height: 660,
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 4,
+    padding: "26.5px !important",
   };
 
   const iceland = {
-    width: "560px",
+    width: "350px",
     height: ["235px", "235px"],
     layout: [2, 2],
     photos: [
       {
         source:
-          "https://images.unsplash.com/photo-1531168556467-80aace0d0144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          "https://images.unsplash.com/photo-1657657397196-0f875ad3cebd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1489593426629-5e4e00ce821c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aWNlbGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          "https://images.unsplash.com/photo-1657656588044-a85446f1720c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1521024221340-efe7d7fa239b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9ad8a99d809d3fa3a9e8dff3ecc81878&auto=format&fit=crop&w=750&q=80"
+          "https://images.unsplash.com/photo-1657656510946-bb347be6cd9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+          "https://images.unsplash.com/photo-1657657397312-b5b81189cf3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       },
       {
         source:
-          "https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5548929376f93d8b1b7a21097df03bd&auto=format&fit=crop&w=749&q=80"
+          "https://images.unsplash.com/photo-1657657397194-d45ebd78d124?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        source:
+          "https://images.unsplash.com/photo-1657656511197-069484aa25ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+
+      {
+        source:
+          "https://images.unsplash.com/photo-1657656510988-ea0698dfc220?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+
+      {
+        source:
+          "https://images.unsplash.com/photo-1657656510997-d2848ab81043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      },
+
+      {
+        source:
+          "https://images.unsplash.com/photo-1657656510950-f36c5a4960e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
       }
       
     ],
@@ -79,7 +86,7 @@ const style1 = {
 
 
   const paris = {
-    width: "560px",
+    width: "350px",
     height: ["235px", "235px"],
     layout: [2, 2],
     photos: [
@@ -114,7 +121,7 @@ const style1 = {
 
 
   const italy = {
-    width: "560px",
+    width: "350px",
     height: ["235px", "235px"],
     layout: [2, 2],
     photos: [
@@ -312,7 +319,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            Itinerary for 3 days in the magical Paris, France
+                            Itinerary for 3 days in the magical Paris, France.
                             </Typography>
 
                             </CardContent>
@@ -336,7 +343,7 @@ const Influencer = () => {
                                 }}
                             >
                                 <Fade in={openParis} >
-                                <Box sx={style3}>
+                                <Box sx={style}>
                                     <Typography id="paris-modal-title" variant="h6" component="h2">
                                    Travel to Paris
                                     </Typography><br />
@@ -356,7 +363,7 @@ const Influencer = () => {
 
                                     <ReactPhotoCollage       
                                     sx={{
-                                    zIndex: 9999
+                                    zIndex: 9999,
                                 }}{...paris } >
                                 </ReactPhotoCollage>
 
@@ -394,7 +401,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy
+                            Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy.
                             </Typography>
 
                             </CardContent>
@@ -418,7 +425,7 @@ const Influencer = () => {
                                 }}
                             >
                                 <Fade in={openItaly} >
-                                <Box sx={style3}>
+                                <Box sx={style}>
                                     <Typography id="italy-modal-title" variant="h6" component="h2">
                                    Travel to Italy
                                     </Typography><br />
@@ -476,7 +483,7 @@ const Influencer = () => {
                             </Typography>
 
                             <Typography variant="body2" color="text.secondary">
-                            Itinerary for 7 days in Iceland <br/> <br/>
+                            Itinerary for 7 days in Iceland. <br/> <br/>
                             </Typography>
 
                             </CardContent>
@@ -500,7 +507,7 @@ const Influencer = () => {
                                 }}
                             >
                                 <Fade in={open} >
-                                <Box sx={style1}>
+                                <Box sx={style}>
                                     <Typography id="iceland-modal-title" variant="h6" component="h2">
                                    Travel to Iceland
                                     </Typography><br />
