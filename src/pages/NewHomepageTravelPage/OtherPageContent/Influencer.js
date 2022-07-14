@@ -14,8 +14,6 @@ import ModalParis from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import { ReactPhotoCollage } from "react-photo-collage";
 import CloseIcon from '@mui/icons-material/Close';
-import { useLocalStorage } from '../../useLocalStorage';
-import React, { useState, useEffect } from 'react';
 
 import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
@@ -273,8 +271,7 @@ const Influencer = () => {
         setOpenParis(false);
     };
 
-    const sendPayment = () => {
-        
+    const sendPayment = (event) => {
         event.preventDefault();
         let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createpaymentintent"
         let body = {
@@ -390,7 +387,7 @@ const Influencer = () => {
                                 </ReactPhotoCollage>
 
                                 <div className="book-text2">
-                                <Button href="/booking"
+                                <Button
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -473,7 +470,7 @@ const Influencer = () => {
                                 </ReactPhotoCollage>
 
                                 <div className="book-text2">
-                                <Button href="/booking"
+                                <Button
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -555,7 +552,7 @@ const Influencer = () => {
                                 </ReactPhotoCollage>
 
                                 <div className="book-text2">
-                                <Button href="/booking"
+                                <Button 
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
