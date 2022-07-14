@@ -14,7 +14,7 @@ import ModalParis from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import { ReactPhotoCollage } from "react-photo-collage";
 import CloseIcon from '@mui/icons-material/Close';
-
+import { useRownd } from '@rownd/react';
 import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
 import Italy2 from "./images/Italy2.png";
