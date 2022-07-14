@@ -270,7 +270,24 @@ const Influencer = () => {
     const handleCloseParis = () => {
         setOpenParis(false);
     };
-    
+
+    const sendPayment = () => {
+
+        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createpaymentintent"
+        let body = {
+        "rownd_id": "test_user",
+        "amount": "100",
+        "currency": "usd"
+        }
+
+        fetch(url, {
+        "method": "POST",
+        "body": JSON.stringify(body)
+        })
+        .then((response) => response.json())
+        
+    };
+
     return (
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Fade bottom>
@@ -328,7 +345,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPayment} >Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -374,7 +391,8 @@ const Influencer = () => {
                                 marginTop: "27px",
                                 borderRadius: "10px",
                                 color: "white",
-                                fontSize: "15px"
+                                fontSize: "15px",
+                                onClick:{sendPayment} 
                             }}>Buy Now</Button>
                             </div>
                                 </Box>
