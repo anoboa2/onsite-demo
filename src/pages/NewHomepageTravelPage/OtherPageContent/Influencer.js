@@ -14,6 +14,8 @@ import ModalParis from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import { ReactPhotoCollage } from "react-photo-collage";
 import CloseIcon from '@mui/icons-material/Close';
+import { useLocalStorage } from '../../useLocalStorage';
+import React, { useState, useEffect } from 'react';
 
 import Iceland from "./images/Iceland.jpg";
 import Paris from "./images/Paris.jpg";
@@ -272,7 +274,8 @@ const Influencer = () => {
     };
 
     const sendPayment = () => {
-
+        
+        event.preventDefault();
         let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createpaymentintent"
         let body = {
         "rownd_id": "test_user",
@@ -285,6 +288,8 @@ const Influencer = () => {
         "body": JSON.stringify(body)
         })
         .then((response) => response.json())
+
+        console.log('Successfully genereated payment intent')
         
     };
 
@@ -345,7 +350,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPayment} >Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onSubmit={sendPayment} >Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -392,7 +397,7 @@ const Influencer = () => {
                                 borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px",
-                                onClick:{sendPayment} 
+                                onSubmit:{sendPayment} 
                             }}>Buy Now</Button>
                             </div>
                                 </Box>
