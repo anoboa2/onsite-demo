@@ -247,6 +247,7 @@ const useStyles = makeStyles((theme) => ({
 })) 
 
 const Influencer = () => {
+    const { is_authenticated, user, requestSignIn } = useRownd();
     const [open, setOpen] = React.useState(false);
     const [openItaly, setOpenItaly] = React.useState(false);
     const [openParis, setOpenParis] = React.useState(false);
@@ -274,11 +275,14 @@ const Influencer = () => {
     const sendPayment = (event) => {
         event.preventDefault();
         let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createpaymentintent"
-        let body = {
-        "rownd_id": "test_user",
-        "amount": "100",
-        "currency": "usd"
-        }
+
+        if (!is_authenticated) requestSignIn({ auto_sign_in: true, identifier: user.data.email, post_login_redirect: '/profile?source=influencer' });
+        else {
+            const body = {
+                "rownd_id": "test_user",
+                "amount": "100",
+                "currency": "usd"
+            }
 
         fetch(url, {
             method: 'POST',
@@ -287,7 +291,7 @@ const Influencer = () => {
             .then((response) => response.json())
 
         console.log('Successfully genereated payment intent')
-        
+        } 
     };
 
     return (
