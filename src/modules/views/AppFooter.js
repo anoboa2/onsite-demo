@@ -55,6 +55,7 @@ export default function AppFooter() {
                     src="/icon/facebook.png"
                     alt="Facebook"
                     height={30}
+                    width={30}
                   />
                 </Box>
                 <Box component="a" href="https://twitter.com/OnsiteTravelApp" sx={iconStyle}>
@@ -62,6 +63,7 @@ export default function AppFooter() {
                     src="/icon/twitter.png"
                     alt="Twitter"
                     height={30}
+                    width={30}
                   />
                 </Box>
                 <Box component="a" href="https://instagram.com/Onsitetravelapp" sx={iconStyle}>
@@ -69,6 +71,7 @@ export default function AppFooter() {
                     src="/icon/instagram.png"
                     alt="Instagram"
                     height={30}
+                    width={30}
                   />
                 </Box>
               </Grid>
