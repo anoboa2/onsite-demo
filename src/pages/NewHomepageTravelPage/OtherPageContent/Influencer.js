@@ -281,10 +281,10 @@ const Influencer = () => {
         }
 
         fetch(url, {
-        "method": "POST",
-        "body": JSON.stringify(body)
+            method: 'POST',
+            body: JSON.stringify(body)
         })
-        .then((response) => response.json())
+            .then((response) => response.json())
 
         console.log('Successfully genereated payment intent')
         
