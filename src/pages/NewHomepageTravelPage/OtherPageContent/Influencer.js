@@ -347,7 +347,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onSubmit={sendPayment} >Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPayment} >Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -394,7 +394,7 @@ const Influencer = () => {
                                 borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px",
-                                onSubmit:{sendPayment} 
+                                onClick:{sendPayment} 
                             }}>Buy Now</Button>
                             </div>
                                 </Box>
