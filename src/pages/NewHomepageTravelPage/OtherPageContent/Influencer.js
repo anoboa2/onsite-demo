@@ -286,6 +286,9 @@ const Influencer = () => {
             },
         })
             .then((response) => response.json())
+            .then((data) => response.data)
+
+            window.location.href = data.redirect_url
 
         console.log('Successfully genereated payment intent')
         
