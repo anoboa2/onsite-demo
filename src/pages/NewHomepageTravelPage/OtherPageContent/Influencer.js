@@ -273,7 +273,7 @@ const Influencer = () => {
 
     const sendPaymentParis = (event) => {
         event.preventDefault();
-        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createcheckoutsession"
+        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
         let body = {
             "product_id": "prod_M3gRlnAKzowhmD"
         }
