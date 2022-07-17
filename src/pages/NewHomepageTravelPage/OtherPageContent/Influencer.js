@@ -271,13 +271,11 @@ const Influencer = () => {
         setOpenParis(false);
     };
 
-    const sendPayment = (event) => {
+    const sendPaymentParis = (event) => {
         event.preventDefault();
-        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createpaymentintent"
+        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/beta/product/createcheckoutsession"
         let body = {
-        "rownd_id": "test_user",
-        "amount": "100",
-        "currency": "usd"
+            "product_id": "prod_M3gRlnAKzowhmD"
         }
 
         fetch(url, {
@@ -347,7 +345,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPayment} >Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPaymentParis} >Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -388,13 +386,13 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
+                                onClick={sendPaymentParis}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
                                 borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px",
-                                onClick:{sendPayment} 
                             }}>Buy Now</Button>
                             </div>
                                 </Box>
