@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { Grid , Link } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 import { Fade } from 'react-reveal';
 import Typography from "../../../modules/components/Typography";
 import Card from '@mui/material/Card';
@@ -280,7 +280,10 @@ const Influencer = () => {
 
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json'
+            },
         })
             .then((response) => response.json())
 
@@ -345,7 +348,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={sendPaymentParis} >Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onSubmit={sendPaymentParis} >Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -386,7 +389,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
-                                onClick={sendPaymentParis}
+                                onSubmit={sendPaymentParis}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
