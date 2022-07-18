@@ -271,11 +271,10 @@ const Influencer = () => {
         setOpenParis(false);
     };
 
-    const sendPaymentParis = (event) => {
-        event.preventDefault();
+    const getCheckoutSession = (product_id) => {
         let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
         let body = {
-            "product_id": "prod_M3gRlnAKzowhmD"
+            "product_id": product_id
         }
 
         fetch(url, {
@@ -286,11 +285,13 @@ const Influencer = () => {
             },
         })
             .then((response) => response.json())
-            .then((data) => response.data)
-
-            window.location.href = data.redirect_url
-
-        console.log('Successfully genereated payment intent')
+            .then(data => {
+              console.log(data)
+              window.location.href = data.redirect_url
+            })
+            .catch(error => {
+              console.log(error)
+            })
         
     };
 
@@ -392,7 +393,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
-                                onSubmit={sendPaymentParis}
+                                onSubmit={getCheckoutSession("prod_M3gRlnAKzowhmD")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -475,6 +476,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
+                                onSubmit={getCheckoutSession("prod_M3gNSuwBEOfg1K")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -557,6 +559,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button 
+                                onSubmit={getCheckoutSession("prod_M3gSPAjSf4ey64")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
