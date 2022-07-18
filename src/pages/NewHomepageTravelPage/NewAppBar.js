@@ -49,9 +49,9 @@ function NewAppBar() {
 
     let pages = [
         {
-            label: 'Influencer',
-            key:'influencer',
-            path: '/influencer',
+            label: 'Itineraries',
+            key:'itineraries',
+            path: '/itineraries',
             isTarget: false
         },
         {
@@ -90,7 +90,7 @@ function NewAppBar() {
             case ('aboutUs' || 'profile') :
                 navigate(menuDetails.path)
                 return;
-            case 'influencer':
+            case 'itineraries':
                     navigate(menuDetails.path)
                     return
             case 'blog':
@@ -179,10 +179,10 @@ function NewAppBar() {
                         color="inherit"
                         variant="h6"
                         underline="none"
-                        href="/influencer"
+                        href="/itineraries"
                         sx={rightLink}
                         >
-                            {'Influencer'}
+                            {'Itineraries'}
                         </Link>
                     <Link
                         color="inherit"

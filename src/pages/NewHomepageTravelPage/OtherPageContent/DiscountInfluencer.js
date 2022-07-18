@@ -40,10 +40,10 @@ const DiscountInfluencer = () => {
 
                     <Box className="book-text3">
                         <Typography className={classes.typographyone} marginBottom="40px" variant="h4">
-                        Do you want your travel plans personalized to fit your needs?
+                        Looking for bespoke travel itineraries based on your interests?
                         </Typography >
                         <Typography className={classes.typographytwo} marginBottom="40px" variant="h5">
-                        Please reach out to us<Link href="https://try.onsiteplanning.com/onsiteplanning/" underline="none" > here</Link>. We will connect you to a specialist for additional fee of 5% of your total trip cost
+                        In addition to our influencer travel plans, Onsite offers a concierge service to fully customize your itinerary.
                         </Typography>
                         <Button 
                             href="https://try.onsiteplanning.com/onsiteplanning/"
