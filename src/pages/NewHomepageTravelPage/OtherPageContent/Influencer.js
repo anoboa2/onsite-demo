@@ -271,28 +271,6 @@ const Influencer = () => {
         setOpenParis(false);
     };
 
-<<<<<<< HEAD
-    const sendPaymentParis = (event) => {
-        event.preventDefault();
-        let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
-        let body = {
-            "product_id": "prod_M3gRlnAKzowhmD"
-        }
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-            .then((response) => response.json())
-            // .then((data) => response.data)
-
-            // window.location.href = data.redirect_url
-
-        console.log('Successfully genereated payment intent')
-=======
     const getCheckoutSession = product_id => event => {
       event.preventDefault();
       let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
@@ -315,7 +293,6 @@ const Influencer = () => {
           .catch(error => {
             console.log(error)
           })
->>>>>>> 96d77c8f176232594ba313bb79fccdfe4f5e1470
         
     };
 
