@@ -271,6 +271,7 @@ const Influencer = () => {
         setOpenParis(false);
     };
 
+<<<<<<< HEAD
     const sendPaymentParis = (event) => {
         event.preventDefault();
         let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
@@ -291,6 +292,30 @@ const Influencer = () => {
             // window.location.href = data.redirect_url
 
         console.log('Successfully genereated payment intent')
+=======
+    const getCheckoutSession = product_id => event => {
+      event.preventDefault();
+      let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
+      let body = {
+          "product_id": product_id
+      }
+
+      fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(body),
+          headers: {
+              'Content-Type': 'application/json'
+          },
+      })
+          .then((response) => response.json())
+          .then(data => {
+            console.log(data)
+            window.location.href = data.redirect_url
+          })
+          .catch(error => {
+            console.log(error)
+          })
+>>>>>>> 96d77c8f176232594ba313bb79fccdfe4f5e1470
         
     };
 
@@ -351,7 +376,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenParis}>
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onSubmit={sendPaymentParis} >Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={getCheckoutSession("prod_M3gRlnAKzowhmD")}>Buy Now</Button>
                             <ModalParis
                                 aria-labelledby="paris-modal-title"
                                 aria-describedby="paris-modal-description"
@@ -392,7 +417,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
-                                onSubmit={sendPaymentParis}
+                                onClick={getCheckoutSession("prod_M3gRlnAKzowhmD")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -434,7 +459,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpenItaly} >
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={getCheckoutSession("prod_M3gNSuwBEOfg1K")}>Buy Now</Button>
                             <ModalItaly
                                 aria-labelledby="italy-modal-title"
                                 aria-describedby="italy-modal-description"
@@ -464,7 +489,7 @@ const Influencer = () => {
                                     top: '5px',
                                 }}
                              >
-                                <CloseIcon onClick={handleCloseItaly} />
+                                <CloseIcon onSubmit={handleCloseItaly} />
                             </Button>
 
                                     <ReactPhotoCollage       
@@ -475,6 +500,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button
+                                onClick={getCheckoutSession("prod_M3gNSuwBEOfg1K")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
@@ -516,7 +542,7 @@ const Influencer = () => {
                             <Button size="small" color="primary" onClick={handleOpen} >
                             Preview itinerary
                             </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}}>Buy Now</Button>
+                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={getCheckoutSession("prod_M3gSPAjSf4ey64")}>Buy Now</Button>
                             <ModalIceland
                                 aria-labelledby="iceland-modal-title"
                                 aria-describedby="iceland-modal-description"
@@ -557,6 +583,7 @@ const Influencer = () => {
 
                                 <div className="book-text2">
                                 <Button 
+                                onClick={getCheckoutSession("prod_M3gSPAjSf4ey64")}
                             variant="contained" style={{
                                 backgroundColor: "#00aaca", padding: "10px 55px",
                                 marginTop: "27px",
