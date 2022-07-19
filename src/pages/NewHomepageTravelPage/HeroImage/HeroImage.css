@@ -36,9 +36,10 @@
   /* Responsive mobile  */
   @media only screen and (max-width: 600px){
     .hero-image {
-      height: 400px;
+      height: 290px;
       width: 100%;
       margin-bottom: "600px !important";
+      padding-bottom: "50px !important";
       
       /* Position and center the image to scale nicely on all screens */
       background-position: right;

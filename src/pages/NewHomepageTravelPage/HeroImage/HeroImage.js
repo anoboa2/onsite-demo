@@ -82,7 +82,8 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginTop: "9% !important",
         },
     }
 }))

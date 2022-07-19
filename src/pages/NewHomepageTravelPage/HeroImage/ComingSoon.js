@@ -36,7 +36,17 @@ const useStyles = makeStyles((theme) => ({
     },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
-            fontSize: "35px !important",
+            fontSize: "30px !important",
+            paddingTop: "145px",
+        }
+    },
+    typographyone2: {
+        paddingTop: "6px",
+        fontSize: "30px !important",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "22px !important",
+            paddingTop: "6px",
+            
         }
     },
     typographytwo: {
@@ -50,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none !important",
             display: "block !important",
-            fontSize: "35px !important",
+            fontSize: "22px !important",
             borderBottom: "none !important",
         },
     },
@@ -81,8 +91,9 @@ const ComingSoon = () => {
                         <Box className={classes.box}>
                             <Box className={classes.boxone}>
                                 <Typography className={classes.typographyone} variant="h3" >
-                                    Stress Less, Dream More. Mobile App <span className={classes.span}>Coming Soon.</span></Typography>
-                               
+                                    Stress Less, Dream More.</Typography>
+                                    <Typography className={classes.typographyone2} variant="h3" >
+                                    Mobile App <span className={classes.span}>Coming Soon.</span></Typography>
                             </Box>
                             <Box className={classes.boxtwo}>
                                 <Typography className={classes.typographytwo} variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }}>
