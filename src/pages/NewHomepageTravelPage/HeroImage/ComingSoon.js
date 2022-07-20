@@ -34,6 +34,15 @@ const useStyles = makeStyles((theme) => ({
 
         }
     },
+    boxone2: {
+        marginLeft: "10%",
+        marginBottom: "6%",
+        [theme.breakpoints.down("sm")]: {
+            width: "120%",
+            marginLeft: "10%",
+            marginTop: "-10px !important",
+        }
+    },
     typographyone: {
         [theme.breakpoints.down("sm")]: {
             fontSize: "30px !important",
@@ -42,10 +51,12 @@ const useStyles = makeStyles((theme) => ({
     },
     typographyone2: {
         paddingTop: "6px",
-        fontSize: "30px !important",
+        fontSize: "22px !important",
+        marginTop: "-42px !important",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "22px !important",
+            fontSize: "18px !important",
             paddingTop: "6px",
+            marginTop: "-12px !important",
             
         }
     },
@@ -59,8 +70,8 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "3px solid #0FAACD",
         [theme.breakpoints.down("sm")]: {
             textDecoration: "none !important",
-            display: "block !important",
-            fontSize: "22px !important",
+            
+            fontSize: "18px !important",
             borderBottom: "none !important",
         },
     },
@@ -92,6 +103,8 @@ const ComingSoon = () => {
                             <Box className={classes.boxone}>
                                 <Typography className={classes.typographyone} variant="h3" >
                                     Stress Less, Dream More.</Typography>
+                            </Box>
+                            <Box className={classes.boxone2}>
                                     <Typography className={classes.typographyone2} variant="h3" >
                                     Mobile App <span className={classes.span}>Coming Soon.</span></Typography>
                             </Box>
