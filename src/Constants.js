@@ -4,7 +4,7 @@ export const home = {
     subHeader : "you make the memories",
     text : "Local Travel Specialists Are Standing By To Plan You The Trip of A Lifetime",
     secondHeader : "You Value Price Transparency,",
-    secondText : "We are the fastest growing and most valued travel company because we believe in growing trustworthy relationships with our travelers. We are transparent with our travelers about pricing, for 5% of your total trip cost, Onsite does everything from plan until you arrive home. Our travelers don’t have to worry about doing anything."
+    secondText : "We are the fastest growing and most valued travel company because we believe in growing trustworthy relationships with our travelers. We are transparent with our travelers about pricing, for 7% of your total trip cost, Onsite does everything from plan until you arrive home. Our travelers don’t have to worry about doing anything."
 }
 
 export const about = {
