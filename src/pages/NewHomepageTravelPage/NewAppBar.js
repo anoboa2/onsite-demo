@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const onsiteLogo = '/img/Onsite_Logo.png';
+const onsiteLogo = '/img/Onsite_Logo1.png';
 
 function NewAppBar() {
     const { is_authenticated } = useRownd();
