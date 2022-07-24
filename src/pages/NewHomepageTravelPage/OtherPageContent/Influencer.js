@@ -337,8 +337,9 @@ const Influencer = () => {
                             height="350"
                             src={Paris}
                             alt="Izanna Paris"
+                            onClick={handleOpenParis}
                             />
-                            <CardContent>
+                            <CardContent onClick={handleOpenParis}>
                             <Typography gutterBottom variant="h6" component="div">
                                 Paris
                             </Typography>
@@ -424,8 +425,9 @@ const Influencer = () => {
                             height="350"
                             src={Italy2}
                             alt="Izanna Italy"
+                            onClick={handleOpenItaly}
                             />
-                            <CardContent>
+                            <CardContent onClick={handleOpenItaly}>
                             <Typography gutterBottom variant="h6" component="div">
                                 Italy
                             </Typography>
@@ -475,7 +477,7 @@ const Influencer = () => {
                                     top: '5px',
                                 }}
                              >
-                                <CloseIcon onSubmit={handleCloseItaly} />
+                                <CloseIcon onClick={handleCloseItaly} />
                             </Button>
 
                                     <ReactPhotoCollage       
@@ -512,8 +514,9 @@ const Influencer = () => {
                             height="350"
                             src={Iceland}
                             alt="Izanna Iceland"
+                            onClick={handleOpen}
                             />
-                            <CardContent>
+                            <CardContent onClick={handleOpen}>
                             <Typography gutterBottom variant="h6" component="div">
                                 Iceland
                             </Typography>
