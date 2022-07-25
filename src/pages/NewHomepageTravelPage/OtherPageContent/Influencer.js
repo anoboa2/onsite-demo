@@ -344,37 +344,6 @@ const Influencer = () => {
                         </Box>
                     </Grid>
                     <Grid item xs={12} width={"100%"} marginTop={"-5%"} >
-<<<<<<< HEAD
-                        <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
-
-                     <div class="flexbox-container2">
-                        
-                        {/* /Paris/ */}
-
-                        <div>
-                        
-                        <Card sx={{ maxWidth: 400 }}>
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            height="350"
-                            src={Paris}
-                            alt="Izanna Paris"
-                            onClick={handleOpenParis}
-                            />
-                            <CardContent onClick={handleOpenParis}>
-                            <Typography gutterBottom variant="h6" component="div">
-                                Paris
-                            </Typography>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary for 3 days in the magical Paris, France.
-                            </Typography><br/>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary will be emailed to you after purchase complete.
-                            </Typography>
-=======
                         <Box className={classes.item} width={"100%"} sx={{ mt: 8, display: 'flex', justifyContent: 'center' }}>
 
                             <div class="flexbox-container2">
@@ -399,6 +368,10 @@ const Influencer = () => {
 
                                                 <Typography variant="body2" color="text.secondary">
                                                     Itinerary for 3 days in the magical Paris, France.
+                                                </Typography><br />
+
+                                                <Typography variant="body2" color="text.secondary">
+                                                Itinerary will be emailed to you after purchase complete.
                                                 </Typography>
 
                                                 <Typography variant="body2" color="#000" fontStyle="italic" fontSize="15px"><br />
@@ -487,6 +460,10 @@ const Influencer = () => {
 
                                                 <Typography variant="body2" color="text.secondary">
                                                     Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy.
+                                                </Typography><br />
+
+                                                <Typography variant="body2" color="text.secondary">
+                                                Itinerary will be emailed to you after purchase complete.
                                                 </Typography>
 
 
@@ -576,6 +553,10 @@ const Influencer = () => {
 
                                                 <Typography variant="body2" color="text.secondary">
                                                     Itinerary for 7 days in Iceland. <br /> <br />
+                                                </Typography><br />
+
+                                                <Typography variant="body2" color="text.secondary">
+                                                Itinerary will be emailed to you after purchase complete.
                                                 </Typography>
 
 
@@ -645,207 +626,7 @@ const Influencer = () => {
                                         </CardActions>
                                     </Card>
                                 </div>
->>>>>>> 4c187013caf92a37e9b61d9967042f22d6b0bffc
-
-
                             </div>
-<<<<<<< HEAD
-                                </Box>
-                                </Fade>
-                            </ModalParis>
-                        </CardActions>
-                        </Card>
-                        </div>
-
-                        {/* /Italy/ */}
-
-                        <div>
-                        <Card sx={{ maxWidth: 400 }}>
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            height="350"
-                            src={Italy2}
-                            alt="Izanna Italy"
-                            onClick={handleOpenItaly}
-                            />
-                            <CardContent onClick={handleOpenItaly}>
-                            <Typography gutterBottom variant="h6" component="div">
-                                Italy
-                            </Typography>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy.
-                            </Typography><br/>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary will be emailed to you after purchase complete.
-                            </Typography>
-
-                            
-                            <Typography variant="body2" color="#000" fontStyle="italic" fontSize="15px"><br/>
-                            Price: $9.99
-                            </Typography>
-
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={handleOpenItaly} >
-                            Preview itinerary
-                            </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={getCheckoutSession("prod_M3gNSuwBEOfg1K")}>Buy Now</Button>
-                            <ModalItaly
-                                aria-labelledby="italy-modal-title"
-                                aria-describedby="italy-modal-description"
-                                open={openItaly}
-                                onClose={handleCloseItaly}
-                                BackdropComponent={Backdrop}
-                                BackdropProps={{
-                                timeout: 500,
-                                }} 
-                                sx={{
-                                    zIndex: 1
-                                }}
-                            >
-                                <Fade in={openItaly} >
-                                <Box sx={style}>
-                                    <Typography id="italy-modal-title" variant="h6" component="h2">
-                                   Travel to Italy
-                                    </Typography><br />
-
-                            <Button
-                                sx={{
-                                    width: 50,
-                                    height: 50,
-                                    color: 'black',
-                                    position: 'absolute',
-                                    right: '5px',
-                                    top: '5px',
-                                }}
-                             >
-                                <CloseIcon onClick={handleCloseItaly} />
-                            </Button>
-
-                                    <ReactPhotoCollage       
-                                    sx={{
-                                    zIndex: 9999
-                                }}{...italy } >
-                                </ReactPhotoCollage>
-
-                                <div className="book-text2">
-                                <Button
-                                onClick={getCheckoutSession("prod_M3gNSuwBEOfg1K")}
-                            variant="contained" style={{
-                                backgroundColor: "#00aaca", padding: "10px 55px",
-                                marginTop: "27px",
-                                borderRadius: "10px",
-                                color: "white",
-                                fontSize: "15px"
-                            }}>Buy Now</Button>
-                            </div>
-                                </Box>
-                                </Fade>
-                            </ModalItaly>
-                        </CardActions>
-                        </Card>
-                        </div>
-
-                        {/* /Iceland/ */}
-                            
-                        <div>
-                        <Card sx={{ maxWidth: 400 }}>
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            height="350"
-                            src={Iceland}
-                            alt="Izanna Iceland"
-                            onClick={handleOpen}
-                            />
-                            <CardContent onClick={handleOpen}>
-                            <Typography gutterBottom variant="h6" component="div">
-                                Iceland
-                            </Typography>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary for 7 days in Iceland. <br/> <br/>
-                            </Typography>
-
-                            <Typography variant="body2" color="text.secondary">
-                            Itinerary will be emailed to you after purchase complete.
-                            </Typography><br/>
-                            
-                            <Typography variant="body2" color="#000" fontStyle="italic" fontSize="15px"><br/>
-                            Price: $9.99
-                            </Typography>
-
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={handleOpen} >
-                            Preview itinerary
-                            </Button>
-                            <Button size="small" color="primary" sx={{paddingLeft:"65px"}} onClick={getCheckoutSession("prod_M3gSPAjSf4ey64")}>Buy Now</Button>
-                            <ModalIceland
-                                aria-labelledby="iceland-modal-title"
-                                aria-describedby="iceland-modal-description"
-                                open={open}
-                                onClose={handleClose}
-                                BackdropComponent={Backdrop}
-                                BackdropProps={{
-                                timeout: 500,
-                                }} 
-                                sx={{
-                                    zIndex: 1
-                                }}
-                            >
-                                <Fade in={open} >
-                                <Box sx={style}>
-                                    <Typography id="iceland-modal-title" variant="h6" component="h2">
-                                   Travel to Iceland
-                                    </Typography><br />
-
-                            <Button
-                                sx={{
-                                    width: 50,
-                                    height: 50,
-                                    color: 'black',
-                                    position: 'absolute',
-                                    right: '5px',
-                                    top: '5px',
-                                }}
-                             >
-                                <CloseIcon onClick={handleClose} />
-                            </Button>
-
-                                    <ReactPhotoCollage       
-                                    sx={{
-                                    zIndex: 9999
-                                }}{...iceland } >
-                                </ReactPhotoCollage>
-
-                                <div className="book-text2">
-                                <Button 
-                                onClick={getCheckoutSession("prod_M3gSPAjSf4ey64")}
-                            variant="contained" style={{
-                                backgroundColor: "#00aaca", padding: "10px 55px",
-                                marginTop: "27px",
-                                borderRadius: "10px",
-                                color: "white",
-                                fontSize: "15px"
-                            }}>Buy Now</Button>
-                            </div>
-                                </Box>
-                                </Fade>
-                            </ModalIceland>
-                        </CardActions>
-                        </Card>
-                        </div>
-
-
-                     </div>
-=======
->>>>>>> 4c187013caf92a37e9b61d9967042f22d6b0bffc
 
                         </Box>
                     </Grid>
