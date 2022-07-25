@@ -182,7 +182,7 @@ function NewAppBar() {
                         href="/itineraries"
                         sx={rightLink}
                         >
-                            {'Itineraries}
+                            {'Itineraries'}
                         </Link>
                     <Link
                         color="inherit"
