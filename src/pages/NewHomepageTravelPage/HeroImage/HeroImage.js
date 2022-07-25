@@ -107,7 +107,7 @@ const HeroImage = ({ details }) => {
     const [open, setOpen] = useState(false)
     const [isCheckoutSuccessful, setIsCheckoutSuccessful] = useState(false)
     const search = useLocation().search;
-    const checkoutMessage = "Checkout successful.  Thank you.";
+    const checkoutMessage = "Checkout completion success! Please check your email for your itinerary.";
 
     const handleClose = () => {
         setOpen(false);
