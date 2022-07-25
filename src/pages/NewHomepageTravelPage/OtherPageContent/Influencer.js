@@ -346,6 +346,10 @@ const Influencer = () => {
 
                             <Typography variant="body2" color="text.secondary">
                             Itinerary for 3 days in the magical Paris, France.
+                            </Typography><br/>
+
+                            <Typography variant="body2" color="text.secondary">
+                            Itinerary will be emailed to you after purchase complete.
                             </Typography>
 
                             <Typography variant="body2" color="#000" fontStyle="italic" fontSize="15px"><br/>
@@ -434,6 +438,10 @@ const Influencer = () => {
 
                             <Typography variant="body2" color="text.secondary">
                             Itinerary for 2 days in Florence, 2 days in Rome, 5 days in Positano, Italy.
+                            </Typography><br/>
+
+                            <Typography variant="body2" color="text.secondary">
+                            Itinerary will be emailed to you after purchase complete.
                             </Typography>
 
                             
@@ -525,6 +533,9 @@ const Influencer = () => {
                             Itinerary for 7 days in Iceland. <br/> <br/>
                             </Typography>
 
+                            <Typography variant="body2" color="text.secondary">
+                            Itinerary will be emailed to you after purchase complete.
+                            </Typography><br/>
                             
                             <Typography variant="body2" color="#000" fontStyle="italic" fontSize="15px"><br/>
                             Price: $9.99
