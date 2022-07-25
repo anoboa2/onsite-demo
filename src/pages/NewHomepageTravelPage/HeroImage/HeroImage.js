@@ -5,6 +5,9 @@ import Typography from "../../../modules/components/Typography";
 import './HeroImage.css';
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
+import { useLocation } from "react-router-dom";
+import { Snackbar } from "@mui/material";
+import Alert from '@mui/material/Alert';
 
 // const useStyles = makeStyles((theme) => ({
 //     typography1: {
@@ -102,16 +105,35 @@ const style = {
 
 const HeroImage = ({ details }) => {
     const [open, setOpen] = useState(false)
+    const [isCheckoutSuccessful, setIsCheckoutSuccessful] = useState(false)
+    const search = useLocation().search;
+    const checkoutMessage = "Payment success! Please check your email for your itinerary.";
+
     const handleClose = () => {
         setOpen(false);
+        setIsCheckoutSuccessful(false);
     };
 
     const handleLearnMore = () => {
         setOpen(true);
     }
+
+    React.useEffect(() => {
+        const source = new URLSearchParams(search).get("checkout_success");
+        if (source === 'true') {
+            setIsCheckoutSuccessful(true);
+        }
+    }, [])
+
     const classes = useStyles()
     return (
         <div>
+            <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={isCheckoutSuccessful}
+                onClose={handleClose}>
+                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                    {checkoutMessage}
+                </Alert>
+            </Snackbar>
             <div className="hero-image">
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
@@ -162,8 +184,6 @@ const HeroImage = ({ details }) => {
                         </Box>}
                 </div>
             </div>
-                
-
         </div>
     );
 }

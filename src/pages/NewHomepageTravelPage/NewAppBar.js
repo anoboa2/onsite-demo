@@ -15,7 +15,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb'; 
-    
+
 const rightLink = {
     fontSize: 16,
     color: 'secondary.main',
@@ -79,7 +79,7 @@ function NewAppBar() {
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
     };
-  
+
     const handleCloseNavMenu = () => {
       setAnchorElNav(null);
     };
@@ -101,7 +101,7 @@ function NewAppBar() {
 
         }
     }
-  
+
     const classes = useStyles()
     return (
         <div >
@@ -234,4 +234,3 @@ function NewAppBar() {
 }
 
 export default NewAppBar;
-
