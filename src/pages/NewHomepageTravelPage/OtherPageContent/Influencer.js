@@ -260,7 +260,7 @@ const Influencer = () => {
         setIsCancel(false);
     }
     const search = useLocation().search;
-    const cancellationMessage = "Checkout unsuccessful.  Please try again.";
+    const cancellationMessage = "Checkout was not completed.  Please try again.";
 
     const classes = useStyles()
 
@@ -316,7 +316,7 @@ const Influencer = () => {
         <Grid mb={5} pl={4} pr={4} pt={5}>
             <Snackbar anchorOrigin={{ horizontal: 'center', vertical: 'top' }} open={isCancel}
                 onClose={handleClose}>
-                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
                     {cancellationMessage}
                 </Alert>
             </Snackbar>
