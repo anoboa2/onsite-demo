@@ -18,9 +18,9 @@ import { useLocation } from "react-router-dom";
 import { Snackbar } from "@mui/material";
 import Alert from '@mui/material/Alert';
 
-import Iceland from "./images/Iceland.jpg";
-import Paris from "./images/Paris.jpg";
-import Italy2 from "./images/Italy2.png";
+import Iceland from "./images/Iceland.gif";
+import Paris from "./images/Paris.gif";
+import Italy from "./images/Italy.gif";
 
 import './CardInfluencer.css';
 
@@ -356,7 +356,7 @@ const Influencer = () => {
                                         <CardActionArea>
                                             <CardMedia
                                                 component="img"
-                                                height="350"
+                                                height="400"
                                                 src={Paris}
                                                 alt="Izanna Paris"
                                                 onClick={handleOpenParis}
@@ -448,8 +448,8 @@ const Influencer = () => {
                                         <CardActionArea>
                                             <CardMedia
                                                 component="img"
-                                                height="350"
-                                                src={Italy2}
+                                                height="400"
+                                                src={Italy}
                                                 alt="Izanna Italy"
                                                 onClick={handleOpenItaly}
                                             />
@@ -541,7 +541,7 @@ const Influencer = () => {
                                         <CardActionArea>
                                             <CardMedia
                                                 component="img"
-                                                height="350"
+                                                height="400"
                                                 src={Iceland}
                                                 alt="Izanna Iceland"
                                                 onClick={handleOpen}
