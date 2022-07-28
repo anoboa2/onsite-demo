@@ -175,15 +175,15 @@ function NewAppBar() {
                         </Menu>
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:"right" }}>
-                    <Link
+                    {/* <Link
                         color="inherit"
                         variant="h6"
                         underline="none"
                         href="/itineraries"
                         sx={rightLink}
                         >
-                            {'Itineraries'}
-                        </Link>
+                            {'Explore'}
+                        </Link> */}
                     <Link
                         color="inherit"
                         variant="h6"

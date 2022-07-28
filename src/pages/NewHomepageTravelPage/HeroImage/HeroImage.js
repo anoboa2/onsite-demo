@@ -167,7 +167,7 @@ const HeroImage = ({ details }) => {
                                   </Button>
                                 </Box>
                             <Box sx={{ p: 1, m: 1, }}>
-                                <Button href="/learnmore"
+                                <Button href="/itineraries"
                                     variant="contained"
                                     
                                     style={{
@@ -178,7 +178,7 @@ const HeroImage = ({ details }) => {
                                         fontSize: "15px"
                                     }}
                                 >
-                                    Learn More
+                                    Explore itineraries
                                 </Button>
                             </Box>
                         </Box>}
