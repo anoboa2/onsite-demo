@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: "pre-line",
         [theme.breakpoints.down("sm")]: {
             width: "70%",
+            zIndex: -1,
             marginLeft: "1%",
         }
     },
