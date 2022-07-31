@@ -26,7 +26,7 @@ const rightLink = {
 };
 
 const image = {
-    marginTop: 5,
+    marginLeft: -80,
     paddingLeft: 10,
 }
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const onsiteLogo = '/img/Onsite_Logo1.png';
+const onsiteLogo = '/img/OnsiteLogo.png';
 
 function NewAppBar() {
     const { is_authenticated } = useRownd();
@@ -116,8 +116,7 @@ function NewAppBar() {
                         <img
                             src={onsiteLogo}
                             alt="Onsite Logo in Color; a flying plane leaving an O-shaped trail"
-                            height='40px'
-                            width='150px'
+
                             style={image}
                         />
                     </Link>
