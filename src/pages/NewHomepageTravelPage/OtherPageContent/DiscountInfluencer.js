@@ -52,7 +52,7 @@ const DiscountInfluencer = () => {
                                 borderRadius: "10px",
                                 color: "white",
                                 fontSize: "15px"
-                            }}>Let's Go</Button>
+                            }}>Customize My Trip</Button>
                     </Box>
 
                 </div>

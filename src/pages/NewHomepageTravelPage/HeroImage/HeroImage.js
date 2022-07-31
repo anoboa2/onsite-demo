@@ -166,19 +166,20 @@ const HeroImage = ({ details }) => {
                                     Get Matched With Travel Specialist
                                   </Button>
                                 </Box>
-                            <Box sx={{ p: 1, m: 1, }}>
-                                <Button href="/learnmore"
+                            <Box sx={{ p: 1, m: 1, zIndex: 999999,}}>
+                                <Button 
                                     variant="contained"
-                                    
+                                    href="/explores"
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 55px",
                                         borderRadius: "10px",
                                         color: "#00aaca",
+                                        
                                         fontSize: "15px"
                                     }}
                                 >
-                                    Learn More
+                                    Explore itineraries
                                 </Button>
                             </Box>
                         </Box>}

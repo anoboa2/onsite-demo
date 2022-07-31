@@ -6,7 +6,6 @@ import NewHomePage from "./pages/NewHomepageTravelPage/NewHomePage";
 import NewProfile from "./pages/NewHomepageTravelPage/NewTravelProfile/NewProfile";
 import NewBooking from "./pages/NewHomepageTravelPage/HeroImage/NewBooking";
 import AboutUs from "./pages/AboutUs";
-import LearnMore from "./pages/LearnMore";
 import NotFoundError from "./pages/NewHomepageTravelPage/NotFoundError";
 import axios from "axios";
 import Influyente from "./pages/Influyente";
@@ -29,12 +28,11 @@ function App() {
     <Routes>
       <Route path="/" element={<NewHomePage />} />
       <Route path="/booking" element={<NewBooking />} />
-      <Route path="/learnmore" element={<LearnMore />} />
       <Route path="/profile" element={<NewProfile />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/itineraries" element={<Influyente />} />
+      <Route path="/explores" element={<Influyente />} />
       <Route path="/*" element={<NotFoundError />} />
     </Routes>
     </div>
