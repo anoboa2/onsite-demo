@@ -51,7 +51,7 @@ function NewAppBar() {
         {
             label: 'Explore',
             key:'explores',
-            path: '/explores',
+            path: '/itineraries',
             isTarget: false
         },
         {
@@ -178,7 +178,7 @@ function NewAppBar() {
                         color="inherit"
                         variant="h6"
                         underline="none"
-                        href="/explores"
+                        href="/itineraries"
                         sx={rightLink}
                         >
                             {'Explore'}

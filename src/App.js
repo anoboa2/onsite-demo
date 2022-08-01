@@ -32,7 +32,7 @@ function App() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/explores" element={<Influyente />} />
+      <Route path="/itineraries" element={<Influyente />} />
       <Route path="/*" element={<NotFoundError />} />
     </Routes>
     </div>

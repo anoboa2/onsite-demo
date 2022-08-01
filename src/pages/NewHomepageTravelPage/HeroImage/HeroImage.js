@@ -169,7 +169,7 @@ const HeroImage = ({ details }) => {
                             <Box sx={{ p: 1, m: 1, zIndex: 999999,}}>
                                 <Button 
                                     variant="contained"
-                                    href="/explores"
+                                    href="/itineraries"
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 55px",
