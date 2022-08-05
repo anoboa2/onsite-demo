@@ -8,6 +8,7 @@ import PopularLocationCategories from "./PopularLocationsCategories";
 import MessageFromFounder from "./messageFromFounder";
 import Instagram from "../HeroImage/Instagram";
 import BookEmail from "../HeroImage/BookEmail";
+import Faqs from "../HeroImage/Faqs";
 
 
 const OtherPageContent = ({img, details}) => {
@@ -22,7 +23,9 @@ const OtherPageContent = ({img, details}) => {
             <BookNow />
             <RatingsSlider />
             <Instagram/>
+            <Faqs/>
             <BookEmail/>
+            
         </div>
     );
 }
