@@ -89,7 +89,7 @@ export default function AppFooter() {
                 <Link href="/terms/" sx={{ color: 'text.primary' }}>Terms</Link>
               </Box>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="" sx={{ color: 'text.primary' }}>Support</Link>
+                <Link href="/faqs" sx={{ color: 'text.primary' }}>Support</Link>
               </Box>
               <Box component="li" sx={{ py: 0.5 }}>
                 <Link href="/privacy/" sx={{ color: 'text.primary' }}>Privacy</Link>

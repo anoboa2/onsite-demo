@@ -33,4 +33,11 @@ export const learn = {
     secondHeader : " As the world's leading expert in",
     secondText : "Our professional travel planners are experts in their fields, with a vast knowledge of the ins and outs of their locations. They're local to your destinations, so they know how to plan itineraries that make the most of even a single day. Onsite planners can help you explore the best of your destination city by recommending local activities, restaurants, and attractions based on both your interests and what's happening that week. Whether you have just one day or an entire month to spend exploring, our planners will make sure you get the most out of it!"
 }
+
+export const Faqss = {
+    isLearn : true,
+    header : "FAQ's",
+    text : "Travelers , Specialists and About Onsite.",
+    
+}
     

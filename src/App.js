@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import NotFoundError from "./pages/NewHomepageTravelPage/NotFoundError";
 import axios from "axios";
 import Influyente from "./pages/Influyente";
+import FaqsPage from "./pages/NewHomepageTravelPage/FaqsPage";
 
 
 const currentVersion = 2
@@ -30,6 +31,7 @@ function App() {
       <Route path="/booking" element={<NewBooking />} />
       <Route path="/profile" element={<NewProfile />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/faqs" element={<FaqsPage/>} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/itineraries" element={<Influyente />} />
