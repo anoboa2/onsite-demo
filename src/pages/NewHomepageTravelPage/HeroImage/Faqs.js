@@ -155,7 +155,7 @@ const Faqs= () => {
                                 aria-controls="panel1bh-content"
                                 id="panel1bh-header"
                                 >
-                                <Typography  sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
+                                <Typography variant="h6" sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
                                 How do I pay Onsite for planning and booking my trip? And how much is the cost of the service?
                                 </Typography>
                                 </AccordionSummary>
@@ -171,7 +171,7 @@ const Faqs= () => {
                                 aria-controls="panel2bh-content"
                                 id="panel2bh-header"
                                 >
-                                <Typography   sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
+                                <Typography  variant="h6" sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
                                 How many pre-made itineraries does Onsite sell? How much do they cost? 
                                 </Typography>
                                 </AccordionSummary>
@@ -190,7 +190,7 @@ const Faqs= () => {
                                 aria-controls="panel3bh-content"
                                 id="panel3bh-header"
                                 >
-                                <Typography  sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
+                                <Typography  variant="h6" sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
                                 Who are the specialists? What do they do? 
                                 </Typography>
                                 </AccordionSummary>
@@ -206,7 +206,7 @@ const Faqs= () => {
                                 aria-controls="panel4bh-content"
                                 id="panel4bh-header"
                                 >
-                                <Typography  sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
+                                <Typography  variant="h6" sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
                                 How does Onsite find its specialists?
                                 </Typography>
                                 </AccordionSummary>
@@ -222,7 +222,7 @@ const Faqs= () => {
                                 aria-controls="panel4bh-content"
                                 id="panel4bh-header"
                                 >
-                                <Typography  sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
+                                <Typography  variant="h6" sx={{ width: '100%', flexShrink: 0 , fontSize: '16px'}}>
                                 Why is Onsite better than other travel planning apps?
                                 </Typography>
                                 </AccordionSummary>
