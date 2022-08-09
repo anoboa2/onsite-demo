@@ -73,6 +73,20 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "20px !important",
         }
     },
+    maintypography11: {
+      borderBottom: "3px solid #0FAACD",
+
+      color: "#0FAACD !important",
+
+
+      [theme.breakpoints.down("md")]: {
+          borderBottom: "none !important",
+      },
+      [theme.breakpoints.down("sm")]: {
+          borderBottom: "none !important",
+          fontSize: "35px !important",
+      }
+  },
     boxone: {
 
 
@@ -128,9 +142,19 @@ const TravelersFaqs= () => {
             <Fade bottom>
                 <Grid container>
 
+                <Box className={classes.mainbox} paddingBottom="55px">
+                        <Box className={classes.firstbox}>
+                            {/* <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
+                            FAQ's</Typography> */}
+                            <Typography variant="h1" className={classes.maintypography11}>
+                                FAQs
+                            </Typography>
+                        </Box>
+                    </Box>
+
                     <Box className={classes.mainbox}>
                         <Box className={classes.firstbox}>
-                            <Typography className={classes.maintypography} variant="h4" align="center" component="h2" >
+                            <Typography className={classes.maintypography} variant="h4" align="center" component="h4" >
                             Travelers</Typography>
                             {/* <Typography variant="h4" className={classes.maintypography1}>
                                 FAQ's

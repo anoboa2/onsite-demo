@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import TextField from '../components/TextField';
 
 function Copyright() {
   return (
@@ -40,7 +39,7 @@ export default function AppFooter() {
       sx={{ display: 'flex', bgcolor: 'neutral.main' }}
     >
       <Container sx={{ my: 8, display: 'flex', flexDirection: "column", justifyContent: "flex-end"}}>
-        <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={5}>
+        <Grid container columns={{ xs: 4, sm: 8, md: 18 }} spacing={3}>
           <Grid item xs={4}>
             <Grid
               container
@@ -89,10 +88,17 @@ export default function AppFooter() {
                 <Link href="/terms/" sx={{ color: 'text.primary' }}>Terms</Link>
               </Box>
               <Box component="li" sx={{ py: 0.5 }}>
-                <Link href="/faqs" sx={{ color: 'text.primary' }}>Support</Link>
-              </Box>
-              <Box component="li" sx={{ py: 0.5 }}>
                 <Link href="/privacy/" sx={{ color: 'text.primary' }}>Privacy</Link>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={4} >
+            <Typography variant="h6" marked="left" gutterBottom>
+              Support
+            </Typography>
+            <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0 }}>
+              <Box component="li" sx={{ py: 0.5 }}>
+                <Link href="/faqs" sx={{ color: 'text.primary' }}>FAQ</Link>
               </Box>
             </Box>
           </Grid>

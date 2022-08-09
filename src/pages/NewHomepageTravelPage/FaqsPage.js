@@ -27,7 +27,7 @@ const FaqsPage = () => {
     return (
         <div className={classes.main}>
             <NewAppBar />
-            <Faqhero details={Faqss} />
+            {/* <Faqhero details={Faqss} /> */}
             <TravelersFaqs/>
             <SpecialistsFaqs/>
             <AboutOnsiteFaqs/>

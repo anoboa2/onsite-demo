@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     typography3: {
+        textAlign: "center !important",
         [theme.breakpoints.down("sm")]: {
             fontSize: "14px !important",
             maxWidth: "60%",
@@ -104,14 +105,14 @@ const Faqhero = ({ details }) => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Typography className={details.isFaqss ? classes.typography1 : classes.typography12} variant="h3">
+                    <Typography className={details.isFaqss ? classes.typography1 : classes.typography12} variant="h3" textAlign= "center !important">
                         {details.header}
                     </Typography> <br />
-                    {details.subHeader && <><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                    {/* {details.subHeader && <><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
                         {details.subHeader}
                     </Typography>
-                        <br /></>}
-                    <Typography className={classes.typography3} maxWidth="40%" variant="h5" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
+                        <br /></>} */}
+                    <Typography className={classes.typography3} maxWidth="40%" variant="h5" textAlign= "center !important" style={{ display: "inline-block", whiteSpace: "pre-line" }} >
                         {details.text}
                     </Typography>
                     <br />
