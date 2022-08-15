@@ -1,14 +1,11 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import NewAppBar from './NewHomepageTravelPage/NewAppBar';
-import AppFooter from '../modules/views/AppFooter';
-import withRoot from '../modules/withRoot';
+import { Box, Container } from '@mui/material';
+import NavBar from '../components/organisms/NavBar';
+import Footer from '../components/organisms/Footer';
 
 function Privacy() {
   return (
-    <React.Fragment>
-      <NewAppBar />
+    <div>
+      <NavBar />
       <Container>
         <Box sx={{ mt: 7, mb: 12 }}>
           <body>
@@ -159,9 +156,9 @@ To ask questions or comment about this privacy policy and our privacy practices,
             </body>
           </Box>
         </Container>
-      <AppFooter />
-    </React.Fragment>
+      <Footer />
+    </div>
   );
 }
 
-export default withRoot(Privacy);
+export default Privacy;
