@@ -1,42 +1,34 @@
-import * as React from 'react';
-import NewAppBar from '../pages/NewHomepageTravelPage/NewAppBar';
-import AppFooter from '../modules/views/AppFooter';
-import withRoot from '../modules/withRoot';
-import HeroImage from "../pages/NewHomepageTravelPage/HeroImage/HeroImage";
-import TravelMockup from './NewHomepageTravelPage/OtherPageContent/TravelMockup';
-import BookNow from "../pages/NewHomepageTravelPage/OtherPageContent/BookNow"
-import AboutTeam from "../pages/NewHomepageTravelPage/OtherPageContent/aboutTeam"
-import travelPlanning from "../pages/NewHomepageTravelPage/OtherPageContent/images/travelPlanning.gif"
-import { about } from '../Constants';
-import AboutUsQuote from './NewHomepageTravelPage/OtherPageContent/aboutusQuote';
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles((theme) => ({
-    main: {
-        background: 'linear-gradient(to right bottom,#f9fafb , #f8eeec)',
-        backgroundPosition: 1,
-        [theme.breakpoints.down("sm")]: {
-            width: "100% !important",
-            height: "100% !important",
-
-        },
-    },
-}));
-
+import { Avatar, Box, Grid, Typography } from '@mui/material';
+import NavBar from '../components/organisms/NavBar';
+import Banner from '../components/molecules/Banner';
+import Footer from '../components/organisms/Footer';
+import Team from  '../content/Team';
+import StartBookingBanner from '../content/StartBookingBanner';
 
 const AboutUs = () => {
-    const classes = useStyles();
-    return (
-        <React.Fragment>
-            <NewAppBar />
-            <HeroImage details={about}/>
-            <TravelMockup img={travelPlanning} details={about}/>
-            <AboutUsQuote />
-            <AboutTeam />
-            <BookNow />
-            <AppFooter />
-        </React.Fragment>
-    )
+  return (
+    <div>
+      <NavBar />
+      <Grid container spacing={2} sx={{ mt: 10 }}>
+        <Grid item xs={12}>
+          <Typography variant="h6">
+            "Our mission is to eliminate the stress and uncertainty of travel planning by connecting you with destination-based travel specialists, whose only job is to make your dream trip a reality. We match your personal taste profile to your ideal travel experiences"
+          </Typography>
+        </Grid>
+        {Team.map((teamMember) => (
+          <Grid item xs={12} sm={6} md={4} key={teamMember.id}>
+            <Box p={2}>
+              <Avatar alt={teamMember.alt} src={teamMember.img} sx={{ height: 150, width: 150 }}/>
+              <Typography variant="h6">{teamMember.name}</Typography>
+              <Typography variant="body1">{teamMember.title}</Typography>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+      <Banner content={StartBookingBanner} />
+      <Footer />
+    </div>
+  );
 }
 
-export default withRoot(AboutUs);
+export default AboutUs;

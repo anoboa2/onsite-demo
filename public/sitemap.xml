@@ -2,12 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>http://www.onsiteplanning.com/</loc>
-      <lastmod>2022-04-25</lastmod>
+      <lastmod>2022-08-15</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://www.onsiteplanning.com/booking</loc>
+      <loc>http://www.onsiteplanning.com/match</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>http://www.onsiteplanning.com/explore</loc>
       <changefreq>daily</changefreq>
       <priority>0.3</priority>
    </url>
@@ -37,7 +42,7 @@
    </url>
        <url>
       <sitemap>
-      <loc>http://www.onsiteplanning.com/explores</loc>
+      <loc>http://www.onsiteplanning.com/myitineraries</loc>
       <changefreq>weekly</changefreq>
       <priority>0.3</priority>
    </url>
