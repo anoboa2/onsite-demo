@@ -5,7 +5,7 @@ const FounderQuote = () => {
     <Box sx={{ mx: 20, my: 10}}>
       <Grid container spacing={3} columns={12}>
         <Grid item xs={12} sm={3} sx={{ alignContent: "center" }}>
-          <Avatar src="/img//team/Izanna-Levintova.webp" alt="headshot of founder Izanna" sx={{ width: 222, height: 222 }}/>
+          <Avatar src="/img/team/Izanna-Levintova.webp" alt="headshot of founder Izanna" sx={{ width: 222, height: 222 }}/>
         </Grid>
         <Grid item xs={12} sm={9}>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
