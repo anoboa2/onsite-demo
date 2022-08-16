@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import ProductCard from '../molecules/ProductCard';
+import ItineraryCard from '../molecules/ItineraryCard';
 import ProfileCard from '../molecules/ProfileCard';
 import { Grid, Typography } from '@mui/material';
 
@@ -93,7 +93,7 @@ const Influencers = () => {
         </Grid>
         {products.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.prod_id}>
-          <ProductCard
+          <ItineraryCard
             key={product.prod_id}
             product={product}
             onClick={onClick(product.prod_id)}
