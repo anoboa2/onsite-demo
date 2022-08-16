@@ -141,11 +141,11 @@ const defaultValues = {
 const formStyle = {
   backgroundColor: 'rgba(33, 195, 126, 0.13)',
   borderRadius: '10px',
-  width: '80%',
-  minWidth: '500px',
-  mx: 'auto',
+  width: '100%',
+  minWidth: {xs: '100%', sm: '500px'},
+  mx: {xs: 0, sm: 'auto'},
   my: 0,
-  p: 7,
+  p: {xs: 2, sm: 7},
   boxShadow: "12px 12px 45px rgba(0,0,0,.1)"
 }
 
@@ -184,7 +184,7 @@ const TravelSpecialistForm = () => {
         <SpecialistResult />
       ) : (
         <Box id="specialist-form" component="form" onSubmit={handleSubmit} sx={{ mt: 10 }}>
-          <Grid container spacing={3} sx={formStyle}>
+          <Grid container spacing={{ xs: 1, sm: 3 }} sx={formStyle}>
             <Grid item xs={12} sm={6}>
               <FormControl variant="outlined" required>
                 <InputLabel htmlFor="first-name-input">First Name</InputLabel>

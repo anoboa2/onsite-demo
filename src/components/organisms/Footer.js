@@ -5,13 +5,13 @@ const Footer = () => {
   return (
 
         <Grid container spacing={3} sx={{ backgroundColor: '#E0F2F1', m: 0, px: "10%", pt: 5, alignContent: 'center', justifyContent: 'center' }}>
-          <Grid item xs={6} sm={3} order={{ xs: 3, sm: 1 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'center', p: 10 }}>
+          <Grid item xs={12} sm={3} order={{ xs: 3, sm: 1 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'center', justifyContent: 'center', p: { xs: 2, sm: 10 } }}>
             <SocialStack />
             <Typography variant='body1' sx={{ pt: 1 }}>
               © <Link color="inherit" href="https://onsiteplanning.com/">Onsite Inc.</Link> 2022
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} order={{ xs: 1, sm: 2 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'center', p: 10 }}>
+          <Grid item xs={6} sm={3} order={{ xs: 1, sm: 2 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'center', p: { xs: 2, sm: 10 } }}>
             <Typography variant="h6" marked="left" gutterBottom>
               Company
             </Typography>
@@ -30,7 +30,7 @@ const Footer = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} sm={3} order={{ xs: 2, sm: 3 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'start', p: 10 }}>
+          <Grid item xs={6} sm={3} order={{ xs: 2, sm: 3 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'start', p: { xs: 2, sm: 10 } }}>
             <Typography variant="h6" marked="left" gutterBottom>
               Support
             </Typography>
@@ -46,7 +46,7 @@ const Footer = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} sm={3} order={{ xs: 4, sm: 4 }} sx={{ display: "flex", flexDirection: "column", alignContent: "start" }}>
+          <Grid item xs={12} sm={3} order={{ xs: 4, sm: 4 }} sx={{ display: "flex", flexDirection: "column", alignContent: "start" }}>
             <Typography variant="h6" marked="left" gutterBottom>
               Contact Us
             </Typography>

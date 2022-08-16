@@ -10,8 +10,9 @@ const Banner = ({ content }) => {
     justifyContent: 'center',
     textAlign: 'center',
     backgroundImage: `url(${background})`,
-    backgroundSize: '100%',
-    backgroundRepeat: 'no-repeat'
+    backgroundSize: {xs: 'cover', md: '100%'},
+    backgroundRepeat: 'no-repeat',
+    overflow: 'hidden',
   }
 
   return (

@@ -7,12 +7,12 @@ import NavigationOptions from '../../content/NavigationOptions';
 
 
 const NavBar = () => {
-  const bp = useMediaQuery(useTheme().breakpoints.up('sm'));
+  const bp = useMediaQuery(useTheme().breakpoints.up('md'));
   const { is_authenticated } = useRownd();
 
   return (
     <AppBar position='fixed'>
-      <Toolbar sx={{ mx: {xs: 1, sm: 10 } }}>
+      <Toolbar sx={{ mx: {xs: 1, sm: 5, md: 10 } }}>
         <IconButton
           edge='start'
           color='inherit'
