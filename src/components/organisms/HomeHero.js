@@ -2,8 +2,8 @@ import { Box, Button, Container, Link, Typography } from '@mui/material'
 
 const HomeHero = () => {
   return (
-    <Box sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center', p: 5, m: 0, backgroundImage: 'url(/img/HeroImage.webp)', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
-      <Container sx={{ width: "50vw", my: 10, mr: "33vw" }}>
+    <Box sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center', p: {xs: "150px 0px", sm: 5 }, m: 0, backgroundImage: 'url(/img/HeroImage.webp)', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
+      <Container sx={{ width: { xs: "80%", sm: "50%" }, my: { xs: 2, sm: 10 }, mr: { xs: 'auto', sm: "33vw" } }}>
         <Typography variant="h1" align="left" sx={{ py: 1 }}>We make the plans,<br />you make the memories</Typography>
         <Typography variant="subtitle1" align="left" sx={{ py: 1}}>Our local travel specialists will provide you with authentic recommendations, personalized itineraries, and insider tips</Typography>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>

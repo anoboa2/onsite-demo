@@ -2,9 +2,9 @@ import { Avatar, Box, Grid, Typography } from "@mui/material";
 
 const FounderQuote = () => {
   return(
-    <Box sx={{ mx: 20, my: 10}}>
+    <Box sx={{ mx: { xs: 2, sm: 20 }, my: 10}}>
       <Grid container spacing={3} columns={12}>
-        <Grid item xs={12} sm={3} sx={{ alignContent: "center" }}>
+        <Grid item xs={12} sm={3} sx={{ display: "flex", alignContent: "center", justifyContent: "center" }}>
           <Avatar src="/img/team/Izanna-Levintova.webp" alt="headshot of founder Izanna" sx={{ width: 222, height: 222 }}/>
         </Grid>
         <Grid item xs={12} sm={9}>
