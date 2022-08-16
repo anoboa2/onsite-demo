@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRownd } from '@rownd/react';
 import { IconButton, Link, Menu, MenuItem } from '@mui/material';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import MenuIcon from '@mui/icons-material/Menu';
+import NavigationOptions from '../../content/NavigationOptions';
 import AuthenticatedNavOptions from '../../content/AuthenticatedNavOptions';
 
-const AccountMenu = () => {
-  const { signOut } = useRownd();
+
+const NavMenu = () => {
+  const { signOut, is_authenticated } = useRownd();
   const [anchorEl, setAnchorEl] = useState(null);
   const handleOpenUserMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -13,6 +15,12 @@ const AccountMenu = () => {
   const handleCloseUserMenu = () => {
     setAnchorEl(null);
   }
+
+  useEffect(() => {
+    if (is_authenticated) {
+      NavigationOptions.push(AuthenticatedNavOptions);
+    }
+  });
 
   return (
     <div>
@@ -22,7 +30,7 @@ const AccountMenu = () => {
         aria-label='menu'
         onClick={handleOpenUserMenu}
         >
-        <AccountCircle />
+        <MenuIcon />
       </IconButton>
       <Menu
         id='user-menu'
@@ -33,7 +41,7 @@ const AccountMenu = () => {
         open={Boolean(anchorEl)}
         onClose={handleCloseUserMenu}
         >
-        {AuthenticatedNavOptions.map(option => (
+        {NavigationOptions.map(option => (
           <MenuItem key={option.name}>
             <Link href={option.path} underline='none' color='primary.main' sx={{ px: 1 }}>
               {option.name}
@@ -48,4 +56,4 @@ const AccountMenu = () => {
   );
 }
 
-export default AccountMenu;
+export default NavMenu;

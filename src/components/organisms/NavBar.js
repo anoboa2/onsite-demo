@@ -1,27 +1,18 @@
-import { AppBar, Box, Button, Toolbar, IconButton, Link } from '@mui/material';
+import { AppBar, Box, Button, Toolbar, IconButton, Link, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
 import { useRownd } from '@rownd/react';
 import AccountMenu from '../molecules/AccountMenu';
+import NavMenu from '../molecules/NavMenu';
+import NavigationOptions from '../../content/NavigationOptions';
 
-const pages = [
-  {
-    name: 'Start a Trip',
-    path: '/match'
-  },
-  {
-    name: 'Explore Itineraries',
-    path: '/explore'
-  },
-  {
-    name: 'Blog',
-    path: 'https://blog.onsiteplanning.com/'
-  }
-];
 
 const NavBar = () => {
+  const bp = useMediaQuery(useTheme().breakpoints.up('sm'));
   const { is_authenticated } = useRownd();
+
   return (
     <AppBar position='fixed'>
-      <Toolbar sx={{ mx: 10 }}>
+      <Toolbar sx={{ mx: {xs: 1, sm: 10 } }}>
         <IconButton
           edge='start'
           color='inherit'
@@ -43,19 +34,26 @@ const NavBar = () => {
         </IconButton>
         <Box flexGrow={1}>
         </Box>
-        {pages.map(page => (
-          <Link key={page.name} href={page.path} underline='hover' color='primary' sx={{ px: 1.5 }}>
-            {page.name}
-          </Link>
-        ))}
-        {is_authenticated ? (
-          <AccountMenu />
-        ) : (
-          <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, fontWeight: 900, borderRadius: '6px', padding: "8px 12px" }}>
-            Sign Up
-          </Button>
-        )}
-        
+        <>
+          {bp ? (
+            <>
+            {NavigationOptions.map(page => (
+              <Link key={page.name} href={page.path} underline='hover' color='primary' sx={{ px: 1.5 }}>
+                {page.name}
+              </Link>
+            ))}
+            {is_authenticated ? (
+              <AccountMenu />
+            ) : (
+              <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, fontWeight: 900, borderRadius: '6px', padding: "8px 12px" }}>
+                Sign Up
+              </Button>
+            )}
+            </>
+          ) : (
+            <NavMenu />
+          )}
+        </>
       </Toolbar>
     </AppBar>
   );
