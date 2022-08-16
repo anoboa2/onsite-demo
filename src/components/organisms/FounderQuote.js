@@ -12,10 +12,10 @@ const FounderQuote = () => {
             <Typography variant="h5" align="justify" sx={{ my: 2 }}>
               “I want to inspire people from all over the world to step outside their comfort zones and experience something new through travel”
             </Typography>
-            <Typography variant="subtitle1" align="left" color="secondary.main" sx={{ fontWeight: 900 }}>
+            <Typography variant="subtitle1" align="left" color="secondary.main">
               Izanna Levintova
             </Typography>
-            <Typography variant="body2" align="left" color="text.secondary" sx={{ fontWeight: 900 }}>
+            <Typography variant="body2" align="left" color="text.secondary">
               CEO & Founder
             </Typography>
           </Box>

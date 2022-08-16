@@ -95,7 +95,7 @@ const formTheme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "Poppins",
-          fontWeight: 900,
+          fontWeight: 600,
           fontSize: '14px',
         }
       }
@@ -119,7 +119,6 @@ const formTheme = createTheme({
         root: {
           marginTop: '-12px',
           fontFamily: "Poppins",
-          fontWeight: 900,
           fontSize: '18px',
         }
       }
