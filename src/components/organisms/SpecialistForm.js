@@ -53,6 +53,7 @@ const formTheme = createTheme({
           '&:hover': {
             backgroundColor: '#16B3B2',
           },
+          padding: '12px 24px',
         },
       },
     },
