@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import ItineraryCard from '../molecules/ItineraryCard';
 import ProfileCard from '../molecules/ProfileCard';
-import { Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 
 const Influencers = () => {
 
@@ -32,11 +32,12 @@ const Influencers = () => {
     }
   ]
 
-  useEffect(() => {
+  const handleClick = () => {
     fetch(`https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/planning/getitineraries`, {
       method: 'GET',
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Content-Type': 'application/json',
+        'sec-fetch-mode': 'no-cors'
       },
       queryParams: {
         'author': 'izanna.lev'
@@ -48,8 +49,7 @@ const Influencers = () => {
         // setProducts(data);
       }
       );
-  }
-  , []);
+  };
 
 
   const profile = {
@@ -90,6 +90,7 @@ const Influencers = () => {
       <Grid container spacing={3} sx={{ px: { xs: 5, sm: 20 }, mb: 15 }}>
         <Grid item xs={12}>
           <Typography variant="h4">Recent Trips</Typography>
+          <Button onClick={handleClick}>Let's Test</Button>
         </Grid>
         {products.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.prod_id}>
