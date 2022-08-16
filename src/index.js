@@ -11,7 +11,7 @@ let key = 'd7e2c6ec-99aa-4614-ad02-41baaa742fc6'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RowndProvider appKey={key} postLoginRedirect="/profile">
+    <RowndProvider appKey={key} postLoginRedirect="/">
       <BrowserRouter>
         <App />
       </BrowserRouter>

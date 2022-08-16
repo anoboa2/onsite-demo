@@ -4,15 +4,11 @@ import AccountMenu from '../molecules/AccountMenu';
 
 const pages = [
   {
-    name: 'Home',
-    path: '/'
-  },
-  {
-    name: 'Specialists',
+    name: 'Start a Trip',
     path: '/match'
   },
   {
-    name: 'Explore',
+    name: 'Explore Itineraries',
     path: '/explore'
   },
   {
@@ -48,14 +44,14 @@ const NavBar = () => {
         <Box flexGrow={1}>
         </Box>
         {pages.map(page => (
-          <Link key={page.name} href={page.path} underline='hover' color='primary' sx={{ px: 1 }}>
+          <Link key={page.name} href={page.path} underline='hover' color='primary' sx={{ px: 1.5 }}>
             {page.name}
           </Link>
         ))}
         {is_authenticated ? (
           <AccountMenu />
         ) : (
-          <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, fontWeight: 900 }}>
+          <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, fontWeight: 900, borderRadius: '6px', padding: "8px 12px" }}>
             Sign Up
           </Button>
         )}
