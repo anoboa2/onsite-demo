@@ -120,6 +120,12 @@ const augmentedTheme = {
   },
   components: {
     MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '12px',
+          padding: '12px 24px',
+        }
+      },
       variants: [
         {
           props: { variant: 'contained' },
