@@ -10,7 +10,7 @@ const ProductPreview = ({ content }) => {
       </Grid>
       <Grid item xs={12} sm={7} order={{ xs: 2, sm: orientation.textSide }}>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", p: { xs: "50px 30px", sm: 10 }, mt: { xs: 1, sm: 5} }}>
-          <Typography variant="h3">
+          <Typography variant="h2">
             {header}
           </Typography>
           <Typography variant="body1" sx={{mt: 4}} style={{ textAlign: "justify" }}>

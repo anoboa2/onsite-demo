@@ -18,7 +18,7 @@ const Banner = ({ content }) => {
   return (
     <Grid container spacing={{xs: 1, sm: 3}} sx={style}>
       <Grid item xs={12}>
-        <Typography variant='h4'>{title}</Typography>
+        <Typography variant='h3'>{title}</Typography>
       </Grid>
       <Grid item xs={12}>
         <Typography variant='body1' sx={{ px: { xs: 1, sm: 10 } }}>{subtitle}</Typography>

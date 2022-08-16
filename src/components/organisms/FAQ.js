@@ -7,7 +7,7 @@ const FAQ = () => {
   return (
     <Grid container sx={{ my: 12 }}>
       <Grid item xs={12}>
-        <Typography variant="h4" align="center">
+        <Typography variant="h3" align="center">
           Have Questions?
         </Typography>
         <Typography variant="subtitle1" align="center">
