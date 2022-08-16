@@ -6,6 +6,16 @@ This app utilizes an [Atomic Design](https://bradfrost.com/blog/post/atomic-web-
 
 This repo use a [Trunk Based](https://trunkbaseddevelopment.com) branching model, with the Master branch serving as the live Trunk.  Merges into Master will trigger an automated build cycle through AWS Amplify.
 
+# Styling Patterns
+
+The foundation of styling for this app is found in `components/theme.js`.  The theme file uses the [MUI css-in-js paradigm](https://mui.com/material-ui/customization/theming/).  Any lower level styling should using a [Styled Component](https://mui.com/material-ui/guides/interoperability/#styled-components), the [MUI system package](https://mui.com/system/getting-started/the-sx-prop/) (aka the "sx" prop), or the.  Use the following three directions to determine where styling should be done.
+
+1. Should the style be applied to all HTML elements/JSX components in the app?  Styling should be done in theme.js
+2. Should the style be applied to a certain page or only one class of elements?  Styling should be done as a reusable style variable that is injected into the SX prop.  However, consider the value of making a [styled component](https://mui.com/material-ui/guides/interoperability/#styled-components) that is accessible from the /atoms or /molecules libraries.  Consider the value of making a [component variant](https://mui.com/material-ui/customization/theme-components/#creating-new-component-variants) in theme.js as well.
+3. Should the style be applied to only one element?  Styling should be done inline using the root component's SX prop.
+
+Should there need to be an exception to any of the above scenarios to use an alternate styling pattern, please reference the [MUI Style Interoperability guide](https://mui.com/material-ui/guides/interoperability/)
+
 # Future Scalability: Microservice Arcitecture
 
 A future goal is to decompose our app into smaller services categorized by key function as follows:
