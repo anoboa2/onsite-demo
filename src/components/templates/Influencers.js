@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import ItineraryCard from '../molecules/ItineraryCard';
+import { useEffect, useState } from 'react';
+import ProductCard from '../molecules/ProductCard';
 import ProfileCard from '../molecules/ProfileCard';
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 const Influencers = () => {
 
@@ -81,19 +81,19 @@ const Influencers = () => {
 
   return (
     <>
-      <Grid container item spacing={3} sx={{ px: { xs: 10, sm: 20 }, my: { xs: 10, sm: 15 }, mt: 20 }}>
+      <Grid container spacing={3} sx={{ px: 20, my: 15, mt: 20 }}>
         <ProfileCard
           key={profile.influencerId}
           content={profile}
         />
       </Grid>
-      <Grid container spacing={3} sx={{ px: { xs: 5, sm: 20 }, mb: 15 }}>
+      <Grid container spacing={3} sx={{ px: 20, mb: 15 }}>
         <Grid item xs={12}>
           <Typography variant="h4">Recent Trips</Typography>
         </Grid>
         {products.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.prod_id}>
-          <ItineraryCard
+          <ProductCard
             key={product.prod_id}
             product={product}
             onClick={onClick(product.prod_id)}
