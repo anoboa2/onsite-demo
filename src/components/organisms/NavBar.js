@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Toolbar, IconButton, Link } from '@mui/material';
 import { useRownd } from '@rownd/react';
 import AccountMenu from '../molecules/AccountMenu';
+import { makeStyles } from "@mui/styles";
 
 const pages = [
   {
@@ -17,8 +18,22 @@ const pages = [
   }
 ];
 
+const useStyles = makeStyles((theme) => ({
+  image: {
+
+      marginLeft: 10,
+      paddingLeft: 10,
+      [theme.breakpoints.down("sm")]: {
+
+        marginLeft: -75,
+        paddingLeft: 10,
+      },
+  }
+}))
+
 const NavBar = () => {
   const { is_authenticated } = useRownd();
+  const classes = useStyles()
   return (
     <AppBar position='fixed'>
       <Toolbar sx={{ mx: 10 }}>
@@ -33,11 +48,12 @@ const NavBar = () => {
             href="/"
           >
             <img
-                src="/img/OnsiteLogo.png"
+                src="/img/Onsite_Logo1.png"
                 alt="Onsite Logo in Color; a flying plane leaving an O-shaped trail"
                 height='40px'
                 width='150px'
-                style={{ mt: 5, pl: 10 }}
+                className={classes.image}
+                
             />
           </Link>
         </IconButton>

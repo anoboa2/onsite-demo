@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../molecules/ProductCard';
 import ProfileCard from '../molecules/ProfileCard';
-<<<<<<< HEAD
-import { Box, Grid, Typography } from '@mui/material';
-=======
 import { Button, Grid, Typography } from '@mui/material';
->>>>>>> 38dccd1ae74a965569ef17c69c215288ab361a3e
 
 const Influencers = () => {
 
