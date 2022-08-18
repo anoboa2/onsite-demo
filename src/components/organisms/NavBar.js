@@ -38,14 +38,14 @@ const NavBar = () => {
           {breakpoint ? (
             <>
             {NavigationOptions.map(page => (
-              <Link key={page.name} href={page.path} underline='hover' color='primary' sx={{ px: 1.5 }}>
+              <Link key={page.name} href={page.path} variant="subtitle1" underline='hover' color='primary' sx={{ px: 1.5 }}>
                 {page.name}
               </Link>
             ))}
             {is_authenticated ? (
               <AccountMenu />
             ) : (
-              <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, fontWeight: 900, borderRadius: '6px', padding: "8px 12px" }}>
+              <Button data-rownd-sign-in-trigger variant='contained' color='secondary' sx={{ ml: 2, borderRadius: '6px', padding: "8px 12px" }}>
                 Sign Up
               </Button>
             )}
