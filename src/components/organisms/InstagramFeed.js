@@ -12,9 +12,9 @@ const InstagramFeed = () => {
                 textAlign="left"
                 variant="h4"
               >
-                On The Gram | <Link variant="h4" color = "primary.main" href="https://instagram.com/Onsitetravelapp" underline="none"> @onsitetravelapp</Link> 📷
+                On The Gram 📷
               </Typography>
-              
+              <Link variant="h4" color = "primary.main" href="https://instagram.com/Onsitetravelapp" underline="none" sx={{ borderBottom: "3px solid #0FAACD" }}> @onsitetravelapp</Link>
               <Typography
                 textAlign="center"
                 variant="h6"
