@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Alert, Avatar, Button, Box, Checkbox, CircularProgress, Container, FormControlLabel, FormGroup, Grid, IconButton, InputLabel, MenuItem, Rating, Select, Snackbar, TextField, Typography } from '@mui/material';
+import { useLocation } from 'react-router-dom';
+import { Alert, Button, Box, Checkbox, CircularProgress, Container, FormControlLabel, FormGroup, Grid, IconButton, InputLabel, MenuItem, Rating, Select, Snackbar, TextField, Typography } from '@mui/material';
 import DateTextField from '../atoms/DateTextField';
 import { useRownd } from '@rownd/react';
 import AdapterDateFns from '@mui/lab/AdapterLuxon';
@@ -27,14 +27,12 @@ const TravelProfile = () => {
         room_amenities: [],
         dietary: [],
     }
-    const navigate = useNavigate();
     const [state = { notLoaded: true }, setState] = useState(null);
     const [values, setValues] = useState(initialValues)
     const [openAlert, setOpenAlert] = useState(false)
     const [openFailureAlert, setOpenFailureAlert] = useState(false)
     const [hasLoadedUserData, setHasLoadedUserData] = useState(false);
     const [value, setValue] = React.useState(new Date());
-    const [datevalue, setdateValue] = React.useState(new Date());
     const [loading, setLoading] = React.useState(false);
     const search = useLocation().search;
 
@@ -62,7 +60,6 @@ const TravelProfile = () => {
         }
     }, [hasLoadedUserData, is_initializing, user.data, values])
 
-    const LoadingComponent = () => <div> Loading... </div>
     const ErrorComponent = () => <div> Please contact admin </div>
 
     function handleChange(name, value, list = false, checked = false) {

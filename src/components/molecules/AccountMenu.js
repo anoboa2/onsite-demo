@@ -4,21 +4,6 @@ import { IconButton, Link, Menu, MenuItem } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import AuthenticatedNavOptions from '../../content/AuthenticatedNavOptions';
 
-const options = [
-  {
-    name: 'Profile',
-    path: '/profile'
-  },
-  {
-    name: 'Itineraries',
-    path: '/myitineraries'
-  },
-  {
-    name: 'Sign Out',
-    path: '/signout'
-  }
-];
-
 const AccountMenu = () => {
   const { signOut } = useRownd();
   const [anchorEl, setAnchorEl] = useState(null);

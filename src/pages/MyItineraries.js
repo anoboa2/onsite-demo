@@ -1,42 +1,6 @@
-import { useState } from 'react';
-import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import NavBar from '../components/organisms/NavBar';
 import Footer from '../components/organisms/Footer';
-
-const content = [
-  {
-    name: "3 Day Trip to New Zealand",
-    description: "My trip to New Zealand and the surrounding islands",
-  },
-  {
-    name: "3 Day Trip to New Zealand",
-    description: "My trip to New Zealand and the surrounding islands",
-  },
-  {
-    name: "3 Day Trip to New Zealand",
-    description: "My trip to New Zealand and the surrounding islands",
-  }
-];
-
-const ItineraryCard = ({ itinerary }) => {
-  const { name, description } = itinerary;
-
-  return (
-  <Card sx={{ minWidth: 275 }}>
-    <CardMedia
-      component='img'
-      alt='Contemplative Reptile'
-      height='140'
-      image='https://source.unsplash.com/random'
-      title='Contemplative Reptile'
-    />
-    <CardContent>
-      <Typography variant="h6">{name}</Typography>
-      <Typography variant="body1">{description}</Typography>
-    </CardContent>
-  </Card>
-  );
-}
 
 const MyItineraries = () => {
 
