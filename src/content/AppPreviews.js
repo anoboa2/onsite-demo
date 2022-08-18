@@ -4,7 +4,7 @@ const AppPreviews = [
   {
     header: 'You Value Price Transparency, We Value You',
     description: 'We are the fastest growing and most valued travel company because we believe in growing trustworthy relationships with our travelers. We are transparent with our travelers about pricing, for 7% of your total trip cost, Onsite does everything from plan until you arrive home. Our travelers don’t have to worry about doing anything.',
-    image: <Box component="img" src="/img/content/itinerary-desktop-mockup.png" alt="" sx={{ height: { xs: 300, sm: 400 }, width: { xs: 400, sm: 600 }, marginTop: { xs: 30, sm: 8 } }} />,
+    image: <Box component="img" src="/img/content/itinerary-desktop-mockup.png" alt="" sx={{ height: { xs: 300, sm: 400 }, width: { xs: 400, sm: 600 } }} />,
     alt: 'Onsite Travel',
     orientation: { imageSide: 1, textSide: 2 }
   },

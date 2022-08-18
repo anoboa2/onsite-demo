@@ -27,7 +27,7 @@ const EmailSubscribeButton = () => {
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "row", width: 500, alignItems: "center" }}>
+      <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: { xs: 'column', sm: "row" }, width: 500, alignItems: "center" }}>
       {isSubmitted ? 
         <Typography>Thanks for subscribing!</Typography>
         :
@@ -40,9 +40,9 @@ const EmailSubscribeButton = () => {
             variant="standard"
             fullWidth
             InputProps={{ disableUnderline: true }}
-            sx={{ backgroundColor: 'white', borderRadius: '10px 0px 0px 10px', height: 50, mt: 1, pl: 2, justifyContent: "center" }}
+            sx={{ backgroundColor: 'white', borderRadius: { xs: '12px', sm: '10px 0px' }, height: 50, mt: 1, pl: 2, justifyContent: "center" }}
           />
-          <Button type="submit" variant="contained" color="primary" sx={{ borderRadius: "0px 10px 10px 0px", height: 50 }}>
+          <Button type="submit" variant="contained" color="primary" sx={{ borderRadius: { xs: '12px', sm: "0px 10px 10px 0px" }, height: 50 }}>
             Subscribe
           </Button>
         </>

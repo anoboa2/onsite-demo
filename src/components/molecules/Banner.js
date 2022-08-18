@@ -4,23 +4,24 @@ const Banner = ({ content }) => {
   const { title, subtitle, cta, background } = content;
 
   const style = {
-    px: 10,
+    px: { xs: 2, sm: 10},
     py: 5,
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     backgroundImage: `url(${background})`,
-    backgroundSize: '100%',
-    backgroundRepeat: 'no-repeat'
+    backgroundSize: {xs: 'cover', md: '100%'},
+    backgroundRepeat: 'no-repeat',
+    overflow: 'hidden',
   }
 
   return (
-    <Grid container spacing={3} sx={style}>
+    <Grid container spacing={{ xs: 1, sm: 3 }} sx={style}>
       <Grid item xs={12}>
-        <Typography variant='h4'>{title}</Typography>
+        <Typography variant='h3'>{title}</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant='body1' sx={{ px: 10 }}>{subtitle}</Typography>
+        <Typography variant='body1' sx={{ px: { xs: 1, sm: 10 } }}>{subtitle}</Typography>
         </Grid>
       <Grid item xs={12}>
         {cta}

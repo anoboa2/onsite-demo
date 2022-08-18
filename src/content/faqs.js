@@ -25,3 +25,5 @@ const faqs = [
     answer: 'Onsite values personalization and wants your travel experience to be the best one yet. We believe in turning your dreams<br/> into a reality. Our destination specialists will curate a unique and custom itinerary to fit your taste profile. We take care of<br/> all the details and all you have to do is enjoy your trip.'
   }
 ];
+
+export default faqs;

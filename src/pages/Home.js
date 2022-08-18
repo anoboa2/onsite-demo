@@ -4,23 +4,22 @@ import Services from '../components/organisms/Services';
 import ProductSection from '../components/organisms/ProductSection';
 import FounderQuote from '../components/organisms/FounderQuote';
 import Banner from '../components/molecules/Banner';
-import Testimonies from '../components/organisms/Testimonies';
+import ReviewSlider from '../components/organisms/ReviewSlider';
 import InstagramFeed from '../components/organisms/InstagramFeed';
 import Footer from '../components/organisms/Footer';
 import StartBookingBanner from '../content/StartBookingBanner';
 import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
-import {home} from "../Constants"
 
 
 const Home = () => {
   return (
       <>
         <NavBar />
-        <HomeHero details={home}/>
+        <HomeHero />
         <ProductSection />
         <Services />
         <Banner content={StartBookingBanner}/>
-        <Testimonies />
+        <ReviewSlider />
         <InstagramFeed />
         <FounderQuote />
         <Banner content={SubscribeEmailBanner} />
