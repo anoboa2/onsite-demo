@@ -42,7 +42,7 @@ const Testimonies = () => {
           What our <Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}>Travelers</Box> have to say
         </Typography>
         <Typography variant="h6" align="center">
-          Here are some responses for the travel services we offer for their locations
+          A few responses from our travelers who enjoyed using Onsite
         </Typography>
       </Box>
       <div style={{ margin: 30 }}>
