@@ -1,7 +1,6 @@
 import { Button, Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
-const ProductCard = ({ product, onClick }) => {
-  const { title, description, price } = product;
+const ItineraryCard = ({ title, price, prod_id, onClick }) => {
 
   return (
     <Card sx={{ minWidth: 275, minHeight: 400 }}>
@@ -14,7 +13,7 @@ const ProductCard = ({ product, onClick }) => {
       />
       <CardContent>
         <Typography variant="h6">{title}</Typography>
-        <Typography variant="body1">{description}</Typography>
+        <Typography variant="body1">{prod_id}</Typography>
         <Typography variant="body1">${price/100}</Typography>
       </CardContent>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -25,4 +24,4 @@ const ProductCard = ({ product, onClick }) => {
   );
 }
 
-export default ProductCard;
+export default ItineraryCard;
