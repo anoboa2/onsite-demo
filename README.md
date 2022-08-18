@@ -16,7 +16,20 @@ The foundation of styling for this app is found in `components/theme.js`.  The t
 
 Should there need to be an exception to any of the above scenarios to use an alternate styling pattern, please reference the [MUI Style Interoperability guide](https://mui.com/material-ui/guides/interoperability/)
 
-# Future Scalability: Microservice Arcitecture
+# Code Style Guide
+
+While this is not fully implemented yet, we will seek to use Airbnb Style Guides for...
+1. [Javascript](https://github.com/airbnb/javascript)
+2. [React](https://github.com/airbnb/javascript/tree/master/react)
+
+For CSS-in-JS usage, we will use the styling patterns demonstrated in the MUI/system guide...
+3. [CSS-in-JS](https://mui.com/system/basics/)
+
+# Media Query vs Breakpoints
+
+Please reference utilizing [MUI breakpoints here](https://mui.com/system/basics/#responsive-values)
+
+# Future Scalability: Microservice Architecture
 
 A future goal is to decompose our app into smaller services categorized by key function as follows:
 - Shared Components
