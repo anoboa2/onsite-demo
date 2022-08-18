@@ -16,6 +16,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@typeform/embed": "^1.37.0",
     "@typeform/embed-react": "^1.19.0",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
     "intl-tel-input": "^17.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
