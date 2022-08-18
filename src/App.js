@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Explore from './pages/Explore';
+import FAQ from './pages/FAQ';
 import Match from './pages/Match';
 import MyItineraries from './pages/MyItineraries';
 import NotFound from './pages/NotFound';
@@ -12,6 +13,7 @@ import Terms from './pages/Terms';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/theme';
 
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -20,6 +22,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/explore/:id" element={<Explore />} />
+        <Route path="/FAQ" element={<FAQ />} />
         <Route path="/match" element={<Match />} />
         <Route path="/myitineraries" element={<MyItineraries />} />
         <Route path="/privacy" element={<Privacy />} />

@@ -3,7 +3,7 @@ import FormHero from '../components/organisms/FormHero';
 import HowItWorks from '../components/organisms/HowItWorks';
 import Banner from '../components/molecules/Banner';
 import AboutPageBanner from '../content/AboutPageBanner';
-import FAQ from '../components/organisms/FAQ';
+import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import Footer from '../components/organisms/Footer';
 
 const Match = () => {
@@ -19,7 +19,7 @@ const Match = () => {
       <FormHero />
       <HowItWorks />
       <Banner content={AboutPageBanner} />
-      <FAQ />
+      <FAQCondensedSection />
       <Footer />
     </div>
   );

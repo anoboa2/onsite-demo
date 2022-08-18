@@ -1,8 +1,8 @@
 import { Box, Grid, Typography } from '@mui/material';
 import AccordionItem from '../molecules/AccordionItem';
-import faqs from '../../content/faqs';
+import { CondensedSection } from '../../content/FAQs';
 
-const FAQ = () => {
+const FAQCondensedSection = () => {
 
   return (
     <Grid container sx={{ my: 12 }}>
@@ -16,7 +16,7 @@ const FAQ = () => {
       </Grid>
         <Box sx={{ mt: 6, display: 'flex', justifyContent: "space-around", borderRadius: 50 }}>
           <Box sx={{ px: "15%" }}>
-            {faqs.map((faq) => (
+            {CondensedSection.map((faq) => (
               <AccordionItem key={faq.order} content={faq} />
             ))}
           </Box>
@@ -25,4 +25,4 @@ const FAQ = () => {
   )
 }
 
-export default FAQ;
+export default FAQCondensedSection;
