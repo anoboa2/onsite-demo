@@ -22,11 +22,11 @@ const FAQSection = () => {
     <Grid container spacing={3} sx={{ py: 10, px: {xs: 1, sm: 3, md: 8} }}>
       {Sections.map((section) => (
           <Grid item xs={12} sx={{ mt: 6, display: 'flex', justifyContent: "center", borderRadius: 50 }}>
-          <Box sx={{ display: 'flex', flexDirection: "column" }}>
-            <Typography variant="h4" component="h1" align="center">
+          <Box sx={{ display: 'flex', flexDirection: "column" }} >
+            <Typography variant="h3" component="h1" align="center" >
               {section.title}
             </Typography>
-            <Box sx={{ px: "10%" }}>
+            <Box sx={{ px: "15%" , mt: { xs: 7, sm: 7 }}}>
               {section.content.map((faq) => (
                 <AccordionItem key={faq.order} content={faq} />
               ))}
