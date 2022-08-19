@@ -10,12 +10,17 @@ import Footer from '../components/organisms/Footer';
 import StartBookingBanner from '../content/StartBookingBanner';
 import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
 
+import HowItWorks from '../components/organisms/HowItWorks';
+import {home} from "../Constants"
+
+
 
 const Home = () => {
   return (
       <>
         <NavBar />
-        <HomeHero />
+        <HomeHero details={home}/>
+        <HowItWorks />
         <ProductSection />
         <Services />
         <Banner content={StartBookingBanner}/>

@@ -182,7 +182,7 @@ const TravelSpecialistForm = () => {
       {isSubmitted ? (
         <SpecialistResult />
       ) : (
-        <Box id="specialist-form" component="form" onSubmit={handleSubmit} sx={{ mt: 10 }}>
+        <Box id="specialist-form" component="form" onSubmit={handleSubmit} sx={{ mt: 10 , mb: 15 }}>
           <Grid container spacing={{ xs: 1, sm: 3 }} sx={formStyle}>
             <Grid item xs={12} sm={6}>
               <FormControl variant="outlined" required>
