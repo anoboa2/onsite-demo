@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
       },
   },
   typography3: {
-    fontSize: "20px !important",
+    fontSize: "18px !important",
       [theme.breakpoints.down("sm")]: {
           fontSize: "14px !important",
           maxWidth: "60%",
@@ -97,14 +97,14 @@ const HomeHero = ({ details }) => {
                 <div className="hero-text" >
                     {/* <TypewriterEffectOne /> */}
 
-                    <Typography className={details.isHome ? classes.typography1 : classes.typography12} variant="h3">
+                    <Typography className={details.isHome ? classes.typography1 : classes.typography12} variant="h1">
                         {details.header}
                     </Typography>
-                    {details.subHeader && <><Typography className={classes.typography2} variant="h3" marginBottom={3} display="inline-block" color="#1CCC6F" >
+                    {details.subHeader && <><Typography className={classes.typography2} variant="h2" marginBottom={3} display="inline-block" color="#1CCC6F" >
                         {details.subHeader}
                     </Typography>
                         <br /></>}
-                    <Typography className={classes.typography3} maxWidth="40%"  variant="h6" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
+                    <Typography className={classes.typography3} maxWidth="40%"  variant="body1" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
                         {details.text}
                     </Typography>
                     <br />

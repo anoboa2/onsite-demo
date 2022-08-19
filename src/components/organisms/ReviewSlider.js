@@ -38,7 +38,7 @@ const Testimonies = () => {
   return (
     <Grid sx={{ mt: 10, mb: 20 }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
-        <Typography textAlign="center" variant="h3">
+        <Typography textAlign="center" variant="h2" marginBottom="10px">
           What our <Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}>Travelers</Box> have to say
         </Typography>
         <Typography variant="h6" align="center">

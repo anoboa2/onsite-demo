@@ -9,10 +9,10 @@ const InstagramFeed = () => {
           <Box sx={{ mt: "50px", mb: "50px", display: "flex", py: "10px", alignContent: "center", justifyContent: "center", overflow: "hidden"}}>
             <Box sx={{ display: "flex", flexDirection: "column", pb: "15px",  }}>
               <Typography
-                textAlign="left"
-                variant="h4"
+                textAlign="center"
+                variant="h2"
               >
-                On The Gram | <Link variant="h4" color = "primary.main" href="https://instagram.com/Onsitetravelapp" underline="none"> @onsitetravelapp</Link> 📷
+                On The Gram | <Link variant="h2" color = "primary.main" href="https://instagram.com/Onsitetravelapp" underline="none"> @onsitetravelapp</Link> 📷
               </Typography>
               <Typography
                 textAlign="center"

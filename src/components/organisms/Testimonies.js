@@ -78,7 +78,7 @@ const Testimonies = () => {
                   </Box>
                 </Box>
                 <Paper elevation={3} sx={{marginTop:"-75px", borderRadius: "40px" , paddingTop:"55px", maxWidth: 400 }}> 
-                  <Box sx={{ p: 4, height: 200, marginBottom: "50px", sm: { height: 320, marginBottom: "58px" }, borderRadius: "20px" }}> 
+                  <Box sx={{ p: 3, height: 200, marginBottom: "50px", sm: { height: 320, marginBottom: "58px" }, borderRadius: "20px" }}> 
                     <Typography component="h3" sx={{ mt: 0, textAlign: "justify" }}>
                       {newData.details}
                     </Typography>

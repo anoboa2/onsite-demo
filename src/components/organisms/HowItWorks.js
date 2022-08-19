@@ -84,7 +84,7 @@ const HowItWorks = () => {
   return (
     <Grid container spacing={6} sx={{ justifyContent: 'center', px: 18, mb: 16}}>
     <Grid item xs={12} className={classes.cards}>
-      <Typography variant="h2" align='center'>How Onsite Works</Typography>
+      <Typography variant="h2" align='center'>How Onsite <Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}>Works</Box></Typography>
     </Grid>
       {content.map(item => (
         <Grid item xs={28} sm={6} md={4} key={item.order}>
@@ -101,3 +101,4 @@ const HowItWorks = () => {
 }
 
 export default HowItWorks;
+
