@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 import AccordionItem from '../molecules/AccordionItem';
-import { CondensedSection } from '../../content/faqs';
+import { CondensedSection } from '../../content/FAQs';
 
 const FAQCondensedSection = () => {
 
