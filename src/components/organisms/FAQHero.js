@@ -1,14 +1,6 @@
-import { useState } from 'react'
-import { Box, Button, Container, Link, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 const FAQHero = ({ details }) => {
-    const [open, setOpen] = useState(false)
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const handleFaqhero = () => {
-        setOpen(true);
-    }
 
     return (
       <Box sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center', p: {xs: "150px 0px", sm: 5 }, m: 0, backgroundImage: 'url(/img/HeroImage.webp)', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
