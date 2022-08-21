@@ -3,7 +3,7 @@ import SocialStack from '../molecules/SocialStack';
 
 const Footer = () => {
   return (
-    <Grid container spacing={3} sx={{ width: "100%", backgroundColor: '#E0F2F1', m: 0, px: "10%", pt: 5, alignContent: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+    <Grid container spacing={3} sx={{ width: "100%", backgroundColor: '#fff', m: 0, px: "10%", pt: 5, alignContent: 'center', justifyContent: 'center', overflow: 'hidden' }}>
       <Grid item xs={12} sm={3} order={{ xs: 3, sm: 1 }} sx={{ display: "flex", flexDirection: "column", alignContent: 'center', justifyContent: 'center', p: { xs: 2, sm: 10 } }}>
         <SocialStack />
         <Typography variant='body1' sx={{ pt: 1 }}>
@@ -51,10 +51,10 @@ const Footer = () => {
         </Typography>
         <Box component="ul" sx={{ m: 0, listStyle: 'none', p: 0 }}>
           <Box component="li" sx={{ py: 0.5 }}>
-            <Typography>info@onsiteplanning.com</Typography>
+            <Typography color="text.primary">info@onsiteplanning.com</Typography>
           </Box>
           <Box component="li" sx={{ py: 0.5 }}>
-            <Typography>+1 (844) 200-8332</Typography>
+            <Typography color="text.primary">+1 (844) 200-8332</Typography>
           </Box>
         </Box>
       </Grid>
