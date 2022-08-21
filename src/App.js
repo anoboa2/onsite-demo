@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Specialist from './components/templates/Specialist';
 import Explore from './pages/Explore';
 import FAQ from './pages/FAQ';
 import Match from './pages/Match';
@@ -22,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/explore/:id" element={<Explore />} />
+        <Route path="/explore/:id" element={<Specialist />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/match" element={<Match />} />
         <Route path="/myitineraries" element={<MyItineraries />} />
