@@ -104,7 +104,7 @@ const HomeHero = ({ details }) => {
                         {details.subHeader}
                     </Typography>
                         <br /></>}
-                    <Typography className={classes.typography3} maxWidth="40%"  variant="body1" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "justify" }} >
+                    <Typography className={classes.typography3} maxWidth="40%"  variant="body1" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "left" }} >
                         {details.text}
                     </Typography>
                     <br />
