@@ -4,8 +4,6 @@ import { useRownd } from '@rownd/react';
 import AccountMenu from '../molecules/AccountMenu';
 import NavMenu from '../molecules/NavMenu';
 import NavigationOptions from '../../content/NavigationOptions';
-
-
 const NavBar = () => {
   const breakpoint = useMediaQuery(useTheme().breakpoints.up('md'));
   const { is_authenticated } = useRownd();
