@@ -40,4 +40,4 @@ const Press = () => {
   )
 }
 
-export default Press; 
+export default Press;
