@@ -1,6 +1,6 @@
 const ServicesOffered = [
   {
-    image: '/img/content/acommodation.jpg',
+    image: '/img/content/Accommodations.jpg',
     alt: 'random image',
     title: 'Accommodations',
     description: 'Do you prefer 4 star or 5 star Hotels? Maybe you\'re interested in airbnbs or villas more. We value your preferences and reserve accordingly.',
