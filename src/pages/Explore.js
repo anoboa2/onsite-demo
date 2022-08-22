@@ -1,20 +1,19 @@
-// import { useState } from 'react';
 import NavBar from '../components/organisms/NavBar';
-import Influencers from '../components/templates/Influencers';
+import PopularItineraries from '../components/organisms/PopularItineraries';
 import Banner from '../components/molecules/Banner';
 import Footer from '../components/organisms/Footer';
 import ExploreBanner from '../content/ExploreBanner';
+import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
+import { SpecialistSection } from '../content/FAQItems';
+
 
 const Explore = () => {
-  // const [isLoading, setIsLoading] = useState(false);
-
-  // const queryParams = new URLSearchParams(window.location.search);
-  // const indicator = queryParams.get('indicator');
 
   return (
     <div>
       <NavBar />
-      <Influencers />
+      <PopularItineraries />
+      <FAQCondensedSection faqsection={SpecialistSection} />
       <Banner content={ExploreBanner}/>
       <Footer />
     </div>
