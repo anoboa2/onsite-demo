@@ -5,7 +5,6 @@ import Banner from '../components/molecules/Banner';
 import AboutPageBanner from '../content/AboutPageBanner';
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import Footer from '../components/organisms/Footer';
-import { CondensedSection } from '../content/FAQItems';
 
 const Match = () => {
   // const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +19,7 @@ const Match = () => {
       <FormHero />
       <HowItWorks />
       <Banner content={AboutPageBanner} />
-      <FAQCondensedSection faqsection={CondensedSection}/>
+      <FAQCondensedSection />
       <Footer />
     </div>
   );

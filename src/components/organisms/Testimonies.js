@@ -25,7 +25,7 @@ const Testimonies = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -38,7 +38,7 @@ const Testimonies = () => {
   return (
     <Grid sx={{ mt: 10, mb: 20 }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
-        <Typography textAlign="center" variant="h2" marginBottom="10px">
+        <Typography textAlign="center" variant="h4">
           What our <Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}>Travelers</Box> have to say
         </Typography>
         <Typography variant="h6" align="center">
@@ -78,7 +78,7 @@ const Testimonies = () => {
                   </Box>
                 </Box>
                 <Paper elevation={3} sx={{marginTop:"-75px", borderRadius: "40px" , paddingTop:"55px", maxWidth: 400 }}> 
-                  <Box sx={{ p: 4, height: 200, marginBottom: "50px", sm: { height: 320, marginBottom: "58px" }, borderRadius: "20px" }}> 
+                  <Box sx={{ p: 3, height: 200, marginBottom: "50px", sm: { height: 320, marginBottom: "58px" }, borderRadius: "20px" }}> 
                     <Typography component="h3" sx={{ mt: 0, textAlign: "justify" }}>
                       {newData.details}
                     </Typography>
