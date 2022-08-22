@@ -33,6 +33,13 @@ const PlanningSteps = [
     description: 'A finalized itinerary will be sent including all tickets and reservations. You can continue to reach out to your specialist at any time with questions or changes, even while on your trip.',
     icon: '/icon/passport.png',
     alt: 'silouhette of passport'
+  },
+  {
+    order: 6,
+    title: 'Plans',
+    description: 'If you\'re not looking for a custom-made itinerary, we offer already curated itineraries by our Travel Specialists and Influencers. Inclusive of tips and recommendations.',
+    icon: '/icon/business-plan.png',
+    alt: 'silouhette of passport'
   }
 ];
 
