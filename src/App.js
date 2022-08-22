@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound';
 import Press from './pages/Press';
 import Privacy from './pages/Privacy';
 import Profile from './pages/Profile';
+import Specialist from './components/templates/Specialist';
 import Terms from './pages/Terms';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/theme';
