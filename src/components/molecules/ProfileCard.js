@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import SpecialistSocials from './SpecialistSocials';
 
-const ProductCard = ({ content, onClick }) => {
-  const { name, bio, id, image_url, socials  } = content;
+const ProfileCard = ({ content }) => {
+  const { first_name, last_name, bio, id, image_url, primary_socials  } = content;
 
   return (
     <Card key={id} sx={{ width: '80%' }}>
@@ -13,8 +13,8 @@ const ProductCard = ({ content, onClick }) => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box>
-              <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>{name}</Typography>
-              <SpecialistSocials socials={socials}/>
+              <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>{first_name} {last_name}</Typography>
+              <SpecialistSocials socials={primary_socials}/>
             </Box>
             <Box>
               <Typography variant="h6" gutterBottom>About</Typography>
@@ -27,4 +27,4 @@ const ProductCard = ({ content, onClick }) => {
   );
 }
 
-export default ProductCard;
+export default ProfileCard;
