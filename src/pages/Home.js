@@ -11,7 +11,7 @@ import StartBookingBanner from '../content/StartBookingBanner';
 import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
 
 import HowItWorks from '../components/organisms/HowItWorks';
-import {home} from "../Constants"
+import { home } from "../content/HeroConstants"
 
 
 
