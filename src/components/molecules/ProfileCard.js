@@ -1,19 +1,25 @@
-import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
+import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
+import SpecialistSocials from './SpecialistSocials';
 
 const ProductCard = ({ content, onClick }) => {
-  const { name, description, influencerId, image_url } = content;
+  const { name, bio, id, image_url, socials  } = content;
 
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 800 }}>
+    <Card key={id} sx={{ width: '80%' }}>
       <CardContent>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Avatar src={image_url} sx={{ height: 200, width: 200 }}/>
+          <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box component="img" src={image_url} sx={{ height: 300, width: 300, objectFit: 'cover' }}/>
           </Grid>
-          <Grid item xs={12} sm={8}>
-            <Typography variant="h6">{name}</Typography>
-            <Typography variant="subtitle1">@{influencerId}</Typography>
-            <Typography variant="body1">{description}</Typography>
+          <Grid item xs={12} sm={6}>
+            <Box>
+              <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>{name}</Typography>
+              <SpecialistSocials socials={socials}/>
+            </Box>
+            <Box>
+              <Typography variant="h6" gutterBottom>About</Typography>
+              <Typography variant="body1">{bio}</Typography>
+            </Box>
           </Grid>
         </Grid>
       </CardContent>

@@ -22,7 +22,7 @@ const Footer = () => {
             <Link href="https://blog.onsiteplanning.com/" variant="subtitle1" color="text.primary" underline="hover">Blog</Link>
           </Box>
           <Box component="li" sx={{ p: 0.5 }}>
-            <Link href="/blog" variant="subtitle1" color="text.primary" underline="hover">Press</Link>
+            <Link href="/press" variant="subtitle1" color="text.primary" underline="hover">Press</Link>
           </Box>
           <Box component="li" sx={{ p: 0.5 }}>
             <Link href="/blog" variant="subtitle1" color="text.primary" underline="hover">Investors</Link>
