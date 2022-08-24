@@ -37,7 +37,7 @@ const ItineraryCard = ({ content }) => {
       </CardContent>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Button variant="text" color="primary" sx={{ m: 2 }}>Preview Itinerary</Button>
-        <Button variant="contained" color='primary' onClick={handleCheckout} sx={{ m: 2 }}>Buy Now</Button>
+        <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
       </Box>
     </Card>
   );
