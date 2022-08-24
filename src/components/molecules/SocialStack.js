@@ -29,6 +29,11 @@ const socials = [
     name: 'Twitter',
     url: 'https://twitter.com/OnsiteTravelApp',
     icon: '/icon/twitter.png',
+  },
+  {
+    name: 'TikTok',
+    url: 'https://tiktok.com/@onsitetravelapp',
+    icon: '/icon/tiktok.png'
   }
 ]
 
