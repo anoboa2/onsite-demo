@@ -5,6 +5,8 @@ import Footer from '../components/organisms/Footer';
 import ExploreBanner from '../content/ExploreBanner';
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
+import HowItWorks from '../components/organisms/HowItWorks';
+import PopularAdvisors from '../components/organisms/PopularAdvisors';
 
 
 const Explore = () => {
@@ -12,7 +14,9 @@ const Explore = () => {
   return (
     <div>
       <NavBar />
+      <PopularAdvisors />
       <PopularItineraries />
+      <HowItWorks />
       <FAQCondensedSection faqsection={SpecialistSection} />
       <Banner content={ExploreBanner}/>
       <Footer />

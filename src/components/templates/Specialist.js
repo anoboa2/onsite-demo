@@ -73,17 +73,17 @@ const Specialist = () => {
               </Grid>
             </>
           ))}
-          <Grid container item xs={12}>
-            <Typography variant="h3" align="left" gutterBottom>
-              Recent Itineraries
-            </Typography>
-          <Grid container item spacing={3} xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Grid container xs={12}>
+            <Grid item xs={12}>
+              <Typography variant="h3" align="left" gutterBottom>
+                Recent Itineraries
+              </Typography>
+            </Grid>
               {itineraries.map(itinerary => (
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                   <ItineraryCard content={itinerary} />
                 </Grid>
               ))}
-            </Grid>
           </Grid>
         </Grid>
     </>
