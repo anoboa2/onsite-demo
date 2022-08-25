@@ -12,11 +12,6 @@ const AboutUs = () => {
       <NavBar />
       <AboutHero/>
       <Grid container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, overflow: "hidden" }}>
-        <Grid item xs={12}>
-          <Typography variant="h3" fontWeight="400" align='center'>
-            "Our mission is to eliminate the stress and uncertainty of travel planning by connecting travelers with our destination-based, DEDICATED travel specialists, who are COMMITTED to making dream trips a reality. It is like having your own personal matchmaker at your disposal; all users need to do is select their next travel destination and leave the rest to our elite travel planners."
-          </Typography>
-        </Grid>
         {Team.map((teamMember) => (
           <Grid item xs={12} sm={6} md={4} key={teamMember.id} align='center' sx={{  mt: { xs: 3, sm: 10 }  }} >
             <Box p={2}>
