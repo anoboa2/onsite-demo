@@ -16,10 +16,10 @@ const Team = [
   },
   {
       order: 3,
-      name: "Peter Delle",
-      img: '/img/team/Peter-Delle.webp',
-      alt: "Photo of Peter in front of a colorful townhouses in Portugal",
-      title: "Head of Marketing"
+      name: "Hardeep Singh",
+      img: '/img/team/Hardeep.jpg',
+      alt: "Photo of Hardeep",
+      title: "Co-founder and Chief Marketing Officer/Chief Operating Officer"
 
   }
 ];
