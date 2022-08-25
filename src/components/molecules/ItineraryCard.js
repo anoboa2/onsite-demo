@@ -3,7 +3,8 @@ import { Button, Box, Card, CardContent, CardMedia, Typography } from '@mui/mate
 const ItineraryCard = ({ content }) => {
    const { title, price, description, prod_id, image_url } = content
 
-  const handleCheckout = prod_id => {
+  const handleCheckout = prod_id => event => {
+    event.preventDefault();
     let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
     let body = {
       "product_id": prod_id
