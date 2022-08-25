@@ -36,16 +36,16 @@ const useStyles = makeStyles((theme) => ({
 const HowItWorks = () => {
   const classes = useStyles()
   return (
-    <Grid container spacing={6} sx={{ justifyContent: 'center', px: 15, mb: 16}}>
+    <Grid container spacing={3} sx={{ justifyContent: 'center', px: 15, mb: 16}}>
     <Grid item xs={12} className={classes.cards}>
-      <Typography variant="h2" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb: -3, ml: -5 , mr: -5, overflow: "hidden" }}>How Onsite Works<Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}> For You</Box></Typography>
+      <Typography variant="h2" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb: 1, ml: -5 , mr: -5, overflow: "hidden" }}>How Onsite Works<Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}> For You</Box></Typography>
     </Grid>
       {PlanningSteps.map(item => (
-        <Grid item xs={28} sm={6} md={4} key={item.order}>
+        <Grid item xs={28} sm={6} md={3.4} key={item.order}>
           <Card sx={cardStyle}>
             <Box sx={{ display: 'flex', justItems: "center", justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'column', py: 2 }}>
-              <Box component="img" src={item.icon} alt={item.alt} sx={{ height: 90, width: 90, my: 2, mx: 'auto'}}/>
-              <Typography variant='body1' align="left">{item.description}</Typography>
+              <Box component="img" src={item.icon} alt={item.alt} sx={{ height: 90, width: 90, my: 2, mx: 'auto', mb: 4}}/>
+              <Typography variant='body1' align="center">{item.description}</Typography>
             </Box>
           </Card>
         </Grid>
