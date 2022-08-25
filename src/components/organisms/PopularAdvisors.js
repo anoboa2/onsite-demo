@@ -9,7 +9,7 @@ const Advisors = [
   },
   {
     firstName: 'Alyssa',
-    lastName: 'Bennett',
+    lastName: 'Chlebek',
     image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/alyssaandthecity/profile.jpeg',
     id: 'alyssaandthecity'
   },
