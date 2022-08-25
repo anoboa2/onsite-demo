@@ -5,6 +5,7 @@ import Footer from '../components/organisms/Footer';
 import Team from  '../content/Team';
 import StartBookingBanner from '../content/StartBookingBanner';
 import AboutHero from '../components/organisms/AboutHero';
+import DestinationPage from '../components/organisms/DestinationPage';
 
 const AboutUs = () => {
   return (
@@ -23,6 +24,7 @@ const AboutUs = () => {
         ))}
       </Grid>
       <Banner content={StartBookingBanner} />
+      <DestinationPage />
       <Footer />
     </div>
   );
