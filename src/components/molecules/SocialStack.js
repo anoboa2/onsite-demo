@@ -1,8 +1,8 @@
 import { Box, Stack, Link } from '@mui/material';
 
 const iconStyle = {
-  width: 48,
-  height: 48,
+  width: 36,
+  height: 36,
   borderRadius: "10px",
   display: 'flex',
   justifyContent: 'center',
@@ -39,11 +39,11 @@ const socials = [
 
 const SocialStack = () => {
   return (
-    <Stack spacing={1} direction="row">
+    <Stack direction="row">
       {socials.map(({ name, url, icon }) => (
         <Link href={url} key={name}>
           <Box sx={iconStyle}>
-            <img src={icon} alt={name} height={30} width={30}/>
+            <img src={icon} alt={name} height={25} width={25}/>
           </Box>
         </Link>
       ))}
