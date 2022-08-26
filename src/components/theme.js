@@ -72,7 +72,7 @@ const augmentedTheme = {
       ...rawTheme.typography.h1,
       ...fontHeader,
       letterSpacing: 0,
-      fontSize: '2.5rem',
+      fontSize: '2.7rem',
     },
     h2: {
       ...rawTheme.typography.h2,
