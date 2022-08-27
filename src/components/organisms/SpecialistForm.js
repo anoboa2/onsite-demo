@@ -242,7 +242,7 @@ const TravelSpecialistForm = () => {
                 </RadioGroup>
               </FormControl>
             </Grid> 
-            <Grid item xs={12}>
+            <Grid item xs={12} align="center">
             {isLoading ? (
               <CircularProgress />
             ) : (
