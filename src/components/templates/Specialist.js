@@ -35,57 +35,51 @@ const Specialist = () => {
 
   return (
     <>
-        <Grid container spacing={2} sx={{ m: 10, display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+        <Box sx={{ m: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
           {specialist.map(specialist => (
             <>
-              <Grid item xs={12}>
-                <ProfileCard content={specialist} />
-              </Grid>
-              <Grid item xs={12}>
-                <Card sx={{ width: '80%' }}>
-                  <CardContent>
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Typography variant="h3" align="left" gutterBottom>
-                          Favorite place I've traveled
-                        </Typography>
-                        <Typography variant="subtitle1" align="left">
-                          {specialist.favorite_destination}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Typography variant="h3">
-                          Travel tips from {specialist.first_name}
-                        </Typography>
-                        <Box>
-                          <Box component="ul">
-                            {specialist.tips && specialist.tips.map(tip => (
-                              <Box component="li" key={tip}>
-                                <Typography variant="body1">{tip}</Typography>
-                              </Box>
-                            ))}
+              <ProfileCard content={specialist} />
+              <Box sx={{ m: {xs: 2, sm: 5, md: 10}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+                <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 2, md: 5} }}>
+                  <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <Typography variant="h3" align="left" gutterBottom>
+                      Favorite place I've traveled
+                    </Typography>
+                    <Typography variant="subtitle1" align="left">
+                      {specialist.favorite_destination}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <Typography variant="h3">
+                      Travel tips from {specialist.first_name}
+                    </Typography>
+                    <Box>
+                      <Box component="ul">
+                        {specialist.tips && specialist.tips.map(tip => (
+                          <Box component="li" key={tip}>
+                            <Typography variant="body1">{tip}</Typography>
                           </Box>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
+                        ))}
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Box>
             </>
           ))}
-          <Grid container xs={12}>
+          <Grid container spacing={3}>
             <Grid item xs={12}>
               <Typography variant="h3" align="left" gutterBottom>
                 Recent Itineraries
               </Typography>
             </Grid>
               {itineraries.map(itinerary => (
-                <Grid item xs={4}>
+                <Grid item sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
                   <ItineraryCard content={itinerary} />
                 </Grid>
               ))}
           </Grid>
-        </Grid>
+        </Box>
     </>
   )
 }

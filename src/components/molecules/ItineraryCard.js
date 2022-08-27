@@ -1,4 +1,4 @@
-import { Button, Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 
 const ItineraryCard = ({ content }) => {
    const { title, price, description, prod_id, image_url } = content
@@ -23,24 +23,27 @@ const ItineraryCard = ({ content }) => {
   }
 
   return (
-    <Card sx={{ minWidth: 275, minHeight: 400 }}>
-      <CardMedia
+    <Box sx={{ width: 400, height: 700 }}>
+      <Box
         component='img'
         alt='itinerary image'
-        height='140'
-        image={image_url}
+        src={image_url}
         title={title}
+        sx={{
+          width: 400,
+          height: 500,
+          objectFit: 'cover',
+        }}
       />
-      <CardContent>
+      <Box sx={{ display: 'flex', height: 100, justifyContent: 'flex-start', alignItems: 'flex-start', flexDirection: 'column' }}>
         <Typography variant="h6">{title}</Typography>
         <Typography variant="body1">{description}</Typography>
         <Typography variant="body1">${price/100}</Typography>
-      </CardContent>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <Button variant="text" color="primary" sx={{ m: 2 }}>Preview Itinerary</Button>
-        <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
       </Box>
-    </Card>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-end', justifyContent: 'flex-end', justifyItems: 'flex-end' }}>
+          <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
+        </Box>
+    </Box>
   );
 }
 

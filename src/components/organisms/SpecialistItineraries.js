@@ -23,7 +23,7 @@ const SpecialistItineraries = ( id ) => {
     <>
       <Grid container spacing={2} sx={{ m: 10, display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
         {itineraries.map((itinerary) => (
-          <Grid item xs={12}>
+          <Grid item xs={3}>
             <ItineraryCard content={itinerary} />
           </Grid>
         ))}
