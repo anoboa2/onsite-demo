@@ -13,7 +13,7 @@ const ProductPreview = ({ content }) => {
           <Typography variant="h2">
             {header}
           </Typography>
-          <Typography variant="body1" sx={{mt: 4}} style={{ textAlign: "justify" }}>
+          <Typography variant="body1" color="text.primary" sx={{mt: 4}} style={{ textAlign: "justify" }}>
             {description}
           </Typography>
           {cta}

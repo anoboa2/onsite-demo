@@ -12,8 +12,8 @@ const ServiceCard = (content) => {
         image={image}
       />
       <CardContent>
-        <Typography variant="h6">{title}</Typography>
-        <Typography variant="body2" color="text.bold">{description}</Typography>
+        <Typography variant="h5" sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{title}</Typography>
+        <Typography variant="body1"  sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{description}</Typography>
       </CardContent>
     </Card>
   );

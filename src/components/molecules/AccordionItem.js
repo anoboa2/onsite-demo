@@ -21,12 +21,12 @@ const AccordionItem = ({ content }) => {
         aria-controls={`panel${order}bh-content`}
         expandIcon={<ExpandMoreIcon />}
       >
-        <Typography sx={{ width: '100%', flexShrink: 0, fontSize: '16px', fontWeight: '500' }}>
+        <Typography color="primary.contrastText" sx={{ width: '100%', flexShrink: 0, fontSize: '15px', fontWeight: '500' }}>
           {question}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography color="#000" align="justify">
+        <Typography color="text.primary" align="justify">
           {answer}
         </Typography>
       </AccordionDetails>

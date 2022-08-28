@@ -11,12 +11,15 @@ const InstagramFeed = () => {
               <Typography
                 textAlign="center"
                 variant="h2"
+                fontWeight="300"
               >
                 On The Gram | <Link variant="h2" color = "primary.main" href="https://instagram.com/Onsitetravelapp" underline="none"> @onsitetravelapp</Link> 📷
               </Typography>
               <Typography
                 textAlign="center"
-                variant="h6"
+                variant="subtitle1"
+                color="text.primary"
+                sx={{mt: {xs: 2 , sm: 2}}}
               >
               Follow us for more
               </Typography>

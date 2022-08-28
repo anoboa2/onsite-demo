@@ -91,7 +91,7 @@ const HomeHero = ({ details }) => {
                         {details.subHeader}
                     </Typography>
                         <br /></>}
-                    <Typography className={classes.typography3} maxWidth="40%"  variant="body1" style={{ display: "inline-block", whiteSpace: "pre-line", textAlign: "left" }} >
+                    <Typography className={classes.typography3} maxWidth="40%"  color="text.primary" sx={{ mt:{xs: 1 , sm: 2} }} variant="body1" style={{ display: "inline-block", textAlign: "left" }} >
                         {details.text}
                     </Typography>
                     <br />
@@ -103,7 +103,7 @@ const HomeHero = ({ details }) => {
                                     variant="contained"
                                     href="https://try.onsiteplanning.com/onsiteplanning/"
                                     style={{
-                                        backgroundColor: "#00aaca", padding: "10px 15px",
+                                        color:'primary',padding: "10px 15px",
                                         borderRadius: "10px",
                                         color: "white",
                                         fontSize: "15px"
@@ -121,7 +121,6 @@ const HomeHero = ({ details }) => {
                                         padding: "10px 33px",
                                         borderRadius: "10px",
                                         color: "#00aaca",
-                                        
                                         fontSize: "15px"
                                     }}
                                 >

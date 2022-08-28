@@ -38,10 +38,10 @@ const Testimonies = () => {
   return (
     <Grid sx={{ mt: 10, mb: 20 }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
-        <Typography textAlign="center" variant="h2" marginBottom="10px">
-          What our <Box component="span" sx={{ color: "primary.main", borderBottom: "3px solid #0FAACD" }}>Travelers</Box> have to say
+        <Typography textAlign="center" variant="h2" marginBottom="10px" fontWeight="300">
+          What our <Box component="span" sx={{ color:"primary.contrastText"}}><b>Travelers</b></Box> have to say
         </Typography>
-        <Typography variant="h6" align="center">
+        <Typography variant="subtitle1" align="center" color="text.primary">
         A few responses from our travelers who enjoyed using Onsite
         </Typography>
       </Box>
