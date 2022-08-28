@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 const HowItWorks = () => {
   const classes = useStyles()
   return (
-    <Grid container spacing={3} sx={{ justifyContent: 'center', px: 15, mb: 16}}>
+    <Grid container spacing={3} sx={{ justifyContent: 'center', px: 15, mb: 13}}>
     <Grid item xs={12} className={classes.cards}>
       <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb: -1, ml: -5 , mr: -5, overflow: "hidden" , color:"primary.light" }}>How Onsite Works <b>For You</b></Typography>
     </Grid>
