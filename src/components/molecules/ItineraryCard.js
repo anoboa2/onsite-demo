@@ -1,7 +1,13 @@
+import { useEffect, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 
 const ItineraryCard = ({ content }) => {
-   const { title, price, description, prod_id, image_url } = content
+  const { title, price, description, prod_id, static_image, hover_image } = content
+  const [ image, setImage ] = useState(static_image);
+
+  useEffect(() => {
+    setImage(static_image);
+  }, []);
 
   const handleCheckout = prod_id => event => {
     event.preventDefault();
@@ -22,13 +28,23 @@ const ItineraryCard = ({ content }) => {
     })
   }
 
+  const handleMouseEnter = () => {
+    setImage(hover_image);
+  }
+
+  const handleMouseLeave = () => {  
+    setImage(static_image);
+  }
+
   return (
     <Box sx={{ width: 400, height: 700 }}>
       <Box
         component='img'
         alt='itinerary image'
-        src={image_url}
+        src={image}
         title={title}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         sx={{
           width: 400,
           height: 500,

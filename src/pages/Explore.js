@@ -1,3 +1,4 @@
+import CheckoutSnackbar from '../components/atoms/CheckoutSnackbar';
 import NavBar from '../components/organisms/NavBar';
 import PopularItineraries from '../components/organisms/PopularItineraries';
 import Banner from '../components/molecules/Banner';
@@ -14,6 +15,7 @@ const Explore = () => {
   return (
     <div>
       <NavBar />
+      <CheckoutSnackbar />
       <PopularAdvisors />
       <PopularItineraries />
       <HowItWorks />
