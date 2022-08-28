@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 
-const ItineraryCard = ({ content }) => {
+const ItineraryCard = ({ content, profile_id }) => {
   const { title, price, description, prod_id, static_image, hover_image } = content
   const [ image, setImage ] = useState(static_image);
 
@@ -13,7 +13,8 @@ const ItineraryCard = ({ content }) => {
     event.preventDefault();
     let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
     let body = {
-      "product_id": prod_id
+      "product_id": prod_id,
+      "profile_id": profile_id
     }
     fetch(url, {
       "method": "POST",
