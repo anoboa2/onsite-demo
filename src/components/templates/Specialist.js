@@ -34,7 +34,7 @@ const Specialist = () => {
       <Box sx={{ m: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
         {specialist.map(specialist => (
           <>
-            <ProfileCard content={specialist} profile_id={id}/>
+            <ProfileCard content={specialist} />
             <Box sx={{ m: {xs: 2, sm: 5, md: 10}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
               <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 2, md: 5} }}>
                 <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

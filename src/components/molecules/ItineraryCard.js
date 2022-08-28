@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 
-const ItineraryCard = ({ content, profile_id }) => {
-  const { title, price, description, prod_id, static_image, hover_image } = content
+const ItineraryCard = ({ content }) => {
+  const { title, price, description, prod_id, static_image, hover_image, author } = content
   const [ image, setImage ] = useState(static_image);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const ItineraryCard = ({ content, profile_id }) => {
     let url = "https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/product/createcheckoutsession"
     let body = {
       "product_id": prod_id,
-      "profile_id": profile_id
+      "profile_id": author
     }
     fetch(url, {
       "method": "POST",
