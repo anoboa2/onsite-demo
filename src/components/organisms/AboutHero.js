@@ -4,7 +4,7 @@ const AboutHero = () => {
     return (
       <div>
       <Container sx={{ width: { xs: "80%", sm: "50%" }, my: { xs: 0, sm: 10 } , mt: { xs: 12, sm: 14 } , mb: { xs: -8, sm: -8 }}}>
-        <Typography variant="h1"  fontWeight="300" align="center" sx={{ py: 1}} color="primary.contrastText">We are <b>Onsite.</b></Typography>
+        <Typography variant="h1"  fontWeight="300" align="center" sx={{ py: 1}} color="primary.contrastText">We are <b color="#000">Onsite.</b></Typography>
          <Typography variant="h2" fontWeight="300" fontStyle= "italic" align="center" color="secondary.dark" sx={{ py: 1}}>Stress Less, Dream More.</Typography>
          <Container sx={{ mt: { xs: 8, sm: 10 } , mb: { xs: 8, sm: 10 }  , justifyContent:'center', ml: { xs: -18, sm: -33 } }}>
           <img 

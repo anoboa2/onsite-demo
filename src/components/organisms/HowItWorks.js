@@ -38,7 +38,7 @@ const HowItWorks = () => {
   return (
     <Grid container spacing={3} sx={{ justifyContent: 'center', px: 15, mb: 13}}>
     <Grid item xs={12} className={classes.cards}>
-      <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb: -1, ml: -5 , mr: -5, overflow: "hidden" , color:"primary.light" }}>How Onsite Works <b>For You</b></Typography>
+      <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb: -1, ml: -5 , mr: -5, overflow: "hidden" , color:"primary.main" }}>How Onsite Works <Box component="span" sx={{ color:"#0FAACD"}} ><b>For You</b></Box></Typography>
     </Grid>
       {PlanningSteps.map(item => (
         <Grid item xs={28} sm={6} md={3.4} key={item.order}>
