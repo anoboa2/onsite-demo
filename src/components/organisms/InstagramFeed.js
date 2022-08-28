@@ -19,7 +19,7 @@ const InstagramFeed = () => {
                 textAlign="center"
                 variant="subtitle1"
                 color="text.primary"
-                sx={{mt: {xs: 2 , sm: 2}}}
+                sx={{mt: {xs: 2 , sm: 2} , mb:{xs: -2 , sm: -2}}}
               >
               Follow us for more
               </Typography>
