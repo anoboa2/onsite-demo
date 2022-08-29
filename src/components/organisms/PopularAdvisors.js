@@ -4,21 +4,21 @@ const Advisors = [
   {
     firstName: 'Izanna',
     lastName: 'Levintova',
-    title: "Advisor",
+    title: "Specialist",
     image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/izanna.lev/profile.jpeg',
     id: 'izanna.lev'
   },
   {
     firstName: 'Alyssa',
     lastName: 'Chlebek',
-    title: "Advisor",
+    title: "Specialist",
     image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/alyssaandthecity/profile.jpeg',
     id: 'alyssaandthecity'
   },
   {
     firstName: 'Mustafa',
     lastName: 'Ansari',
-    title: "Advisor",
+    title: "Specialist",
     image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/mustafa23ansari/profile.jpeg',
     id: 'mustafa23ansari'
   }
@@ -28,7 +28,7 @@ const PopularAdvisors = () => {
   return (
     <Grid  container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: 12, sm: 8 }, overflow: "hidden" }}>
       <Grid item xs={12}>
-        <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -3, sm: -10 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Our Popular <b>Advisors</b></Typography>
+        <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -3, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Our Popular <b>Specialists</b></Typography>
       </Grid>
       <Grid container spacing={3}>
         {Advisors.map(({ firstName, lastName, title, image, id }) => (
