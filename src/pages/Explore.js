@@ -8,6 +8,9 @@ import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
 import HowItWorks from '../components/organisms/HowItWorks';
 import PopularAdvisors from '../components/organisms/PopularAdvisors';
+import ExploreHero from '../components/organisms/ExploreHero';
+import StartBookingBanner from '../content/StartBookingBanner';
+import OnsiteTravelerIcons from '../components/organisms/OnsiteTravelerIcons';
 
 
 const Explore = () => {
@@ -15,10 +18,12 @@ const Explore = () => {
   return (
     <div>
       <NavBar />
+      <ExploreHero/>
       <CheckoutSnackbar />
       <PopularAdvisors />
+      <Banner content={StartBookingBanner}/>
       <PopularItineraries />
-      <HowItWorks />
+      <OnsiteTravelerIcons/>
       <FAQCondensedSection faqsection={SpecialistSection} />
       <Banner content={ExploreBanner}/>
       <Footer />
