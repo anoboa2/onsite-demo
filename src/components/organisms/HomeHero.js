@@ -101,7 +101,7 @@ const HomeHero = ({ details }) => {
                             <Box sx={{ p: 1, m: 1, }}>
                                 <Button
                                     variant="contained"
-                                    href="https://try.onsiteplanning.com/onsiteplanning/"
+                                    href="/match"
                                     style={{
                                         color:'primary',padding: "10px 15px",
                                         borderRadius: "10px",
@@ -115,7 +115,7 @@ const HomeHero = ({ details }) => {
                             <Box sx={{ p: 1, m: 1, zIndex: 999999,}}>
                                 <Button 
                                     variant="contained"
-                                    href="/itineraries"
+                                    href="/explore"
                                     style={{
                                         backgroundColor: "#fff",
                                         padding: "10px 33px",
