@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Box, Grid, Typography } from '@mui/material';
 import ProfileCard from '../molecules/ProfileCard';
 import ItineraryCard from '../molecules/ItineraryCard';
+import SpecialistHero from '../organisms/SpecialistHero';
 
 const Specialist = () => {
   const { id } = useParams();
@@ -32,8 +33,10 @@ const Specialist = () => {
   return (
     <>
       <Box sx={{ m: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
+      
         {specialist.map(specialist => (
           <>
+          <SpecialistHero content={specialist}/>
             <ProfileCard content={specialist} />
             <Box sx={{ m: {xs: 2, sm: 5, md: 10}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
               <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 2, md: 5} }}>

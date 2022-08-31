@@ -1,10 +1,11 @@
 import CheckoutSnackbar from '../components/atoms/CheckoutSnackbar';
 import NavBar from '../components/organisms/NavBar';
 import Specialist from '../components/templates/Specialist';
-import HowItWorks from '../components/organisms/HowItWorks';
+import OnsiteTravelerIcons from '../components/organisms/OnsiteTravelerIcons';
 import Banner from '../components/molecules/Banner';
 import AboutPageBanner from '../content/AboutPageBanner';
 import Footer from '../components/organisms/Footer';
+import SpecialistHero from '../components/organisms/SpecialistHero';
 
 const SpecialistProfile = () => {
 
@@ -13,7 +14,7 @@ const SpecialistProfile = () => {
       <CheckoutSnackbar />
       <NavBar />
       <Specialist />
-      <HowItWorks />
+      <OnsiteTravelerIcons />
       <Banner content={AboutPageBanner} />
       <Footer />
     </div>
