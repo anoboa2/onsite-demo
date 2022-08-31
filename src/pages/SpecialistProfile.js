@@ -5,7 +5,6 @@ import OnsiteTravelerIcons from '../components/organisms/OnsiteTravelerIcons';
 import Banner from '../components/molecules/Banner';
 import AboutPageBanner from '../content/AboutPageBanner';
 import Footer from '../components/organisms/Footer';
-import SpecialistHero from '../components/organisms/SpecialistHero';
 
 const SpecialistProfile = () => {
 

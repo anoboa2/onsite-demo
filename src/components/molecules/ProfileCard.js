@@ -5,7 +5,7 @@ const ProfileCard = ({ content }) => {
   const { first_name, last_name, bio, id, image_url, primary_socials  } = content;
 
   return (
-    <Box key={id} sx={{ width: {sm: '80%' , xs: "170%"}, border: 'solid rgba(0, 0, 0, 0.3)' }}>
+    <Box key={id} sx={{ width: {sm: '80%' , xs: "170%"},  mb: {xs: 5, sm: -5},  border: 'solid rgba(0, 0, 0, 0.3)' }}>
       <Grid container  sx={{ display: 'flex', justifyContent: 'center' }}>
       <Grid item sm={12} md={6} sx={{ px: 5, display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center' }}>
           <Box sx={{ py: 1 }}>

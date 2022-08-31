@@ -38,25 +38,25 @@ const Specialist = () => {
           <>
           <SpecialistHero content={specialist}/>
             <ProfileCard content={specialist} />
-            <Box sx={{ m: {xs: 2, sm: 5, md: 10}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
-              <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 2, md: 5} }}>
+            <Box sx={{  m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center'  }}>
+              <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 1, md: 5} }}>
                 <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <Typography variant="h3" align="left" gutterBottom>
+                  <Typography variant="h3" align="left" color="primary.main" gutterBottom>
                     Favorite place I've traveled
                   </Typography>
-                  <Typography variant="subtitle1" align="left">
+                  <Typography variant="subtitle1" align="left" fontWeight={300}>
                     {specialist.favorite_destination}
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <Typography variant="h3">
+                  <Typography variant="h3" color="primary.main" >
                     Travel tips from {specialist.first_name}
                   </Typography>
                   <Box>
-                    <Box component="ul">
+                    <Box component="ul" >
                       {specialist.tips && specialist.tips.map(tip => (
                         <Box component="li" key={tip}>
-                          <Typography variant="body1">{tip}</Typography>
+                          <Typography variant="body1" fontWeight={300} lineHeight={1.7}>{tip}</Typography>
                         </Box>
                       ))}
                     </Box>
