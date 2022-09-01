@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import { Button, Box, Typography , Card, CardContent, CardMedia, CardActions } from '@mui/material';
 
 const ItineraryCard = ({ content }) => {
   const { title, price, description, prod_id, image_url, static_image, hover_image, author } = content
@@ -38,8 +38,8 @@ const ItineraryCard = ({ content }) => {
   }
 
   return (
-    <Box sx={{ width: 400, height: 700 }}>
-      <Box
+    <Card sx={{ maxWidth: 400 }}>
+      <CardMedia
         component='img'
         alt='itinerary image'
         src={image_url}
@@ -47,21 +47,21 @@ const ItineraryCard = ({ content }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         sx={{
-          width: 400,
-          height: 500,
-          objectFit: 'cover',
+          
+          height: 400,
+          objectFit: 'cover', 
         }}
       />
-      <Box sx={{ display: 'flex', height: 100, justifyContent: 'flex-start', alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Typography variant="h6">{title}</Typography>
-        <Typography variant="body1">{description}</Typography>
-        <Typography variant="body1">${price/100}</Typography>
-      </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-end', justifyContent: 'flex-end', justifyItems: 'flex-end' }}>
-          <Button variant="text" color="primary" sx={{ m: 2 }}>Preview Itinerary</Button>
-          <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
-        </Box>
-    </Box>
+      <CardContent >
+        <Typography variant="h6">{title}.</Typography><br/> 
+        <Typography fontWeight={300} variant="body1">{description}.</Typography><br/> 
+        <Typography variant="body1">Price: ${price/100}</Typography>
+      </CardContent>
+        <CardActions >
+          <Button variant="text" color="primary" >Preview Itinerary</Button>
+          <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} >Buy Now</Button>
+        </CardActions>
+    </Card>
   );
 }
 
