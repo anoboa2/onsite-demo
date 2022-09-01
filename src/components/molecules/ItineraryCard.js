@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Button, Box, Typography , Card, CardContent, CardMedia, CardActions } from '@mui/material';
+import { Backdrop, Button, Box, Modal, Typography , Card, CardContent, CardMedia, CardActions } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { ReactPhotoCollage } from 'react-photo-collage';
+
 
 const ItineraryCard = ({ content }) => {
-  const { title, price, description, prod_id, image_url, static_image, hover_image, author } = content
+  const { title, price, description, prod_id, image_url, static_image, hover_image, itinerary_images, author } = content
   const [ image, setImage ] = useState(static_image);
+  const [ open, setOpen ] = useState(false);
 
   useEffect(() => {
     setImage(static_image);
@@ -52,16 +56,44 @@ const ItineraryCard = ({ content }) => {
           objectFit: 'cover', 
         }}
       />
+
       <CardContent >
         <Typography variant="h6">{title}.</Typography><br/> 
         <Typography fontWeight={300} variant="body1">{description}.</Typography><br/> 
         <Typography variant="body1">Price: ${price/100}</Typography>
       </CardContent>
         <CardActions >
-          <Button variant="text" color="primary" >Preview Itinerary</Button>
+          <Button variant="text" color="primary" onClick={() => setOpen(true)} >Preview Itinerary</Button>
           <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} >Buy Now</Button>
         </CardActions>
+        <Modal
+        arial-labelledby={`${title}-modal-title`}
+        arial-describedby={`${title}-modal-description`}
+        open={open}
+        onClose={() => setOpen(false)}
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500
+        }}
+        sx={{
+          zIndex: 999
+        }}
+       >
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, height: 660, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
+          <Typography variant="h6" id={`${title}-modal-title`}>
+            {title}
+          </Typography>
+          <Button onClick={() => setOpen(false)}>
+            <CloseIcon />
+          </Button>
+          <ReactPhotoCollage width='350px' height={["235px", "235px"]} layout={[2, 2]} photos={itinerary_images} showNumOfRemainingPhotos={true} />
+          <Button variant="contained" onClick={handleCheckout(prod_id)} sx={{ backgroundColor: "#00aaca", padding: "10px 55px", marginTop: "27px", borderRadius: "10px", color: "white", fontSize: "15px"}}>
+            Buy Now
+          </Button>
+        </Box>
+      </Modal>
     </Card>
+
   );
 }
 

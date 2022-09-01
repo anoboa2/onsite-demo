@@ -36,7 +36,7 @@ const Specialist = () => {
       
         {specialist.map(specialist => (
           <>
-          <SpecialistHero content={specialist}/>
+            <SpecialistHero content={specialist} />
             <ProfileCard content={specialist} />
             <Box sx={{  m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center'  }}>
               <Grid container spacing={2} >
@@ -72,7 +72,7 @@ const Specialist = () => {
             Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box></Typography>
           </Grid>
             {itineraries.map(itinerary => (
-              <Grid item sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Grid item key={itinerary.title} sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
                 <ItineraryCard content={itinerary} />
               </Grid>
             ))}
