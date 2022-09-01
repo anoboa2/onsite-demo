@@ -14,7 +14,7 @@ const ProfileCard = ({ content }) => {
             <SpecialistSocials sx={{ mb:{xs: 2, sm: 2} }}socials={primary_socials}/>
           </Box>
           <Box sx={{ py: 2 }}>
-            <Typography variant="h6" sx={{ mb:{xs: 3, sm: 3} }} gutterBottom>Why {first_name} travel plans are worth it?</Typography>
+            <Typography variant="h6" sx={{ mb:{xs: 3, sm: 3} }} gutterBottom> Why Travel With {first_name}</Typography>
             <Typography fontWeight={300} variant="body1">{bio}</Typography>
           </Box>
         </Grid>

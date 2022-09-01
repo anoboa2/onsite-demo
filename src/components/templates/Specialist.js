@@ -39,24 +39,24 @@ const Specialist = () => {
           <SpecialistHero content={specialist}/>
             <ProfileCard content={specialist} />
             <Box sx={{  m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center'  }}>
-              <Grid container spacing={2} sx={{ mx: {xs: 1, sm: 1, md: 5} }}>
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <Grid container spacing={2} >
+                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 0 , sm:0} , paddingRight:{xs: 0, sm:0} }}>
                   <Typography variant="h3" align="left" color="primary.main" gutterBottom>
                     Favorite place I've traveled
                   </Typography>
-                  <Typography variant="subtitle1" align="left" fontWeight={300}>
+                  <Typography variant="subtitle1" align="left" fontWeight={300} >
                     {specialist.favorite_destination}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <Typography variant="h3" color="primary.main" >
+                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 10 , sm:0} , paddingRight:{xs: 13, md:0} }}>
+                  <Typography variant="h3" color="primary.main" sx={{mr:{xs:-8}}}  >
                     Travel tips from {specialist.first_name}
                   </Typography>
-                  <Box>
+                  <Box sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 5, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }} >
                     <Box component="ul" >
                       {specialist.tips && specialist.tips.map(tip => (
-                        <Box component="li" key={tip}>
-                          <Typography variant="body1" fontWeight={300} lineHeight={1.7}>{tip}</Typography>
+                        <Box  component="li" key={tip} >
+                          <Typography variant="body1" fontWeight={300} paddingBottom={1} lineHeight={1.7}>{tip}</Typography>
                         </Box>
                       ))}
                     </Box>
