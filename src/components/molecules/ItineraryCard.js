@@ -58,6 +58,7 @@ const ItineraryCard = ({ content }) => {
         <Typography variant="body1">${price/100}</Typography>
       </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-end', justifyContent: 'flex-end', justifyItems: 'flex-end' }}>
+          <Button variant="text" color="primary" sx={{ m: 2 }}>Preview Itinerary</Button>
           <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
         </Box>
     </Box>
