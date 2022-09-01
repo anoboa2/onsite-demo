@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 
 const ItineraryCard = ({ content }) => {
-  const { title, price, description, prod_id, static_image, hover_image, author } = content
+  const { title, price, description, prod_id, image_url, static_image, hover_image, author } = content
   const [ image, setImage ] = useState(static_image);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const ItineraryCard = ({ content }) => {
       <Box
         component='img'
         alt='itinerary image'
-        src={image}
+        src={image_url}
         title={title}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
