@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import { Backdrop, Button, Box, Modal, Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { ReactPhotoCollage } from 'react-photo-collage';
 
 const ItineraryCard = ({ content }) => {
-  const { title, price, description, prod_id, image_url, static_image, hover_image, author } = content
+  const { title, price, description, prod_id, image_url, static_image, hover_image, itinerary_images, author } = content
   const [ image, setImage ] = useState(static_image);
+  const [ open, setOpen ] = useState(false);
 
   useEffect(() => {
     setImage(static_image);
@@ -57,10 +60,36 @@ const ItineraryCard = ({ content }) => {
         <Typography variant="body1">{description}</Typography>
         <Typography variant="body1">${price/100}</Typography>
       </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-end', justifyContent: 'flex-end', justifyItems: 'flex-end' }}>
-          <Button variant="text" color="primary" sx={{ m: 2 }}>Preview Itinerary</Button>
-          <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-end', justifyContent: 'flex-end', justifyItems: 'flex-end' }}>
+        <Button variant="text" color="primary" onClick={() => setOpen(true)} sx={{ m: 2 }}>Preview Itinerary</Button>
+        <Button variant="contained" color='primary' onClick={handleCheckout(prod_id)} sx={{ m: 2 }}>Buy Now</Button>
+      </Box>
+      <Modal
+        arial-labelledby={`${title}-modal-title`}
+        arial-describedby={`${title}-modal-description`}
+        open={open}
+        onClose={() => setOpen(false)}
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500
+        }}
+        sx={{
+          zIndex: 1
+        }}
+      >
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
+          <Typography variant="h6" id={`${title}-modal-title`}>
+            {title}
+          </Typography>
+          <Button onClick={() => setOpen(false)}>
+            <CloseIcon />
+          </Button>
+          <ReactPhotoCollage width='350px' height={["235px", "235px"]} layout={[2, 2]} photos={itinerary_images} showNumOfRemainingPhotos={true} />
+          <Button variant="contained" onClick={handleCheckout(prod_id)} sx={{ backgroundColor: "#00aaca", padding: "10px 55px", marginTop: "27px", borderRadius: "10px", color: "white", fontSize: "15px"}}>
+            Buy Now
+          </Button>
         </Box>
+      </Modal>
     </Box>
   );
 }
