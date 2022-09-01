@@ -60,6 +60,7 @@ const ItineraryCard = ({ content }) => {
       <CardContent >
         <Typography variant="h6">{title}.</Typography><br/> 
         <Typography fontWeight={300} variant="body1">{description}.</Typography><br/> 
+        <Typography fontWeight={300} fontStyle= "italic" variant="body1">Your itinerary will be emailed to you after checkout.</Typography><br/> 
         <Typography variant="body1">Price: ${price/100}</Typography>
       </CardContent>
         <CardActions >
@@ -82,6 +83,10 @@ const ItineraryCard = ({ content }) => {
         <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, height: 660, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
           <Typography variant="h6" id={`${title}-modal-title`}>
             {title}
+          </Typography>
+          <Typography variant="h6" fontWeight={300}>
+          Curated itinerary with {author} tips and plans. Inclusive of hotels, restaurants, 
+          activities and transportation. You can use these as a reference for your own travel plans.
           </Typography>
           <Button onClick={() => setOpen(false)}>
             <CloseIcon />

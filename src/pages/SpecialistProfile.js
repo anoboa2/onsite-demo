@@ -3,7 +3,7 @@ import NavBar from '../components/organisms/NavBar';
 import Specialist from '../components/templates/Specialist';
 import OnsiteTravelerIcons from '../components/organisms/OnsiteTravelerIcons';
 import Banner from '../components/molecules/Banner';
-import AboutPageBanner from '../content/AboutPageBanner';
+import ExploreBanner from '../content/ExploreBanner';
 import Footer from '../components/organisms/Footer';
 
 const SpecialistProfile = () => {
@@ -14,7 +14,7 @@ const SpecialistProfile = () => {
       <NavBar />
       <Specialist />
       <OnsiteTravelerIcons />
-      <Banner content={AboutPageBanner} />
+      <Banner content={ExploreBanner} />
       <Footer />
     </div>
   );
