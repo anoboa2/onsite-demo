@@ -74,10 +74,10 @@ const ItineraryCard = ({ content }) => {
           timeout: 500
         }}
         sx={{
-          zIndex: 1
+          zIndex: 999
         }}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, height: 660, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
           <Typography variant="h6" id={`${title}-modal-title`}>
             {title}
           </Typography>
