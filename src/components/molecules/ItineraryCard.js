@@ -80,18 +80,30 @@ const ItineraryCard = ({ content }) => {
           zIndex: 999
         }}
        >
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, height: 660, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', height:{ sm:645}, width:{xs:350, sm:350}, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
           <Typography variant="h6" id={`${title}-modal-title`}>
             {title}
           </Typography>
-          <Typography variant="h6" fontWeight={300}>
+          <Typography variant="body1" fontWeight={300} sx={{ mt:{xs: 2 , sm: 2} , mb:{xs: 2 , sm: 2}}}>
           Curated itinerary with {author} tips and plans. Inclusive of hotels, restaurants, 
           activities and transportation. You can use these as a reference for your own travel plans.
           </Typography>
-          <Button onClick={() => setOpen(false)}>
+          <Button onClick={() => setOpen(false)}
+          sx={{
+            width: 50,
+            height: 50,
+            color: 'primary.main',
+            position: 'absolute',
+            right: '5px',
+            top: '5px',
+        }}
+          >
             <CloseIcon />
           </Button>
-          <ReactPhotoCollage width='350px' height={["235px", "235px"]} layout={[2, 2]} photos={itinerary_images} showNumOfRemainingPhotos={true} />
+          <ReactPhotoCollage 
+          width='350px'
+          height={["215px", "215px"]} layout={[2, 2]} 
+          photos={itinerary_images} showNumOfRemainingPhotos={true} />
           <Button variant="contained" onClick={handleCheckout(prod_id)} sx={{ backgroundColor: "#00aaca", padding: "10px 55px", marginTop: "27px", borderRadius: "10px", color: "white", fontSize: "15px"}}>
             Buy Now
           </Button>
@@ -103,3 +115,4 @@ const ItineraryCard = ({ content }) => {
 }
 
 export default ItineraryCard;
+
