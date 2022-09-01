@@ -27,7 +27,7 @@ const OnsiteTravelerIcons = () => {
       </Grid>
       <Grid container spacing={2} align="center">
         {Traveler.map(({ Name, title, image}) => (
-          <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' , mt: { xs: -2, sm: -2} }}>
+          <Grid item key={Name} xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' , mt: { xs: -2, sm: -2} }}>
             <Box component="a" sx={{ px: 5, py:5, textDecoration: 'none', mx: 'auto' , mt: { xs: -3, sm: -3} }}>
             <Box component="img" src={image}  sx={{ height: 90, width: 90, my: 2, mx: 'auto', mb: 4}}/>
                 <Typography variant="h5" align="center" color="primary.main" sx={{mt: { xs: 3, sm: 3}}}>
