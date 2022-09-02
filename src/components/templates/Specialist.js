@@ -9,6 +9,7 @@ const Specialist = () => {
   const { id } = useParams();
   const [ specialist, setSpecialist ] = useState([]);
   const [ itineraries, setItineraries ] = useState([]);
+  const [ firstName, setFirstName ] = useState('');
 
   useEffect(() => {
     const getProfile = async () => {
@@ -29,6 +30,10 @@ const Specialist = () => {
     }
     getItineraries();
   } , [id]);
+
+  useEffect(() => {
+    setFirstName(specialist.first_name);
+  }, [specialist]);
 
   return (
     <>
@@ -64,20 +69,20 @@ const Specialist = () => {
                 </Grid>
               </Grid>
             </Box>
+            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -5, sm: -19 }, mb:{xs: 7 , sm: 1} , justifyContent: 'center' }}>
+              <Grid item xs={12}>
+                <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: -2 , sm: -1}, ml: -5 , mr: -5, overflow: "hidden" }}>
+                  Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box>
+                </Typography>
+              </Grid>
+              {itineraries.map(itinerary => (
+                <Grid item key={itinerary.title} sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+                  <ItineraryCard content={itinerary} firstName={specialist.first_name}/>
+                </Grid>
+              ))}
+            </Grid>
           </>
         ))}
-         <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -5, sm: -19 }, mb:{xs: 7 , sm: 1} , justifyContent: 'center' }}>
-          <Grid item xs={12}>
-            <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: -2 , sm: -1}, ml: -5 , mr: -5, overflow: "hidden" }}>
-            Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box></Typography>
-          </Grid>
-            {itineraries.map(itinerary => (
-              <Grid item key={itinerary.title} sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-                <ItineraryCard content={itinerary} />
-              </Grid>
-            ))}
-
-        </Grid>
       </Box>
     </>
   )

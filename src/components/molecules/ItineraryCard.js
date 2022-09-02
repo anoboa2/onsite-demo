@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { ReactPhotoCollage } from 'react-photo-collage';
 
 
-const ItineraryCard = ({ content }) => {
+const ItineraryCard = ({ content, firstName }) => {
   const { title, price, description, prod_id, image_url, static_image, hover_image, itinerary_images, author } = content
   const [ image, setImage ] = useState(static_image);
   const [ open, setOpen ] = useState(false);
@@ -85,7 +85,7 @@ const ItineraryCard = ({ content }) => {
             {title}
           </Typography>
           <Typography variant="body1" fontWeight={300} sx={{ mt:{xs: 2 , sm: 2} , mb:{xs: 2 , sm: 2}}}>
-          Curated itinerary with {author} tips and plans. Inclusive of hotels, restaurants, 
+          Curated itinerary with {firstName}'s tips and plans. Inclusive of hotels, restaurants, 
           activities and transportation. You can use these as a reference for your own travel plans.
           </Typography>
           <Button onClick={() => setOpen(false)}
