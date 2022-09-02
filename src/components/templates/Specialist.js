@@ -12,7 +12,7 @@ const Specialist = () => {
   const { id } = useParams();
   const [ specialist, setSpecialist ] = useState([]);
   const [ itineraries, setItineraries ] = useState([]);
-  const [ firstName, setFirstName ] = useState('');
+  const [ values, setValues ] = useState({ destination: '' });
 
   useEffect(() => {
     const getProfile = async () => {
@@ -34,9 +34,25 @@ const Specialist = () => {
     getItineraries();
   } , [id]);
 
-  useEffect(() => {
-    setFirstName(specialist.first_name);
-  }, [specialist]);
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setValues({ ...values, [name]: value });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch('https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/marketing/requestdestination', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...values, id})
+    })
+      .then(res => console.log(res))
+      .then(data => {
+        console.log(data);
+      })
+  }
 
   return (
     <>
@@ -49,21 +65,25 @@ const Specialist = () => {
 
             <StickyBox className="content-sidebar  ">
             <Typography variant="h6"  align="left" >
-                “Don’t see a destination that you’re looking for? Enter it below and one of our specialists will get back to you
+              Don't see a destination that you're looking for? Enter it below and one of our specialists will get back to you
             </Typography>
-            <TextField
-            name="destination"
-            type="text"
-            placeholder="Enter your destination"
-            margin="normal"
-            variant="standard"
-            fullWidth
-            InputProps={{ disableUnderline: true }}
-            sx={{ backgroundColor: 'white', borderRadius: { xs: '12px', sm: '10px 0px' }, height: 40, mt: 1, pl: 2, justifyContent: "center" }}
-          />
-          <Button type="submit" variant="contained" color="primary" sx={{ borderRadius: { xs: '12px', sm: "0px 10px 10px 0px" }, height: 40 }}>
-            Contact Us
-          </Button>
+              <form onSubmit={handleSubmit}>
+                <TextField
+                name="destination"
+                type="text"
+                placeholder="Enter your destination"
+                margin="normal"
+                variant="standard"
+                value={values.destination}
+                onChange={handleInputChange}
+                fullWidth
+                InputProps={{ disableUnderline: true }}
+                sx={{ backgroundColor: 'white', borderRadius: { xs: '12px', sm: '10px 0px' }, height: 40, mt: 1, pl: 2, justifyContent: "center" }}
+              />
+              <Button type="submit" variant="contained" color="primary" sx={{ borderRadius: { xs: '12px', sm: "0px 10px 10px 0px" }, height: 40 }}>
+                Contact Us
+              </Button>
+            </form>
           </StickyBox>
           
             <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' ,  visibility:{xs: "hidden" , sm: "visible"} }}>
