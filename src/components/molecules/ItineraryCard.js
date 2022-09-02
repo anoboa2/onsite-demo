@@ -84,7 +84,7 @@ const ItineraryCard = ({ content, firstName }) => {
           <Typography variant="h6" id={`${title}-modal-title`}>
             {title}
           </Typography>
-          <Typography variant="body1" fontWeight={300} sx={{ mt:{xs: 2 , sm: 2} , mb:{xs: 2 , sm: 2}}}>
+          <Typography variant="h6" fontWeight={300} lineHeight={1.2} sx={{ mt:{xs: 2 , sm: 2} , mb:{xs: 2 , sm: 2}}}>
           Curated itinerary with {firstName}'s tips and plans. Inclusive of hotels, restaurants, 
           activities and transportation. You can use these as a reference for your own travel plans.
           </Typography>

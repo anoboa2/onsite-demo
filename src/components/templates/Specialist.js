@@ -57,7 +57,7 @@ const Specialist = () => {
                   <Typography variant="h3" color="primary.main" sx={{mr:{xs:-8}}}  >
                     Travel tips from {specialist.first_name}
                   </Typography>
-                  <Box sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 5, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }} >
+                  <Box sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 2, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }} >
                     <Box component="ul" >
                       {specialist.tips && specialist.tips.map(tip => (
                         <Box  component="li" key={tip} >
