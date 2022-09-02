@@ -1,0 +1,58 @@
+
+
+
+ .content-container {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+ }
+
+ .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #aaa;
+ }
+
+ .side-by-side {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px 20px;
+ }
+
+  .content-sidebar {
+  flex: 150px 0px 0px;
+  background-image: url("/public/img/BannerBackground.webp");
+  padding: 25px 60px 25px;
+  width: 15%;
+  margin-top:40px !important;
+  margin-bottom:-290px !important;
+  margin-left:759px !important;
+  border-radius:0 0 7px 7px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+ }
+
+ .content-body {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+ }
+
+ /* Responsive mobile  */
+ @media only screen and (max-width: 600px){
+  .content-sidebar {
+    visibility: hidden;
+    flex: 150px 0 0;
+    background-color: #e1e1e1;
+    padding: 10px 10px 9px;
+    width: 100%;
+    margin-bottom:-200px !important;
+    margin-top:-40px !important;
+    margin-left:108px !important;
+    
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -19,6 +19,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "intl-tel-input": "^17.0.18",
+    "lodash.range": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ig-feed": "^1.7.0",
@@ -27,6 +28,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "react-sticky-box": "^1.0.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
