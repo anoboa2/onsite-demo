@@ -7,6 +7,7 @@ import ExploreBanner from '../content/ExploreBanner';
 import Footer from '../components/organisms/Footer';
 import StickySpecialistMobile from '../components/organisms/StickySpecialistMobile';
 import StickyBox from "react-sticky-box";
+import ThankYou from "../components/organisms/ThankYou";
 
 const SpecialistProfile = () => {
 
@@ -19,6 +20,7 @@ const SpecialistProfile = () => {
       <Banner content={ExploreBanner} />
       <Footer />
       <StickySpecialistMobile />
+      <ThankYou />
     </div>
   );
 }
