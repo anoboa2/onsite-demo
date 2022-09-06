@@ -2,28 +2,38 @@ import { Box, Grid, Typography } from '@mui/material';
 
 const Destinations = [
   {
-    name: 'Aruba',
-    image: '/img/destinations/aurba-destination.jpg',
-    path: '/aruba'
+    name: 'Italy',
+    image: '/img/destinations/Italy-popular.jpg',
+    path: '/italy'
   },
   {
-    name: 'Jamaica',
-    image: '/img/destinations/Jamaica-destination.jpg',
-    path: '/jamaica'
+    name: 'Paris',
+    image: '/img/destinations/France-popular.jpg',
+    path: '/paris'
   },
   {
-    name: 'Bahamas',
-    image: '/img/destinations/Bahamas-destination.jpg',
-    path: '/bahamas'
+    name: 'Iceland',
+    image: '/img/destinations/Iceland-popular.jpg',
+    path: '/iceland'
   },
+  {
+    name: 'Thailand',
+    image: '/img/destinations/Thailand-popular.jpg',
+    path: '/thailand'
+  },
+  {
+    name: 'Canada',
+    image: 'https://source.unsplash.com/uhn-U0sSxFQ',
+    path: '/canada'
+  }
 ]
 
 const OtherItineraries = () => {
   return (
     // <Grid container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: 8, sm: 10 }, overflow: "hidden" }}>
-    <Grid container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "12%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -5, sm: -5 }, overflow: "hidden", justifyContent: 'center' }}>
+    <Grid container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -5, sm: -2 }, overflow: "hidden", justifyContent: 'center' }}>
       <Grid item xs={12}>
-      <Typography variant="h3"  fontWeight="300" sx={{ py: 1,  mt: { xs: -7, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Check out our itineraries for other <b>destinations!</b></Typography>
+      <Typography variant="h3"  fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -7, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Check out our itineraries for other <b>destinations!</b></Typography>
       </Grid>
       {Destinations.map(({ name, image, path }) => (
        <Grid item key={path} xs={28} sm={6} md={4} sx={{ display: 'flex', justItems: "center", justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'column', py: 2, mt: { xs: -5, sm: -4 } , mb: { xs: 8, sm: 8 } }}>

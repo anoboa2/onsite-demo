@@ -6,14 +6,14 @@ import OtherItineraries from "./OtherItineraries";
 
 
 
-const ExploreHero = ({  }) => {
+const ThankYou = ({  }) => {
 
   return (
 
         <Grid container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "12%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: 8, sm: 10 }, overflow: "hidden", justifyContent: 'center' }}>              
         <Grid item xs={12}>
-            <Typography variant="h3" container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "12%" } , py: 5, mb: 10, mt: { xs: 8, sm: 10 }, overflow: "hidden" , textAlign:{ xs: "center" , sm: "center" }}}>
-            Thank you for purchasing the <Box component="span" sx={{ color:"primary.main"}} ><b> "Destination" </b></Box> Itinerary</Typography>
+            <Typography variant="h3" container spacing={3} color="primary.main" sx={{ my: 10, px: { xs: 3, sm: "12%" } , py: 5, mb: 10, mt: { xs: 8, sm: 10 }, overflow: "hidden" , textAlign:{ xs: "center" , sm: "center" }}}>
+            Thank you for purchasing the <Box component="span" ><b> "Destination" </b></Box> Itinerary</Typography>
             
             <Typography variant="h6" fontWeight="400"  align='left' container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -10, sm: -10 }, overflow: "hidden", justifyContent: 'center' }}>
            
@@ -37,4 +37,4 @@ const ExploreHero = ({  }) => {
   );
 }
 
-export default ExploreHero;
+export default ThankYou;
