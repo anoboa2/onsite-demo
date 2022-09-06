@@ -61,7 +61,7 @@ const StickySpecialistMobile= () => {
       color="primary"
       onClick={handleOpen}
     >
-      Contac Us
+      Contact Us
     </Button>,
       </Grid>
     </Grid>
