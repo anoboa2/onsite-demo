@@ -20,7 +20,7 @@ const Traveler = [
 
 const OnsiteTravelerIcons = () => {
   return (
-    <Grid  container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: -13, sm: 10 }, overflow: "hidden" }}>
+    <Grid  container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: -13, sm: 150 }, overflow: "hidden" }}>
       <Grid item xs={12}>
         <Typography variant="h2"  fontWeight="300"  sx={{ py: 1,  mt: { xs: -3, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">As an Onsite <b>Traveler </b></Typography>
         <Typography variant="subtitle1" color="text.primary" sx={{ py: 1,  mt: { xs: -8, sm: -9 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}}>You get <Box component="span" fontStyle={'italic'} > <b>wayyy</b></Box> more </Typography>

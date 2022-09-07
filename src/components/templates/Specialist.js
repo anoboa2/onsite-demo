@@ -86,7 +86,7 @@ const Specialist = () => {
             </form>
           </StickyBox>
           
-            <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' ,  visibility:{xs: "hidden" , sm: "visible"} }}>
+            <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
               <Grid container spacing={2} >
                 <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 0 , sm:0} , paddingRight:{xs: 0, sm:0} }}>
                   <Typography variant="h3" align="left" color="primary.main" gutterBottom>
@@ -112,7 +112,7 @@ const Specialist = () => {
                 </Grid>
               </Grid>
             </Box>
-            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -240, sm: -19 }, mb:{xs: 7 , sm: -140} , justifyContent: 'center' }}>
+            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -3, sm: -19 }, mb:{xs: 7 , sm: -140} , justifyContent: 'center' }}>
               <Grid item xs={12}>
                 <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: -2 , sm: -1}, ml: -5 , mr: -5, overflow: "hidden" }}>
                   Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box>
@@ -125,7 +125,7 @@ const Specialist = () => {
               ))}
             </Grid>
 
-            <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' ,  visibility:{sm: "hidden" , xs: "visible"} }}>
+            {/* <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' ,  visibility:{sm: "hidden" , xs: "visible"} }}>
               <Grid container spacing={2} >
                 <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 0 , sm:0} , paddingRight:{xs: 0, sm:0} }}>
                   <Typography variant="h3" align="left" color="primary.main" gutterBottom>
@@ -150,7 +150,7 @@ const Specialist = () => {
                   </Box>
                 </Grid>
               </Grid>
-            </Box>
+            </Box> */}
           </>
           
         ))}
