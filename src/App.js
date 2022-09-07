@@ -7,6 +7,7 @@ import FAQ from './pages/FAQ';
 import Match from './pages/Match';
 import MyItineraries from './pages/MyItineraries';
 import NotFound from './pages/NotFound';
+import PostCheckout from './pages/PostCheckout';
 import Press from './pages/Press';
 import Privacy from './pages/Privacy';
 import Profile from './pages/Profile';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/match" element={<Match />} />
         <Route path="/myitineraries" element={<MyItineraries />} />
+        <Route path="/thankyou" element={<PostCheckout />} />
         <Route path="/press" element={<Press />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/profile" element={<Profile />} />
