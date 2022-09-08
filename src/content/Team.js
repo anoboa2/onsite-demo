@@ -4,7 +4,7 @@ const Team = [
       name: "Izanna Levintova",
       img: '/img/team/Izanna-Levintova.webp',
       alt: "Headshot of Izanna in front of a light blue backdrop",
-      title: "Chief Executive Officer"
+      title: "Founder and Chief Executive Officer"
 
   },
   {
