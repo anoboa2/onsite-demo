@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Explore from './pages/Explore';
 import FAQ from './pages/FAQ';
+import IgRedirect from './pages/IgRedirect';
 import Match from './pages/Match';
 import MyItineraries from './pages/MyItineraries';
 import NotFound from './pages/NotFound';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/explore/:id" element={<SpecialistProfile />} />
+        <Route path="/igredirect" element={<IgRedirect />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/match" element={<Match />} />
         <Route path="/myitineraries" element={<MyItineraries />} />
