@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Grid, Typography , Button , TextField} from '@mui/material';
+import { Box, Grid, Typography , Button , TextField, Collapse} from '@mui/material';
 import ProfileCard from '../molecules/ProfileCard';
 import ItineraryCard from '../molecules/ItineraryCard';
 import SpecialistHero from '../organisms/SpecialistHero';
@@ -13,6 +13,7 @@ const Specialist = () => {
   const [ specialist, setSpecialist ] = useState([]);
   const [ itineraries, setItineraries ] = useState([]);
   const [ values, setValues ] = useState({ destination: '' });
+  const [ expand, setExpand ] = useState(false);
 
   useEffect(() => {
     const getProfile = async () => {
@@ -100,7 +101,7 @@ const Specialist = () => {
                   <Typography variant="h3" color="primary.main" sx={{mr:{xs:-8}}}  >
                     Travel tips from {specialist.first_name}
                   </Typography>
-                  <Box sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 2, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }} >
+                  <Collapse in={expand} collapsedSize={'320px'} orientation="vertical" sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 2, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }}>
                     <Box component="ul" >
                       {specialist.tips && specialist.tips.map(tip => (
                         <Box  component="li" key={tip} >
@@ -108,7 +109,10 @@ const Specialist = () => {
                         </Box>
                       ))}
                     </Box>
-                  </Box>
+                  </Collapse>
+                  <Button variant="contained" color="primary" fullWidth onClick={() => setExpand(!expand)} sx={{ justifyContent: 'center'  , width:{xs: 160 , sm: 200} , mt:{sm: 7} }}>
+                    {expand ? 'Read Less' : 'Read More'}
+                  </Button>
                 </Grid>
               </Grid>
             </Box>
