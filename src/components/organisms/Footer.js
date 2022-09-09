@@ -25,7 +25,7 @@ const Footer = () => {
             <Link href="/press" variant="subtitle1" color="text.primary" underline="hover">Press</Link>
           </Box>
           <Box component="li" sx={{ p: 0.5 }}>
-            <Link href="/blog" variant="subtitle1" color="text.primary" underline="hover">Investors</Link>
+            <Link href="https://wefunder.com/onsiteplanning/" variant="subtitle1" color="text.primary" underline="hover">Investors</Link>
           </Box>
         </Box>
       </Grid>
