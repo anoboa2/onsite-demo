@@ -20,7 +20,7 @@ const NotFound = () => {
                   component="img"
                   src="/img/Error404.png"
                   alt="404 page"
-                  sx={{ height: { xs: 400, sm: 600 }, width: { xs: 400, sm: 600 } }}
+                  sx={{ height: { xs: 400, sm: 600 }, width: { xs: 370, sm: 600 } }}
               />
             </Grid>
           </Grid>
