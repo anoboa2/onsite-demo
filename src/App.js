@@ -16,6 +16,25 @@ import SpecialistProfile from './pages/SpecialistProfile';
 import Terms from './pages/Terms';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/theme';
+import ComingSoon from './pages/ComingSoon';
+
+const Destinations = [
+  {
+    path: '/italy'
+  },
+  {
+    path: '/paris'
+  },
+  {
+    path: '/iceland'
+  },
+  {
+    path: '/thailand'
+  },
+  {
+    path: '/canada'
+  }
+]
 
 
 function App() {
@@ -32,6 +51,9 @@ function App() {
         <Route path="/myitineraries" element={<MyItineraries />} />
         <Route path="/thankyou" element={<PostCheckout />} />
         <Route path="/press" element={<Press />} />
+        {Destinations.map(({ path }) => (
+        <Route path={path} element={<ComingSoon />} />
+        ))}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/terms" element={<Terms />} />
