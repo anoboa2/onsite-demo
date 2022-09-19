@@ -80,13 +80,13 @@ const ItineraryCard = ({ content, firstName }) => {
           zIndex: 999
         }}
        >
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', height:{ sm:645}, width:{xs:350, sm:350}, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', height:{ sm:690}, width:{xs:350, sm:350}, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
           <Typography variant="h6" id={`${title}-modal-title`}>
             {title}
           </Typography>
           <Typography variant="h6" fontWeight={300} lineHeight={1.2} sx={{ mt:{xs: 2 , sm: 2} , mb:{xs: 2 , sm: 2}}}>
-          Curated itinerary with {firstName}'s tips and plans. Inclusive of hotels, restaurants, 
-          activities and transportation. You can use these as a reference for your own travel plans.
+          Below you’ll find a small preview of {firstName}'s curated itinerary with tips and plans. Inclusive of hotels, restaurants, activities and transportation. 
+          You can use these as a reference for your own travel plans.To unlock the full itinerary, click buy now at the bottom.
           </Typography>
           <Button onClick={() => setOpen(false)}
           sx={{
