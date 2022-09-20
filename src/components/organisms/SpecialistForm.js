@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Box, Button, CircularProgress, FormControl, FormControlLabel, FormLabel, Grid, Input, InputLabel, MenuItem, Radio, RadioGroup, Select } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { green, red } from '@mui/material/colors';
@@ -152,6 +153,7 @@ const TravelSpecialistForm = () => {
   const [values, setValues] = useState(defaultValues);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -175,6 +177,8 @@ const TravelSpecialistForm = () => {
         setTimeout(setIsLoading(false), 5000);
         setIsSubmitted(true);
       })
+      .catch(err => console.log(err));
+    navigate({search: '?action=thankyou'}, {replace: true});
   }
 
   return (
