@@ -178,7 +178,7 @@ const TravelSpecialistForm = () => {
         setIsSubmitted(true);
       })
       .catch(err => console.log(err));
-    navigate({search: '?action=thankyou'}, {replace: true});
+    navigate({search: `?action=thankyou&destination=${values.destination}`}, {replace: true});
   }
 
   return (
