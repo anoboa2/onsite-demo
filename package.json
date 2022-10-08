@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.94",
     "@mui/material": "^5.9.2",
@@ -21,6 +22,7 @@
     "intl-tel-input": "^17.0.18",
     "lodash.range": "^3.2.0",
     "react": "^18.2.0",
+    "react-avatar": "^5.0.3",
     "react-dom": "^18.2.0",
     "react-ig-feed": "^1.7.0",
     "react-photo-collage": "^1.0.9",

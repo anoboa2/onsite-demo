@@ -17,11 +17,12 @@ import Terms from './pages/Terms';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/theme';
 import ComingSoon from './pages/ComingSoon';
+import DestinationPage from './components/organisms/DestinationPage';
 
 const Destinations = [
-  {
-    path: '/italy'
-  },
+  // {
+  //   path: '/italy'
+  // },
   {
     path: '/paris'
   },
@@ -34,6 +35,13 @@ const Destinations = [
   {
     path: '/canada'
   }
+]
+
+const Destinations2 = [
+  {
+    path: '/italy'
+  }
+
 ]
 
 
@@ -53,6 +61,9 @@ function App() {
         <Route path="/press" element={<Press />} />
         {Destinations.map(({ path }) => (
         <Route path={path} element={<ComingSoon />} />
+        ))}
+        {Destinations2.map(({ path }) => (
+        <Route path={path} element={<DestinationPage />} />
         ))}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/profile" element={<Profile />} />

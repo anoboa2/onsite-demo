@@ -4,7 +4,7 @@ import './ExploreImage.css';
 
 
 
-const ExploreHero = ({ details }) => {
+const ExploreHero = () => {
 
   return (
     
