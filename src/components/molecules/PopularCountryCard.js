@@ -36,7 +36,7 @@ const PopularCountryCard = (content) => {
         <Avatar
           style={{ marginRight: "14px" }}
           alt="Izanna Levintova"
-          src='/img/team/IzannaL-Profile.jpeg'
+          src='/img/team/IzannaL-Profile.jpg'
         />
         <Typography variant="body2" fontSize={13} fontWeight={400}>{description} <br />
         <Box component="span" fontWeight={500} sx={{ color:"secondary.main"}} >Izanna L.</Box>
