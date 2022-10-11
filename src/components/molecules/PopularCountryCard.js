@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography , Box , Avatar} from "@mui/material";
+import { Card, CardContent, CardMedia, CardActionArea, Typography , Box , Avatar, Grid} from "@mui/material";
 import styled from "styled-components";
 
 
@@ -15,19 +15,47 @@ const AvatarLabel = styled.div`
   align-items: center;
 `;
 
+const Advisors = [
+  {
+    id: 'izanna.lev'
+  }
+  // {
+  //   firstName: 'Alyssa',
+  //   lastName: 'Chlebek',
+  //   title: "Specialist",
+  //   image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/alyssaandthecity/profile.jpeg',
+  //   id: 'alyssaandthecity'
+  // },
+  // {
+  //   firstName: 'Mustafa',
+  //   lastName: 'Ansari',
+  //   title: "Specialist",
+  //   image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/mustafa23ansari/profile.jpeg',
+  //   id: 'mustafa23ansari'
+  // }
+]
+
 const PopularCountryCard = (content) => {
-  const { image, alt, title, description, imagenSpecialist } = content; 
+  const { image, alt, title, description } = content; 
   
 
   return (
-    <Card sx={{ maxWidth: 400 }}>
+
+    <Grid  >
+     {Advisors.map(({ id }) => ( 
+
+    <Card sx={{ maxWidth: 400}}>
+
+    <CardActionArea href={`/explore/${id}`}>
       <CardMedia
         component='img'
         alt={alt}
         height='250'
         image={image}
+        
       />
-      <CardContent>
+      
+      <CardContent >
         <Typography variant="h5" sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{title}</Typography>
         {/* <Typography variant="body1"  sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{description}</Typography> */}
 
@@ -45,7 +73,13 @@ const PopularCountryCard = (content) => {
       </AvatarContainer>
 
       </CardContent>
+      </CardActionArea>
+     
     </Card>
+    
+     ))}
+
+     </Grid>
   );
 }
 
