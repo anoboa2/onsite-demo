@@ -26,7 +26,7 @@ const InstagramFeed = () => {
             </Box>
           </Box>
         </Grid>
-      <InstagramEmbed token="IGQVJXdURaVzVlUFNUOUhwRXdLaUtkdXNmY1NoZADN5M0puZA3htVHp6VzNLX1VrNHd3SXNLTnNNVXZAnQmlLdTByM1R5NDlDSzlZAWlVyNTN1WVRvU1cwakNhWk5uS2ZAYUlc3VFUtQkxDc1dOaVNqNWNpQgZDZD" counter="4" />
+      <InstagramEmbed token="IGQVJVVDJNMzZAudHZAsZAXRHUktNWTdmbkxidEx0WjYwOXFjTVU3OGJHZAHRaRllCRXZANcFVvWUJ1aHd4TUE1SUZAiYlpraDdQQjRfZA0VQaHByWnViclREeWo2SUdMZAW1XZA3JReUFUeFNxOWtmQjh6NGRaZAwZDZD" counter="4" />
     </Grid>
   );
 }
