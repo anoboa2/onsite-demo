@@ -5,12 +5,12 @@ import { ReactPhotoCollage } from 'react-photo-collage';
 
 
 const ItineraryCard = ({ content, firstName }) => {
-  const { title, price, description, prod_id, image_url, static_image, hover_image, itinerary_images, author } = content
-  const [ image, setImage ] = useState(static_image);
+  const { title, price, description, prod_id, images, author } = content
+  const [ image, setImage ] = useState(images?.static_image);
   const [ open, setOpen ] = useState(false);
 
   useEffect(() => {
-    setImage(static_image);
+    setImage(images?.static_image);
   }, []);
 
   const handleCheckout = prod_id => event => {
@@ -34,11 +34,11 @@ const ItineraryCard = ({ content, firstName }) => {
   }
 
   const handleMouseEnter = () => {
-    setImage(hover_image);
+    setImage(images?.hover_image);
   }
 
   const handleMouseLeave = () => {  
-    setImage(static_image);
+    setImage(images?.static_image);
   }
 
   return (
@@ -46,7 +46,7 @@ const ItineraryCard = ({ content, firstName }) => {
       <CardMedia
         component='img'
         alt='itinerary image'
-        src={image_url}
+        src={image}
         title={title}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -103,7 +103,7 @@ const ItineraryCard = ({ content, firstName }) => {
           <ReactPhotoCollage 
           width='350px'
           height={["215px", "215px"]} layout={[2, 2]} 
-          photos={itinerary_images} showNumOfRemainingPhotos={true} />
+          photos={[{source: images?.preview1}, {source: images?.preview2}, {source: images?.preview3}]} showNumOfRemainingPhotos={true} />
           <Button variant="contained" onClick={handleCheckout(prod_id)} sx={{ backgroundColor: "#00aaca", padding: "10px 55px", marginTop: "27px", borderRadius: "10px", color: "white", fontSize: "15px"}}>
             Buy Now
           </Button>
