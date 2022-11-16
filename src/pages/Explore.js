@@ -3,14 +3,13 @@ import NavBar from '../components/organisms/NavBar';
 import PopularItineraries from '../components/organisms/PopularItineraries';
 import Banner from '../components/molecules/Banner';
 import Footer from '../components/organisms/Footer';
-import ExploreBanner from '../content/ExploreBanner';
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
-import HowItWorks from '../components/organisms/HowItWorks';
 import PopularAdvisors from '../components/organisms/PopularAdvisors';
 import ExploreHero from '../components/organisms/ExploreHero';
 import StartBookingBanner from '../content/StartBookingBanner';
 import OnsiteTravelerIcons from '../components/organisms/OnsiteTravelerIcons';
+import SpecialistSignupBanner from '../content/SpecialistSignupBanner';
 
 
 const Explore = () => {
@@ -25,7 +24,7 @@ const Explore = () => {
       <PopularItineraries />
       <OnsiteTravelerIcons/>
       <FAQCondensedSection faqsection={SpecialistSection} />
-      <Banner content={ExploreBanner}/>
+      <Banner content={SpecialistSignupBanner}/>
       <Footer />
     </div>
   );
