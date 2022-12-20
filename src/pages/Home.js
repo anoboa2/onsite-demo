@@ -25,7 +25,7 @@ const Home = () => {
         <Services />
         <Banner content={StartBookingBanner}/>
         <ReviewSlider />
-        <InstagramFeed />
+        {/* <InstagramFeed /> */}
         <FounderQuote />
         <Banner content={SubscribeEmailBanner} />
         <Footer />
