@@ -2,7 +2,6 @@ import NavBar from '../components/organisms/NavBar';
 import HomeHero from '../components/organisms/HomeHero';
 import Services from '../components/organisms/Services';
 import ProductSection from '../components/organisms/ProductSection';
-import FounderQuote from '../components/organisms/FounderQuote';
 import Banner from '../components/molecules/Banner';
 import ReviewSlider from '../components/organisms/ReviewSlider';
 import InstagramFeed from '../components/organisms/InstagramFeed';
@@ -25,8 +24,6 @@ const Home = () => {
         <Services />
         <Banner content={StartBookingBanner}/>
         <ReviewSlider />
-        {/* <InstagramFeed /> */}
-        <FounderQuote />
         <Banner content={SubscribeEmailBanner} />
         <Footer />
       </>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2';
 import './HeroImage.css';
 
 import { makeStyles } from "@mui/styles";
@@ -23,26 +24,26 @@ const useStyles = makeStyles((theme) => ({
   typography2: {
       borderBottom: "3px solid #1CCC6F",
       [theme.breakpoints.down("sm")]: {
-          fontSize: "17px !important",
-          marginRight: "112px !important",
-          display: "block !important",
-          borderBottom: "none !important",
+        fontSize: "17px !important",
+        marginRight: "112px !important",
+        display: "block !important",
+        borderBottom: "none !important",
       },
   },
   typography3: {
     fontSize: "18px !important",
       [theme.breakpoints.down("sm")]: {
-          fontSize: "14px !important",
-          maxWidth: "60%",
-          whiteSpace: "break-spaces",
+        fontSize: "14px !important",
+        maxWidth: "60%",
+        whiteSpace: "break-spaces",
       },
   },
   typography4: {
       display: "inline-block",
       [theme.breakpoints.down("sm")]: {
-          fontSize: "14px !important",
-          display: "block !important",
-          marginRight: "45px !important",
+        fontSize: "14px !important",
+        display: "block !important",
+        marginRight: "45px !important",
       },
   },
   boxtwo: {
@@ -50,9 +51,9 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row !important",
       marginLeft: "140px",
       [theme.breakpoints.down("sm")]: {
-          fontSize: "14px !important",
-          display: "block !important",
-          marginLeft: "0px !important",
+        fontSize: "14px !important",
+        display: "block !important",
+        marginLeft: "0px !important",
       },
       alignItems: "baseline",
   },
@@ -61,9 +62,9 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row !important",
       marginLeft: "140px",
       [theme.breakpoints.down("sm")]: {
-          fontSize: "14px !important",
-          display: "block !important",
-          marginLeft: "0px !important",
+        fontSize: "14px !important",
+        display: "block !important",
+        marginLeft: "0px !important",
       },
   },
   boxfour: {
@@ -78,58 +79,52 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const HomeHero = ({ details }) => {
-  const classes = useStyles()
   return (
-    <div className="hero-image">
-                <div className="hero-text" >
-                    {/* <TypewriterEffectOne /> */}
-
-                    <Typography className={details.isHome ? classes.typography1 : classes.typography12} variant="h1">
-                        {details.header}
-                    </Typography>
-                    {details.subHeader && <><Typography className={classes.typography2} variant="h2" marginBottom={3} display="inline-block" color="#1CCC6F" >
-                        {details.subHeader}
-                    </Typography>
-                        <br /></>}
-                    <Typography className={classes.typography3} maxWidth="40%"  color="text.primary" sx={{ mt:{xs: 1 , sm: 2} }} variant="body1" style={{ display: "inline-block", textAlign: "left" }} >
-                        {details.text}
-                    </Typography>
-                    <br />
-                    <br />
-                    {details.isHome &&
-                        <Box className={classes.boxfour}>
-                            <Box sx={{ p: 1, m: 1, }}>
-                                <Button
-                                    variant="contained"
-                                    href="/match"
-                                    style={{
-                                        color:'primary',padding: "10px 15px",
-                                        borderRadius: "10px",
-                                        color: "white",
-                                        fontSize: "15px"
-                                    }}
-                                 >
-                                    Get Matched With A Travel Specialist
-                                  </Button>
-                                </Box>
-                            <Box sx={{ p: 1, m: 1, zIndex: 999999,}}>
-                                <Button 
-                                    variant="contained"
-                                    href="/explore"
-                                    style={{
-                                        backgroundColor: "#fff",
-                                        padding: "10px 33px",
-                                        borderRadius: "10px",
-                                        color: "#00aaca",
-                                        fontSize: "15px"
-                                    }}
-                                >
-                                    Explore itineraries
-                                </Button>
-                            </Box>
-                        </Box>}
-                </div>
-            </div>
+    <Box className="hero-image" component="div">
+      <Box className="hero-text" component="div" sx={{ position: 'relative', display: 'block', }}>
+        <Typography variant="h1" sx={{ display: 'block' }}>
+          {details.header}
+        </Typography>
+        {details.subHeader && 
+          <Typography variant="h2" sx={{ mb: 3, display: 'block', color: "#1CCC6F"}}>
+            {details.subHeader}
+          </Typography>
+        }
+        <Typography maxWidth="40%"  color="text.primary" sx={{ mt:{xs: 1 , sm: 2} }} variant="body1" style={{ display: "inline-block", textAlign: "left" }} >
+            {details.text}
+        </Typography>
+        <Grid container spacing={2} sx={{ mt: 3, mb: 3, width: '50%' }}>
+          <Grid xs={12} sm={6} sx={{ display: 'block', width: 'auto' }}>
+            <Button
+              variant="contained"
+              href="/match"
+              style={{
+                color:'primary',padding: "10px 15px",
+                borderRadius: "10px",
+                fontSize: "15px"
+              }}
+            >
+              Match with a travel specialist
+            </Button>
+          </Grid>
+          <Grid xs={12} sm={6} sx={{ display: 'block' }}>
+            <Button 
+              variant="text"
+              href="/explore"
+              style={{
+                backgroundColor: "#fff",
+                padding: "10px 33px",
+                borderRadius: "10px",
+                color: "#00aaca",
+                fontSize: "15px"
+              }}
+            >
+              Explore itineraries
+            </Button>
+          </Grid>
+        </Grid>
+      </Box>
+  </Box>
   );
 }
 
