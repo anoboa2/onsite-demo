@@ -36,10 +36,10 @@ const Testimonies = () => {
   };
 
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', mt: 10, mb: 20 }}>
+    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', mt: 10, mb: 20, px: '12%' }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
         <Typography textAlign="center" variant="h2" marginBottom="10px" fontWeight="300">
-          What our <Box component="span" sx={{ color:"#000"}}><b  fontWeight="700 !important">Travelers</b></Box> have to say
+          What our travelers have to say
         </Typography>
         <Typography variant="subtitle1" align="center" color="text.primary">
         A few responses from our travelers who enjoyed using Onsite

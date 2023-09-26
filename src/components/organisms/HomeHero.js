@@ -18,8 +18,7 @@ const HomeHero = ({ details }) => {
         <Typography maxWidth="40%"  color="text.primary" sx={{ mt:{xs: 1 , sm: 2} }} variant="body1" style={{ display: "inline-block", textAlign: "left" }} >
             {details.text}
         </Typography>
-        <Grid container spacing={2} sx={{ mt: 3, mb: 3, width: '50%' }}>
-          <Grid xs={12} sm={6} sx={{ display: 'block', width: 'auto' }}>
+        <Box component="div" sx={{ mt: 3, mb: 3, width: '50%' }}>
             <Button
               variant="contained"
               href="/match"
@@ -31,9 +30,7 @@ const HomeHero = ({ details }) => {
             >
               Match with a travel specialist
             </Button>
-          </Grid>
-          <Grid xs={12} sm={6} sx={{ display: 'block' }}>
-            <Button 
+            {/* <Button 
               variant="text"
               href="/explore"
               style={{
@@ -45,9 +42,8 @@ const HomeHero = ({ details }) => {
               }}
             >
               Explore itineraries
-            </Button>
-          </Grid>
-        </Grid>
+            </Button> */}
+        </Box>
       </Box>
   </Box>
   );
