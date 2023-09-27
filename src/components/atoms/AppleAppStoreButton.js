@@ -10,7 +10,8 @@ const AppleAppStoreButton = () => {
     >
       <Link
         underline="none"
-        href="https://apps.apple.com/us/app/onsite-for-students/id1498425701"
+        href="https://apps.apple.com/us/app/onsite-we-plan-you-enjoy/id1659976501"
+        target="_blank"
       >
         <img
             src="/img/apple-app-store.jpeg"
