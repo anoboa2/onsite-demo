@@ -1,12 +1,10 @@
 import React from "react";
 import { Box, Button, Typography } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2';
-import './HeroImage.css';
 
 const HomeHero = ({ details }) => {
   return (
-    <Box className="hero-image" component="div">
-      <Box className="hero-text" component="div" sx={{ position: 'relative', display: 'block', }}>
+    <Box component="div" sx={{ backgroundImage: 'url("/img/newhero22.png")', height: { xs: '290px', sm: '500px'}, width: '100%', backgroundPosition: 'right', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'relative' }}>
+      <Box component="div" sx={{ position: 'relative', display: 'block', top: { xs: '55%', sm: '30%' }, left: { xs: '37%', sm: '27%' }, pt: '20px', whiteSpace: 'nowrap', maxHeight: {xs: '400px', sm: '600px' }, maxWidth: '50%' }}>
         <Typography variant="h1" sx={{ display: 'block' }}>
           {details.header}
         </Typography>

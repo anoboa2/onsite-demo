@@ -5,7 +5,6 @@ import Footer from '../components/organisms/Footer';
 import Team from  '../content/Team';
 import StartBookingBanner from '../content/StartBookingBanner';
 import AboutHero from '../components/organisms/AboutHero';
-import CollageFounder from '../pages/CollageFounder';
 
 const AboutUs = (setting) => {
   return (
@@ -35,15 +34,6 @@ const AboutUs = (setting) => {
           </Grid>
         ))}
       </Grid>
-
-      <Grid container spacing={3} align="center" sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: -5 , overflow: "hidden" }}>
-        
-      <Grid item xs={12}>
-        <Typography variant="h2" fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -7, sm: -9 } , mb: { xs: 8, sm: 8 } , textAlign:{ xs: "center" , sm: "left" }}} color="primary.contrastText"><b>Why we love to travel</b></Typography>
-        <CollageFounder  {...setting}/>
-        </Grid>
-      </Grid>
-
       <Banner content={StartBookingBanner} />
       <Footer />
     </div>

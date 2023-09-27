@@ -24,7 +24,6 @@ const AboutHero = () => {
           <Typography variant="h6" fontWeight="400" align='left' sx={{ mt: { xs: 3, sm: 3 } , mb: { xs: 6, sm: 6 }}}>
             Our mission is to eliminate the stress and uncertainty of travel planning by connecting travelers with our destination-based, DEDICATED travel specialists, who are COMMITTED to making dream trips a reality. It is like having your own personal matchmaker at your disposal; all users need to do is select their next travel destination and leave the rest to our elite travel planners. As our tagline suggests, “Stress Less, Dream More."
           </Typography>
-          <Typography variant="h3" fontStyle= "italic" align="left" lineHeight={1.3} sx={{ pr: { xs: 3, sm: 20 }  , mb: { xs: 8, sm: -2 }}}>We will use the power of technology & innovation to provide travelers with the most valuable & MEMORABLE travel experiences around the world.</Typography>
         </Grid>
       </Grid>
 

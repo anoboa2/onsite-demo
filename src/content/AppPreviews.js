@@ -22,7 +22,7 @@ const AppPreviews = [
     image: <Box component="img" src='/img/content/three-phone-mockup.webp' alt="" sx={{ height: { xs: 300, sm: 600 }, width: { xs: 400, sm: 600 } }} />,
     alt: 'Private Travel',
     // cta: <Box component="img" src='/img/coming-soon.gif' alt="text of coming soon in flashing green and blue" height="166px" width="228px" sx={{ mt: 5, alignSelf: "center" }} />,
-    cta: <Box component="a" href="https://apps.apple.com/us/app/onsite-we-plan-you-enjoy/id1659976501" target="_blank" sx={{ m:2 }}><AppleAppStoreButton /></Box>,
+    cta: <Box component="div" sx={{ m:2 }}><AppleAppStoreButton /></Box>,
     orientation: { imageSide: 2, textSide: 1 }
   }
 ]
