@@ -1,48 +1,18 @@
-import { Box, Container, Typography , Grid} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const AboutHero = () => {
     return (
-      <div>
-      <Container sx={{ width: { xs: "80%", sm: "50%" }, my: { xs: 0, sm: 10 } , mt: { xs: 12, sm: 14 } , mb: { xs: -8, sm: -8 }}}>
-        <Typography variant="h1"  fontWeight="300" align="center" sx={{ py: 1}} color="primary.contrastText">We are <b color="#000">Onsite.</b></Typography>
-         <Typography variant="h2" fontWeight="300" fontStyle= "italic" align="center" color="secondary.dark" sx={{ py: 1}}>Stress Less, Dream More.</Typography>
-         <Container sx={{ mt: { xs: 8, sm: 10 } , mb: { xs: 8, sm: 10 }  , justifyContent:'center', ml: { xs: -18, sm: -33 } }}>
-          <img 
-          src='/img/content/About-2.jpg' 
-          style={{
-            height:"auto" ,
-            maxWidth:"180%",
-            align: "center",
-          }}
-          />
-       </Container>
-      </Container>
-
-      <Grid container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, overflow: "hidden" }}>
-        <Grid item xs={12}>
-        <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1}} color="primary.contrastText"><b>Our Story</b></Typography>
-          <Typography variant="h6" fontWeight="400" align='left' sx={{ mt: { xs: 3, sm: 3 } , mb: { xs: 6, sm: 6 }}}>
-            Our mission is to eliminate the stress and uncertainty of travel planning by connecting travelers with our destination-based, DEDICATED travel specialists, who are COMMITTED to making dream trips a reality. It is like having your own personal matchmaker at your disposal; all users need to do is select their next travel destination and leave the rest to our elite travel planners. As our tagline suggests, “Stress Less, Dream More."
+      <Box component="div" sx={{ display: 'block', width: "80%", mt: 10, mx: 'auto' }}>
+        <Typography variant="h2" fontStyle= "italic" align="center" color="secondary.dark">Stress Less, Dream More.</Typography>
+        <Box component="img" src='/img/content/About-2.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
+        <Box component="div" sx={{ display: 'block', width: '80%', mx: 'auto', py: 3 }}>
+          <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1}} color="primary.contrastText"><b>Our Story</b></Typography>
+          <Typography variant="body1" fontWeight="400" align='left' sx={{ mt: { xs: 3, sm: 3 } , mb: { xs: 6, sm: 6 }}}>
+            Our mission is to eliminate the stress and uncertainty of travel planning by connecting travelers with our destination-based, dedicated travel specialists who are committed to making dream trips become a reality. It is like having your own personal matchmaker at your disposal; all users need to do is select their next travel destination and leave the rest to our elite travel planners.
           </Typography>
-        </Grid>
-      </Grid>
-
-      <Container sx={{ width: { xs: "80%", sm: "50%" }, my: { xs: 0, sm: 10 } , mt: { xs: -12, sm: 5 } , mb: { xs: -8, sm: -8 }}}>
-         <Container sx={{ mt: { xs: 8, sm: 10 } , mb: { xs: 8, sm: 10 }  , justifyContent:'center', ml: { xs: -18, sm: -33 } }}>
-          <img 
-          src='/img/content/About-3.jpg' 
-          style={{
-            height:"auto" ,
-            maxWidth:"180%",
-            align: "center",
-          }}
-          />
-       </Container>
-      </Container>
-      
-      </div> 
-      
-    
+        </Box>
+        <Box component="img" src='/img/content/About-3.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
+      </Box>
     );
 }
 
