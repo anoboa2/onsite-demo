@@ -224,7 +224,7 @@ const TravelSpecialistForm = () => {
                 <Input id="dates-input" name="dates" value={values.dates} onChange={handleInputChange} />
               </FormControl>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <FormControl variant="outlined" required>
                 <InputLabel htmlFor="age">What is your age?</InputLabel>
                 <Select id="age" name="age" variant="standard" align="left" value={values.age} onChange={handleInputChange}>
@@ -235,7 +235,7 @@ const TravelSpecialistForm = () => {
                   <MenuItem value={'56-65'}>56-65</MenuItem>
                 </Select>
               </FormControl>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm={8}>
               <FormControl component="fieldset" variant="standard" required>
                 <FormLabel id="planning-state-selector" align="left" sx={{ pl: 2 }}>How much have you already planned?</FormLabel>

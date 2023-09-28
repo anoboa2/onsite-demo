@@ -4,7 +4,7 @@ import AccordionItem from '../molecules/AccordionItem';
 const FAQCondensedSection = ({ faqsection }) => {
 
   return (
-    <Grid container sx={{ my: 12 }}>
+    <Grid container sx={{ display: 'block', my: '20vh', mx: 'auto', maxWidth: '1440px' }}>
       <Grid item xs={12}>
         <Typography variant="h2" align="center">
           Have Questions?
