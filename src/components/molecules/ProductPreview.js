@@ -5,7 +5,7 @@ const ProductPreview = ({ content }) => {
   const { header, description, image, cta, orientation } = content;
 
   return (
-    <Grid container spacing={{ xs: 1, sm: 3, maxWidth: '80%' }}>
+    <Grid container spacing={{ xs: 1, sm: 3 }}>
       <Grid sm={12} md={5} order={{ xs: 1, sm: orientation.imageSide }} sx={{ overflow: "hidden", flexShrink: 2 }}>
         {image}
       </Grid>
@@ -14,7 +14,7 @@ const ProductPreview = ({ content }) => {
           <Typography variant="h2">
             {header}
           </Typography>
-          <Typography variant="body1" color="text.primary" sx={{mt: 4}} style={{ textAlign: "justify" }}>
+          <Typography variant="body1" color="text.primary" sx={{ mt: 4, textAlign: "justify" }}>
             {description}
           </Typography>
           {cta}

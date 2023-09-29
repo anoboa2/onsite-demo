@@ -3,8 +3,8 @@ import { Box, Button, Typography } from '@mui/material'
 
 const HomeHero = ({ details }) => {
   return (
-    <Box component="div" sx={{ backgroundImage: 'url("/img/newhero22.png")', height: { xs: '290px', sm: '500px'}, width: '100%', backgroundPosition: 'right', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'relative' }}>
-      <Box component="div" sx={{ position: 'relative', display: 'block', top: { xs: '55%', sm: '30%' }, left: { xs: '37%', sm: '27%' }, pt: '20px', whiteSpace: 'nowrap', maxHeight: {xs: '400px', sm: '600px' }, maxWidth: '50%' }}>
+    <Box component="div" sx={{ backgroundImage: { xs: 'none', sm: 'url("/img/newhero22.png")' }, height: { xs: '75vh', sm: '500px'}, width: '100%', backgroundPosition: 'right', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'relative' }}>
+      <Box component="div" sx={{ position: 'relative', display: 'block', top: '30%', left: { xs: '20%', sm: '27%' }, pt: '20px', whiteSpace: 'nowrap', maxHeight: {xs: '100vh', sm: '600px' }, maxWidth: '50%' }}>
         <Typography variant="h1" sx={{ display: 'block' }}>
           {details.header}
         </Typography>
