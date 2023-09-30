@@ -165,7 +165,8 @@ const TravelSpecialistForm = () => {
     // make fetch request to backend
     setIsLoading(true);
     console.log(values);
-    fetch('https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/booking/submitrequest', {
+    // let url = 'https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/booking/submitrequest';
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
