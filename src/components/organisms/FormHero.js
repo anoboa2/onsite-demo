@@ -1,19 +1,6 @@
 import { Box, Container, Typography } from '@mui/material'
 import SpecialistForm from './SpecialistForm';
 
-// const heroStyle = {
-//   height: '100%',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   textAlign: 'center',
-//   py: 5,
-//   px: { xs: 1, sm: 5 },
-//   m: 0,
-//   backgroundImage: 'url(/img/HeroImage.webp)',
-//   backgroundSize: '100%',
-//   backgroundRepeat: 'no-repeat',
-// }
-
 const FormHero = () => {
   return (
     <Box >
