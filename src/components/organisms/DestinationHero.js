@@ -1,4 +1,4 @@
-import { Box, Container, Typography , Grid} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 const DestinationHero = () => {
     return (

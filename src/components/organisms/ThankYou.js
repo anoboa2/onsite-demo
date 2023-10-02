@@ -1,7 +1,6 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
 import { Box, Grid, Typography } from '@mui/material'
-import './ExploreImage.css';
 import OtherItineraries from "./OtherItineraries";
 
 const ThankYou = () => {

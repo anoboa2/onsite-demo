@@ -1,17 +1,26 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import NavBar from '../components/organisms/NavBar';
-import Banner from '../components/molecules/Banner';
+import Banner from '../templates/Banner';
 import Footer from '../components/organisms/Footer';
 import Team from  '../content/Team';
 import StartBookingBanner from '../content/StartBookingBanner';
-import AboutHero from '../components/organisms/AboutHero';
 
 const AboutUs = () => {
   return (
     <div>
       <NavBar />
-      <AboutHero/>
+      <Box component="div" sx={{ display: 'block', width: "80%", mt: 10, mx: 'auto' }}>
+        <Typography variant="h2" fontStyle= "italic" align="center" color="secondary.dark">Stress Less, Dream More.</Typography>
+        <Box component="img" src='/img/content/About-2.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
+        <Box component="div" sx={{ display: 'block', width: '80%', mx: 'auto', py: 3 }}>
+          <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1}} color="primary.contrastText"><b>Our Story</b></Typography>
+          <Typography variant="body1" fontWeight="400" align='left' sx={{ mt: { xs: 3, sm: 3 } , mb: { xs: 6, sm: 6 }}}>
+            Our mission is to eliminate the stress and uncertainty of travel planning by connecting travelers with our destination-based, dedicated travel specialists who are committed to making dream trips become a reality. It is like having your own personal matchmaker at your disposal; all users need to do is select their next travel destination and leave the rest to our elite travel planners.
+          </Typography>
+        </Box>
+        <Box component="img" src='/img/content/About-3.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
+      </Box>
       <Box component="div" sx={{ display: 'block', width: "70%", pb: 10, mx: 'auto' }}>
         <Typography variant="h2" align="left" sx={{ textAlign:{ xs: "center" , sm: "left" }}} color="primary.contrastText"><b>Meet Our Founders</b></Typography>
         <Grid container spacing={2} sx={{ mt: 7 }} >
@@ -26,7 +35,9 @@ const AboutUs = () => {
         ))}
         </Grid>
       </Box>
-      <Banner content={StartBookingBanner} />
+      <Banner>
+          
+      </Banner>
       <Footer />
     </div>
   );
