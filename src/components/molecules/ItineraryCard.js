@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Backdrop, Button, Box, Modal, Typography , Card, CardContent, CardMedia, CardActions } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { ReactPhotoCollage } from 'react-photo-collage';
+// import { ReactPhotoCollage } from 'react-photo-collage';
 
 
 const ItineraryCard = ({ content, firstName }) => {
@@ -100,10 +100,12 @@ const ItineraryCard = ({ content, firstName }) => {
           >
             <CloseIcon />
           </Button>
-          <ReactPhotoCollage 
-          width='350px'
-          height={["215px", "215px"]} layout={[2, 2]} 
-          photos={[{source: images?.preview1}, {source: images?.preview2}, {source: images?.preview3}]} showNumOfRemainingPhotos={true} />
+          {/* <ReactPhotoCollage 
+            width='350px'
+            height={["215px", "215px"]} layout={[2, 2]} 
+            photos={[{source: images?.preview1}, {source: images?.preview2}, {source: images?.preview3}]}
+            showNumOfRemainingPhotos={true}
+          /> */}
           <Button variant="contained" onClick={handleCheckout(prod_id)} sx={{ backgroundColor: "#00aaca", padding: "10px 55px", marginTop: "27px", borderRadius: "10px", color: "white", fontSize: "15px"}}>
             Buy Now
           </Button>
