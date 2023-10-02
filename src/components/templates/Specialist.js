@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Grid, Typography , Button , TextField, Collapse} from '@mui/material';
+import { Box, Grid, Typography , Button , Collapse} from '@mui/material';
 import ProfileCard from '../molecules/ProfileCard';
 import ItineraryCard from '../molecules/ItineraryCard';
 import SpecialistHero from '../organisms/SpecialistHero';
-import StickySpecialist from '../organisms/StickySpecialist';
-import StickyBox from "react-sticky-box";
 
 
 const Specialist = () => {

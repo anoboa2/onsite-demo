@@ -4,7 +4,6 @@ import Services from '../components/organisms/Services';
 import ProductSection from '../components/organisms/ProductSection';
 import Banner from '../components/molecules/Banner';
 import ReviewSlider from '../components/organisms/ReviewSlider';
-import InstagramFeed from '../components/organisms/InstagramFeed';
 import Footer from '../components/organisms/Footer';
 import StartBookingBanner from '../content/StartBookingBanner';
 import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
