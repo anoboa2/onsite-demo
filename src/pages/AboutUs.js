@@ -1,10 +1,9 @@
-import { Avatar, Box, Typography } from '@mui/material';
+import { Avatar, Box, Button, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import NavBar from '../components/organisms/NavBar';
-import Banner from '../templates/Banner';
+import Banner from '../components/templates/Banner';
 import Footer from '../components/organisms/Footer';
 import Team from  '../content/Team';
-import StartBookingBanner from '../content/StartBookingBanner';
 
 const AboutUs = () => {
   return (
@@ -21,7 +20,7 @@ const AboutUs = () => {
         </Box>
         <Box component="img" src='/img/content/About-3.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
       </Box>
-      <Box component="div" sx={{ display: 'block', width: "70%", pb: 10, mx: 'auto' }}>
+      <Box component="div" sx={{ display: 'block', width: "64%", pb: 10, mx: 'auto' }}>
         <Typography variant="h2" align="left" sx={{ textAlign:{ xs: "center" , sm: "left" }}} color="primary.contrastText"><b>Meet Our Founders</b></Typography>
         <Grid container spacing={2} sx={{ mt: 7 }} >
         {Team.map((teamMember) => (
@@ -36,7 +35,15 @@ const AboutUs = () => {
         </Grid>
       </Box>
       <Banner>
-          
+        <Typography variant="h3" align="center" sx={{ pb: 1 }} color="primary.main">What Makes Us Different</Typography>
+        <Typography variant="body1" lineHeight={1.4} align="center" sx={{ pb: 1 , paddingLeft: { xs: -7, sm: 15 } , paddingRight: { xs: -7, sm: 15 } , mt: { xs: 2, sm: 1 } ,  mb: { xs: 2} }} >We are travel aficionados. We design and then book itineraries based on your travel profile, interests, and budget. Our local travel specialists curate the best travel plans based on their experiences in your destination. Plus, we enable you to live like a local and show you as much as possible instead of rushing through a city or booking private tours by yourself.</Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/aboutus"
+        >
+          Learn More
+        </Button>
       </Banner>
       <Footer />
     </div>
