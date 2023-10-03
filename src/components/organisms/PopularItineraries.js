@@ -1,5 +1,6 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
+import DestinationCard from '../molecules/DestinationCard';
 
 const Destinations = [
   {
@@ -31,42 +32,16 @@ const Destinations = [
 
 const PopularItineraries = () => {
   return (
-    <Container sx={{ height: '100vh', maxWidth: '1440px' }}>
-      <Box component="div" sx={{ display: 'block' }}>
-        <Typography variant="h2" align="center" color="primary.contrastText">Our Popular Destinations</Typography>
-        <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'row', py: 2 }}>
-        {Destinations.map(({ name, image, path }) => (
-          <Grid key={path} xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Box component="a" href={path} sx={{ textDecoration: 'none' }}>
-              <Box component="div" sx={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})`,
-                backgroundSize: 'cover',
-                borderRadius: '20px',
-                m: '30',
-                px: 2,
-                minHeight: '350px',
-                maxHeight: '500px',
-                minWidth: '250px',
-                maxWidth: '280px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                '&:hover': {
-                  background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${image})`,
-                  backgroundSize: 'cover',
-                  backdropFilter: 'blur(5px)',
-                }
-                }}
-              >
-                <Typography variant="h2" color="white">{name}</Typography>
-              </Box>
-            </Box>
-          </Grid>
-        ))}
+    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+      <Typography variant="h2" align="center" color="primary.contrastText" sx={{ py: 5 }}>Our Popular Destinations</Typography>
+      <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'row', py: 2 }}>
+      {Destinations.map(({ name, image, path }) => (
+        <Grid key={path} xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <DestinationCard destination={name} image={image} path={path} />
         </Grid>
-      </Box>
-    </Container>
+      ))}
+      </Grid>
+    </Box>
   );
 }
 

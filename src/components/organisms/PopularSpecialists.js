@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import SpecialistAvatar from '../molecules/SpecialistAvatar';
 
@@ -26,10 +26,10 @@ const Advisors = [
   }
 ]
 
-const PopularAdvisors = () => {
+const PopularSpecialists = () => {
   return (
-    <Container>
-      <Typography variant="h3" align="center" color="primary.contrastText">Our Popular Specialists</Typography>
+    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+      <Typography variant="h2" align="center" color="primary.contrastText" sx={{ py: 4 }}>Our Popular Specialists</Typography>
       <Grid container spacing={3}>
         {Advisors.map(({ firstName, lastName, title, image, id }) => (
           <Grid key={id} xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' }}>
@@ -37,8 +37,8 @@ const PopularAdvisors = () => {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Box>
   )
 }
 
-export default PopularAdvisors;
+export default PopularSpecialists;

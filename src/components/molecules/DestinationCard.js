@@ -1,56 +1,47 @@
-import { Avatar, Box, Card, CardContent, CardMedia, CardActionArea, Typography} from "@mui/material";
+import { Box, Typography } from '@mui/material';
 
-
-const Advisors = [
-  {
-    id: 'izanna.lev'
-  }
-  // {
-  //   firstName: 'Alyssa',
-  //   lastName: 'Chlebek',
-  //   title: "Specialist",
-  //   image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/alyssaandthecity/profile.jpeg',
-  //   id: 'alyssaandthecity'
-  // },
-  // {
-  //   firstName: 'Mustafa',
-  //   lastName: 'Ansari',
-  //   title: "Specialist",
-  //   image: 'https://onsite-images-1xo7eac.s3.amazonaws.com/profile/mustafa23ansari/profile.jpeg',
-  //   id: 'mustafa23ansari'
-  // }
-]
-
-const DestinationCard = (content) => {
-  const { image, alt, title, description } = content; 
-  
+const DestinationCard = ({ destination, image, path }) => {
   return (
-    <Box component="div">
-    {Advisors.map(({ id }) => ( 
-      <Card sx={{ maxWidth: 400}}>
-        <CardActionArea href={`/explore/${id}`}>
-          <CardMedia component='img' alt={alt} height='250' image={image} />
-          <CardContent>
-            <Typography variant="h5" sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{title}</Typography>
-            {/* <Typography variant="body1" sx={{mt: {xs: 2 , sm: 2} , mb: {xs: 2 , sm: 2}}}>{description}</Typography> */}
-            <Box component="div" sx={{ display: 'flex', mb: '14px' }}>
-              <Box component="div" sx={{ display: 'flex', alignItems: 'center' }}>
-                <Avatar
-                  style={{ marginRight: "14px" }}
-                  alt="Izanna Levintova"
-                  src='/img/team/IzannaL-Profile.jpg'
-                />
-                <Typography variant="body2" fontSize={13} fontWeight={400}>{description} <br />
-                  <Box component="span" fontWeight={500} sx={{ color:"secondary.main"}} >Izanna L.</Box>
-                </Typography>
-              </Box>
-            </Box>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    ))}
+    <Box
+      component="a"
+      href={path}
+      sx={{
+        textDecoration: 'none'
+      }}
+    >
+      <Box
+        component="div"
+        sx={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})`,
+          backgroundSize: 'cover',
+          borderRadius: '20px',
+          m: '30',
+          px: 2,
+          minHeight: '350px',
+          maxHeight: '500px',
+          minWidth: '250px',
+          maxWidth: '280px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          transition: 'background 0.9s ease-in-out',
+          '&:hover': {
+            background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${image})`,
+            backgroundSize: 'cover',
+            backdropFilter: 'blur(5px)',
+          }
+        }}
+      >
+        <Typography
+          variant="h3"
+          color="white"
+        >
+          {destination}
+        </Typography>
+      </Box>
     </Box>
-  );
+  )
 }
 
 export default DestinationCard;

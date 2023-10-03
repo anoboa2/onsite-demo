@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import BasePage from '../components/templates/BasePage';
 
 import CheckoutSnackbar from '../components/atoms/CheckoutSnackbar';
@@ -7,7 +7,7 @@ import PopularItineraries from '../components/organisms/PopularItineraries';
 
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
-import PopularAdvisors from '../components/organisms/PopularAdvisors';
+import PopularSpecialists from '../components/organisms/PopularSpecialists';
 import { SpecialistSignupBanner } from '../components/organisms/Banners';
 import MemberBenefits from '../components/organisms/MemberBenefits';
 import Hero from '../components/templates/Hero';
@@ -30,10 +30,18 @@ const Explore = () => {
         </Box>
       </Hero>
       <CheckoutSnackbar />
-      <PopularAdvisors />
-      <PopularItineraries />
-      <MemberBenefits />
-      <FAQCondensedSection faqsection={SpecialistSection} />
+      <Container sx={{ display: 'block', position: 'relative', height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <PopularSpecialists />
+      </Container>
+      <Container sx={{ display: 'block', position: 'relative', height: '100%', minHeight: '70vh', width: '80%', my: 10 }}>
+        <PopularItineraries />
+      </Container>
+      <Container sx={{ display: 'block', position: 'relative', height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <MemberBenefits />
+      </Container>
+      <Container sx={{ display: 'block', position: 'relative', height: '100%', minHeight: '50vh', width: '80%' }}>
+        <FAQCondensedSection faqsection={SpecialistSection} />
+      </Container>
       <SpecialistSignupBanner />
     </BasePage>
   );
