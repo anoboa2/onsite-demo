@@ -2,7 +2,6 @@ import { Box, Grid, Link, Typography } from '@mui/material';
 import NavBar from '../components/organisms/NavBar';
 import Footer from '../components/organisms/Footer';
 import PressLinks from '../content/PressLinks';
-import Banner from '../components/molecules/Banner';
 import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
 const Press = () => {
