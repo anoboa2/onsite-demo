@@ -1,26 +1,22 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import AccordionItem from '../molecules/AccordionItem';
 
 const FAQCondensedSection = ({ faqsection }) => {
 
   return (
-    <Grid container sx={{ display: 'block', my: '20vh', mx: 'auto', maxWidth: '1440px' }}>
-      <Grid item xs={12}>
-        <Typography variant="h2" align="center">
-          Have Questions?
-        </Typography>
-        <Typography variant="subtitle1" color="text.primary" align="center" marginTop={2}>
-          We've got all your answers right here
-        </Typography>
-      </Grid>
-        <Box sx={{ mt: 6, display: 'flex', justifyContent: "space-around", borderRadius: 50 }}>
-          <Box sx={{ px: "15%" }}>
-            {faqsection && faqsection.map((faq) => (
-              <AccordionItem key={faq.order} content={faq} />
-            ))}
-          </Box>
-        </Box>
-    </Grid>
+    <Box component="div" sx={{ display: 'block' }}>
+      <Typography variant="h2" align="center">
+        Have Questions?
+      </Typography>
+      <Typography variant="subtitle1" align="center" color="text.primary" sx={{ mt: 2 }}>
+        We've got all your answers right here
+      </Typography>
+      <Box component="div" sx={{ display: 'block', mt: 6 }}>
+      {faqsection && faqsection.map((faq) => (
+        <AccordionItem key={faq.order} content={faq} />
+      ))}
+      </Box>
+    </Box>
   )
 }
 
