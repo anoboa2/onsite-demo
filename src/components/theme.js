@@ -149,6 +149,13 @@ const augmentedTheme = {
         },
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: '1440px',
+        },
+      },
+    },
   },
 };
 
