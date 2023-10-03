@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 const Destinations = [
   {
@@ -30,7 +30,7 @@ const Destinations = [
 
 const PopularItineraries = () => {
   return (
-    // <Grid container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: 8, sm: 10 }, overflow: "hidden" }}>
+    <Container sx={{ height: '100%', maxWidth: '1440px' }}>
     <Grid container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "20%" } , alignContent: 'center', py: 5, mb: { xs: 8, sm: -145 }, mt: { xs: 8, sm: 10 }, overflow: "hidden", justifyContent: 'center' }}>
       <Grid item xs={12}>
       <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -7, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Our Popular Destinations</Typography>
@@ -66,6 +66,7 @@ const PopularItineraries = () => {
       ))}
 
     </Grid>
+    </Container>
   );
 }
 

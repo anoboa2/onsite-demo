@@ -16,7 +16,7 @@ import SpecialistProfile from './pages/SpecialistProfile';
 import Terms from './pages/Terms';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/theme';
-import DestinationPage from './components/organisms/DestinationPage';
+import Destination from './pages/Destination';
 
 const Destinations = [
   // {
@@ -59,7 +59,7 @@ function App() {
         <Route path="/thankyou" element={<PostCheckout />} />
         <Route path="/press" element={<Press />} />
         {Destinations2.map(({ path }) => (
-        <Route path={path} element={<DestinationPage />} />
+        <Route path={path} element={<Destination />} />
         ))}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/profile" element={<Profile />} />
