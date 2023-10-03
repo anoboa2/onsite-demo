@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Box, Button, CircularProgress, FormControl, FormControlLabel, FormLabel, Grid, Input, InputLabel, MenuItem, Radio, RadioGroup, Select } from '@mui/material';
+import { Box, Button, CircularProgress, FormControl, FormControlLabel, FormLabel, Grid, Input, InputLabel, Radio, RadioGroup } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { green, red } from '@mui/material/colors';
 import SpecialistResult from './SpecialistResult';
@@ -134,8 +134,7 @@ const defaultValues = {
   phoneNumber: '',
   destination: '',
   dates: '',
-  planningState: '',
-  age: ''
+  planningState: ''
 }
 
 const formStyle = {
@@ -226,18 +225,6 @@ const TravelSpecialistForm = () => {
                 <Input id="dates-input" name="dates" value={values.dates} onChange={handleInputChange} />
               </FormControl>
             </Grid>
-            {/* <Grid item xs={12} sm={6}>
-              <FormControl variant="outlined" required>
-                <InputLabel htmlFor="age">What is your age?</InputLabel>
-                <Select id="age" name="age" variant="standard" align="left" value={values.age} onChange={handleInputChange}>
-                  <MenuItem value={'18-25'}>18-25</MenuItem>
-                  <MenuItem value={'26-35'}>26-35</MenuItem>
-                  <MenuItem value={'36-45'}>36-45</MenuItem>
-                  <MenuItem value={'46-55'}>46-55</MenuItem>
-                  <MenuItem value={'56-65'}>56-65</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid> */}
             <Grid item xs={12} sm={8}>
               <FormControl component="fieldset" variant="standard" required>
                 <FormLabel id="planning-state-selector" align="left" sx={{ pl: 2 }}>How much have you already planned?</FormLabel>

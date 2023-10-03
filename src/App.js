@@ -19,24 +19,6 @@ import theme from './components/theme';
 import Destination from './pages/Destination';
 
 const Destinations = [
-  // {
-  //   path: '/italy'
-  // },
-  {
-    path: '/paris'
-  },
-  {
-    path: '/iceland'
-  },
-  {
-    path: '/thailand'
-  },
-  {
-    path: '/canada'
-  }
-]
-
-const Destinations2 = [
   {
     path: '/italy'
   }
@@ -58,7 +40,7 @@ function App() {
         <Route path="/myitineraries" element={<MyItineraries />} />
         <Route path="/thankyou" element={<PostCheckout />} />
         <Route path="/press" element={<Press />} />
-        {Destinations2.map(({ path }) => (
+        {Destinations.map(({ path }) => (
         <Route path={path} element={<Destination />} />
         ))}
         <Route path="/privacy" element={<Privacy />} />

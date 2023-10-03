@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const Destinations = [
   {
@@ -30,42 +31,41 @@ const Destinations = [
 
 const PopularItineraries = () => {
   return (
-    <Container sx={{ height: '100%', maxWidth: '1440px' }}>
-    <Grid container spacing={3} sx={{ my: 10, px: { xs: 3, sm: "20%" } , alignContent: 'center', py: 5, mb: { xs: 8, sm: -145 }, mt: { xs: 8, sm: 10 }, overflow: "hidden", justifyContent: 'center' }}>
-      <Grid item xs={12}>
-      <Typography variant="h2"  fontWeight="300" align="left" sx={{ py: 1,  mt: { xs: -7, sm: -7 } , mb: { xs: 8, sm: 8 } ,  textAlign:{ xs: "center" , sm: "center" }}} color="primary.contrastText">Our Popular Destinations</Typography>
-      </Grid>
-      {Destinations.map(({ name, image, path }) => (
-       <Grid item key={path} xs={28} sm={6} md={4} sx={{ display: 'flex', justItems: "center", justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'column', py: 2, mt: { xs: -5, sm: -4 } , mb: { xs: 8, sm: 8 } }}>
-          <Box component="a" href={path} sx={{ textDecoration: 'none', mb:{xs: -4, sm: -4} }}>
-            <Box sx={{
-              background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})`,
-              backgroundSize: 'cover',
-              borderRadius: '20px',
-              m: '30',
-              px: 2,
-              minHeight: '350px',
-              maxHeight: '500px',
-              minWidth: '250px',
-              maxWidth: '280px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              '&:hover': {
-                background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${image})`,
+    <Container sx={{ height: '100vh', maxWidth: '1440px' }}>
+      <Box component="div" sx={{ display: 'block' }}>
+        <Typography variant="h2" align="center" color="primary.contrastText">Our Popular Destinations</Typography>
+        <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'row', py: 2 }}>
+        {Destinations.map(({ name, image, path }) => (
+          <Grid key={path} xs={12} sm={6} md={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Box component="a" href={path} sx={{ textDecoration: 'none' }}>
+              <Box component="div" sx={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})`,
                 backgroundSize: 'cover',
-                backdropFilter: 'blur(5px)',
-              }
-              }}
-            >
+                borderRadius: '20px',
+                m: '30',
+                px: 2,
+                minHeight: '350px',
+                maxHeight: '500px',
+                minWidth: '250px',
+                maxWidth: '280px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                '&:hover': {
+                  background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${image})`,
+                  backgroundSize: 'cover',
+                  backdropFilter: 'blur(5px)',
+                }
+                }}
+              >
                 <Typography variant="h2" color="white">{name}</Typography>
+              </Box>
             </Box>
-          </Box>
-      </Grid>
-      ))}
-
-    </Grid>
+          </Grid>
+        ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }

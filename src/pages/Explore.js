@@ -7,7 +7,7 @@ import Footer from '../components/organisms/Footer';
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
 import PopularAdvisors from '../components/organisms/PopularAdvisors';
-import { SpecialistSignupBanner, StartBookingBanner } from '../components/organisms/Banners';
+import { SpecialistSignupBanner } from '../components/organisms/Banners';
 import MemberBenefits from '../components/organisms/MemberBenefits';
 import Hero from '../components/templates/Hero';
 
@@ -31,7 +31,6 @@ const Explore = () => {
       </Hero>
       <CheckoutSnackbar />
       <PopularAdvisors />
-      <StartBookingBanner />
       <PopularItineraries />
       <MemberBenefits />
       <FAQCondensedSection faqsection={SpecialistSection} />

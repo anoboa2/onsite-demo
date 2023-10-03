@@ -7,11 +7,9 @@ import AppPreviews from '../../content/AppPreviews';
 const ProductSection = () => {
   return (
     <Box sx={{ display: 'block', margin: 'auto', maxWidth: { xs: '90%', sm: '80%', md: '70%'} }}>
-      {AppPreviews.map((content, index) => {
-        return (
-          <ProductPreview key={index} content={content} />
-        )
-      })}
+    {AppPreviews.map((content, index) => (
+      <ProductPreview key={index} content={content} />
+    ))}
     </Box>
   )
 }

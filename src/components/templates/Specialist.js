@@ -90,7 +90,7 @@ const Specialist = () => {
                 </Grid>
               </Grid>
             </Box>
-            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -3, sm: -19 }, mb:{xs: 7 , sm: -140} , justifyContent: 'center' }}>
+            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -3, sm: -19 } , justifyContent: 'center' }}>
               <Grid item xs={12}>
                 <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: -2 , sm: -1}, ml: -5 , mr: -5, overflow: "hidden" }}>
                   Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box>

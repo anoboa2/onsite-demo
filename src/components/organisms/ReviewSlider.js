@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useRef } from "react";
 import { useEffect } from "react";
 import "./line-indicator.css";
-import { Avatar, Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Paper, Typography } from "@mui/material";
 import Reviews from '../../content/Reviews';
 
 const Testimonies = () => {
