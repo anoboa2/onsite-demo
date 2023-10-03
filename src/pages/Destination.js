@@ -1,19 +1,15 @@
 import { Box, Typography } from '@mui/material';
-import StandardPage from "../components/templates/StandardPage";
-
+import BasePage from "../components/templates/BasePage";
 
 import Hero from "../components/templates/Hero";
-import DestinationProfile from "../components/organisms/DestinationProfile";
+import DestinationSpecialists from "../components/organisms/DestinationSpecialists";
 import MemberBenefits from "../components/organisms/MemberBenefits";
-import PopularItinerariesCountry from "../components/organisms/PopularItinerariesCountry";
+import DestinationItineraries from "../components/organisms/DestinationItineraries";
 import { StartBookingBanner } from "../components/organisms/Banners";
-
-
-
 
 const Destination = () => {
   return (
-    <StandardPage>
+    <BasePage>
       <Hero image='url("/img/destinations/italy-cover2.jpg")'>
         <Box component="div" sx={{ display: 'block', m: 'auto', width: '80%', maxWidth: '1440px', height: '100%', backgroundColor: 'rgba(255, 255, 255, .1)' }}>
           <Box component="div" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'space-evenly', backgroundColor: 'rgba(255, 255, 255, .1)' }}>
@@ -26,10 +22,10 @@ const Destination = () => {
         </Box>
       </Hero>
       <MemberBenefits />
-      <PopularItinerariesCountry />
-      <DestinationProfile />
+      <DestinationItineraries />
+      <DestinationSpecialists />
       <StartBookingBanner />
-    </StandardPage>
+    </BasePage>
   );
 }
 

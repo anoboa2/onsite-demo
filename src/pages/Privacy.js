@@ -1,12 +1,10 @@
 import { Box, Container } from '@mui/material';
-import NavBar from '../components/organisms/NavBar';
-import Footer from '../components/organisms/Footer';
+import BasePage from '../components/templates/BasePage';
 import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
 function Privacy() {
   return (
-    <div>
-      <NavBar />
+    <BasePage>
       <Container>
         <Box sx={{ mt: 7, mb: 12 }}>
           <body>
@@ -158,8 +156,7 @@ To ask questions or comment about this privacy policy and our privacy practices,
           </Box>
         </Container>
         <SubscribeEmailBanner />
-      <Footer />
-    </div>
+    </BasePage>
   );
 }
 

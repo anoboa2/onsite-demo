@@ -1,11 +1,9 @@
 import { Box, Grid, Typography } from '@mui/material';
-import NavBar from '../components/organisms/NavBar';
-import Footer from '../components/organisms/Footer';
+import BasePage from '../components/templates/BasePage';
 
 const NotFound = () => {
     return (
-      <>
-        <NavBar />
+      <BasePage>
           <Grid container spacing={3} sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, mt: { xs: 10, sm: 10 }, overflow: "hidden" }}>
             <Grid item xs={12} sm={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <Typography variant="h3">
@@ -24,8 +22,7 @@ const NotFound = () => {
               />
             </Grid>
           </Grid>
-        <Footer />
-      </>
+      </BasePage>
     );
 }
 

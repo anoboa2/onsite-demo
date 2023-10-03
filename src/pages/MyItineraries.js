@@ -1,12 +1,10 @@
 import { Grid, Typography } from '@mui/material';
-import NavBar from '../components/organisms/NavBar';
-import Footer from '../components/organisms/Footer';
+import BasePage from '../components/templates/BasePage';
 
 const MyItineraries = () => {
 
   return (
-    <>
-      <NavBar />
+    <BasePage>
       <Grid container spacing={2} sx={{ mt: '10vh', height: '90vh', px: 20}}>
         <Grid item xs={12} sx={{ mt: 20 }}>
           <Typography variant='h4'>My Itineraries</Typography>
@@ -22,8 +20,7 @@ const MyItineraries = () => {
             </Grid>
           ))} */}
       </Grid>
-      <Footer />
-    </>
+    </BasePage>
   );
 }
 

@@ -1,7 +1,7 @@
 import NavBar from "../organisms/NavBar";
 import Footer from "../organisms/Footer";
 
-const StandardPage = ({ children }) => {
+const BasePage = ({ children }) => {
   return (
     <>
       <NavBar />
@@ -11,4 +11,4 @@ const StandardPage = ({ children }) => {
   );
 }
 
-export default StandardPage;
+export default BasePage;

@@ -1,14 +1,12 @@
 import { Grid } from '@mui/material';
-import NavBar from '../components/organisms/NavBar.js'
+import BasePage from '../components/templates/BasePage.js';
 import ProfileSideMenu from '../components/organisms/ProfileSideMenu.js'
 import TravelProfile from '../components/templates/TravelProfile.js'
-import Footer from '../components/organisms/Footer.js'
 
 
 const Profile = () => {
   return (
-    <>
-      <NavBar  />
+    <BasePage>
       <Grid container spacing={2} style={{ overflowX: "visible" }}>
         <Grid item sm={3} xs={2}>
           <ProfileSideMenu />
@@ -17,8 +15,7 @@ const Profile = () => {
           <TravelProfile />
         </Grid>
       </Grid>
-      <Footer />
-    </>
+    </BasePage>
   )
 }
 

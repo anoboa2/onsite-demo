@@ -1,9 +1,10 @@
 import { Box, Typography } from '@mui/material'
+import BasePage from '../components/templates/BasePage';
 
 import CheckoutSnackbar from '../components/atoms/CheckoutSnackbar';
-import NavBar from '../components/organisms/NavBar';
+
 import PopularItineraries from '../components/organisms/PopularItineraries';
-import Footer from '../components/organisms/Footer';
+
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
 import { SpecialistSection } from '../content/FAQItems';
 import PopularAdvisors from '../components/organisms/PopularAdvisors';
@@ -15,8 +16,7 @@ import Hero from '../components/templates/Hero';
 const Explore = () => {
 
   return (
-    <div>
-      <NavBar />
+    <BasePage>
       <Hero image='url("/img/banner.jpg")'>
         <Box component="div" sx={{ mt: 2 }}>              
           <Box component="div" sx={{ position: 'absolute', display: 'block', top: '40%', left: '10%' }} >
@@ -35,8 +35,7 @@ const Explore = () => {
       <MemberBenefits />
       <FAQCondensedSection faqsection={SpecialistSection} />
       <SpecialistSignupBanner />
-      <Footer />
-    </div>
+    </BasePage>
   );
 }
 

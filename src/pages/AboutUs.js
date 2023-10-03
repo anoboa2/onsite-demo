@@ -1,14 +1,13 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import NavBar from '../components/organisms/NavBar';
+import BasePage from '../components/templates/BasePage';
 import { StartBookingBanner } from '../components/organisms/Banners';
-import Footer from '../components/organisms/Footer';
+
 import Team from  '../content/Team';
 
 const AboutUs = () => {
   return (
-    <div>
-      <NavBar />
+    <BasePage>
       <Box component="div" sx={{ display: 'block', width: "80%", mt: 10, mx: 'auto' }}>
         <Typography variant="h2" fontStyle= "italic" align="center" color="secondary.dark">Stress Less, Dream More.</Typography>
         <Box component="img" src='/img/content/About-2.jpg' sx={{ display: 'block', height: "90%", width: "90%", mt: { xs: 8, sm: 10 }, mb: { xs: 8, sm: 10 }, mx: 'auto' }}/>
@@ -35,8 +34,7 @@ const AboutUs = () => {
         </Grid>
       </Box>
       <StartBookingBanner />
-      <Footer />
-    </div>
+    </BasePage>
   );
 }
 

@@ -1,13 +1,11 @@
 import { Box, Grid, Link, Typography } from '@mui/material';
-import NavBar from '../components/organisms/NavBar';
-import Footer from '../components/organisms/Footer';
+import BasePage from '../components/templates/BasePage';
 import PressLinks from '../content/PressLinks';
 import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
 const Press = () => {
   return (
-    <>
-      <NavBar />
+    <BasePage>
       <Grid container spacing={3} sx={{ my: 5, pb: 5 }}>
         <Grid item xs={12}>
           <Typography variant="h2" align="center" gutterBottom>
@@ -37,8 +35,7 @@ const Press = () => {
         </Grid>
       </Grid>
       <SubscribeEmailBanner />
-      <Footer />
-    </>
+    </BasePage>
   )
 }
 

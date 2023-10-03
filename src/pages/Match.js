@@ -1,10 +1,9 @@
 import { Box, Container, Typography } from '@mui/material'
+import BasePage from '../components/templates/BasePage';
 
-import NavBar from '../components/organisms/NavBar';
 import SpecialistForm from '../components/organisms/SpecialistForm';
 import HowItWorks from '../components/organisms/HowItWorks';
 import FAQCondensedSection from '../components/organisms/FAQCondensedSection';
-import Footer from '../components/organisms/Footer';
 import { CondensedSection } from '../content/FAQItems';
 import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
@@ -16,8 +15,7 @@ const Match = () => {
 
 
   return (
-    <div>
-      <NavBar />
+    <BasePage>
       <Box component="div">
         <Container sx={{ my: 10 }}>
           <Box sx={{ pt: {xs: 5, sm: 5}, pl: { xs: 0, sm: 10 } }} >
@@ -30,8 +28,7 @@ const Match = () => {
       <HowItWorks />
       <FAQCondensedSection faqsection={CondensedSection}/>
       <SubscribeEmailBanner />
-      <Footer />
-    </div>
+    </BasePage>
   );
 }
 

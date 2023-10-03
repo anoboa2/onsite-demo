@@ -1,14 +1,12 @@
-import NavBar from "../components/organisms/NavBar";
+import BasePage from "../components/templates/BasePage";
 import ThankYou from "../components/organisms/ThankYou";
-import Footer from "../components/organisms/Footer";
+
 
 const PostCheckout = () => {
   return (
-    <div>
-      <NavBar />
+    <BasePage>
       <ThankYou />
-      <Footer />
-    </div>
+    </BasePage>
   );
 }
 

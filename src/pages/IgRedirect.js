@@ -1,7 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
-import NavBar from '../components/organisms/NavBar';
-import Footer from '../components/organisms/Footer';
 import { useEffect } from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import BasePage from '../components/templates/BasePage';
 
 const appId = '1071094180207728';
 const redirectUri = 'https://www.onsiteplanning.com/igredirect/';
@@ -41,8 +40,7 @@ const IgRedirect = () => {
   
 
   return (
-    <>
-      <NavBar />
+    <BasePage>
       <Box>
         <Button href={instagram_auth}>
           Sign in with Instagram
@@ -52,8 +50,7 @@ const IgRedirect = () => {
         <Typography variant="h2">Redirected from Instagram</Typography>
         {code && <Typography variant="body1">Code:<br/>{code}</Typography>}
       </Box>
-      <Footer />
-    </>
+    </BasePage>
   );
 }
 
