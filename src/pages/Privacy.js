@@ -1,8 +1,7 @@
 import { Box, Container } from '@mui/material';
 import NavBar from '../components/organisms/NavBar';
 import Footer from '../components/organisms/Footer';
-import Banner from '../components/molecules/Banner';
-import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
+import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
 function Privacy() {
   return (
@@ -158,7 +157,7 @@ To ask questions or comment about this privacy policy and our privacy practices,
             </body>
           </Box>
         </Container>
-        <Banner content={SubscribeEmailBanner} />
+        <SubscribeEmailBanner />
       <Footer />
     </div>
   );

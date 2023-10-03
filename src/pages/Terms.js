@@ -1,8 +1,7 @@
 import { Box, Container } from '@mui/material';
 import NavBar from '../components/organisms/NavBar';
 import Footer from '../components/organisms/Footer';
-import Banner from '../components/molecules/Banner';
-import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
+import { SubscribeEmailBanner } from '../components/organisms/Banners';
 
 function Terms() {
   return (
@@ -114,7 +113,7 @@ The Terms & Conditions and our Privacy Policy constitute the sole and entire agr
           </body>
         </Box>
       </Container>
-      <Banner content={SubscribeEmailBanner}/>
+      <SubscribeEmailBanner />
       <Footer />
     </div>
   );

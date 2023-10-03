@@ -3,11 +3,9 @@ import { Box, Button, Typography } from "@mui/material";
 import NavBar from '../components/organisms/NavBar';
 import Services from '../components/organisms/Services';
 import ProductSection from '../components/organisms/ProductSection';
-import Banner from '../components/molecules/Banner';
 import ReviewSlider from '../components/organisms/ReviewSlider';
 import Footer from '../components/organisms/Footer';
-import StartBookingBanner from '../content/StartBookingBanner';
-import SubscribeEmailBanner from '../content/SubscribeEmailBanner';
+import { StartBookingBanner, SubscribeEmailBanner } from '../components/organisms/Banners';
 
 import HowItWorks from '../components/organisms/HowItWorks';
 import Hero from '../components/templates/Hero';
@@ -47,9 +45,9 @@ const Home = () => {
         <HowItWorks />
         <ProductSection />
         <Services />
-        <Banner content={StartBookingBanner}/>
+        <StartBookingBanner />
         <ReviewSlider />
-        <Banner content={SubscribeEmailBanner} />
+        <SubscribeEmailBanner />
         <Footer />
       </>
   );
