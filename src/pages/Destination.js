@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import BasePage from "../components/templates/BasePage";
 
 import Hero from "../components/templates/Hero";
@@ -21,9 +21,15 @@ const Destination = () => {
           </Box>
         </Box>
       </Hero>
-      <MemberBenefits />
-      <DestinationItineraries />
-      <DestinationSpecialists />
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <MemberBenefits />
+      </Container>
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 10 }}>
+        <DestinationItineraries />
+      </Container>
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <DestinationSpecialists />
+      </Container>
       <StartBookingBanner />
     </BasePage>
   );

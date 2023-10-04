@@ -5,7 +5,7 @@ import SocialStack from '../molecules/SocialStack';
 const Footer = () => {
   return (
     <Box component="div" sx={{ display: 'block' }}>
-    <Grid container spacing={3} sx={{ display: 'flex', width: "95%", maxWidth: '90vw', overflow: 'hidden', alignItems: 'center', justifyItems: 'center', mx: 'auto' }}>
+    <Grid container spacing={3} sx={{ display: 'flex', width: "95%", maxWidth: '90vw', overflow: 'hidden', alignItems: 'center', justifyItems: 'center', mx: 'auto', my: 3 }}>
       <Grid xs={12} sm={3} order={{ xs: 3, sm: 1 }} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <SocialStack />
         <Typography variant='body1' sx={{ pt: 1 }}>
@@ -31,7 +31,7 @@ const Footer = () => {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} sm={3} order={{ xs: 2, sm: 3 }} sx={{ display: "flex", flexDirection: "column", alignItems: 'center', p: { xs: 2, sm: 10 } }}>
+      <Grid xs={6} sm={3} order={{ xs: 1, sm: 2 }} sx={{ display: "flex", flexDirection: "column", alignItems: 'center' }}>
         <Typography variant="h6" marked="left" gutterBottom>
           Support
         </Typography>
@@ -44,6 +44,9 @@ const Footer = () => {
           </Box>
           <Box component="li" sx={{ py: 0.5 }}>
             <Link href="/privacy" variant="subtitle1" color="text.primary" underline="hover">Privacy</Link>
+          </Box>
+          <Box component="li" sx={{ py: 0.5 }}>
+            <Box component="div" sx={{ height: 20 }} />
           </Box>
         </Box>
       </Grid>

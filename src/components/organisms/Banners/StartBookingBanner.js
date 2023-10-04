@@ -17,6 +17,9 @@ const StartBookingBanner = () => {
         variant="contained"
         color="primary"
         href="/match"
+        sx={{
+          my: 2
+        }}
       >
         Start a Trip
       </Button>

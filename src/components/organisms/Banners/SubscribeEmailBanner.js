@@ -17,6 +17,9 @@ const SubscribeEmailBanner = () => {
       <Typography
         variant="body1"
         align="center"
+        sx={{
+          mb: 2
+        }}
       >
         Sign up to receive our latest travel tips and inspiration.
       </Typography>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import OtherItineraries from "./OtherItineraries";
 
 const ThankYou = () => {

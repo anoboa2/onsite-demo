@@ -19,8 +19,8 @@ const Home = () => {
           <Typography variant="h2" sx={{ mb: 3, display: 'block', color: "#1CCC6F"}}>
             you make the memories.
           </Typography>
-          <Typography variant="body1" maxWidth="40%" color="text.primary" sx={{ mt:{xs: 1 , sm: 2} }} style={{ display: "inline-block", textAlign: "left" }} >
-            An Instagram-worthy trip is just a click away.
+          <Typography variant="body1" maxWidth="40%" color="text.primary" sx={{ display: "inline-block", textAlign: "left" }} >
+            A stress free trip is just a click away
           </Typography>
           <Box component="div" sx={{ mt: 3, mb: 3, width: '50%' }}>
             <Button variant="contained" href="/match" sx={{ color:'primary', padding: "10px 15px", borderRadius: "10px", fontSize: "15px" }}>

@@ -152,6 +152,8 @@ const augmentedTheme = {
     MuiContainer: {
       styleOverrides: {
         root: {
+          display: 'block',
+          position: 'relative',
           maxWidth: '1440px',
         },
       },

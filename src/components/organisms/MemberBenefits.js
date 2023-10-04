@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 
 const Benefits = [

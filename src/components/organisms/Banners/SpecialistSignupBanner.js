@@ -27,6 +27,9 @@ const SpecialistSignupBanner = () => {
         color="primary"
         href="https://tally.so/r/3laB76"
         target="_blank"
+        sx={{
+          my: 2
+        }}
       >
         Apply to Join Onsite
       </Button>
