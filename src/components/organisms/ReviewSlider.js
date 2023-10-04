@@ -36,7 +36,7 @@ const Testimonies = () => {
   };
 
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', mt: 10, mb: 20, px: '12%' }}>
+    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', mt: 10, mb: 20 }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
         <Typography textAlign="center" variant="h2" marginBottom="10px" fontWeight="300">
           What our travelers have to say

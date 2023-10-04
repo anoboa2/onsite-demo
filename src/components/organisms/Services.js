@@ -6,7 +6,7 @@ import ServicesOffered from '../../content/ServicesOffered';
 const Services = () => {
 
   return (
-    <Box component="div" sx={{ px: { xs: 3, sm: "20%" }, py: 5, mb: 10, overflow: "hidden" }}>
+    <Box component="div" sx={{ py: 5, mb: 10, overflow: "hidden" }}>
       <Box component="div" sx={{ display: 'block', mb: 10, mx: 'auto' }}>
         <Typography variant="h2" align="center" fontWeight="300" sx={{ pb: 1 }} color="primary.main">We arrange the <Box component="span" sx={{ color:"#0FAACD"}} ><b>best</b></Box></Typography>
         <Typography variant="subtitle1" align="center" color="text.primary">Your specialist will plan your trip from start to finish</Typography>
