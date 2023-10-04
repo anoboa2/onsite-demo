@@ -61,7 +61,7 @@ const Specialist = () => {
             <Box key={specialist.id} component="div" sx={{ width: {sm: '80%'} }}>
               <Box component="div" sx={{ display: 'flex', justifyContent: 'center' , mt:{xs: -7 , sm: -3} }}>
                 <Box component="div" sx={{ px: 5, display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center' }}>
-                  <Box sx={{ py: 1 }}>
+                  <Box sx={{ display: 'inline-block', py: 1 }}>
                     <Typography variant="h1" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: 2 , sm: 3}, ml: -5 , mr: -5, overflow: "hidden" }}>
                       Meet <Box component="span" sx={{ color:"primary.main"}}><b>{specialist.first_name}</b></Box>
                     </Typography>
@@ -93,7 +93,7 @@ const Specialist = () => {
                       ))}
                     </Box>
                   </Collapse>
-                  <Button variant="contained" color="primary" fullWidth onClick={() => setExpand(!expand)} sx={{ justifyContent: 'center'  , width:{xs: 160 , sm: 200} , mt:{sm: 7} }}>
+                  <Button variant="outlined" color="primary" fullWidth onClick={() => setExpand(!expand)} sx={{ justifyContent: 'center', alignSelf: 'center', width:{xs: 160 , sm: 200} , mt:{sm: 7} }}>
                     {expand ? 'Read Less' : 'Read More'}
                   </Button>
                 </Grid>
