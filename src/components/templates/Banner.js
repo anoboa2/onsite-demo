@@ -17,7 +17,7 @@ const Banner = ({ children }) => {
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ maxWidth: '1400px' }}>
+      <Box sx={{ width: '95%', maxWidth: '1400px' }}>
         {children}
       </Box>
     </Box>
