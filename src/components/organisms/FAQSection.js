@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import AccordionItem from '../molecules/AccordionItem';
 import { AboutSection , SpecialistSection, TravelerSection } from '../../content/faqs';
 
@@ -19,22 +19,20 @@ const Sections = [
 
 const FAQSection = () => {
   return (
-    <Grid container spacing={3} sx={{ py: 10, px: {xs: 1, sm: 3, md: 8} }}>
+    <Box component="div" sx={{ display: 'block' }}>
       {Sections.map((section) => (
-        <Grid item xs={12} sx={{ mt: 6, display: 'flex', justifyContent: "center", borderRadius: 50 }}>
-          <Box sx={{ display: 'flex', flexDirection: "column" }} >
-            <Typography variant="h3" component="h1" align="center" >
-              {section.title}
-            </Typography>
-            <Box sx={{ px: "15%" , mt: { xs: 7, sm: 7 }}}>
-              {section.content.map((faq) => (
-                <AccordionItem key={faq.order} content={faq} />
-              ))}
-            </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: "center", borderRadius: 50 }}>
+          <Typography variant="h3" component="h1" align="center" sx={{ mt: 4, py: 1 }}>
+            {section.title}
+          </Typography>
+          <Box sx={{ px: "5%" , mt: 2}}>
+          {section.content.map((faq) => (
+            <AccordionItem key={faq.order} content={faq} />
+          ))}
           </Box>
-        </Grid>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   )
 }
 
