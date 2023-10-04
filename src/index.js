@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RowndProvider } from '@rownd/react';
 
 // let key = process.env.REACT_APP_ROWND_APP_KEY
-let key = 'd7e2c6ec-99aa-4614-ad02-41baaa742fc6'
+let key = 'key_r8wpslb6qmu9pj7gm0bbt9pn'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

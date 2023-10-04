@@ -6,7 +6,7 @@ const ProductPreview = ({ content }) => {
 
   return (
     <Grid container spacing={{ xs: 1, sm: 3 }}>
-      <Grid sm={12} md={5} order={{ xs: 1, sm: orientation.imageSide }} sx={{ overflow: "hidden", flexShrink: 2 }}>
+      <Grid sm={12} md={5} order={{ xs: 1, sm: orientation.imageSide }} sx={{ overflow: "hidden" }}>
         {image}
       </Grid>
       <Grid sm={12} md={7} order={{ xs: 2, sm: orientation.textSide }}>

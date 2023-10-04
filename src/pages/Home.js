@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import BasePage from "../components/templates/BasePage";
 
 import Hero from '../components/templates/Hero';
@@ -29,11 +29,19 @@ const Home = () => {
           </Box>
         </Box>
       </Hero>
-      <HowItWorks />
-      <ProductSection />
-      <Services />
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <HowItWorks />
+      </Container>
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <ProductSection />
+      </Container>
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <Services />
+      </Container>
       <StartBookingBanner />
-      <ReviewSlider />
+      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+        <ReviewSlider />
+      </Container>
       <SubscribeEmailBanner />
     </BasePage>
   );
