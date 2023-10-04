@@ -5,7 +5,7 @@ import CountryOffered from '../../content/CountryOffered';
 
 const DestinationItineraries = () => {
   return (
-    <Box component="div" sx={{ display: 'block' }}>
+    <Box component="div" sx={{ display: 'block', width: '100%' }}>
       <Typography variant="h2" align="center" sx={{ my: 4 }}>Popular <b>Italy</b> Itineraries</Typography>
       <Grid container sx={{ display: 'flex', mt: 8, justifyContent: 'start' }}>
       {CountryOffered.map((country, index) => (

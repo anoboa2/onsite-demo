@@ -11,23 +11,25 @@ const Destination = () => {
   return (
     <BasePage>
       <Hero image='url("/img/destinations/italy-cover2.jpg")'>
-        <Box component="div" sx={{ display: 'block', m: 'auto', width: '80%', maxWidth: '1440px', height: '100%', backgroundColor: 'rgba(255, 255, 255, .1)' }}>
-          <Box component="div" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'space-evenly', backgroundColor: 'rgba(255, 255, 255, .1)' }}>
-            <Typography variant="h2" align="center" color="primary.contrastText">Italy</Typography>
-            <Typography variant="subtitle1" align="center">
-              The beautiful country of fine food and wine, sun-bathed landscapes, Venetian canals, smoldering volcanoes, and sleepy lagoons. Let our travel specialists help you enjoy a trip of a lifetime. 
-              From Milan to Rome to Positano, use our travel guides to explore all the hidden gems in this beautiful country.
-            </Typography>
+        <Box component="div" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: 'rgba(255, 255, 255, .1)' }}>
+          <Box component="div" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '80%', height: '100%', backgroundColor: 'rgba(255, 255, 255, .55)' }}>
+            <Box component="div" sx={{ display: 'block', width: '50%', flexDirection: 'column', alignContent: 'center', justifyItems: 'center' }}>
+              <Typography variant="h2" align="center" color="primary.contrastText" sx={{ my: 4 }}>Italy</Typography>
+              <Typography variant="subtitle1" align="center">
+                The beautiful country of fine food and wine, sun-bathed landscapes, Venetian canals, smoldering volcanoes, and sleepy lagoons. Let our travel specialists help you enjoy a trip of a lifetime. 
+                From Milan to Rome to Positano, use our travel guides to explore all the hidden gems in this beautiful country.
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Hero>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5, minHeight: '40vh' }}>
         <MemberBenefits />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 10 }}>
+      <Container sx={{ my: 5 }}>
         <DestinationItineraries />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <DestinationSpecialists />
       </Container>
       <StartBookingBanner />

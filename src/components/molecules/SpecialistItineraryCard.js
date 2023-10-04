@@ -27,7 +27,7 @@ const SpecialistItineraryCard = (content) => {
   return (
     <Box component="div">
     {Specialists.map(({ id }) => ( 
-      <Card sx={{ maxWidth: 400}}>
+      <Card>
         <CardActionArea href={`/explore/${id}`}>
           <CardMedia component='img' alt={alt} height='250' image={image} />
           <CardContent>
