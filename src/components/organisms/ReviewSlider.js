@@ -36,13 +36,13 @@ const Testimonies = () => {
   };
 
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', mt: 10, mb: 20 }}>
+    <Box component="div" sx={{ display: 'block', width: '100%', mt: 10, mb: 20 }}>
       <Box sx={{ display: "flex", flexDirection: "column", paddingBottom: "15px", justifyContent: "center" }}>
         <Typography textAlign="center" variant="h2" marginBottom="10px" fontWeight="300">
           What our travelers have to say
         </Typography>
         <Typography variant="subtitle1" align="center" color="text.primary">
-        A few responses from our travelers who enjoyed using Onsite
+          A few responses from our travelers who enjoyed using Onsite
         </Typography>
       </Box>
       <Box component="div" sx={{ display: 'block', maxWidth: '80%', mx: 'auto' }}>

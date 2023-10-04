@@ -4,7 +4,7 @@ import PlanningSteps from '../../content/PlanningSteps';
 
 const HowItWorks = () => {
   return (
-    <Box component="div" sx={{ display: 'block', justifyItems: 'center', my: 'auto' }} >
+    <Box component="div" sx={{ display: 'block', width: '100%', justifyItems: 'center' }} >
       <Typography variant="h2" align="center" sx={{ display: 'block', py: 5, color: "primary.main" }}>
         How Onsite works for you
       </Typography>
