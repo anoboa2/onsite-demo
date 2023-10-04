@@ -21,7 +21,7 @@ const Benefits = [
 
 const MemberBenefits = () => {
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', my: 2, justifyItems: 'center' }}>
+    <Box component="div" sx={{ display: 'block', width: '100%' }}>
       <Typography variant="h2" align="center" color="primary.contrastText">As an Onsite Traveler</Typography>
       <Typography variant="subtitle1" align="center" color="text.primary">You get <Box component="span" fontStyle={'italic'}><b>wayyy</b></Box> more</Typography>
       <Grid container sx={{ display: 'flex', my: 2 }}>

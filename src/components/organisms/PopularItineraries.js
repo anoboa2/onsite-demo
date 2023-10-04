@@ -32,7 +32,7 @@ const Destinations = [
 
 const PopularItineraries = () => {
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+    <Box component="div" sx={{ display: 'block', width: '100%' }}>
       <Typography variant="h2" align="center" color="primary.contrastText" sx={{ py: 5 }}>Our Popular Destinations</Typography>
       <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: "center", flexDirection: 'row', py: 2 }}>
       {Destinations.map(({ name, image, path }) => (

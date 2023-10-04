@@ -4,7 +4,7 @@ import AccordionItem from '../molecules/AccordionItem';
 const FAQCondensedSection = ({ faqsection }) => {
 
   return (
-    <Box component="div" sx={{ display: 'block' }}>
+    <Box component="div" sx={{ display: 'block', width: '100%' }}>
       <Typography variant="h2" align="center">
         Have Questions?
       </Typography>

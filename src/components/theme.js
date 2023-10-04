@@ -152,9 +152,15 @@ const augmentedTheme = {
     MuiContainer: {
       styleOverrides: {
         root: {
-          display: 'block',
-          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+          minHeight: '50vh',
+          width: '80%,',
           maxWidth: '1440px',
+          m: '0 auto',
         },
       },
     },

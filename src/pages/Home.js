@@ -29,17 +29,17 @@ const Home = () => {
           </Box>
         </Box>
       </Hero>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <HowItWorks />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <ProductSection />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <Services />
       </Container>
       <StartBookingBanner />
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <ReviewSlider />
       </Container>
       <SubscribeEmailBanner />

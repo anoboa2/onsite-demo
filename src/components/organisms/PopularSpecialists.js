@@ -28,7 +28,7 @@ const Advisors = [
 
 const PopularSpecialists = () => {
   return (
-    <Box component="div" sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+    <Box component="div" sx={{ display: 'block', width: '100%' }}>
       <Typography variant="h2" align="center" color="primary.contrastText" sx={{ py: 4 }}>Our Popular Specialists</Typography>
       <Grid container spacing={3}>
         {Advisors.map(({ firstName, lastName, title, image, id }) => (

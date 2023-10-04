@@ -28,16 +28,16 @@ const Explore = () => {
         </Box>
       </Hero>
       <CheckoutSnackbar />
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container>
         <PopularSpecialists />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '70vh', width: '80%', my: 10 }}>
+      <Container sx={{ my: 5 }}>
         <PopularItineraries />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%', my: 5 }}>
+      <Container sx={{ my: 5 }}>
         <MemberBenefits />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '50vh', width: '80%' }}>
+      <Container sx={{ mt: -10 }}>
         <FAQCondensedSection faqsection={SpecialistSection} />
       </Container>
       <SpecialistSignupBanner />

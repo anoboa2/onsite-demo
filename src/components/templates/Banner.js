@@ -9,6 +9,7 @@ const Banner = ({ children }) => {
         flexDirection: 'column',
         px: { xs: 2, sm: 10},
         py: 5,
+        alignItems: 'center',
         textAlign: 'center',
         backgroundImage: `url("/img/BannerBackground.webp")`,
         backgroundSize: {xs: 'cover', md: '100%'},

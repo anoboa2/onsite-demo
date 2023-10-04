@@ -23,10 +23,10 @@ const Match = () => {
         </Box>
         <SpecialistForm />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '75vh', width: '80%', my: 7 }}>
+      <Container sx={{ my: 4 }}>
         <HowItWorks />
       </Container>
-      <Container sx={{ height: '100%', minHeight: '60vh', width: '80%', mt: 7, mb: 5 }}>
+      <Container sx={{ my: 2 }}>
         <FAQCondensedSection faqsection={CondensedSection}/>
       </Container>
       <SubscribeEmailBanner />
