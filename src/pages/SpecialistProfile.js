@@ -1,3 +1,4 @@
+import { Container } from '@mui/material'
 import BasePage from '../components/templates/BasePage';
 import CheckoutSnackbar from '../components/atoms/CheckoutSnackbar';
 import Specialist from '../components/templates/Specialist';
@@ -11,7 +12,9 @@ const SpecialistProfile = () => {
     <BasePage>
       <CheckoutSnackbar />
       <Specialist />
-      <MemberBenefits />
+      <Container sx={{ minHeight: '40vh' }}>
+        <MemberBenefits />
+      </Container>
       <StartBookingBanner />
     </BasePage>
   );

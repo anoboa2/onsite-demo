@@ -15,7 +15,7 @@ const Explore = () => {
 
   return (
     <BasePage>
-      <Hero image='url("/img/banner.jpg")'>
+      <Hero image={{ xs: 'none', sm: 'url("/img/banner.jpg")'}}>
         <Box component="div" sx={{ mt: 2 }}>              
           <Box component="div" sx={{ position: 'absolute', display: 'block', top: '40%', left: '10%' }} >
             <Typography variant="h1" align='left' lineHeight={1.3} sx={{ color: "primary.contrastText" }}>

@@ -25,11 +25,10 @@ const DestinationCard = ({ destination, image, path }) => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          transition: 'background 0.9s ease-in-out',
+          transition: 'background 500ms ease-in-out',
           '&:hover': {
             background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${image})`,
-            backgroundSize: 'cover',
-            backdropFilter: 'blur(5px)',
+            backgroundSize: 'cover'
           }
         }}
       >
