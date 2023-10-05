@@ -19,7 +19,7 @@ const Match = () => {
       <Container sx={{ my: 10 }}>
         <Box sx={{ pt: {xs: 5, sm: 5}, pl: { xs: 0, sm: 10 } }} >
           <Typography variant="h2" color="secondary.main" align='left' sx={{ mb: 2 }}>Kick back and relax.  We'll do the planning.</Typography>
-          <Typography variant="subtitle1" align='left' color="text.primary">Tell us about your dream trip and we will match you with a specialist who will make it a reality</Typography>
+          <Typography variant="subtitle1" align='left' color="text.primary">Tell us about your dream trip and we'll match you with a specialist who will make it a reality</Typography>
         </Box>
         <SpecialistForm />
       </Container>
