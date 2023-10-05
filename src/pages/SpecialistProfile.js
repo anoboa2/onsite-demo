@@ -12,7 +12,7 @@ const SpecialistProfile = () => {
     <BasePage>
       <CheckoutSnackbar />
       <Specialist />
-      <Container sx={{ minHeight: '40vh', mt: -10 }}>
+      <Container sx={{ minHeight: '40vh', mt: -2, mb: 2 }}>
         <MemberBenefits />
       </Container>
       <StartBookingBanner />

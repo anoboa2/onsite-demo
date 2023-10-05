@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Grid, Typography , Button , Collapse} from '@mui/material';
+import { Box, Button, Collapse, Container, Grid, Typography } from '@mui/material';
 import ProfileCard from '../molecules/ProfileCard';
 import ItineraryCard from '../molecules/ItineraryCard';
 
@@ -9,7 +9,6 @@ const Specialist = () => {
   const { id } = useParams();
   const [ specialist, setSpecialist ] = useState([]);
   const [ itineraries, setItineraries ] = useState([]);
-  const [ values, setValues ] = useState({ destination: '' });
   const [ expand, setExpand ] = useState(false);
 
   useEffect(() => {
@@ -32,117 +31,60 @@ const Specialist = () => {
     getItineraries();
   } , [id]);
 
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch('https://hmou3ha9b1.execute-api.us-east-1.amazonaws.com/v1/marketing/requestdestination', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({...values, id})
-    })
-      .then(res => console.log(res))
-      .then(data => {
-        console.log(data);
-      })
-  }
-
   return (
-    <>
       <Box sx={{ m: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
-      
         {specialist.map(specialist => (
           <>
-            <Box key={specialist.id} component="div" sx={{ width: {sm: '80%'} }}>
-              <Box component="div" sx={{ display: 'flex', justifyContent: 'center' , mt:{xs: -7 , sm: -3} }}>
-                <Box component="div" sx={{ px: 5, display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center' }}>
-                  <Box sx={{ display: 'inline-block', py: 1 }}>
-                    <Typography variant="h1" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: 2 , sm: 3}, ml: -5 , mr: -5, overflow: "hidden" }}>
-                      Meet <Box component="span" sx={{ color:"primary.main"}}><b>{specialist.first_name}</b></Box>
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
+            <Box component="div" sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Typography variant="h2" align='center' sx={{ my: 3 }}>
+                Meet <Box component="span" sx={{ color:"primary.main"}}><b>{specialist.first_name}</b></Box>
+              </Typography>
             </Box>
             <ProfileCard content={specialist} />          
-            <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
-              <Grid container spacing={2} >
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 0 , sm:0} , paddingRight:{xs: 0, sm:0} }}>
-                  <Typography variant="h3" align="left" color="primary.main" gutterBottom>
-                    Favorite place I've traveled
-                  </Typography>
-                  <Typography variant="subtitle1" align="left" fontWeight={300} >
-                    {specialist.favorite_destination}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 10 , sm:0} , paddingRight:{xs: 13, md:0} }}>
-                  <Typography variant="h3" color="primary.main" sx={{mr:{xs:-8}}}  >
-                    Travel tips from {specialist.first_name}
-                  </Typography>
-                  <Collapse in={expand} collapsedSize={'320px'} orientation="vertical" sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 2, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }}>
-                    <Box component="ul" >
-                      {specialist.tips && specialist.tips.map(tip => (
-                        <Box  component="li" key={tip} >
-                          <Typography variant="body1" fontWeight={300} paddingBottom={1} lineHeight={1.7}>{tip}</Typography>
-                        </Box>
-                      ))}
-                    </Box>
-                  </Collapse>
-                  <Button variant="outlined" color="primary" fullWidth onClick={() => setExpand(!expand)} sx={{ justifyContent: 'center', alignSelf: 'center', width:{xs: 160 , sm: 200} , mt:{sm: 7} }}>
-                    {expand ? 'Read Less' : 'Read More'}
-                  </Button>
-                </Grid>
-              </Grid>
-            </Box>
-            <Grid container spacing={4} sx={{ width: {xs: "185%" , sm: "100%"}, my: 10, px: { xs: 3, sm: "10%" } , alignContent: 'center', py: 5, mb: 10, mt: { xs: -3, sm: -19 } , justifyContent: 'center' }}>
-              <Grid item xs={12}>
-                <Typography variant="h2" fontWeight="300" align='center' sx={{ px: { xs: 2, sm: "20%" }, py: 5, mb:{xs: -2 , sm: -1}, ml: -5 , mr: -5, overflow: "hidden" }}>
-                  Recent <Box component="span" sx={{ color:"primary.main"}} ><b>Itineraries</b></Box>
+            <Box component="div" sx={{ display: 'flex', flexDirection: 'column', my: 5, py: 5, height: '100%', width: '80%', borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)' }}>
+              <Box component="div" sx={{ display: 'block', flexDirection: 'column', width: '80%', mx: 'auto' }}>
+                <Typography variant="h3" color="primary.main" gutterBottom>
+                  Favorite place I've traveled
                 </Typography>
-              </Grid>
-              {itineraries.map(itinerary => (
-                <Grid item key={itinerary.title} sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <ItineraryCard content={itinerary} firstName={specialist.first_name}/>
-                </Grid>
-              ))}
-            </Grid>
-
-            {/* <Box sx={{m: {xs: 2, sm: 5, md: 18}, py: 5, borderStyle: 'solid none', borderColor: 'rgba(0,0,0,0.3)', display: 'flex', justifyContent: 'center', alignContent: 'center' ,  visibility:{sm: "hidden" , xs: "visible"} }}>
-              <Grid container spacing={2} >
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 0 , sm:0} , paddingRight:{xs: 0, sm:0} }}>
-                  <Typography variant="h3" align="left" color="primary.main" gutterBottom>
-                    Favorite place I've traveled
-                  </Typography>
-                  <Typography variant="subtitle1" align="left" fontWeight={300} >
-                    {specialist.favorite_destination}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , mx: {md: 10}, paddingLeft:{xs: 10 , sm:0} , paddingRight:{xs: 13, md:0} }}>
-                  <Typography variant="h3" color="primary.main" sx={{mr:{xs:-8}}}  >
-                    Travel tips from {specialist.first_name}
-                  </Typography>
-                  <Box sx={{ width: {sm: '85%' , xs: "170%"},  mb: {xs: 2, sm: -5}, justifyContent: 'center', alignContent: 'center', ml:{xs:-2, sm:7}  }} >
-                    <Box component="ul" >
-                      {specialist.tips && specialist.tips.map(tip => (
-                        <Box  component="li" key={tip} >
-                          <Typography variant="body1" fontWeight={300} paddingBottom={1} lineHeight={1.7}>{tip}</Typography>
-                        </Box>
-                      ))}
+                <Typography variant="subtitle1">
+                  {specialist.favorite_destination}
+                </Typography>
+                <Typography variant="h3" color="primary.main">
+                  Travel tips from {specialist.first_name}
+                </Typography>
+                <Collapse in={expand} collapsedSize={'320px'} orientation="vertical" sx={{ width: '100%', justifyContent: 'center', alignContent: 'center' }}>
+                  <Box component="ul" >
+                  {specialist.tips && specialist.tips.map(tip => (
+                    <Box component="li" key={tip}>
+                      <Typography variant="body1" paddingBottom={1} lineHeight={1.7}>{tip}</Typography>
                     </Box>
+                  ))}
                   </Box>
+                </Collapse>
+                <Button variant="outlined" color="primary" onClick={() => setExpand(!expand)} sx={{ justifyContent: 'center', alignSelf: 'center', mt: 2 }}>
+                  {expand ? 'Read Less' : 'Read More'}
+                </Button>
+              </Box>
+            </Box>
+            <Container>
+              <Box component="div" sx={{ width: '100%', alignContent: 'center', justifyContent: 'center' }}>
+                <Box component="div">
+                  <Typography variant="h2" align='center'>
+                    Recent Itineraries
+                  </Typography>
+                </Box>
+                <Grid container spacing={2} sx={{ my: 5 }}>
+                {itineraries.map(itinerary => (
+                  <Grid key={itinerary.title} sm={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <ItineraryCard content={itinerary} firstName={specialist.first_name}/>
+                  </Grid>
+                ))}
                 </Grid>
-              </Grid>
-            </Box> */}
+              </Box>
+            </Container>
           </>
-          
         ))}
       </Box>
-    </>
   )
 }
 
